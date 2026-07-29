@@ -28,6 +28,10 @@ app.get('/health', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.status(200).send('<div style="font-family:sans-serif;text-align:center;padding:50px;"><h1>🌿 Miatz AI Backend is Live!</h1><p>The services for Dany Experiences are active and responding.</p></div>');
+});
+
 // Start Server
 app.listen(config.port, () => {
   console.log(`[Cerebro] Microservice is running on port ${config.port}`);
