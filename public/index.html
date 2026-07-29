@@ -119,11 +119,15 @@
       }
     </script>
 <style>
-        html, body {
-            overflow-x: hidden;
+        html, body, #root-wrapper {
+            overflow-x: hidden !important;
             width: 100%;
+            max-width: 100vw;
             margin: 0;
             padding: 0;
+        }
+        header, section, footer {
+            max-width: 100vw !important;
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -155,9 +159,10 @@
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md overflow-x-hidden w-full">
+<div id="root-wrapper" class="w-full max-w-[100vw] overflow-x-hidden relative">
 <!-- TopNavBar -->
 <header class="w-full top-0 z-50 bg-transparent backdrop-blur-md sticky top-0 shadow-sm bg-surface/10 backdrop-blur-xl">
-<nav class="flex justify-between items-center w-full px-4 md:px-gutter py-4 max-w-container-max mx-auto">
+<nav id="nav-inner" class="flex justify-between items-center w-full px-6 md:px-gutter py-4 max-w-container-max mx-auto">
 <div class="h-8 sm:h-10"><img src="./assets/logo_dany.webp" alt="Dany Experiences Logo" class="h-full w-auto object-contain"></div>
 <div class="hidden md:flex items-center gap-stack-md">
 <a data-i18n="nav_tours" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-300" href="#tours">Tours</a>
@@ -210,7 +215,7 @@
   <div class="w-full h-full bg-cover bg-center animate-ken-burns" style="background-image: url('./assets/chichen_itza_sunset.webp')"></div>
 </div>
 <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent z-10"></div>
-<div class="relative z-20 max-w-container-max mx-auto px-4 md:px-gutter w-full py-8 md:py-12 flex justify-start">
+<div class="relative z-20 max-w-container-max mx-auto px-6 md:px-gutter w-full py-8 md:py-12 flex justify-start">
 <div class="glass-card w-full p-5 sm:p-8 md:p-12 rounded-2xl border border-[#B09A6D]/30 max-w-2xl shadow-2xl relative overflow-hidden backdrop-blur-md bg-[#F6F3E6]/90 luxury-shadow">
   <!-- Decorative gold top border accent -->
   <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#B09A6D] via-[#ECE8D9] to-[#B09A6D]"></div>
@@ -236,18 +241,18 @@
   </div>
   
   <!-- Stats row -->
-  <div class="grid grid-cols-3 gap-2 pt-6 border-t border-[#B09A6D]/20 mt-6 md:mt-8 text-left">
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#B09A6D]/20 mt-6 md:mt-8 text-left">
     <div>
-      <h4 data-i18n="hero_stat1_title" class="text-[9px] sm:text-[10px] font-bold text-[#00334D] uppercase tracking-wider mb-0.5 leading-tight">Guía Certificado</h4>
-      <p data-i18n="hero_stat1_desc" class="text-[8px] sm:text-[9px] text-[#7A6947] leading-tight">Credencial Federal SECTUR</p>
+      <h4 data-i18n="hero_stat1_title" class="text-xs font-bold text-[#00334D] uppercase tracking-wider mb-0.5">Guía Certificado</h4>
+      <p data-i18n="hero_stat1_desc" class="text-xs text-[#7A6947]">Credencial Federal SECTUR</p>
     </div>
     <div>
-      <h4 data-i18n="hero_stat2_title" class="text-[9px] sm:text-[10px] font-bold text-[#00334D] uppercase tracking-wider mb-0.5 leading-tight">Evita Multitudes</h4>
-      <p data-i18n="hero_stat2_desc" class="text-[8px] sm:text-[9px] text-[#7A6947] leading-tight">Accesos temprano exclusivos</p>
+      <h4 data-i18n="hero_stat2_title" class="text-xs font-bold text-[#00334D] uppercase tracking-wider mb-0.5">Evita Multitudes</h4>
+      <p data-i18n="hero_stat2_desc" class="text-xs text-[#7A6947]">Accesos temprano exclusivos</p>
     </div>
     <div>
-      <h4 data-i18n="hero_stat3_title" class="text-[9px] sm:text-[10px] font-bold text-[#00334D] uppercase tracking-wider mb-0.5 leading-tight">Rutas a la Medida</h4>
-      <p data-i18n="hero_stat3_desc" class="text-[8px] sm:text-[9px] text-[#7A6947] leading-tight">100% personalizables</p>
+      <h4 data-i18n="hero_stat3_title" class="text-xs font-bold text-[#00334D] uppercase tracking-wider mb-0.5">Rutas a la Medida</h4>
+      <p data-i18n="hero_stat3_desc" class="text-xs text-[#7A6947]">100% personalizables</p>
     </div>
   </div>
 </div>
@@ -522,17 +527,17 @@
 </div>
 <div class="space-y-4 max-h-[280px] md:max-h-[400px] overflow-y-auto pr-2">
 <!-- Testimonial 1 -->
-<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm">
+<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm" style="max-width: calc(100vw - 48px);">
 <p data-i18n="trust_quote1" class="font-body-md text-xs text-[#7A6947] italic">"Dany Experiences rediseñó lo que significa viajar para nosotros. Cada detalle fue seleccionado con tal precisión y cuidado que nos sentimos más que huéspedes: nos sentimos parte de la historia de la tierra."</p>
 <p data-i18n="trust_author1" class="text-[10px] font-bold text-[#00334D]">— Elena V., Viajera Privada</p>
 </div>
 <!-- Testimonial 2 -->
-<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm">
+<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm" style="max-width: calc(100vw - 48px);">
 <p data-i18n="trust_quote2" class="font-body-md text-xs text-[#7A6947] italic">"La expedición a Chichén Itzá al amanecer valió cada segundo. Dany no solo conoce la historia, te explica la arqueoastronomía de una forma que te vuela la cabeza. ¡Y sin multitudes!"</p>
 <p data-i18n="trust_author2" class="text-[10px] font-bold text-[#00334D]">— Marcus K., Viajero de Aventuras</p>
 </div>
 <!-- Testimonial 3 -->
-<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm">
+<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm" style="max-width: calc(100vw - 48px);">
 <p data-i18n="trust_quote3" class="font-body-md text-xs text-[#7A6947] italic">"Nadar en los cenotes privados de Casa Tortuga con el guía de ecoturismo fue mágico e íntimo. El respeto por el medio ambiente y la seguridad fue de diez. Altamente recomendado."</p>
 <p data-i18n="trust_author3" class="text-[10px] font-bold text-[#00334D]">— Sophia &amp; Pierre, Luna de Miel</p>
 </div>
@@ -620,6 +625,7 @@
     </div>
   </div>
 </footer>
+</div> <!-- End of #root-wrapper -->
 <!-- Mobile Navigation Drawer Overlay -->
 <div id="mobile-menu" class="fixed inset-0 bg-[#00334D]/50 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-sm" style="will-change: opacity;">
   <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-xs bg-[#F6F3E6] p-8 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between border-l border-[#B09A6D]/20" style="will-change: transform;">
