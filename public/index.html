@@ -30,52 +30,52 @@
         theme: {
           extend: {
             "colors": {
-                    "tertiary-container": "#733100",
-                    "on-secondary-container": "#004666",
+                    "tertiary-container": "#7A6947",
+                    "on-secondary-container": "#00334D",
                     "inverse-surface": "#2d3133",
-                    "inverse-primary": "#95d3ba",
-                    "on-primary": "#ffffff",
-                    "on-tertiary-fixed": "#331200",
-                    "on-primary-fixed": "#002117",
+                    "inverse-primary": "#b0f0d6",
+                    "on-primary": "#F6F3E6",
+                    "on-tertiary-fixed": "#00334D",
+                    "on-primary-fixed": "#F6F3E6",
                     "on-error-container": "#93000a",
-                    "outline": "#707974",
-                    "surface-bright": "#f7f9fb",
-                    "tertiary-fixed": "#ffdbca",
-                    "primary-fixed": "#b0f0d6",
-                    "surface": "#f7f9fb",
-                    "secondary-fixed": "#c9e6ff",
-                    "on-tertiary-fixed-variant": "#763300",
-                    "outline-variant": "#bfc9c3",
-                    "surface-container": "#eceef0",
-                    "on-tertiary-container": "#ff985a",
-                    "secondary-fixed-dim": "#89ceff",
+                    "outline": "#B09A6D",
+                    "surface-bright": "#F6F3E6",
+                    "tertiary-fixed": "#B09A6D",
+                    "primary-fixed": "#00334D",
+                    "surface": "#F6F3E6",
+                    "secondary-fixed": "#1F6C7B",
+                    "on-tertiary-fixed-variant": "#7A6947",
+                    "outline-variant": "#ECE8D9",
+                    "surface-container": "#ECE8D9",
+                    "on-tertiary-container": "#F6F3E6",
+                    "secondary-fixed-dim": "#1F6C7B",
                     "on-error": "#ffffff",
-                    "surface-container-low": "#f2f4f6",
-                    "tertiary": "#502000",
+                    "surface-container-low": "#F2EFE0",
+                    "tertiary": "#B09A6D",
                     "surface-container-lowest": "#ffffff",
-                    "on-secondary-fixed-variant": "#004c6e",
-                    "surface-tint": "#2b6954",
-                    "on-background": "#191c1e",
-                    "background": "#f7f9fb",
-                    "on-surface": "#191c1e",
-                    "on-primary-container": "#80bea6",
-                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#00334D",
+                    "surface-tint": "#00334D",
+                    "on-background": "#00334D",
+                    "background": "#F6F3E6",
+                    "on-surface": "#00334D",
+                    "on-primary-container": "#F6F3E6",
+                    "on-tertiary": "#00334D",
                     "surface-dim": "#d8dadc",
-                    "secondary": "#006591",
-                    "on-primary-fixed-variant": "#0b513d",
-                    "on-secondary": "#ffffff",
-                    "primary-fixed-dim": "#95d3ba",
-                    "surface-variant": "#e0e3e5",
-                    "primary-container": "#064e3b",
-                    "secondary-container": "#39b8fd",
-                    "surface-container-highest": "#e0e3e5",
-                    "primary": "#003527",
-                    "on-surface-variant": "#404944",
+                    "secondary": "#1F6C7B",
+                    "on-primary-fixed-variant": "#00334D",
+                    "on-secondary": "#F6F3E6",
+                    "primary-fixed-dim": "#00334D",
+                    "surface-variant": "#ECE8D9",
+                    "primary-container": "#00334D",
+                    "secondary-container": "#B09A6D",
+                    "surface-container-highest": "#D7D3BD",
+                    "primary": "#00334D",
+                    "on-surface-variant": "#7A6947",
                     "inverse-on-surface": "#eff1f3",
-                    "surface-container-high": "#e6e8ea",
+                    "surface-container-high": "#E2DEC9",
                     "error-container": "#ffdad6",
-                    "tertiary-fixed-dim": "#ffb68e",
-                    "on-secondary-fixed": "#001e2f",
+                    "tertiary-fixed-dim": "#B09A6D",
+                    "on-secondary-fixed": "#F6F3E6",
                     "error": "#ba1a1a"
             },
             "borderRadius": {
@@ -132,6 +132,14 @@
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
         }
+        @keyframes kenBurns {
+            0% { transform: scale(1.02) translate(0, 0); }
+            50% { transform: scale(1.08) translate(-1%, -0.5%); }
+            100% { transform: scale(1.02) translate(0, 0); }
+        }
+        .animate-ken-burns {
+            animation: kenBurns 24s infinite ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md">
@@ -140,40 +148,96 @@
 <nav class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
 <div class="h-10"><img src="./assets/logo_dany.webp" alt="Dany Experiences Logo" class="h-full w-auto object-contain"></div>
 <div class="hidden md:flex items-center gap-stack-md">
-<a data-i18n="nav_destinations" class="font-body-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Destinations</a>
-<a data-i18n="nav_experiences" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Experiences</a>
-<a data-i18n="nav_jet" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Private Jet</a>
-<a data-i18n="nav_concierge" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Concierge</a>
+<a data-i18n="nav_tours" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-300" href="#tours">Tours</a>
+<a data-i18n="nav_about" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-300" href="#sobre-dany">Sobre Dany</a>
+<a data-i18n="nav_certifications" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-300" href="#certificaciones">Certificaciones</a>
+<a data-i18n="nav_contact" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all duration-300" href="#contacto">Contacto</a>
 </div>
-<div class="flex items-center gap-4">
+<div class="flex items-center gap-3">
 <button data-i18n="nav_book" class="hidden md:block bg-primary-container text-on-primary px-6 py-2 rounded-full font-label-md uppercase tracking-widest scale-95 duration-200 ease-in-out hover:opacity-80 transition-all">Book Now</button>
-<span class="material-symbols-outlined text-primary cursor-pointer text-2xl" data-icon="menu">menu</span>
+<!-- Language Selector Dropdown -->
+<div class="relative inline-block text-left" id="lang-selector-container">
+  <button id="lang-btn" class="flex items-center gap-1 text-primary border border-outline/30 px-3 py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider hover:bg-[#B09A6D]/10 transition-all duration-300">
+    <span class="material-symbols-outlined text-sm" data-icon="language">language</span>
+    <span id="current-lang-label">ES</span>
+    <span class="material-symbols-outlined text-xs" data-icon="keyboard_arrow_down" style="font-size: 16px;">keyboard_arrow_down</span>
+  </button>
+  <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-[#F6F3E6] border border-[#B09A6D] rounded-lg shadow-xl overflow-hidden z-50">
+    <button data-lang="es" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+      <span>ES</span>
+      <span class="lang-check text-[#1F6C7B] font-bold">✓</span>
+    </button>
+    <button data-lang="en" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+      <span>EN</span>
+      <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
+    </button>
+    <button data-lang="fr" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+      <span>FR</span>
+      <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
+    </button>
+    <button data-lang="it" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+      <span>IT</span>
+      <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
+    </button>
+    <button data-lang="pt" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+      <span>PT</span>
+      <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
+    </button>
+  </div>
+</div>
+<span id="mobile-menu-trigger" class="material-symbols-outlined text-primary cursor-pointer text-2xl md:hidden" data-icon="menu">menu</span>
 </div>
 </nav>
 </header>
 <main>
 <!-- Section 1: Hero -->
 <section class="relative min-h-[90vh] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0 parallax-bg bg-cover bg-center" style="background-image: url('./assets/chichen_itza_hero.webp')">
+<!-- Parallax Wrapper -->
+<div class="absolute inset-0 z-0 parallax-bg overflow-hidden">
+  <!-- Ken Burns Zooming Image -->
+  <div class="w-full h-full bg-cover bg-center animate-ken-burns" style="background-image: url('./assets/chichen_itza_sunset.jpg')"></div>
 </div>
-<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent z-10"></div>
-<div class="relative z-20 max-w-container-max mx-auto px-gutter w-full">
-<div class="max-w-2xl">
-<h1 data-i18n="hero_title" class="font-display-xl text-display-xl text-primary mb-stack-sm leading-tight">
-                        Transformative Journeys
-                    </h1>
-<p data-i18n="hero_subtitle" class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-lg">
-                        Bespoke adventures curated for the discerning traveler. Discover the hidden soul of the Riviera Maya through our signature private expeditions.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<button id="plan-with-ai-btn" class="bg-primary-container text-on-primary px-10 py-4 rounded-full font-label-md text-label-md flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-lg">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-                            <span data-i18n="hero_plan_ai">Plan with AI</span>
-                        </button>
-<button data-i18n="hero_explore" class="border-2 border-primary-container text-primary-container px-10 py-4 rounded-full font-label-md text-label-md hover:bg-primary-container/5 transition-colors duration-300">
-                            Explore Tours
-                        </button>
-</div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent z-10"></div>
+<div class="relative z-20 max-w-container-max mx-auto px-gutter w-full py-12 flex justify-start">
+<div class="glass-card p-8 md:p-12 rounded-2xl border border-[#B09A6D]/30 max-w-2xl shadow-2xl relative overflow-hidden backdrop-blur-md bg-[#F6F3E6]/90 luxury-shadow">
+  <!-- Decorative gold top border accent -->
+  <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#B09A6D] via-[#ECE8D9] to-[#B09A6D]"></div>
+  
+  <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#1F6C7B] uppercase tracking-widest mb-4 border-b border-[#1F6C7B]/20 pb-1" data-i18n="hero_badge">✦ EXPEDICIONES PRIVADAS DE LUJO ✦</span>
+  
+  <h1 data-i18n="hero_title" class="font-display-xl text-3xl md:text-5xl text-[#00334D] mb-4 leading-tight font-bold">
+    Descubre el Legado Maya en su Máximo Esplendor
+  </h1>
+  
+  <p data-i18n="hero_subtitle" class="font-body-md text-sm md:text-base text-[#7A6947] mb-8 max-w-lg leading-relaxed">
+    Explora Chichén Itzá, Tulum y los cenotes más sagrados con Dany, tu guía federal certificado y experto en la zona con años de experiencia. Evita las multitudes con accesos temprano exclusivos.
+  </p>
+  
+  <div class="flex flex-wrap gap-4">
+    <button id="plan-with-ai-btn" class="bg-[#00334D] hover:bg-[#1F6C7B] text-white px-8 py-3.5 rounded-full font-label-md text-xs flex items-center gap-2 hover:scale-105 active:scale-95 transition-all duration-300 shadow-md">
+      <span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+      <span data-i18n="hero_plan_ai">Planear con IA</span>
+    </button>
+    <a href="#tours" data-i18n="hero_explore" class="border border-[#00334D] text-[#00334D] hover:bg-[#00334D]/5 px-8 py-3.5 rounded-full font-label-md text-xs flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-300">
+      Explorar Tours
+    </a>
+  </div>
+  
+  <!-- Stats row -->
+  <div class="grid grid-cols-1 gap-4 pt-6 border-t border-[#B09A6D]/20 mt-8 text-left sm:grid-cols-3 sm:gap-4">
+    <div>
+      <h4 data-i18n="hero_stat1_title" class="text-[10px] font-bold text-[#00334D] uppercase tracking-wider mb-0.5">Guía Certificado</h4>
+      <p data-i18n="hero_stat1_desc" class="text-[9px] text-[#7A6947]">Credencial Federal SECTUR</p>
+    </div>
+    <div>
+      <h4 data-i18n="hero_stat2_title" class="text-[10px] font-bold text-[#00334D] uppercase tracking-wider mb-0.5">Evita Multitudes</h4>
+      <p data-i18n="hero_stat2_desc" class="text-[9px] text-[#7A6947]">Accesos temprano exclusivos</p>
+    </div>
+    <div>
+      <h4 data-i18n="hero_stat3_title" class="text-[10px] font-bold text-[#00334D] uppercase tracking-wider mb-0.5">Rutas a la Medida</h4>
+      <p data-i18n="hero_stat3_desc" class="text-[9px] text-[#7A6947]">100% personalizables</p>
+    </div>
+  </div>
 </div>
 </div>
 </section>
@@ -215,9 +279,6 @@
 </div>
 </div>
 <div class="flex-grow space-y-4 overflow-y-auto mb-4 pr-2" id="ai-agent-messages">
-<div class="bg-surface-container rounded-lg p-3 max-w-[80%] self-start text-body-md">
-                            Welcome. I see you're interested in the Mayan Riviera. Would you prefer a sunrise archaeological tour or a private cenote experience?
-                        </div>
 </div>
 <div class="relative">
 <input id="ai-agent-input" data-i18n="chat_input_placeholder" class="w-full bg-surface p-4 pr-12 rounded-full border border-outline-variant focus:border-secondary outline-none transition-all text-body-md" placeholder="Type your travel preferences..." type="text">
@@ -228,8 +289,97 @@
 </div>
 </div>
 </section>
+<!-- Section 2.5: Sobre tu Guía: Dany -->
+<section id="sobre-dany" class="py-section-gap max-w-container-max mx-auto px-gutter scroll-mt-20">
+  <div class="flex flex-col md:flex-row gap-12 items-center">
+    <!-- Left Column: Image/Visual Badge -->
+    <div class="w-full md:w-5/12 relative group">
+      <div class="absolute inset-0 bg-[#B09A6D]/20 rounded-xl transform translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+      <div class="aspect-[4/5] rounded-xl overflow-hidden border-2 border-[#B09A6D] relative shadow-lg bg-cover bg-center" style="background-image: url('./assets/dany_profile.jpg'); min-height: 400px;">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 text-white">
+          <p class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] mb-1">Dany Experiences</p>
+          <h3 class="text-2xl font-bold font-display-xl text-[#F6F3E6]">Dany</h3>
+          <p class="text-caption opacity-90" data-i18n="about_role">Fundador &amp; Guía de Expedición</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Column: Biography & Credentials -->
+    <div class="w-full md:w-7/12 space-y-6">
+      <div class="space-y-2">
+        <p data-i18n="about_tag" class="text-secondary font-label-md uppercase tracking-widest">Experto Arqueológico Local</p>
+        <h2 data-i18n="about_title" class="font-headline-lg text-headline-lg text-primary font-display-xl">Liderando Caminos Ancestrales</h2>
+      </div>
+      
+      <p data-i18n="about_desc" class="font-body-md text-on-surface-variant leading-relaxed">
+        Como guía certificado y apasionado de la historia, mi objetivo es transformar un simple recorrido turístico en una expedición de descubrimiento espiritual y cultural. Cada piedra de Chichén Itzá y cada acantilado de Tulum encierra secretos arqueoastronómicos que transmito con el mayor respeto al legado maya.
+      </p>
+
+    </div>
+  </div>
+</section>
+<!-- Section 2.7: Certificaciones Oficiales -->
+<section id="certificaciones" class="py-section-gap bg-[#F6F3E6]/60 border-t border-b border-[#B09A6D]/15 scroll-mt-20">
+  <div class="max-w-container-max mx-auto px-gutter text-center">
+    <div class="max-w-3xl mx-auto mb-12 text-center space-y-3">
+      <p data-i18n="cert_tag" class="text-[#1F6C7B] font-label-md uppercase tracking-widest">Garantía de Confianza</p>
+      <h2 data-i18n="cert_title" class="font-headline-lg text-headline-lg text-[#00334D] font-display-xl font-bold">Certificaciones y Registro Federal</h2>
+      <p data-i18n="cert_subtitle" class="font-body-md text-sm md:text-base text-[#7A6947] leading-relaxed max-w-xl mx-auto">
+        Tu seguridad y la excelencia de tu experiencia son lo primero. Dany cuenta con todas las credenciales oficiales y capacitación internacional vigentes.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 text-left">
+      <!-- Credential 1: SECTUR -->
+      <div class="p-6 rounded-xl border border-[#B09A6D]/20 hover:border-[#1F6C7B]/50 hover:shadow-lg transition-all duration-300 bg-[#F6F3E6]/80 backdrop-blur-sm shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-[#00334D]/10 flex items-center justify-center text-[#00334D] mb-4">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">badge</span>
+          </div>
+          <h4 data-i18n="about_cred1_title" class="text-sm font-bold uppercase tracking-wider text-[#00334D] mb-2">Guía SECTUR</h4>
+          <p data-i18n="about_cred1_desc" class="text-xs text-[#7A6947] leading-relaxed">Licencia federal oficial NOM-08-TUR-2002 para acceso preferente e interpretación histórica en zonas arqueológicas.</p>
+        </div>
+      </div>
+      
+      <!-- Credential 2: Arqueología -->
+      <div class="p-6 rounded-xl border border-[#B09A6D]/20 hover:border-[#1F6C7B]/50 hover:shadow-lg transition-all duration-300 bg-[#F6F3E6]/80 backdrop-blur-sm shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-[#00334D]/10 flex items-center justify-center text-[#00334D] mb-4">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">history_edu</span>
+          </div>
+          <h4 data-i18n="about_cred2_title" class="text-sm font-bold uppercase tracking-wider text-[#00334D] mb-2">Experto Local</h4>
+          <p data-i18n="about_cred2_desc" class="text-xs text-[#7A6947] leading-relaxed">Años de experiencia guiando expediciones privadas de historia y naturaleza en la Riviera Maya.</p>
+        </div>
+      </div>
+      
+      <!-- Credential 3: Ecoturismo -->
+      <div class="p-6 rounded-xl border border-[#B09A6D]/20 hover:border-[#1F6C7B]/50 hover:shadow-lg transition-all duration-300 bg-[#F6F3E6]/80 backdrop-blur-sm shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-[#00334D]/10 flex items-center justify-center text-[#00334D] mb-4">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+          </div>
+          <h4 data-i18n="about_cred3_title" class="text-sm font-bold uppercase tracking-wider text-[#00334D] mb-2">Ecoturismo</h4>
+          <p data-i18n="about_cred3_desc" class="text-xs text-[#7A6947] leading-relaxed">Certificación en primeros auxilios en áreas remotas (WFA) y rescate acuático especializado para cenotes.</p>
+        </div>
+      </div>
+      
+      <!-- Credential 4: RNT -->
+      <div class="p-6 rounded-xl border border-[#B09A6D]/20 hover:border-[#1F6C7B]/50 hover:shadow-lg transition-all duration-300 bg-[#F6F3E6]/80 backdrop-blur-sm shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-lg bg-[#00334D]/10 flex items-center justify-center text-[#00334D] mb-4">
+            <span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">verified</span>
+          </div>
+          <h4 data-i18n="cert_cred4_title" class="text-sm font-bold uppercase tracking-wider text-[#00334D] mb-2">Registro RNT</h4>
+          <p data-i18n="cert_cred4_desc" class="text-xs text-[#7A6947] leading-relaxed">Inscrito formalmente en el Registro Nacional de Turismo de México, garantizando operaciones turísticas 100% reguladas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Section 3: Tour Cards -->
-<section class="py-section-gap bg-surface-container-low/30">
+<section id="tours" class="py-section-gap bg-surface-container-low/30 scroll-mt-20">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="flex justify-between items-end mb-stack-lg">
 <div>
@@ -324,12 +474,12 @@
 <p data-i18n="cat_cenotes" class="font-label-md uppercase tracking-widest">Cenotes</p>
 </div>
 </div>
-<!-- Private Jets -->
+<!-- Naturaleza -->
 <div class="group relative overflow-hidden rounded-lg aspect-square border-2 border-transparent hover:border-secondary transition-all duration-300 cursor-pointer">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_hero.webp')"></div>
 <div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
-<span class="material-symbols-outlined text-3xl mb-2" data-icon="flight">flight</span>
-<p data-i18n="cat_jets" class="font-label-md uppercase tracking-widest">Private Jets</p>
+<span class="material-symbols-outlined text-3xl mb-2" data-icon="forest">forest</span>
+<p data-i18n="cat_nature" class="font-label-md uppercase tracking-widest">Naturaleza</p>
 </div>
 </div>
 <!-- Adventure -->
@@ -346,18 +496,35 @@
 <section class="py-section-gap bg-surface-container-lowest">
 <div class="max-w-container-max mx-auto px-gutter text-center">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-<div class="text-left">
-<div class="flex items-center gap-2 mb-4">
-<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="ml-2 font-label-md text-on-surface">Google Reviews 4.9/5.0</span>
+<div class="text-left space-y-6">
+<div class="space-y-2">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-2 font-label-md text-[#7A6947] text-xs">Google Reviews 4.9 / 5.0</span>
 </div>
-<h2 data-i18n="trust_title" class="font-headline-lg text-headline-lg text-primary mb-stack-md">Trusted by World Travelers</h2>
-<p data-i18n="trust_quote" class="font-body-md text-on-surface-variant mb-stack-lg">"Dany Experiences redefined what travel means to us. Every detail was curated with such precision and care that we felt like more than just guests—we felt like part of the land's history."</p>
-<p data-i18n="trust_author" class="font-label-md text-primary">— Elena V., Private Traveler</p>
+<h2 data-i18n="trust_title" class="font-headline-lg text-headline-lg text-[#00334D] font-display-xl font-bold">Trusted by World Travelers</h2>
+</div>
+<div class="space-y-4 max-h-[400px] overflow-y-auto pr-2">
+<!-- Testimonial 1 -->
+<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm">
+<p data-i18n="trust_quote1" class="font-body-md text-xs text-[#7A6947] italic">"Dany Experiences rediseñó lo que significa viajar para nosotros. Cada detalle fue seleccionado con tal precisión y cuidado que nos sentimos más que huéspedes: nos sentimos parte de la historia de la tierra."</p>
+<p data-i18n="trust_author1" class="text-[10px] font-bold text-[#00334D]">— Elena V., Viajera Privada</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm">
+<p data-i18n="trust_quote2" class="font-body-md text-xs text-[#7A6947] italic">"La expedición a Chichén Itzá al amanecer valió cada segundo. Dany no solo conoce la historia, te explica la arqueoastronomía de una forma que te vuela la cabeza. ¡Y sin multitudes!"</p>
+<p data-i18n="trust_author2" class="text-[10px] font-bold text-[#00334D]">— Marcus K., Viajero de Aventuras</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="p-5 bg-[#F6F3E6]/60 border border-[#B09A6D]/20 rounded-xl space-y-2 shadow-sm">
+<p data-i18n="trust_quote3" class="font-body-md text-xs text-[#7A6947] italic">"Nadar en los cenotes privados de Casa Tortuga con el guía de ecoturismo fue mágico e íntimo. El respeto por el medio ambiente y la seguridad fue de diez. Altamente recomendado."</p>
+<p data-i18n="trust_author3" class="text-[10px] font-bold text-[#00334D]">— Sophia &amp; Pierre, Luna de Miel</p>
+</div>
+</div>
 </div>
 <div class="bg-surface-container-low rounded-lg p-10 border border-outline-variant/30">
 <h3 data-i18n="pay_title" class="font-headline-md text-headline-md text-primary mb-6">Pagos Seguros</h3>
@@ -380,18 +547,17 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="w-full py-section-gap bg-surface-container-lowest dark:bg-inverse-surface">
+<footer id="contacto" class="w-full py-section-gap bg-surface-container-lowest dark:bg-inverse-surface scroll-mt-20">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg max-w-container-max mx-auto px-gutter">
 <div class="col-span-1 md:col-span-1">
 <div class="mb-stack-md h-16"><img src="./assets/logo_dany_completo.webp" alt="Dany Experiences Logo" class="h-full w-auto object-contain"></div>
 <p data-i18n="footer_desc" class="font-body-md text-body-md text-on-surface-variant">© 2024 Dany Experiences. Transformative journeys for the discerning traveler.</p>
 </div>
-<div class="flex flex-col gap-stack-sm">
-<h4 data-i18n="footer_company" class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Company</h4>
-<a data-i18n="footer_about" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">About Us</a>
-<a data-i18n="footer_partner" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Partner with Us</a>
-<a data-i18n="footer_sustainability" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Sustainability</a>
-<a data-i18n="footer_contact" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Contact</a>
+<div class="flex flex-col gap-stack-sm text-left">
+<h4 data-i18n="footer_contact_title" class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Contacto Directo</h4>
+<p data-i18n="footer_location" class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1.5 opacity-90"><span class="material-symbols-outlined text-xs text-[#1F6C7B]" data-icon="location_on">location_on</span> Riviera Maya, Q. Roo, México</p>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5 opacity-90 hover:opacity-100" href="mailto:Shakoneytor19@gmail.com"><span class="material-symbols-outlined text-xs text-[#1F6C7B]" data-icon="mail">mail</span> Shakoneytor19@gmail.com</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5 opacity-90 hover:opacity-100" href="https://wa.me/529981234567" target="_blank"><span class="material-symbols-outlined text-xs text-[#1F6C7B]" data-icon="chat">chat</span> +52 998 123 4567</a>
 </div>
 <div class="flex flex-col gap-stack-sm">
 <h4 data-i18n="footer_legal" class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Legal</h4>
@@ -415,29 +581,140 @@
 </div>
 </div>
 </div>
+  <!-- Footer Emergency & Assistance Numbers -->
+  <div class="mt-12 pt-8 border-t border-[#B09A6D]/20 max-w-container-max mx-auto px-gutter w-full">
+    <div class="bg-[#00334D]/5 p-6 rounded-xl border border-[#B09A6D]/20 flex flex-col md:flex-row justify-between items-center gap-6 text-left">
+      <div class="space-y-1">
+        <h5 class="text-xs font-bold text-[#00334D] uppercase tracking-wider flex items-center gap-1.5" data-i18n="emergency_title">
+          <span class="material-symbols-outlined text-sm text-red-600" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+          Asistencia y Emergencia Turística 24/7
+        </h5>
+        <p class="text-[10px] text-[#7A6947]" data-i18n="emergency_desc">Números oficiales de asistencia vial, rescate y protección al viajero en la Riviera Maya.</p>
+      </div>
+      <div class="flex flex-wrap gap-6 text-xs font-bold text-[#00334D]">
+        <div class="flex items-center gap-1.5">
+          <span class="bg-red-600 text-white font-black px-2 py-0.5 rounded text-[10px]">911</span>
+          <span class="text-[10px] font-medium text-[#7A6947]" data-i18n="num_emergencies">Emergencias</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="bg-[#B09A6D] text-white px-2 py-0.5 rounded text-[10px]">078</span>
+          <span class="text-[10px] font-medium text-[#7A6947]" data-i18n="num_angeles">Ángeles Verdes (Vial)</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="bg-[#1F6C7B] text-white px-2 py-0.5 rounded text-[10px]">800 001 4834</span>
+          <span class="text-[10px] font-medium text-[#7A6947]" data-i18n="num_guest_assist">Guest Assist (Turismo)</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
+<!-- Mobile Navigation Drawer Overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-[#00334D]/50 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-sm">
+  <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-xs bg-[#F6F3E6] p-8 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between border-l border-[#B09A6D]/20">
+    <div class="space-y-8">
+      <div class="flex justify-between items-center pb-4 border-b border-[#B09A6D]/20">
+        <img src="./assets/logo_dany.webp" alt="Dany Experiences Logo" class="h-8 w-auto object-contain">
+        <button id="mobile-menu-close" class="text-[#00334D] hover:text-[#1F6C7B]">
+          <span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+        </button>
+      </div>
+      <div class="flex flex-col gap-6">
+        <a data-i18n="nav_tours" class="mobile-nav-link font-display-xl text-lg uppercase tracking-widest text-[#00334D] hover:text-[#1F6C7B] transition-colors duration-300" href="#tours">Tours</a>
+        <a data-i18n="nav_about" class="mobile-nav-link font-display-xl text-lg uppercase tracking-widest text-[#00334D] hover:text-[#1F6C7B] transition-colors duration-300" href="#sobre-dany">Sobre Dany</a>
+        <a data-i18n="nav_certifications" class="mobile-nav-link font-display-xl text-lg uppercase tracking-widest text-[#00334D] hover:text-[#1F6C7B] transition-colors duration-300" href="#certificaciones">Certificaciones</a>
+        <a data-i18n="nav_contact" class="mobile-nav-link font-display-xl text-lg uppercase tracking-widest text-[#00334D] hover:text-[#1F6C7B] transition-colors duration-300" href="#contacto">Contacto</a>
+      </div>
+    </div>
+    
+    <div class="space-y-4">
+      <a href="https://wa.me/529981234567" target="_blank" class="w-full bg-[#25D366] text-white py-3 rounded-full font-label-md text-xs flex items-center justify-center gap-2 hover:scale-105 transition-all duration-300 shadow-md">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.45 5.536.002 10.04-4.501 10.043-10.043.002-2.684-1.042-5.207-2.942-7.109-1.9-1.9-4.429-2.947-7.117-2.948-5.545 0-10.05 4.502-10.053 10.047-.001 1.761.47 3.479 1.365 5.0l-.974 3.559 3.653-.956zM17.487 14.38c-.27-.136-1.602-.79-1.85-.88-.25-.09-.43-.136-.61.136-.18.272-.697.88-.853 1.06-.156.18-.312.2-.58.064-.268-.136-1.134-.418-2.16-1.334-.799-.713-1.338-1.593-1.495-1.865-.156-.272-.016-.42.12-.556.12-.12.268-.312.4-.469.136-.156.18-.272.27-.453.09-.18.044-.338-.022-.474-.067-.136-.61-1.47-.835-2.013-.22-.53-.44-.457-.61-.466-.156-.009-.336-.01-.516-.01-.18 0-.472.067-.719.338-.247.272-.942.92-.942 2.243 0 1.323.961 2.599 1.096 2.78.136.18 1.892 2.89 4.584 4.053.64.277 1.139.442 1.528.566.643.204 1.228.175 1.69.106.516-.077 1.602-.656 1.83-.129.227-.528.227-.98.159-1.06-.069-.08-.25-.136-.52-.272z"/>
+        </svg>
+        WhatsApp
+      </a>
+      <p class="text-[9px] text-[#7A6947] text-center">© 2026 Dany Experiences</p>
+    </div>
+  </div>
+</div>
+
 <script>
-        // Micro-interactions and effects
-        document.addEventListener('DOMContentLoaded', () => {
-            // Parallax effect on scroll
-            window.addEventListener('scroll', () => {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('.parallax-bg');
-                if (parallax) {
-                    parallax.style.transform = `translateY(${scrolled * 0.15}px)`;
-                }
-                
-                // Header background transition
-                const header = document.querySelector('header');
-                if (scrolled > 50) {
-                    header.classList.add('bg-surface/90');
-                    header.classList.remove('bg-transparent');
-                } else {
-                    header.classList.remove('bg-surface/90');
-                    header.classList.add('bg-transparent');
-                }
-            });
+    // Micro-interactions and effects
+    document.addEventListener('DOMContentLoaded', () => {
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-bg');
+            if (parallax) {
+                parallax.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+            
+            // Header background transition
+            const header = document.querySelector('header');
+            if (scrolled > 50) {
+                header.classList.add('bg-surface/90');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-surface/90');
+                header.classList.add('bg-transparent');
+            }
         });
-    </script>
+
+        // Mobile Menu Drawer Logic
+        const trigger = document.getElementById('mobile-menu-trigger');
+        const menu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('mobile-menu-close');
+        const menuInner = menu ? menu.querySelector('div') : null;
+        const links = menu ? menu.querySelectorAll('.mobile-nav-link') : [];
+
+        function openMobileMenu() {
+            if (menu && menuInner) {
+                menu.classList.remove('opacity-0', 'pointer-events-none');
+                menu.classList.add('opacity-100');
+                menuInner.classList.remove('translate-x-full');
+                menuInner.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden'; // Stop page scroll
+            }
+        }
+
+        function closeMobileMenu() {
+            if (menu && menuInner) {
+                menu.classList.remove('opacity-100');
+                menu.classList.add('opacity-0', 'pointer-events-none');
+                menuInner.classList.remove('translate-x-0', 'translate-x-full');
+                menuInner.classList.add('translate-x-full');
+                document.body.style.overflow = ''; // Restore page scroll
+            }
+        }
+
+        if (trigger) trigger.addEventListener('click', openMobileMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMobileMenu);
+        if (menu) {
+            menu.addEventListener('click', (e) => {
+                if (e.target === menu) closeMobileMenu();
+            });
+        }
+        links.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+    });
+</script>
+<!-- Floating Action Buttons -->
+<!-- Bottom Left: AI Concierge -->
+<button id="floating-ai-btn" class="fixed bottom-6 left-6 z-50 bg-[#00334D] hover:bg-[#1F6C7B] text-[#F6F3E6] w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 group border border-[#B09A6D]/40">
+  <span class="material-symbols-outlined text-2xl group-hover:rotate-12 transition-transform duration-300" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+  <!-- tooltip -->
+  <span class="absolute left-16 bg-[#00334D] text-white text-[10px] font-label-md px-3 py-1.5 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap border border-[#B09A6D]/20" data-i18n="floating_ai_tooltip">Planear con IA</span>
+</button>
+
+<!-- Bottom Right: WhatsApp Contact -->
+<a href="https://wa.me/529981234567?text=Hola%20Dany%20Experiences,%20me%20gustar%C3%ADa%20cotizar%20un%20tour%20privado." target="_blank" id="floating-whatsapp-btn" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BA56] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 group border border-white/20">
+  <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.625 1.45 5.536.002 10.04-4.501 10.043-10.043.002-2.684-1.042-5.207-2.942-7.109-1.9-1.9-4.429-2.947-7.117-2.948-5.545 0-10.05 4.502-10.053 10.047-.001 1.761.47 3.479 1.365 5.0l-.974 3.559 3.653-.956zM17.487 14.38c-.27-.136-1.602-.79-1.85-.88-.25-.09-.43-.136-.61.136-.18.272-.697.88-.853 1.06-.156.18-.312.2-.58.064-.268-.136-1.134-.418-2.16-1.334-.799-.713-1.338-1.593-1.495-1.865-.156-.272-.016-.42.12-.556.12-.12.268-.312.4-.469.136-.156.18-.272.27-.453.09-.18.044-.338-.022-.474-.067-.136-.61-1.47-.835-2.013-.22-.53-.44-.457-.61-.466-.156-.009-.336-.01-.516-.01-.18 0-.472.067-.719.338-.247.272-.942.92-.942 2.243 0 1.323.961 2.599 1.096 2.78.136.18 1.892 2.89 4.584 4.053.64.277 1.139.442 1.528.566.643.204 1.228.175 1.69.106.516-.077 1.602-.656 1.83-.129.227-.528.227-.98.159-1.06-.069-.08-.25-.136-.52-.272z" />
+  </svg>
+  <!-- tooltip -->
+  <span class="absolute right-16 bg-[#25D366] text-white text-[10px] font-label-md px-3 py-1.5 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap border border-white/10" data-i18n="floating_wa_tooltip">Contactar vía WhatsApp</span>
+</a>
+
 <script src="./dany-experiences-integration.js"></script>
 </body></html>

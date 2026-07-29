@@ -29,15 +29,37 @@
   // i18n Translation Dictionary
   const TRANSLATIONS = {
     es: {
-      nav_destinations: "Destinos",
-      nav_experiences: "Experiencias",
-      nav_jet: "Jet Privado",
-      nav_concierge: "Conserjería",
+      nav_tours: "Tours Privados",
+      nav_about: "Sobre Dany",
+      nav_certifications: "Certificaciones",
+      nav_contact: "Contacto",
       nav_book: "Reservar Ahora",
-      hero_title: "Viajes Transformativos",
-      hero_subtitle: "Aventuras a la medida diseñadas para el viajero exigente. Descubre el alma oculta de la Riviera Maya a través de nuestras expediciones privadas exclusivas.",
+      hero_badge: "✦ EXPEDICIONES PRIVADAS DE LUJO ✦",
+      hero_title: "Descubre el Legado Maya en su Máximo Esplendor",
+      hero_subtitle: "Explora Chichén Itzá, Tulum y los cenotes más sagrados con Dany, tu guía federal certificado y experto en la zona con años de experiencia. Evita las multitudes con accesos temprano exclusivos.",
       hero_plan_ai: "Planear con IA",
       hero_explore: "Explorar Tours",
+      hero_stat1_title: "Guía Certificado",
+      hero_stat1_desc: "Credencial Federal SECTUR",
+      hero_stat2_title: "Evita Multitudes",
+      hero_stat2_desc: "Accesos temprano exclusivos",
+      hero_stat3_title: "Rutas a la Medida",
+      hero_stat3_desc: "100% personalizables",
+      about_role: "Fundador & Guía de Expedición",
+      about_tag: "Experto Local Certificado",
+      about_title: "Liderando Caminos Ancestrales",
+      about_desc: "Como guía certificado y apasionado de la historia, mi objetivo es transformar un simple recorrido turístico en una expedición de descubrimiento espiritual y cultural. Cada piedra de Chichén Itzá y cada acantilado de Tulum encierra secretos arqueoastronómicos que transmito con el mayor respeto al legado maya.",
+      about_cred1_title: "Guía SECTUR",
+      about_cred1_desc: "Licencia federal oficial para acceso preferente e interpretación histórica.",
+      about_cred2_title: "Experto Local",
+      about_cred2_desc: "Años de experiencia guiando expediciones privadas de historia y naturaleza en la Riviera Maya.",
+      about_cred3_title: "Ecoturismo",
+      about_cred3_desc: "Certificación acuática y preservación estricta del entorno ecológico.",
+      cert_tag: "Garantía de Confianza",
+      cert_title: "Certificaciones y Registro Federal",
+      cert_subtitle: "Tu seguridad y la excelencia de tu experiencia son lo primero. Dany cuenta con todas las credenciales oficiales y capacitación internacional vigentes.",
+      cert_cred4_title: "Registro RNT",
+      cert_cred4_desc: "Inscrito formalmente en el Registro Nacional de Turismo de México, garantizando operaciones turísticas 100% reguladas.",
       ai_tag: "Potenciado con IA",
       ai_title: "Tu Concierge Digital",
       ai_desc: "Nuestro asistente de viajes inteligente diseña itinerarios basados en tus preferencias personales, patrones estacionales y accesos exclusivos. Planificación sin esfuerzo en segundos.",
@@ -63,15 +85,19 @@
       bento_subtitle: "Explora según tus intereses específicos de viaje.",
       cat_archaeology: "Arqueología",
       cat_cenotes: "Cenotes",
-      cat_jets: "Jets Privados",
+      cat_nature: "Naturaleza",
       cat_adventure: "Aventura",
       cat_gastronomy: "Gastronomía Local",
       cat_wellness: "Bienestar",
       cat_service: "Servicio Personal",
       cat_photography: "Fotografía",
       trust_title: "Con la confianza de viajeros del mundo",
-      trust_quote: "\"Dany Experiences rediseñó lo que significa viajar para nosotros. Cada detalle fue seleccionado con tal precisión y cuidado que nos sentimos más que huéspedes: nos sentimos parte de la historia de la tierra.\"",
-      trust_author: "— Elena V., Viajera Privada",
+      trust_quote1: "\"Dany Experiences rediseñó lo que significa viajar para nosotros. Cada detalle fue seleccionado con tal precisión y cuidado que nos sentimos más que huéspedes: nos sentimos parte de la historia de la tierra.\"",
+      trust_author1: "— Elena V., Viajera Privada",
+      trust_quote2: "\"La expedición a Chichén Itzá al amanecer valió cada segundo. Dany no solo conoce la historia, te explica la arqueoastronomía de una forma que te vuela la cabeza. ¡Y sin multitudes!\"",
+      trust_author2: "— Marcus K., Viajero de Aventuras",
+      trust_quote3: "\"Nadar en los cenotes privados de Casa Tortuga con el guía de ecoturismo fue mágico e íntimo. El respeto por el medio ambiente y la seguridad fue de diez. Altamente recomendado.\"",
+      trust_author3: "— Sophia & Pierre, Luna de Miel",
       pay_title: "Pagos Seguros",
       pay_desc: "Aceptamos las principales tarjetas de crédito y pagos digitales seguros. Sistemas de transacciones encriptados y verificados.",
       pay_btn: "Iniciar Reserva",
@@ -81,6 +107,8 @@
       footer_partner: "Trabaja con Nosotros",
       footer_sustainability: "Sustentabilidad",
       footer_contact: "Contacto",
+      footer_contact_title: "Contacto Directo",
+      footer_location: "Ubicación: Riviera Maya, México",
       footer_legal: "Legal",
       footer_privacy: "Política de Privacidad",
       footer_terms: "Términos de Servicio",
@@ -90,18 +118,47 @@
       footer_email_placeholder: "Correo electrónico",
       chat_header_title: "Miatz AI Concierge",
       chat_header_status: "En línea y listo para ayudarte",
-      chat_input_placeholder: "Escribe tus preferencias de viaje..."
+      chat_input_placeholder: "Escribe tus preferencias de viaje...",
+      floating_ai_tooltip: "Planear con IA",
+      floating_wa_tooltip: "Contactar vía WhatsApp",
+      emergency_title: "Asistencia y Emergencia Turística 24/7",
+      emergency_desc: "Números oficiales de asistencia vial, rescate y protección al viajero en la Riviera Maya.",
+      num_emergencies: "Emergencias",
+      num_angeles: "Ángeles Verdes (Vial)",
+      num_guest_assist: "Atención al Turista"
     },
     en: {
-      nav_destinations: "Destinations",
-      nav_experiences: "Experiences",
-      nav_jet: "Private Jet",
-      nav_concierge: "Concierge",
+      nav_tours: "Private Tours",
+      nav_about: "About Dany",
+      nav_certifications: "Credentials",
+      nav_contact: "Contact",
       nav_book: "Book Now",
-      hero_title: "Transformative Journeys",
-      hero_subtitle: "Bespoke adventures curated for the discerning traveler. Discover the hidden soul of the Riviera Maya through our signature private expeditions.",
+      hero_badge: "✦ LUXURY PRIVATE EXPEDITIONS ✦",
+      hero_title: "Discover the Mayan Legacy in its Full Splendor",
+      hero_subtitle: "Explore Chichén Itzá, Tulum, and the most sacred cenotes with Dany, your certified federal guide and local expert with years of experience. Avoid crowds with exclusive early access.",
       hero_plan_ai: "Plan with AI",
       hero_explore: "Explore Tours",
+      hero_stat1_title: "Certified Guide",
+      hero_stat1_desc: "SECTUR Federal License",
+      hero_stat2_title: "Avoid Crowds",
+      hero_stat2_desc: "Exclusive early access",
+      hero_stat3_title: "Bespoke Routes",
+      hero_stat3_desc: "100% customizable",
+      about_role: "Founder & Expedition Guide",
+      about_tag: "Certified Local Expert",
+      about_title: "Leading Ancestral Paths",
+      about_desc: "As a certified guide and history enthusiast, my goal is to transform a simple sightseeing tour into an expedition of spiritual and cultural discovery. Every stone in Chichén Itzá and every cliff in Tulum holds archaeoastronomical secrets that I transmit with the utmost respect for the Mayan legacy.",
+      about_cred1_title: "SECTUR Guide",
+      about_cred1_desc: "Official federal license for priority access and historical interpretation.",
+      about_cred2_title: "Local Expert",
+      about_cred2_desc: "Years of experience leading private history and nature expeditions in the Mayan Riviera.",
+      about_cred3_title: "Ecoturism",
+      about_cred3_desc: "Aquatic certification and strict preservation of the ecological environment.",
+      cert_tag: "Trust Guarantee",
+      cert_title: "Official Certifications & Registry",
+      cert_subtitle: "Your safety and the excellence of your experience come first. Dany has all the official credentials and up-to-date international training.",
+      cert_cred4_title: "RNT Registry",
+      cert_cred4_desc: "Formally registered in Mexico's National Tourism Registry, ensuring 100% regulated tourist operations.",
       ai_tag: "Powered by AI",
       ai_title: "Your Digital Concierge",
       ai_desc: "Our intelligent travel partner designs itineraries based on your personal preferences, seasonal patterns, and exclusive access points. Experience effortless planning in seconds.",
@@ -127,15 +184,19 @@
       bento_subtitle: "Explore by your specific travel interests and desires.",
       cat_archaeology: "Archaeology",
       cat_cenotes: "Cenotes",
-      cat_jets: "Private Jets",
+      cat_nature: "Nature",
       cat_adventure: "Adventure",
       cat_gastronomy: "Local Gastronomy",
       cat_wellness: "Wellness",
       cat_service: "Personal Service",
       cat_photography: "Photography",
       trust_title: "Trusted by World Travelers",
-      trust_quote: "\"Dany Experiences redefined what travel means to us. Every detail was curated with such precision and care that we felt like more than just guests—we felt like part of the land's history.\"",
-      trust_author: "— Elena V., Private Traveler",
+      trust_quote1: "\"Dany Experiences redefined what travel means to us. Every detail was curated with such precision and care that we felt like more than just guests—we felt like part of the land's history.\"",
+      trust_author1: "— Elena V., Private Traveler",
+      trust_quote2: "\"The sunrise expedition to Chichén Itzá was worth every second. Dany doesn't just know the history, he explains the archaeoastronomy in a mind-blowing way. And with no crowds!\"",
+      trust_author2: "— Marcus K., Adventure Traveler",
+      trust_quote3: "\"Swimming in the private cenotes of Casa Tortuga with the ecotourism guide was magical and intimate. The respect for the environment and safety was top-notch. Highly recommended.\"",
+      trust_author3: "— Sophia & Pierre, Honeymooners",
       pay_title: "Secure Payments",
       pay_desc: "We accept all major credit cards and secure digital payments. Encrypted and verified transaction systems.",
       pay_btn: "Start Your Booking",
@@ -145,6 +206,8 @@
       footer_partner: "Partner with Us",
       footer_sustainability: "Sustainability",
       footer_contact: "Contact",
+      footer_contact_title: "Direct Contact",
+      footer_location: "Location: Riviera Maya, Mexico",
       footer_legal: "Legal",
       footer_privacy: "Privacy Policy",
       footer_terms: "Terms of Service",
@@ -154,18 +217,47 @@
       footer_email_placeholder: "Email",
       chat_header_title: "Miatz AI Concierge",
       chat_header_status: "Online & ready to assist",
-      chat_input_placeholder: "Type your travel preferences..."
+      chat_input_placeholder: "Type your travel preferences...",
+      floating_ai_tooltip: "Plan with AI",
+      floating_wa_tooltip: "Contact via WhatsApp",
+      emergency_title: "24/7 Tourist Assistance & Emergency",
+      emergency_desc: "Official highway assistance, rescue, and traveler protection numbers in the Mayan Riviera.",
+      num_emergencies: "Emergencies",
+      num_angeles: "Green Angels (Road Assistance)",
+      num_guest_assist: "Tourist Hotline"
     },
     fr: {
-      nav_destinations: "Destinations",
-      nav_experiences: "Expériences",
-      nav_jet: "Jet Privé",
-      nav_concierge: "Conciergerie",
+      nav_tours: "Tours Privés",
+      nav_about: "À propos de Dany",
+      nav_certifications: "Certifications",
+      nav_contact: "Contact",
       nav_book: "Réserver",
-      hero_title: "Voyages Transformateurs",
-      hero_subtitle: "Des aventures sur mesure conçues pour le voyageur exigeant. Découvrez l'âme cachée de la Riviera Maya à travers nos expéditions privées exclusives.",
+      hero_badge: "✦ EXPÉDITIONS PRIVÉES DE LUXE ✦",
+      hero_title: "Découvrez l'héritage maya dans toute sa splendeur",
+      hero_subtitle: "Explorez Chichén Itzá, Tulum et les cénotes les plus sacrés avec Dany, votre guide fédéral certifié et expert local avec des années d'expérience. Évitez les foules grâce à des accès exclusifs.",
       hero_plan_ai: "Planifier avec l'IA",
       hero_explore: "Explorer les Tours",
+      hero_stat1_title: "Guide Certifié",
+      hero_stat1_desc: "Licence Fédérale SECTUR",
+      hero_stat2_title: "Évitez les Foules",
+      hero_stat2_desc: "Accès anticipés exclusifs",
+      hero_stat3_title: "Itinéraires sur Mesure",
+      hero_stat3_desc: "100% personnalisable",
+      about_role: "Fondateur & Guide d'expédition",
+      about_tag: "Expert local certifié",
+      about_title: "Mener les chemins ancestraux",
+      about_desc: "En tant que guide certifié et passionné d'histoire, mon but est de transformer une simple visite en une expédition de découverte spirituelle et culturelle. Chaque pierre de Chichén Itzá et chaque falaise de Tulum recèle des secrets archéoastronômes que je transmets dans le plus grand respect de l'héritage maya.",
+      about_cred1_title: "Guide SECTUR",
+      about_cred1_desc: "Licence fédérale officielle pour un accès prioritaire et une interprétation historique.",
+      about_cred2_title: "Expert local",
+      about_cred2_desc: "Des années d'expérience dans la direction d'expéditions privées d'histoire et de nature sur la Riviera Maya.",
+      about_cred3_title: "Écotourisme",
+      about_cred3_desc: "Certification aquatique et préservation stricte de l'environnement écologique.",
+      cert_tag: "Garantie de Confiance",
+      cert_title: "Certifications et Registre Officiel",
+      cert_subtitle: "Votre sécurité et l'excellence de votre expérience passent en premier. Dany possède toutes les certifications officielles et formations internationales à jour.",
+      cert_cred4_title: "Registre RNT",
+      cert_cred4_desc: "Officiellement inscrit au Registre national du tourisme du Mexique, garantissant des opérations touristiques 100% réglementées.",
       ai_tag: "Propulsé par l'IA",
       ai_title: "Votre Concierge Numérique",
       ai_desc: "Notre partenaire de voyage intelligent conçoit des itinéraires basés sur vos préférences personnelles, les tendances saisonnières et des accès exclusifs. Planifiez sans effort en quelques secondes.",
@@ -177,7 +269,7 @@
       tours_view_all: "Voir Toutes les Expériences",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "La Grande Merveille",
-      tour1_desc: "Découvrez la majesté du monde maya avec un accès anticipé exclusif et des explications archéoastronomiques d'experts.",
+      tour1_desc: "Découvrez la majesté du monde maya avec un accès anticipé exclusif et des explications archéoastronomiqes d'experts.",
       tour1_book: "Réserver",
       tour2_title: "Casa Tortuga",
       tour2_subtitle: "Cénotes & Nature",
@@ -191,15 +283,19 @@
       bento_subtitle: "Explorez selon vos intérêts de voyage spécifiques.",
       cat_archaeology: "Archéologie",
       cat_cenotes: "Cénotes",
-      cat_jets: "Jets Privés",
+      cat_nature: "Nature",
       cat_adventure: "Aventure",
       cat_gastronomy: "Gastronomie Locale",
       cat_wellness: "Bien-être",
       cat_service: "Service Personnel",
       cat_photography: "Photographie",
       trust_title: "Approuvé par les Voyageurs du Monde",
-      trust_quote: "\"Dany Experiences a redéfini ce que signifie voyager pour nous. Chaque détail a été sélectionné avec une précision et un soin tels que nous nous sommes sentis plus que de simples invités : nous avons fait partie de l'histoire de cette terre.\"",
-      trust_author: "— Elena V., Voyageuse Privée",
+      trust_quote1: "\"Dany Experiences a redéfini ce que signifie voyager pour nous. Chaque détail a été sélectionné avec une précision et un soin tels que nous nous sommes sentis plus que de simples invités : nous avons fait partie de l'histoire de cette terre.\"",
+      trust_author1: "— Elena V., Voyageuse Privée",
+      trust_quote2: "\"L'expédition à Chichén Itzá au lever du soleil valait chaque seconde. Dany ne se contente pas de connaître l'histoire, il explique l'archéoastronomie d'une manière époustouflante. Et sans la foule !\"",
+      trust_author2: "— Marcus K., Voyageur d'Aventure",
+      trust_quote3: "\"Se baigner dans les cénotes privés de Casa Tortuga avec le guide d'écotourisme était magique et intime. Le respect de l'environnement et la sécurité étaient de premier ordre. Hautement recommandé.\"",
+      trust_author3: "— Sophia & Pierre, Voyage de Noces",
       pay_title: "Paiements Sécurisés",
       pay_desc: "Nous acceptons toutes les principales cartes de crédit et paiements numériques sécurisés. Systèmes cryptés et vérifiés.",
       pay_btn: "Commencer la Réservation",
@@ -209,6 +305,8 @@
       footer_partner: "Devenir Partenaire",
       footer_sustainability: "Durabilité",
       footer_contact: "Contact",
+      footer_contact_title: "Contact Direct",
+      footer_location: "Lieu: Riviera Maya, Mexique",
       footer_legal: "Mentions Légales",
       footer_privacy: "Politique de Confidentialité",
       footer_terms: "Conditions d'Utilisation",
@@ -218,22 +316,51 @@
       footer_email_placeholder: "E-mail",
       chat_header_title: "Concierge Miatz IA",
       chat_header_status: "En ligne & prêt à vous aider",
-      chat_input_placeholder: "Écrivez vos préférences de voyage..."
+      chat_input_placeholder: "Écrivez vos préférences de voyage...",
+      floating_ai_tooltip: "Planifier avec l'IA",
+      floating_wa_tooltip: "Contacter par WhatsApp",
+      emergency_title: "Assistance touristique et urgence 24/7",
+      emergency_desc: "Numéros officiels d'assistance routière, de sauvetage et de protection des voyageurs sur la Riviera Maya.",
+      num_emergencies: "Urgences",
+      num_angeles: "Anges Verts (Assistance Routière)",
+      num_guest_assist: "Assistance Touristique"
     },
     it: {
-      nav_destinations: "Destinazioni",
-      nav_experiences: "Esperienze",
-      nav_jet: "Jet Privato",
-      nav_concierge: "Portineria",
+      nav_tours: "Tour Privati",
+      nav_about: "Su Dany",
+      nav_certifications: "Certificazioni",
+      nav_contact: "Contatto",
       nav_book: "Prenota Ora",
-      hero_title: "Viaggi Trasformativi",
-      hero_subtitle: "Avventure su misura per il viaggiatore esigente. Scopri l'anima nascosta della Riviera Maya attraverso le nostre esclusive spedizioni private.",
+      hero_badge: "✦ SPEDIZIONI PRIVATE DI LUSSO ✦",
+      hero_title: "Scopri l'eredità maya nel suo massimo splendore",
+      hero_subtitle: "Esplora Chichén Itzá, Tulum e i cenote più sacri con Dany, la tua guida federale certificata ed esperto local con anni di esperienza. Evita la folla con accessi prioritari esclusivi.",
       hero_plan_ai: "Pianifica con l'IA",
       hero_explore: "Esplora i Tour",
+      hero_stat1_title: "Guida Certificata",
+      hero_stat1_desc: "Licenza Federale SECTUR",
+      hero_stat2_title: "Evita la Folla",
+      hero_stat2_desc: "Accessi prioritari esclusivi",
+      hero_stat3_title: "Itinerari su Misura",
+      hero_stat3_desc: "100% personalizzabili",
+      about_role: "Fondatore & Guida di spedizione",
+      about_tag: "Esperto locale certificato",
+      about_title: "Guidare sentieri ancestrali",
+      about_desc: "Come guida certificata e appassionata di storia, il mio obiettivo è trasformare una semplice visita guidata in una spedizione di scoperta spirituale e culturale. Ogni pietra di Chichén Itzá e ogni scogliera di Tulum racchiude segreti archeoastronômici que trasmetto con il massimo rispetto per l'eredità maya.",
+      about_cred1_title: "Guida SECTUR",
+      about_cred1_desc: "Licenza federale ufficiale per l'accesso prioritario e l'interpretazione storica.",
+      about_cred2_title: "Esperto locale",
+      about_cred2_desc: "Anni di esperienza nella guida di spedizioni private di storia e natura nella Riviera Maya.",
+      about_cred3_title: "Ecoturismo",
+      about_cred3_desc: "Certificazione aquatica e conservazione rigorosa dell'ambiente ecologico.",
+      cert_tag: "Garanzia di Fiducia",
+      cert_title: "Certificazioni e Registro Ufficiale",
+      cert_subtitle: "La tua sicurezza e l'eccellenza della tua esperienza vengono prima di tutto. Dany possiede tutte le credenziali ufficiali e corsi di formazione internazionale aggiornati.",
+      cert_cred4_title: "Registro RNT",
+      cert_cred4_desc: "Formalmente registrato nel Registro Nazionale del Turismo del Messico, garantendo operazioni turistiche regolamentate al 100%.",
       ai_tag: "Alimentato da IA",
       ai_title: "Il Tuo Concierge Digitale",
       ai_desc: "Il nostro assistente di viaggio intelligente progetta itinerari in base alle tue preferenze personali, all'andamento stagionale e a punti di accesso esclusivi. Pianifica senza sforzo in pochi secondi.",
-      ai_bullet1: "Sincronizzazione meteo in tempo reale",
+      ai_bullet1: "Sincronizzazione meteo en tempo reale",
       ai_bullet2: "Prenotazioni di ristoranti di lusso curati",
       ai_bullet3: "Gestione dei permessi di accesso privato",
       tours_tag: "Percorsi Progettati per Te",
@@ -255,15 +382,19 @@
       bento_subtitle: "Esplora in base ai tuoi specifici interessi e desideri di viaggio.",
       cat_archaeology: "Archeologia",
       cat_cenotes: "Cenotes",
-      cat_jets: "Jet Privati",
+      cat_nature: "Natura",
       cat_adventure: "Avventura",
       cat_gastronomy: "Gastronomia Locale",
       cat_wellness: "Benessere",
       cat_service: "Servizio Personale",
       cat_photography: "Fotografia",
       trust_title: "Scelto dai Viaggiatori del Mondo",
-      trust_quote: "\"Dany Experiences ha ridefinito il significato di viaggio per noi. Ogni dettaglio è stato curato con tale precisione e cura che ci siamo sentiti più che semplici ospiti: ci siamo sentiti parte della storia di questa terra.\"",
-      trust_author: "— Elena V., Viaggiatrice Privata",
+      trust_quote1: "\"Dany Experiences ha ridefinito il significato di viaggio per noi. Ogni dettaglio è stato curato con tale precisione e cura que ci siamo sentiti più che semplici ospiti: ci siamo sentiti parte della storia di questa terra.\"",
+      trust_author1: "— Elena V., Viaggiatrice Privata",
+      trust_quote2: "\"La spedizione all'alba a Chichén Itzá è valsa ogni secondo. Dany non conosce solo la storia, ti spiega l'archeoastronomia in modo sbalorditivo. E senza folla!\"",
+      trust_author2: "— Marcus K., Viaggiatore d'Avventura",
+      trust_quote3: "\"Nuotare nei cenote privati di Casa Tortuga con la guida ecoturistica è stato magico e intimo. Il rispetto per l'ambiente e la sicurezza è stato eccezionale. Altamente raccomandato.\"",
+      trust_author3: "— Sophia & Pierre, Viaggio di Nozze",
       pay_title: "Pagamenti Sicuri",
       pay_desc: "Accettiamo tutte le principali carte di credito e pagamenti digitali sicuri. Sistemi crittografati e verificati.",
       pay_btn: "Inizia la Prenotazione",
@@ -273,6 +404,8 @@
       footer_partner: "Collabora con Noi",
       footer_sustainability: "Sostenibilità",
       footer_contact: "Contatto",
+      footer_contact_title: "Contatto Diretto",
+      footer_location: "Sede: Riviera Maya, Messico",
       footer_legal: "Note Legali",
       footer_privacy: "Informativa sulla Privacy",
       footer_terms: "Termini di Servizio",
@@ -282,30 +415,59 @@
       footer_email_placeholder: "E-mail",
       chat_header_title: "Miatz AI Concierge",
       chat_header_status: "Online & pronto ad assisterti",
-      chat_input_placeholder: "Scrivi le tue preferenze di viaggio..."
+      chat_input_placeholder: "Scrivi le tue preferenze di viaggio...",
+      floating_ai_tooltip: "Pianifica con l'IA",
+      floating_wa_tooltip: "Contatta via WhatsApp",
+      emergency_title: "Assistenza turistica ed emergenza 24/7",
+      emergency_desc: "Numeri ufficiali di assistenza stradale, soccorso e protezione dei viaggiatori nella Riviera Maya.",
+      num_emergencies: "Emergenze",
+      num_angeles: "Angeli Verdi (Soccorso Stradale)",
+      num_guest_assist: "Assistenza Turistica"
     },
     pt: {
-      nav_destinations: "Destinos",
-      nav_experiences: "Experiências",
-      nav_jet: "Jato Privado",
-      nav_concierge: "Concierge",
+      nav_tours: "Tours Privados",
+      nav_about: "Sobre Dany",
+      nav_certifications: "Certificações",
+      nav_contact: "Contacto",
       nav_book: "Reservar Agora",
-      hero_title: "Viagens Transformativas",
-      hero_subtitle: "Aventuras personalizadas criadas para o viajante exigente. Descubra a alma oculta da Riviera Maya através de nossas expedições privadas exclusivas.",
+      hero_badge: "✦ EXPEDIÇÕES PRIVADAS DE LUXO ✦",
+      hero_title: "Descubra o Legado Maia em seu Esplendor Máximo",
+      hero_subtitle: "Explore Chichén Itzá, Tulum e os cenotes mais sagrados com Dany, seu guia federal certificado e especialista na zona com anos de experiência. Evite as multidões com acessos antecipados exclusivos.",
       hero_plan_ai: "Planejar com IA",
       hero_explore: "Explorar Tours",
+      hero_stat1_title: "Guia Certificado",
+      hero_stat1_desc: "Licença Federal SECTUR",
+      hero_stat2_title: "Evite Multidões",
+      hero_stat2_desc: "Acessos antecipados exclusivos",
+      hero_stat3_title: "Rotas sob Medida",
+      hero_stat3_desc: "100% personalizáveis",
+      about_role: "Fundador & Guia de Expedição",
+      about_tag: "Especialista Local Certificado",
+      about_title: "Liderando Caminhos Ancestrais",
+      about_desc: "Como guia certificado e apaixonado por história, meu objetivo é transformar um simples passeio turístico em uma expedição de descoberta espiritual y cultural. Cada pedra de Chichén Itzá e cada penhasco de Tulum guarda segredos arqueoastronômicos que transmito com o maior respeito ao legado maia.",
+      about_cred1_title: "Guia SECTUR",
+      about_cred1_desc: "Licença federal oficial para acesso prioritário e interpretação histórica.",
+      about_cred2_title: "Especialista Local",
+      about_cred2_desc: "Anos de experiência liderando expedições privadas de história e natureza na Riviera Maya.",
+      about_cred3_title: "Ecoturismo",
+      about_cred3_desc: "Certificação aquática e preservação rigorosa do meio ambiente ecológico.",
+      cert_tag: "Garantia de Confiança",
+      cert_title: "Certificações e Registro Oficial",
+      cert_subtitle: "A sua segurança e a excelência da sua experiência vêm em primeiro lugar. Dany possui todas as credenciais oficiais e treinamento internacional atualizados.",
+      cert_cred4_title: "Registro RNT",
+      cert_cred4_desc: "Formalmente registrado no Registro Nacional de Turismo do México, garantindo operações turísticas 100% regulamentadas.",
       ai_tag: "Alimentado por IA",
       ai_title: "Seu Concierge Digital",
-      ai_desc: "Nosso parceiro de viagem inteligente projeta roteiros com base em suas preferências pessoais, padrões sazonais e pontos de acesso exclusivos. Planejamento sem esforço em segundos.",
+      ai_desc: "Nosso parceiro de viagem inteligente projeta roteiros com base em suas preferências pessoais, padrões sazonais e pontos de acesso exclusivos. Planejamento sem esforcó em segundos.",
       ai_bullet1: "Sincronização de clima em tempo real",
       ai_bullet2: "Reservas de restaurantes de luxo selecionadas",
-      ai_bullet3: "Gestão de autorizações de acesso privado",
+      ai_bullet3: "Gestão de autorizaciones de acesso privado",
       tours_tag: "Rotas Projetadas para Você",
-      tours_title: "Experiências Personalizadas",
+      tours_title: "Experias Personalizadas",
       tours_view_all: "Ver Todas as Experiências",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "La Gran Maravilla",
-      tour1_desc: "Experimente a majestade do mundo maia com acesso antecipado exclusivo e percepções arqueoastronômicas de especialistas.",
+      tour1_desc: "Experimente a majestade do maia com acesso antecipado exclusivo e percepções arqueoastronômicas de especialistas.",
       tour1_book: "Reservar Agora",
       tour2_title: "Casa Tortuga",
       tour2_subtitle: "Cenotes e Natureza",
@@ -313,23 +475,27 @@
       tour2_book: "Reservar Agora",
       tour3_title: "Tulum",
       tour3_subtitle: "Ruínas Oceânicas",
-      tour3_desc: "Uma mistura perfeita de história antiga e vistas espetaculares das falésas do mar do Caribe, longe das multidões.",
+      tour3_desc: "Uma mistura perfeita de história antiga e vistas espetaculares das falésias do mar do Caribe, longe das multidões.",
       tour3_book: "Reservar Agora",
       bento_title: "Paixões sob Medida",
       bento_subtitle: "Explore por seus interesses e desejos específicos de viagem.",
       cat_archaeology: "Arqueologia",
       cat_cenotes: "Cenotes",
-      cat_jets: "Jatos Privados",
+      cat_nature: "Natureza",
       cat_adventure: "Aventura",
       cat_gastronomy: "Gastronomia Local",
       cat_wellness: "Bem-estar",
       cat_service: "Serviço Pessoal",
       cat_photography: "Fotografia",
       trust_title: "Aprovado por Viajantes do Mundo",
-      trust_quote: "\"Dany Experiences redefiniu o que significa viajar para nós. Cada detalhe foi selecionado com tal precauge e cuidado que nos sentimos mais do que hóspedes: nos sentimos parte da história da terra.\"",
-      trust_author: "— Elena V., Viajante Privada",
+      trust_quote1: "\"Dany Experiences redefiniu o que significa viajar para nós. Cada detalhe foi selecionado com tal precaução e cuidado que nos sentimos mais do que hóspedes: nos sentimos parte da história de la terra.\"",
+      trust_author1: "— Elena V., Viajante Privada",
+      trust_quote2: "\"A expedição ao amanhecer em Chichén Itzá valeu cada segundo. Dany não apenas conhece a história, explica a arqueoastronomia de uma forma impressionante. E sem multidões!\"",
+      trust_author2: "— Marcus K., Viajante de Aventura",
+      trust_quote3: "\"Nadar nos cenotes privados de Casa Tortuga com o guia de ecoturismo foi mágico e íntimo. O respeito pelo meio ambiente e a segurança foi nota dez. Altamente recomendado.\"",
+      trust_author3: "— Sophia & Pierre, Lua de Mel",
       pay_title: "Pagamentos Seguros",
-      pay_desc: "Aceitamos todos os principais cartões de crédito e pagamentos digitais seguros. Sistemas encriptados e verificados.",
+      pay_desc: "Aceitamos todos os principais cartões de crédito e pagamentos digitais seguros. Sistemas encriptados y verificados.",
       pay_btn: "Iniciar Reserva",
       footer_desc: "© 2024 Dany Experiences. Viagens transformativas para o viajante exigente.",
       footer_company: "Empresa",
@@ -337,16 +503,25 @@
       footer_partner: "Trabalhe Conosco",
       footer_sustainability: "Sustentabilidade",
       footer_contact: "Contato",
+      footer_contact_title: "Contato Direto",
+      footer_location: "Localização: Riviera Maya, México",
       footer_legal: "Informações Legais",
       footer_privacy: "Política de Privacidade",
-      footer_terms: "Terminos de Serviço",
+      footer_terms: "Termos de Serviço",
       footer_insurance: "Seguro de Viagem",
       footer_follow: "Siga-nos",
       footer_newsletter: "Assinar Boletim",
       footer_email_placeholder: "E-mail",
       chat_header_title: "Concierge Miatz IA",
       chat_header_status: "Online & pronto para ajudar",
-      chat_input_placeholder: "Escreva suas preferências de viagem..."
+      chat_input_placeholder: "Escreva suas preferências de viagem...",
+      floating_ai_tooltip: "Planejar com IA",
+      floating_wa_tooltip: "Contatar via WhatsApp",
+      emergency_title: "Assistência turística e emergência 24/7",
+      emergency_desc: "Números oficiais de assistência rodoviária, resgate e proteção ao viajante na Riviera Maya.",
+      num_emergencies: "Emergências",
+      num_angeles: "Anjos Verdes (Assistência Rodoviária)",
+      num_guest_assist: "Atendimento ao Turista"
     }
   };
 
@@ -552,7 +727,7 @@
         subtitle: "A única cidade maia em frente ao mar do Caribe",
         description: "Explore o espetacular sítio arqueológico de Tulum, a única cidade amuralhada construída em um penhasco com vista para o Mar do Caribe. Conheça a história de Zamá (amanhecer), que funcionou como um importante porto comercial maia.",
         itinerary: [
-          "Tour guiado pelos templos de El Castillo, Deus Descendente e dos Frescos.",
+          "Tour guiado pelos tempos de El Castillo, Deus Descendente e dos Frescos.",
           "Caminhada pelas antigas muralhas defensivas maias.",
           "Acesso a mirantes panorâmicos espetaculares com vista para o Caribe.",
           "Tempo livre para desfrutar da praia de Tulum e tirar fotos memoráveis."
@@ -578,6 +753,29 @@
         }
       }
     });
+
+    // Update UI elements in the selector
+    const label = document.getElementById('current-lang-label');
+    if (label) {
+      label.textContent = lang.toUpperCase();
+    }
+
+    const dropdown = document.getElementById('lang-dropdown');
+    if (dropdown) {
+      dropdown.querySelectorAll('[data-lang]').forEach(btn => {
+        const check = btn.querySelector('.lang-check');
+        if (check) {
+          if (btn.getAttribute('data-lang') === lang) {
+            check.classList.remove('hidden');
+          } else {
+            check.classList.add('hidden');
+          }
+        }
+      });
+    }
+
+    // Initialize chat greeting in the correct language
+    initChatGreeting(lang);
   }
 
   // Detect language and run localization
@@ -606,22 +804,24 @@
     return greetings[lang] || greetings.es;
   }
 
+  // Initialize chat welcome message
+  function initChatGreeting(lang) {
+    const messagesContainer = document.querySelector(SELECTORS.chatMessages);
+    if (messagesContainer) {
+      messagesContainer.innerHTML = '';
+      chatHistory = [];
+      const greetingText = getInitialGreeting(lang);
+      appendMessage('assistant', greetingText);
+      chatHistory.push({ role: 'assistant', text: greetingText });
+    }
+  }
+
   // Smooth scroll to element and focus input
   function initPlanWithAI() {
     const target = document.querySelector(SELECTORS.chatContainer);
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'center' });
       
-      // Send initial greeting if chat is empty
-      const messagesContainer = document.querySelector(SELECTORS.chatMessages);
-      if (messagesContainer && messagesContainer.children.length <= 1) {
-        setTimeout(() => {
-          const greetingText = getInitialGreeting(userLanguage);
-          appendMessage('assistant', greetingText);
-          chatHistory.push({ role: 'assistant', text: greetingText });
-        }, 800);
-      }
-
       // Focus input
       const input = document.querySelector(SELECTORS.chatInput);
       if (input) setTimeout(() => input.focus(), 1000);
@@ -689,7 +889,7 @@
       const response = await fetch(`${BACKEND_URL}/api/dany/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message, history: chatHistory })
+        body: JSON.stringify({ message, history: chatHistory, lang: userLanguage })
       });
 
       if (typingIndicator.parentNode) {
@@ -962,6 +1162,50 @@
     // 1. Detect browser language and localize page layout
     detectAndApplyLanguage();
 
+    // 1b. Language dropdown toggle and selection logic
+    const langBtn = document.getElementById('lang-btn');
+    const langDropdown = document.getElementById('lang-dropdown');
+    const langSelectorContainer = document.getElementById('lang-selector-container');
+
+    if (langBtn && langDropdown) {
+      langBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        langDropdown.classList.toggle('hidden');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (langSelectorContainer && !langSelectorContainer.contains(e.target)) {
+          langDropdown.classList.add('hidden');
+        }
+      });
+
+      // Add click listener to each language option
+      langDropdown.querySelectorAll('[data-lang]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selectedLang = btn.getAttribute('data-lang');
+          if (selectedLang && selectedLang !== userLanguage) {
+            userLanguage = selectedLang;
+            localizePage(selectedLang);
+            
+            // If chat has no history except welcome, we update the greeting text
+            const messagesContainer = document.querySelector(SELECTORS.chatMessages);
+            if (messagesContainer) {
+              const textBubbles = messagesContainer.querySelectorAll('.flex.w-full');
+              if (textBubbles.length <= 1) {
+                // Remove existing bubbles
+                messagesContainer.innerHTML = '';
+                const greetingText = getInitialGreeting(selectedLang);
+                appendMessage('assistant', greetingText);
+                chatHistory = [{ role: 'assistant', text: greetingText }];
+              }
+            }
+          }
+          langDropdown.classList.add('hidden');
+        });
+      });
+    }
+
     const sendBtn = document.querySelector(SELECTORS.chatSendBtn);
     const chatInput = document.querySelector(SELECTORS.chatInput);
 
@@ -989,6 +1233,14 @@
     const planBtn = document.querySelector(SELECTORS.planWithAiBtn);
     if (planBtn) {
       planBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        initPlanWithAI();
+      });
+    }
+
+    const floatingAiBtn = document.getElementById('floating-ai-btn');
+    if (floatingAiBtn) {
+      floatingAiBtn.addEventListener('click', (e) => {
         e.preventDefault();
         initPlanWithAI();
       });

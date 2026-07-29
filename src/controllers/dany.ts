@@ -13,7 +13,7 @@ export interface ChatMessage {
 
 const MIATZ_SYSTEM_INSTRUCTION = `
 Eres Miatz, el Agente de IA y Concierge Digital de Dany Experiences en la Riviera Maya. Tu nombre es de origen maya y significa "sabiduría" o "sabio". 
-Hablas en nombre de Dany Experiences, asistiendo a los viajeros a planificar sus expediciones con Dany, quien es el Guía Federal Certificado y arqueólogo experto local. 
+Hablas en nombre de Dany Experiences, asistiendo a los viajeros a planificar sus expediciones con Dany, quien es el Guía Federal Certificado y experto local con años de experiencia en la Riviera Maya. 
 No eres un bot genérico de atención al cliente; hablas con la autoridad, el misticismo y la calidez de alguien que vive en la selva, respeta la naturaleza y conoce de primera mano los secretos ancestrales de las ruinas y cenotes transmitidos por Dany.
 
 PAUTAS DE IDIOMA Y MULTILINGÜISMO:
@@ -58,7 +58,8 @@ OBJETIVO DE CAPTACIÓN DE LEADS (REGLA CRÍTICA):
  * Proxy endpoint to consult Gemini API as Miatz AI.
  */
 export const handleDanyChat = async (req: Request, res: Response) => {
-  const { message, history } = req.body;
+  const { message, history, lang } = req.body;
+  const userLang = (lang || 'es').toLowerCase();
 
   if (!message) {
     return res.status(400).json({ error: 'Message is required' });
@@ -71,18 +72,67 @@ export const handleDanyChat = async (req: Request, res: Response) => {
 
   if (!config.geminiApiKey || config.geminiApiKey === 'your_google_gemini_api_key') {
     console.warn('[Miatz AI] GEMINI_API_KEY not configured or is placeholder. Running in Mock mode.');
-    // Simulated mock conversational responses for Miatz AI
-    let reply = 'Hola, soy Miatz, guía de la selva en modo de pruebas. ';
-    const lowercaseMsg = message.toLowerCase();
     
-    if (lowercaseMsg.includes('chichen') || lowercaseMsg.includes('itza')) {
-      reply += 'Chichén Itzá es el corazón arqueoastronómico maya. ¿Cuál es tu nombre para darte acceso temprano de primera clase?';
-    } else if (lowercaseMsg.includes('tortuga') || lowercaseMsg.includes('cenote')) {
-      reply += 'En Casa Tortuga nadarás en portales sagrados del Xibalbá. Por favor compárteme tu WhatsApp para enviarte las políticas de protector solar biodegradable.';
-    } else if (lowercaseMsg.includes('tulum')) {
-      reply += 'Tulum, la majestuosa Zamá, mira al Caribe. ¿Te gustaría planear esta aventura? ¿Cómo te llamas?';
+    // Localized simulated responses for Miatz AI in mock mode
+    let reply = '';
+    const lowercaseMsg = message.toLowerCase();
+
+    if (userLang === 'en') {
+      reply = 'Hello! I am Miatz, jungle guide in test mode. ';
+      if (lowercaseMsg.includes('chichen') || lowercaseMsg.includes('itza')) {
+        reply += 'Chichén Itzá is the maya archaeoastronomical heart. What is your name to give you first-class early access?';
+      } else if (lowercaseMsg.includes('tortuga') || lowercaseMsg.includes('cenote')) {
+        reply += 'In Casa Tortuga you will swim in sacred portals of Xibalba. Please share your WhatsApp to send you the biodegradable sunscreen policies.';
+      } else if (lowercaseMsg.includes('tulum')) {
+        reply += 'Tulum, the majestic Zama, looks at the Caribbean. Would you like to plan this adventure? What is your name?';
+      } else {
+        reply += 'Do you prefer to explore the Mayan jungle with its sacred cenotes or the walled coast of Tulum?';
+      }
+    } else if (userLang === 'fr') {
+      reply = 'Bonjour! Je suis Miatz, guide de la jungle en mode test. ';
+      if (lowercaseMsg.includes('chichen') || lowercaseMsg.includes('itza')) {
+        reply += 'Chichén Itzá est le cœur archéoastronomique maya. Quel est votre nom pour vous donner un accès anticipé de première classe?';
+      } else if (lowercaseMsg.includes('tortuga') || lowercaseMsg.includes('cenote')) {
+        reply += 'À Casa Tortuga, vous nagerez dans des portails sacrés du Xibalba. Veuillez partager votre WhatsApp pour vous envoyer les politiques de crème solaire biodégradable.';
+      } else if (lowercaseMsg.includes('tulum')) {
+        reply += 'Tulum, la majestueuse Zama, regarde les Caraïbes. Souhaitez-vous planifier cette aventure? Quel est votre nom?';
+      } else {
+        reply += 'Préférez-vous explorer la jungle maya avec ses cénotes sacrés ou la côte fortifiée de Tulum?';
+      }
+    } else if (userLang === 'it') {
+      reply = 'Ciao! Sono Miatz, guida della giungla in modalità test. ';
+      if (lowercaseMsg.includes('chichen') || lowercaseMsg.includes('itza')) {
+        reply += 'Chichén Itzá è il cuore archeoastronômico maya. Qual è il tuo nome per darti un accesso prioritario di prima classe?';
+      } else if (lowercaseMsg.includes('tortuga') || lowercaseMsg.includes('cenote')) {
+        reply += 'A Casa Tortuga nuoterai nei portali sacri di Xibalba. Condividi il tuo WhatsApp per inviarti le politiche sulla protezione solare biodegradabile.';
+      } else if (lowercaseMsg.includes('tulum')) {
+        reply += 'Tulum, la maestosa Zama, guarda i Caraibi. Vorresti pianificare questa avventura? Come ti chiami?';
+      } else {
+        reply += 'Preferisci esplorare la giungla maya con i suoi cenote sacri o la costa murata di Tulum?';
+      }
+    } else if (userLang === 'pt') {
+      reply = 'Olá! Sou Miatz, guia da selva em modo de teste. ';
+      if (lowercaseMsg.includes('chichen') || lowercaseMsg.includes('itza')) {
+        reply += 'Chichén Itzá é o coração arqueoastronômico maia. Qual é o seu nome para lhe dar acesso antecipado de primeira classe?';
+      } else if (lowercaseMsg.includes('tortuga') || lowercaseMsg.includes('cenote')) {
+        reply += 'Em Casa Tortuga você nadará em portais sagrados de Xibalba. Por favor compartilhe seu WhatsApp para lhe enviar as políticas de protetor solar biodegradável.';
+      } else if (lowercaseMsg.includes('tulum')) {
+        reply += 'Tulum, a majestosa Zama, olha para o Caribe. Gostaria de planejar esta aventura? Qual é o seu nome?';
+      } else {
+        reply += 'Você prefere explorar a selva maia com seus cenotes sagrados o a costa murada de Tulum?';
+      }
     } else {
-      reply += '¿Prefieres explorar la selva maya con sus cenotes sagrados o la costa amurallada de Tulum?';
+      // Default to Spanish (es)
+      reply = 'Hola, soy Miatz, guía de la selva en modo de pruebas. ';
+      if (lowercaseMsg.includes('chichen') || lowercaseMsg.includes('itza')) {
+        reply += 'Chichén Itzá es el corazón arqueoastronómico maya. ¿Cuál es tu nombre para darte acceso temprano de primera clase?';
+      } else if (lowercaseMsg.includes('tortuga') || lowercaseMsg.includes('cenote')) {
+        reply += 'En Casa Tortuga nadarás en portales sagrados del Xibalbá. Por favor compárteme tu WhatsApp para enviarte las políticas de protector solar biodegradable.';
+      } else if (lowercaseMsg.includes('tulum')) {
+        reply += 'Tulum, la majestuosa Zamá, mira al Caribe. ¿Te gustaría planear esta aventura? ¿Cómo te llamas?';
+      } else {
+        reply += '¿Prefieres explorar la selva maya con sus cenotes sagrados o la costa amurallada de Tulum?';
+      }
     }
 
     // Trigger mock lead qualified if a phone and name look present
@@ -94,9 +144,11 @@ export const handleDanyChat = async (req: Request, res: Response) => {
   }
 
   try {
+    const customSystemInstruction = `${MIATZ_SYSTEM_INSTRUCTION}\n\nCRITICAL LANGUAGE DIRECTIVE: The user UI language is currently set to: ${userLang.toUpperCase()}. Regardless of the message language, you MUST respond in this language (${userLang.toUpperCase()}), unless the user explicitly requests to speak in another language. Never mix languages.`;
+
     const model = genAI.getGenerativeModel({
       model: 'gemini-1.5-flash',
-      systemInstruction: MIATZ_SYSTEM_INSTRUCTION,
+      systemInstruction: customSystemInstruction,
     });
 
     const result = await model.generateContent({
