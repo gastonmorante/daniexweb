@@ -145,6 +145,7 @@
         }
         .animate-ken-burns {
             animation: kenBurns 24s infinite ease-in-out;
+            will-change: transform;
         }
     </style>
 </head>
@@ -163,35 +164,35 @@
 <button data-i18n="nav_book" class="hidden md:block bg-primary-container text-on-primary px-6 py-2 rounded-full font-label-md uppercase tracking-widest scale-95 duration-200 ease-in-out hover:opacity-80 transition-all">Book Now</button>
 <!-- Language Selector Dropdown -->
 <div class="relative inline-block text-left" id="lang-selector-container">
-  <button id="lang-btn" class="flex items-center gap-0.5 sm:gap-1 text-primary border border-outline/30 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider hover:bg-[#B09A6D]/10 transition-all duration-300">
+  <button id="lang-btn" class="relative before:content-[''] before:absolute before:inset-[-8px] before:z-10 flex items-center gap-0.5 sm:gap-1 text-primary border border-outline/30 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full font-label-md text-xs uppercase tracking-wider hover:bg-[#B09A6D]/10 transition-all duration-300">
     <span class="material-symbols-outlined text-sm" data-icon="language">language</span>
     <span id="current-lang-label">ES</span>
     <span class="material-symbols-outlined text-xs" data-icon="keyboard_arrow_down" style="font-size: 16px;">keyboard_arrow_down</span>
   </button>
   <div id="lang-dropdown" class="hidden absolute right-0 mt-2 w-32 bg-[#F6F3E6] border border-[#B09A6D] rounded-lg shadow-xl overflow-hidden z-50">
-    <button data-lang="es" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+    <button data-lang="es" class="w-full text-left px-4 py-3 sm:py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
       <span>ES</span>
       <span class="lang-check text-[#1F6C7B] font-bold">✓</span>
     </button>
-    <button data-lang="en" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+    <button data-lang="en" class="w-full text-left px-4 py-3 sm:py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
       <span>EN</span>
       <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
     </button>
-    <button data-lang="fr" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+    <button data-lang="fr" class="w-full text-left px-4 py-3 sm:py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
       <span>FR</span>
       <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
     </button>
-    <button data-lang="it" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+    <button data-lang="it" class="w-full text-left px-4 py-3 sm:py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
       <span>IT</span>
       <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
     </button>
-    <button data-lang="pt" class="w-full text-left px-4 py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
+    <button data-lang="pt" class="w-full text-left px-4 py-3 sm:py-2 text-xs font-body-md text-[#00334D] hover:bg-[#B09A6D]/20 transition-colors duration-200 flex items-center justify-between">
       <span>PT</span>
       <span class="lang-check hidden text-[#1F6C7B] font-bold">✓</span>
     </button>
   </div>
 </div>
-<span id="mobile-menu-trigger" class="material-symbols-outlined text-primary cursor-pointer text-2xl md:hidden" data-icon="menu">menu</span>
+<span id="mobile-menu-trigger" class="relative before:content-[''] before:absolute before:inset-[-12px] material-symbols-outlined text-primary cursor-pointer text-2xl md:hidden" data-icon="menu">menu</span>
 </div>
 </nav>
 </header>
@@ -255,7 +256,7 @@
 <span class="material-symbols-outlined text-sm" data-icon="smart_toy">smart_toy</span>
                         <span data-i18n="ai_tag">Powered by IA</span>
                     </div>
-<h2 data-i18n="ai_title" class="font-headline-lg text-headline-lg text-primary font-display-xl">Tu Concierge Digital</h2>
+<h2 data-i18n="ai_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-display-xl">Tu Concierge Digital</h2>
 <p data-i18n="ai_desc" class="font-body-md text-body-md text-on-surface-variant">
                         Our intelligent travel partner designs itineraries based on your personal preferences, seasonal patterns, and exclusive access points. Experience effortless planning in seconds.
                     </p>
@@ -315,7 +316,7 @@
     <div class="w-full md:w-7/12 space-y-6">
       <div class="space-y-2">
         <p data-i18n="about_tag" class="text-secondary font-label-md uppercase tracking-widest">Experto Local Certificado</p>
-        <h2 data-i18n="about_title" class="font-headline-lg text-headline-lg text-primary font-display-xl">Liderando Caminos Ancestrales</h2>
+        <h2 data-i18n="about_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary font-display-xl">Liderando Caminos Ancestrales</h2>
       </div>
       
       <p data-i18n="about_desc" class="font-body-md text-on-surface-variant leading-relaxed">
@@ -330,7 +331,7 @@
   <div class="max-w-container-max mx-auto px-4 md:px-gutter text-center">
     <div class="max-w-3xl mx-auto mb-12 text-center space-y-3">
       <p data-i18n="cert_tag" class="text-[#1F6C7B] font-label-md uppercase tracking-widest">Garantía de Confianza</p>
-      <h2 data-i18n="cert_title" class="font-headline-lg text-headline-lg text-[#00334D] font-display-xl font-bold">Certificaciones y Registro Federal</h2>
+      <h2 data-i18n="cert_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#00334D] font-display-xl font-bold">Certificaciones y Registro Federal</h2>
       <p data-i18n="cert_subtitle" class="font-body-md text-sm md:text-base text-[#7A6947] leading-relaxed max-w-xl mx-auto">
         Tu seguridad y la excelencia de tu experiencia son lo primero. Dany cuenta con todas las credenciales oficiales y capacitación internacional vigentes.
       </p>
@@ -390,7 +391,7 @@
 <div class="flex justify-between items-end mb-stack-lg">
 <div>
 <p data-i18n="tours_tag" class="text-secondary font-label-md uppercase tracking-widest mb-2">Curated Collections</p>
-<h2 data-i18n="tours_title" class="font-headline-lg text-headline-lg text-primary">Signature Expeditions</h2>
+<h2 data-i18n="tours_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Signature Expeditions</h2>
 </div>
 <button class="hidden md:flex items-center gap-2 text-primary font-label-md hover:underline">
                         <span data-i18n="tours_view_all">View All Experiences</span> <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
@@ -460,7 +461,7 @@
 <!-- Section 4: Categories (Bento Grid Style) -->
 <section class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter">
 <div class="text-center mb-stack-lg">
-<h2 data-i18n="bento_title" class="font-headline-lg text-headline-lg text-primary">Tailored Passions</h2>
+<h2 data-i18n="bento_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Tailored Passions</h2>
 <p data-i18n="bento_subtitle" class="font-body-md text-on-surface-variant">Explore by your specific travel interests and desires.</p>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -512,7 +513,7 @@
 <span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="ml-2 font-label-md text-[#7A6947] text-xs">Google Reviews 4.9 / 5.0</span>
 </div>
-<h2 data-i18n="trust_title" class="font-headline-lg text-headline-lg text-[#00334D] font-display-xl font-bold">Trusted by World Travelers</h2>
+<h2 data-i18n="trust_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-[#00334D] font-display-xl font-bold">Trusted by World Travelers</h2>
 </div>
 <div class="space-y-4 max-h-[280px] md:max-h-[400px] overflow-y-auto pr-2">
 <!-- Testimonial 1 -->
@@ -615,12 +616,12 @@
   </div>
 </footer>
 <!-- Mobile Navigation Drawer Overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-[#00334D]/50 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-sm">
-  <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-xs bg-[#F6F3E6] p-8 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between border-l border-[#B09A6D]/20">
+<div id="mobile-menu" class="fixed inset-0 bg-[#00334D]/50 z-50 transition-opacity duration-300 opacity-0 pointer-events-none backdrop-blur-sm" style="will-change: opacity;">
+  <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-xs bg-[#F6F3E6] p-8 shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between border-l border-[#B09A6D]/20" style="will-change: transform;">
     <div class="space-y-8">
       <div class="flex justify-between items-center pb-4 border-b border-[#B09A6D]/20">
         <img src="./assets/logo_dany.webp" alt="Dany Experiences Logo" class="h-8 w-auto object-contain">
-        <button id="mobile-menu-close" class="text-[#00334D] hover:text-[#1F6C7B]">
+        <button id="mobile-menu-close" class="relative before:content-[''] before:absolute before:inset-[-12px] before:z-10 text-[#00334D] hover:text-[#1F6C7B]">
           <span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
         </button>
       </div>
