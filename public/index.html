@@ -121,13 +121,13 @@
 <nav class="flex justify-between items-center w-full px-gutter py-4 max-w-container-max mx-auto">
 <div class="h-10"><img src="./assets/logo_dany.png" alt="Dany Experiences Logo" class="h-full w-auto object-contain"></div>
 <div class="hidden md:flex items-center gap-stack-md">
-<a class="font-body-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Destinations</a>
-<a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Experiences</a>
-<a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Private Jet</a>
-<a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Concierge</a>
+<a data-i18n="nav_destinations" class="font-body-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Destinations</a>
+<a data-i18n="nav_experiences" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Experiences</a>
+<a data-i18n="nav_jet" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Private Jet</a>
+<a data-i18n="nav_concierge" class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 transition-all duration-300" href="#">Concierge</a>
 </div>
 <div class="flex items-center gap-4">
-<button class="hidden md:block bg-primary-container text-on-primary px-6 py-2 rounded-full font-label-md uppercase tracking-widest scale-95 duration-200 ease-in-out hover:opacity-80 transition-all">Book Now</button>
+<button data-i18n="nav_book" class="hidden md:block bg-primary-container text-on-primary px-6 py-2 rounded-full font-label-md uppercase tracking-widest scale-95 duration-200 ease-in-out hover:opacity-80 transition-all">Book Now</button>
 <span class="material-symbols-outlined text-primary cursor-pointer text-2xl" data-icon="menu">menu</span>
 </div>
 </nav>
@@ -140,18 +140,18 @@
 <div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent z-10"></div>
 <div class="relative z-20 max-w-container-max mx-auto px-gutter w-full">
 <div class="max-w-2xl">
-<h1 class="font-display-xl text-display-xl text-primary mb-stack-sm leading-tight">
+<h1 data-i18n="hero_title" class="font-display-xl text-display-xl text-primary mb-stack-sm leading-tight">
                         Transformative Journeys
                     </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-lg">
+<p data-i18n="hero_subtitle" class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg max-w-lg">
                         Bespoke adventures curated for the discerning traveler. Discover the hidden soul of the Yucatan through our signature private expeditions.
                     </p>
 <div class="flex flex-wrap gap-4">
 <button id="plan-with-ai-btn" class="bg-primary-container text-on-primary px-10 py-4 rounded-full font-label-md text-label-md flex items-center gap-2 hover:scale-105 transition-transform duration-300 shadow-lg">
 <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-                            Plan with AI
+                            <span data-i18n="hero_plan_ai">Plan with AI</span>
                         </button>
-<button class="border-2 border-primary-container text-primary-container px-10 py-4 rounded-full font-label-md text-label-md hover:bg-primary-container/5 transition-colors duration-300">
+<button data-i18n="hero_explore" class="border-2 border-primary-container text-primary-container px-10 py-4 rounded-full font-label-md text-label-md hover:bg-primary-container/5 transition-colors duration-300">
                             Explore Tours
                         </button>
 </div>
@@ -164,24 +164,24 @@
 <div class="w-full md:w-1/2 space-y-6">
 <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-caption font-semibold">
 <span class="material-symbols-outlined text-sm" data-icon="smart_toy">smart_toy</span>
-                        Powered by IA
+                        <span data-i18n="ai_tag">Powered by IA</span>
                     </div>
-<h2 class="font-headline-lg text-headline-lg text-primary font-display-xl">Tu Concierge Digital</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
+<h2 data-i18n="ai_title" class="font-headline-lg text-headline-lg text-primary font-display-xl">Tu Concierge Digital</h2>
+<p data-i18n="ai_desc" class="font-body-md text-body-md text-on-surface-variant">
                         Our intelligent travel partner designs itineraries based on your personal preferences, seasonal patterns, and exclusive access points. Experience effortless planning in seconds.
                     </p>
 <ul class="space-y-4">
 <li class="flex items-center gap-3 font-body-md text-on-surface">
 <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
-                            Real-time weather synchronization
+                            <span data-i18n="ai_bullet1">Real-time weather synchronization</span>
                         </li>
 <li class="flex items-center gap-3 font-body-md text-on-surface">
 <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
-                            Curated luxury restaurant bookings
+                            <span data-i18n="ai_bullet2">Curated luxury restaurant bookings</span>
                         </li>
 <li class="flex items-center gap-3 font-body-md text-on-surface">
 <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
-                            Private access permits management
+                            <span data-i18n="ai_bullet3">Private access permits management</span>
                         </li>
 </ul>
 </div>
@@ -191,8 +191,8 @@
 <span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
 </div>
 <div>
-<p class="font-label-md text-primary">Miatz Concierge</p>
-<p class="text-caption text-secondary">Online &amp; Ready to assist</p>
+<p data-i18n="chat_header_title" class="font-label-md text-primary">Miatz AI Concierge</p>
+<p data-i18n="chat_header_status" class="text-caption text-secondary">Online &amp; Ready to assist</p>
 </div>
 </div>
 <div class="flex-grow space-y-4 overflow-y-auto mb-4 pr-2" id="ai-agent-messages">
@@ -201,7 +201,7 @@
                         </div>
 </div>
 <div class="relative">
-<input id="ai-agent-input" class="w-full bg-surface p-4 pr-12 rounded-full border border-outline-variant focus:border-secondary outline-none transition-all text-body-md" placeholder="Type your travel preferences..." type="text">
+<input id="ai-agent-input" data-i18n="chat_input_placeholder" class="w-full bg-surface p-4 pr-12 rounded-full border border-outline-variant focus:border-secondary outline-none transition-all text-body-md" placeholder="Type your travel preferences..." type="text">
 <button id="ai-agent-send" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary-container text-on-primary rounded-full flex items-center justify-center">
 <span class="material-symbols-outlined text-sm" data-icon="send">send</span>
 </button>
@@ -214,11 +214,11 @@
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="flex justify-between items-end mb-stack-lg">
 <div>
-<p class="text-secondary font-label-md uppercase tracking-widest mb-2">Curated Collections</p>
-<h2 class="font-headline-lg text-headline-lg text-primary">Signature Expeditions</h2>
+<p data-i18n="tours_tag" class="text-secondary font-label-md uppercase tracking-widest mb-2">Curated Collections</p>
+<h2 data-i18n="tours_title" class="font-headline-lg text-headline-lg text-primary">Signature Expeditions</h2>
 </div>
 <button class="hidden md:flex items-center gap-2 text-primary font-label-md hover:underline">
-                        View All Experiences <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                        <span data-i18n="tours_view_all">View All Experiences</span> <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -233,10 +233,10 @@
                             </div>
 </div>
 <div class="p-6">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Chichén Itzá</h3>
-<p class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">The Great Wonder</p>
-<p class="font-body-md text-on-surface-variant mb-6">Experience the majesty of the Mayan world with exclusive early-access and expert archeological insights.</p>
-<button id="book-chichen-btn" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
+<h3 data-i18n="tour1_title" class="font-headline-md text-headline-md text-primary mb-2">Chichén Itzá</h3>
+<p data-i18n="tour1_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">The Great Wonder</p>
+<p data-i18n="tour1_desc" class="font-body-md text-on-surface-variant mb-6">Experience the majesty of the Mayan world with exclusive early-access and expert archeological insights.</p>
+<button id="book-chichen-btn" data-i18n="tour1_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
 </div>
 </div>
 <!-- Card 2 -->
@@ -250,10 +250,10 @@
                             </div>
 </div>
 <div class="p-6">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Casa Tortuga</h3>
-<p class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">Cenotes &amp; Nature</p>
-<p class="font-body-md text-on-surface-variant mb-6">Dive into the sacred waters of the Mayan underworld in private, pristine limestone caverns.</p>
-<button id="book-tortuga-btn" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
+<h3 data-i18n="tour2_title" class="font-headline-md text-headline-md text-primary mb-2">Casa Tortuga</h3>
+<p data-i18n="tour2_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">Cenotes &amp; Nature</p>
+<p data-i18n="tour2_desc" class="font-body-md text-on-surface-variant mb-6">Dive into the sacred waters of the Mayan underworld in private, pristine limestone caverns.</p>
+<button id="book-tortuga-btn" data-i18n="tour2_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
 </div>
 </div>
 <!-- Card 3 -->
@@ -267,10 +267,10 @@
                             </div>
 </div>
 <div class="p-6">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Tulum</h3>
-<p class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">Oceanic Ruins</p>
-<p class="font-body-md text-on-surface-variant mb-6">A harmonious blend of ancient history and breathtaking Caribbean vistas, away from the crowds.</p>
-<button id="book-tulum-btn" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
+<h3 data-i18n="tour3_title" class="font-headline-md text-headline-md text-primary mb-2">Tulum</h3>
+<p data-i18n="tour3_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">Oceanic Ruins</p>
+<p class="font-body-md text-on-surface-variant mb-6" data-i18n="tour3_desc">A harmonious blend of ancient history and breathtaking Caribbean vistas, away from the crowds.</p>
+<button id="book-tulum-btn" data-i18n="tour3_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
 </div>
 </div>
 </div>
@@ -279,8 +279,8 @@
 <!-- Section 4: Categories (Bento Grid Style) -->
 <section class="py-section-gap max-w-container-max mx-auto px-gutter">
 <div class="text-center mb-stack-lg">
-<h2 class="font-headline-lg text-headline-lg text-primary">Tailored Passions</h2>
-<p class="font-body-md text-on-surface-variant">Explore by your specific travel interests and desires.</p>
+<h2 data-i18n="bento_title" class="font-headline-lg text-headline-lg text-primary">Tailored Passions</h2>
+<p data-i18n="bento_subtitle" class="font-body-md text-on-surface-variant">Explore by your specific travel interests and desires.</p>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <!-- Archaeology -->
@@ -288,7 +288,7 @@
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_itza_hero.jpeg')"></div>
 <div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
 <span class="material-symbols-outlined text-3xl mb-2" data-icon="account_balance">account_balance</span>
-<p class="font-label-md uppercase tracking-widest">Archaeology</p>
+<p data-i18n="cat_archaeology" class="font-label-md uppercase tracking-widest">Archaeology</p>
 </div>
 </div>
 <!-- Cenotes -->
@@ -296,7 +296,7 @@
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/casa_tortuga_hero.jpeg')"></div>
 <div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
 <span class="material-symbols-outlined text-3xl mb-2" data-icon="water_drop">water_drop</span>
-<p class="font-label-md uppercase tracking-widest">Cenotes</p>
+<p data-i18n="cat_cenotes" class="font-label-md uppercase tracking-widest">Cenotes</p>
 </div>
 </div>
 <!-- Private Jets -->
@@ -304,7 +304,7 @@
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_hero.jpeg')"></div>
 <div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
 <span class="material-symbols-outlined text-3xl mb-2" data-icon="flight">flight</span>
-<p class="font-label-md uppercase tracking-widest">Private Jets</p>
+<p data-i18n="cat_jets" class="font-label-md uppercase tracking-widest">Private Jets</p>
 </div>
 </div>
 <!-- Adventure -->
@@ -312,7 +312,7 @@
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_itza_hero.jpeg')"></div>
 <div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
 <span class="material-symbols-outlined text-3xl mb-2" data-icon="landscape">landscape</span>
-<p class="font-label-md uppercase tracking-widest">Adventure</p>
+<p data-i18n="cat_adventure" class="font-label-md uppercase tracking-widest">Adventure</p>
 </div>
 </div>
 </div>
@@ -330,12 +330,12 @@
 <span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="ml-2 font-label-md text-on-surface">Google Reviews 4.9/5.0</span>
 </div>
-<h2 class="font-headline-lg text-headline-lg text-primary mb-stack-md">Trusted by World Travelers</h2>
-<p class="font-body-md text-on-surface-variant mb-stack-lg">"Dany Experiences redefined what travel means to us. Every detail was curated with such precision and care that we felt like more than just guests—we felt like part of the land's history."</p>
-<p class="font-label-md text-primary">— Elena V., Private Traveler</p>
+<h2 data-i18n="trust_title" class="font-headline-lg text-headline-lg text-primary mb-stack-md">Trusted by World Travelers</h2>
+<p data-i18n="trust_quote" class="font-body-md text-on-surface-variant mb-stack-lg">"Dany Experiences redefined what travel means to us. Every detail was curated with such precision and care that we felt like more than just guests—we felt like part of the land's history."</p>
+<p data-i18n="trust_author" class="font-label-md text-primary">— Elena V., Private Traveler</p>
 </div>
 <div class="bg-surface-container-low rounded-lg p-10 border border-outline-variant/30">
-<h3 class="font-headline-md text-headline-md text-primary mb-6">Pagos Seguros</h3>
+<h3 data-i18n="pay_title" class="font-headline-md text-headline-md text-primary mb-6">Pagos Seguros</h3>
 <div class="flex flex-col gap-8">
 <div class="flex justify-center items-center opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
 <span class="material-symbols-outlined text-5xl" data-icon="payments">payments</span>
@@ -346,8 +346,8 @@
 <span class="material-symbols-outlined text-3xl" data-icon="account_balance">account_balance</span>
 <span class="material-symbols-outlined text-3xl" data-icon="wallet">wallet</span>
 </div>
-<p class="text-caption text-on-surface-variant">We accept all major credit cards and secure digital payments. Encrypted and verified transaction systems.</p>
-<button class="bg-primary text-on-primary py-4 rounded-full font-label-md uppercase tracking-widest hover:scale-105 transition-transform">Start Your Booking</button>
+<p data-i18n="pay_desc" class="text-caption text-on-surface-variant">We accept all major credit cards and secure digital payments. Encrypted and verified transaction systems.</p>
+<button data-i18n="pay_btn" class="bg-primary text-on-primary py-4 rounded-full font-label-md uppercase tracking-widest hover:scale-105 transition-transform">Start Your Booking</button>
 </div>
 </div>
 </div>
@@ -359,32 +359,32 @@
 <div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg max-w-container-max mx-auto px-gutter">
 <div class="col-span-1 md:col-span-1">
 <div class="mb-stack-md h-16"><img src="./assets/logo_dany_completo.png" alt="Dany Experiences Logo" class="h-full w-auto object-contain"></div>
-<p class="font-body-md text-body-md text-on-surface-variant">© 2024 Dany Experiences. Transformative journeys for the discerning traveler.</p>
+<p data-i18n="footer_desc" class="font-body-md text-body-md text-on-surface-variant">© 2024 Dany Experiences. Transformative journeys for the discerning traveler.</p>
 </div>
 <div class="flex flex-col gap-stack-sm">
-<h4 class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Company</h4>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">About Us</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Partner with Us</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Sustainability</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Contact</a>
+<h4 data-i18n="footer_company" class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Company</h4>
+<a data-i18n="footer_about" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">About Us</a>
+<a data-i18n="footer_partner" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Partner with Us</a>
+<a data-i18n="footer_sustainability" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Sustainability</a>
+<a data-i18n="footer_contact" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Contact</a>
 </div>
 <div class="flex flex-col gap-stack-sm">
-<h4 class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Legal</h4>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Travel Insurance</a>
+<h4 data-i18n="footer_legal" class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Legal</h4>
+<a data-i18n="footer_privacy" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a data-i18n="footer_terms" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+<a data-i18n="footer_insurance" class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors opacity-90 hover:opacity-100" href="#">Travel Insurance</a>
 </div>
 <div class="flex flex-col gap-stack-sm">
-<h4 class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Follow Us</h4>
+<h4 data-i18n="footer_follow" class="font-label-md text-primary dark:text-primary-fixed-dim uppercase tracking-widest">Follow Us</h4>
 <div class="flex gap-4">
 <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="photo_camera">photo_camera</span>
 <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="travel_explore">travel_explore</span>
 <span class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform" data-icon="videocam">videocam</span>
 </div>
 <div class="mt-4 p-4 bg-surface-container rounded-lg">
-<p class="text-caption text-on-surface-variant font-bold mb-2">Join our Newsletter</p>
+<p data-i18n="footer_newsletter" class="text-caption text-on-surface-variant font-bold mb-2">Join our Newsletter</p>
 <div class="flex gap-2">
-<input class="bg-surface-container-lowest border-none rounded-full px-4 text-caption w-full" placeholder="Email" type="email">
+<input data-i18n="footer_email_placeholder" class="bg-surface-container-lowest border-none rounded-full px-4 text-caption w-full" placeholder="Email" type="email">
 <button class="bg-primary text-on-primary p-2 rounded-full"><span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
 </div>
 </div>
