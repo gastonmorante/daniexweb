@@ -474,39 +474,99 @@
 <h2 data-i18n="bento_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Tailored Passions</h2>
 <p data-i18n="bento_subtitle" class="font-body-md text-on-surface-variant">Explore by your specific travel interests and desires.</p>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<!-- Archaeology -->
-<div class="group relative overflow-hidden rounded-lg aspect-square border-2 border-transparent hover:border-secondary transition-all duration-300 cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_itza_hero.webp')"></div>
-<div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
-<span class="material-symbols-outlined text-3xl mb-2" data-icon="account_balance">account_balance</span>
-<p data-i18n="cat_archaeology" class="font-label-md uppercase tracking-widest">Archaeology</p>
-</div>
-</div>
-<!-- Cenotes -->
-<div class="group relative overflow-hidden rounded-lg aspect-square border-2 border-transparent hover:border-secondary transition-all duration-300 cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/casa_tortuga_hero.webp')"></div>
-<div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
-<span class="material-symbols-outlined text-3xl mb-2" data-icon="water_drop">water_drop</span>
-<p data-i18n="cat_cenotes" class="font-label-md uppercase tracking-widest">Cenotes</p>
-</div>
-</div>
-<!-- Naturaleza -->
-<div class="group relative overflow-hidden rounded-lg aspect-square border-2 border-transparent hover:border-secondary transition-all duration-300 cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_hero.webp')"></div>
-<div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
-<span class="material-symbols-outlined text-3xl mb-2" data-icon="forest">forest</span>
-<p data-i18n="cat_nature" class="font-label-md uppercase tracking-widest">Naturaleza</p>
-</div>
-</div>
-<!-- Adventure -->
-<div class="group relative overflow-hidden rounded-lg aspect-square border-2 border-transparent hover:border-secondary transition-all duration-300 cursor-pointer">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_itza_hero.webp')"></div>
-<div class="absolute inset-0 bg-black/30 flex flex-col justify-end p-6 text-white group-hover:bg-black/40 transition-colors">
-<span class="material-symbols-outlined text-3xl mb-2" data-icon="landscape">landscape</span>
-<p data-i18n="cat_adventure" class="font-label-md uppercase tracking-widest">Adventure</p>
-</div>
-</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+  <!-- 1. Mundos Extraordinarios (Eco-Parks) -->
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Mundos_Extraordinarios')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_2.webp')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+    <div class="relative z-20 space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="park">park</span>
+        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_eco_parks_title">Mundos Extraordinarios</h3>
+      </div>
+      <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_eco_parks_desc">Desde la magia cultural de Xcaret hasta la adrenalina de Xplor y el mundo sensorial de Xenses. Acceso prioritario a los parques más icónicos de México.</p>
+      <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Xcaret Plus</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Xel-Há</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Río Secreto</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Aqua Nick</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Legado Ancestral (Arqueología) -->
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Chichen_Gold_Expedition')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_1.webp')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+    <div class="relative z-20 space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="account_balance">account_balance</span>
+        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_archaeology_title">Legado Ancestral</h3>
+      </div>
+      <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_archaeology_desc">Expediciones privadas a las raíces del Imperio Maya. Chichén Itzá, Tulum y Cobá bajo una narrativa experta y sin multitudes.</p>
+      <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Chichén Itzá Deluxe</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Ek Balam</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Pirámide Nohoch Mul</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Conexión Vital (Nado con Delfines) -->
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Conexion_Vital')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_3.webp')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+    <div class="relative z-20 space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="waves">waves</span>
+        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_dolphins_title">Conexión Vital</h3>
+      </div>
+      <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_dolphins_desc">Encuentros íntimos y educativos en los hábitats más exclusivos. Programas 1-a-1 diseñados para una conexión profunda con la especie.</p>
+      <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Dolphin Interax</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Primax</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">The One Private</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Horizonte Caribe (Experiencias de Mar) -->
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-1 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Horizonte_Caribe')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_2.webp')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+    <div class="relative z-20 space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="sailing">sailing</span>
+        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_sea_title">Horizonte Caribe</h3>
+      </div>
+      <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_sea_desc">Navegación premium en catamarán a Isla Mujeres, nado con tiburón ballena y cenas románticas bajo las estrellas del Caribe.</p>
+      <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">MUSA</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Jungle Tour</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Pesca Deportiva</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Columbus Cruise</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Selva Viva & Adrenalina (Aventura) -->
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-2 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Selva_Viva')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_1.webp')"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
+    <div class="relative z-20 space-y-2">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="explore">explore</span>
+        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_adventure_title">Selva Viva & Adrenalina</h3>
+      </div>
+      <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_adventure_desc">Rutas todoterreno en ATVs, el misticismo de los Xenotes y la belleza surrealista de las lagunas rosadas de Las Coloradas.</p>
+      <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Selvática</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">ATVs Todoterreno</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Xenotes (4 tipos)</span>
+        <span class="bg-white/15 text-white/95 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Las Coloradas</span>
+      </div>
+    </div>
+  </div>
 </div>
 </section>
 <!-- Section 5: Trust & Checkout -->
