@@ -1,10 +1,14 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 import { config } from './config';
 import { verifyWebhook, handleWebhook } from './controllers/webhook';
 import { handleDanyChat, handleDanyLead, handleDanyWebhookMP } from './controllers/dany';
 
 const app = express();
+
+// Serve Static Frontend Files
+app.use(express.static(path.join(__dirname, '../public')));
 
 // Standard Middlewares
 app.use(cors());
@@ -26,10 +30,6 @@ app.get('/health', (req, res) => {
     uptime: process.uptime(),
     timestamp: new Date().toISOString()
   });
-});
-
-app.get('/', (req, res) => {
-  res.status(200).send('<div style="font-family:sans-serif;text-align:center;padding:50px;"><h1>🌿 Miatz AI Backend is Live!</h1><p>The services for Dany Experiences are active and responding.</p></div>');
 });
 
 // Start Server
