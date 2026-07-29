@@ -134,6 +134,11 @@
         .parallax-bg {
             background-attachment: fixed;
         }
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background-attachment: scroll;
+            }
+        }
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
@@ -149,7 +154,7 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md">
+<body class="bg-background text-on-background font-body-md overflow-x-hidden w-full">
 <!-- TopNavBar -->
 <header class="w-full top-0 z-50 bg-transparent backdrop-blur-md sticky top-0 shadow-sm bg-surface/10 backdrop-blur-xl">
 <nav class="flex justify-between items-center w-full px-4 md:px-gutter py-4 max-w-container-max mx-auto">
@@ -206,13 +211,13 @@
 </div>
 <div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent z-10"></div>
 <div class="relative z-20 max-w-container-max mx-auto px-4 md:px-gutter w-full py-8 md:py-12 flex justify-start">
-<div class="glass-card p-5 sm:p-8 md:p-12 rounded-2xl border border-[#B09A6D]/30 max-w-2xl shadow-2xl relative overflow-hidden backdrop-blur-md bg-[#F6F3E6]/90 luxury-shadow">
+<div class="glass-card w-full p-5 sm:p-8 md:p-12 rounded-2xl border border-[#B09A6D]/30 max-w-2xl shadow-2xl relative overflow-hidden backdrop-blur-md bg-[#F6F3E6]/90 luxury-shadow">
   <!-- Decorative gold top border accent -->
   <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#B09A6D] via-[#ECE8D9] to-[#B09A6D]"></div>
   
   <span class="inline-flex items-center gap-1.5 text-[10px] font-bold text-[#1F6C7B] uppercase tracking-widest mb-4 border-b border-[#1F6C7B]/20 pb-1" data-i18n="hero_badge">✦ EXPEDICIONES PRIVADAS DE LUJO ✦</span>
   
-  <h1 data-i18n="hero_title" class="font-display-xl text-2xl sm:text-3xl md:text-5xl text-[#00334D] mb-4 leading-tight font-bold">
+  <h1 data-i18n="hero_title" class="font-display-xl text-2xl sm:text-3xl md:text-5xl text-[#00334D] mb-4 leading-tight font-bold break-words">
     Descubre el Legado Maya en su Máximo Esplendor
   </h1>
   
