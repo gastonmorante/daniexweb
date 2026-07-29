@@ -1,6 +1,6 @@
 /**
  * Dany Experiences - Stitch Integration Script
- * Integrates Miatz AI Chat, Lead Capture, and Multilingual i18n Localization.
+ * Integrates Miatz AI Chat, Lead Capture, Multilingual i18n Localization, and Interactive Tour Details Modals.
  */
 
 (function () {
@@ -18,7 +18,8 @@
     planWithAiBtn: '#plan-with-ai-btn',
     bookChichenBtn: '#book-chichen-btn',
     bookTortugaBtn: '#book-tortuga-btn',
-    bookTulumBtn: '#book-tulum-btn'
+    bookTulumBtn: '#book-tulum-btn',
+    tourCards: '.tour-card-interactive'
   };
 
   // State
@@ -43,8 +44,8 @@
       ai_bullet1: "Sincronización del clima en tiempo real",
       ai_bullet2: "Reservas en restaurantes de lujo seleccionados",
       ai_bullet3: "Gestión de permisos de acceso privado",
-      tours_tag: "Colecciones Curadas",
-      tours_title: "Expediciones de Firma",
+      tours_tag: "Rutas Diseñadas para Ti",
+      tours_title: "Experiencias Personalizadas",
       tours_view_all: "Ver Todas las Experiencias",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "La Gran Maravilla",
@@ -107,8 +108,8 @@
       ai_bullet1: "Real-time weather synchronization",
       ai_bullet2: "Curated luxury restaurant bookings",
       ai_bullet3: "Private access permits management",
-      tours_tag: "Curated Collections",
-      tours_title: "Signature Expeditions",
+      tours_tag: "Tours Designed for You",
+      tours_title: "Personalized Experiences",
       tours_view_all: "View All Experiences",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "The Great Wonder",
@@ -171,8 +172,8 @@
       ai_bullet1: "Synchronisation météo en temps réel",
       ai_bullet2: "Réservations de restaurants de luxe",
       ai_bullet3: "Gestion des permis d'accès privés",
-      tours_tag: "Collections Sélectionnées",
-      tours_title: "Expéditions Signatures",
+      tours_tag: "Itinéraires Conçus pour Vous",
+      tours_title: "Expériences Personnalisées",
       tours_view_all: "Voir Toutes les Expériences",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "La Grande Merveille",
@@ -235,8 +236,8 @@
       ai_bullet1: "Sincronizzazione meteo in tempo reale",
       ai_bullet2: "Prenotazioni di ristoranti di lusso curati",
       ai_bullet3: "Gestione dei permessi di accesso privato",
-      tours_tag: "Collezioni Curate",
-      tours_title: "Spedizioni d'Autore",
+      tours_tag: "Percorsi Progettati per Te",
+      tours_title: "Esperienze Personalizzate",
       tours_view_all: "Visualizza Tutte le Esperienze",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "La Grande Meraviglia",
@@ -299,8 +300,8 @@
       ai_bullet1: "Sincronização de clima em tempo real",
       ai_bullet2: "Reservas de restaurantes de luxo selecionadas",
       ai_bullet3: "Gestão de autorizações de acesso privado",
-      tours_tag: "Coleções Selecionadas",
-      tours_title: "Expedições Exclusivas",
+      tours_tag: "Rotas Projetadas para Você",
+      tours_title: "Experiências Personalizadas",
       tours_view_all: "Ver Todas as Experiências",
       tour1_title: "Chichén Itzá",
       tour1_subtitle: "La Gran Maravilla",
@@ -325,7 +326,7 @@
       cat_service: "Serviço Pessoal",
       cat_photography: "Fotografia",
       trust_title: "Aprovado por Viajantes do Mundo",
-      trust_quote: "\"Dany Experiences redefiniu o que significa viajar para nós. Cada detalhe foi selecionado com tal precisão e cuidado que nos sentimos mais do que hóspedes: nos sentimos parte da história da terra.\"",
+      trust_quote: "\"Dany Experiences redefiniu o que significa viajar para nós. Cada detalhe foi selecionado com tal precauge e cuidado que nos sentimos mais do que hóspedes: nos sentimos parte da história da terra.\"",
       trust_author: "— Elena V., Viajante Privada",
       pay_title: "Pagamentos Seguros",
       pay_desc: "Aceitamos todos os principais cartões de crédito e pagamentos digitais seguros. Sistemas encriptados e verificados.",
@@ -338,7 +339,7 @@
       footer_contact: "Contato",
       footer_legal: "Informações Legais",
       footer_privacy: "Política de Privacidade",
-      footer_terms: "Termos de Serviço",
+      footer_terms: "Terminos de Serviço",
       footer_insurance: "Seguro de Viagem",
       footer_follow: "Siga-nos",
       footer_newsletter: "Assinar Boletim",
@@ -346,6 +347,219 @@
       chat_header_title: "Concierge Miatz IA",
       chat_header_status: "Online & pronto para ajudar",
       chat_input_placeholder: "Escreva suas preferências de viagem..."
+    }
+  };
+
+  // Rich Tour Data for Interactive Detail Modal
+  const TOUR_DETAILS = {
+    Chichen_Gold_Expedition: {
+      images: ['./assets/chichen_itza_hero.webp', './assets/chichen_1.webp', './assets/chichen_2.webp', './assets/chichen_3.webp'],
+      es: {
+        title: "Chichén Itzá - Expedición de Oro",
+        subtitle: "Una de las 7 Maravillas del Mundo Moderno",
+        description: "Descubre la majestuosidad de Chichén Itzá, Patrimonio Mundial de la UNESCO. Recorre los templos sagrados junto a un guía federal certificado que te revelará la arqueastronomía y la precisión del calendario solar maya. Además, disfruta de un baño en un místico cenote y visita la hermosa ciudad colonial de Valladolid.",
+        itinerary: [
+          "Acceso temprano exclusivo (evita calor y multitudes).",
+          "Recorrido detallado de la Pirámide de Kukulkán, Templo de los Guerreros y el Juego de Pelota.",
+          "Nado relajante en un cenote sagrado de aguas cristalinas.",
+          "Almuerzo tradicional yucateco (opcional/libre).",
+          "Paseo por las históricas calles coloniales de Valladolid."
+        ],
+        includes: ["Guía Federal Certificado", "Acceso temprano", "Visita a Cenote", "Visita a Valladolid"],
+        policies: "Presentarse 15 minutos antes. Uso de protector solar biodegradable por respeto al medio ambiente. Cancelación gratuita con 24 horas de anticipación."
+      },
+      en: {
+        title: "Chichén Itzá - Gold Expedition",
+        subtitle: "One of the 7 Wonders of the Modern World",
+        description: "Discover the majesty of Chichén Itzá, a UNESCO World Heritage site. Explore the sacred temples with a certified federal guide who will reveal Mayan archeoastronomy and solar calendar precision. Also, enjoy a swim in a mystic cenote and visit the beautiful colonial city of Valladolid.",
+        itinerary: [
+          "Exclusive early access (avoid heat and crowds).",
+          "Detailed tour of the Kukulkan Pyramid, Temple of the Warriors, and Ball Court.",
+          "Relaxing swim in a sacred cenote with crystal-clear waters.",
+          "Traditional Yucatecan lunch (optional/free time).",
+          "Stroll through the historic colonial streets of Valladolid."
+        ],
+        includes: ["Certified Federal Guide", "Early access entry", "Cenote visit & swim", "Valladolid colonial tour"],
+        policies: "Arrive 15 minutes before departure. Biodegradable sunscreen required to protect the ecosystem. Free cancellation 24h in advance."
+      },
+      fr: {
+        title: "Chichén Itzá - Expédition d'Or",
+        subtitle: "L'une des 7 merveilles du monde moderne",
+        description: "Découvrez la majesté de Chichén Itzá, site classé au patrimoine mondial de l'UNESCO. Explorez les temples sacrés avec un guide fédéral certifié qui vous révélera l'archéoastronomie maya. Profitez d'une baignade dans un cénoté mystique et visitez la magnifique ville coloniale de Valladolid.",
+        itinerary: [
+          "Accès anticipé exclusif (évite la chaleur et la foule).",
+          "Visite détaillée de la pyramide de Kukulkan et du temple des guerriers.",
+          "Baignade relaxante dans un cénoté sacré aux eaux cristallines.",
+          "Déjeuner traditionnel du Yucatan (optionnel/temps libre).",
+          "Promenade dans les rues coloniales historiques de Valladolid."
+        ],
+        includes: ["Guide Fédéral Certifié", "Entrée accès anticipé", "Baignade en cénoté", "Visite coloniale de Valladolid"],
+        policies: "Arriver 15 minutes avant le départ. Crème solaire biodégradable obligatoire. Annulation gratuite 24h à l'avance."
+      },
+      it: {
+        title: "Chichén Itzá - Spedizione d'Oro",
+        subtitle: "Una delle 7 meraviglie del mondo moderno",
+        description: "Scopri la maestosità di Chichén Itzá, patrimonio mondiale dell'UNESCO. Esplora i templi sacri con una guida federale certificata che ti svelerà l'archeoastronomia maya. Inoltre, goditi un bagno in un mistico cenote e visita la splendida città coloniale di Valladolid.",
+        itinerary: [
+          "Accesso anticipato esclusivo (evita calore e folla).",
+          "Tour dettagliato della Piramide di Kukulkan e del Tempio dei Guerrieri.",
+          "Nuotata rilassante in un cenote sacro con acque cristalline.",
+          "Pranzo tradizionale dello Yucatan (opzionale/tempo libero).",
+          "Passeggiata tra le storiche vie coloniali di Valladolid."
+        ],
+        includes: ["Guida Federale Certificata", "Ingresso prioritario", "Bagno nel cenote", "Tour coloniale di Valladolid"],
+        policies: "Arrivare 15 minuti prima della partenza. Crema solare biodegradabile obbligatoria. Cancellazione gratuita con 24h di anticipo."
+      },
+      pt: {
+        title: "Chichén Itzá - Expedição de Ouro",
+        subtitle: "Uma das 7 maravilhas do mundo moderno",
+        description: "Descubra a majestade de Chichén Itzá, patrimônio mundial da UNESCO. Explore os templos sagrados com um guia federal certificado que revelará a arqueastronomia maia. Além disso, desfrute de um mergulho em um místico cenote e visite a bela cidade colonial de Valladolid.",
+        itinerary: [
+          "Acesso antecipado exclusivo (evita calor e multidões).",
+          "Tour detalhado da Pirâmide de Kukulkán e Templo dos Guerreiros.",
+          "Mergulho relaxante em um cenote sagrado de águas cristalinas.",
+          "Almoço tradicional de Yucatán (opcional/tempo livre).",
+          "Passeio pelas ruas coloniais históricas de Valladolid."
+        ],
+        includes: ["Guia Federal Certificado", "Entrada com acesso antecipado", "Nado em cenote", "Visita colonial de Valladolid"],
+        policies: "Apresentar-se 15 minutos antes. Uso de protetor solar biodegradável. Cancelamento gratuito com 24h de antecedência."
+      }
+    },
+    Tortuga_Nature_Pass: {
+      images: ['./assets/casa_tortuga_hero.webp', './assets/tortuga_1.webp', './assets/tortuga_2.webp', './assets/tortuga_3.webp'],
+      es: {
+        title: "Casa Tortuga - Cenotes y Aventura",
+        subtitle: "Aventura y Relajación en el Inframundo Maya",
+        description: "Una experiencia inmersiva de contacto directo con la naturaleza en el Parque Casa Tortuga. Explora 5 cenotes espectaculares: tres cenotes abiertos tipo albercas naturales rodeados de selva exuberante y dos místicas cavernas con impresionantes formaciones de estalactitas y estalagmitas.",
+        itinerary: [
+          "Recorrido guiado por los 5 cenotes del parque.",
+          "Tiempo libre para nadar y relajarte en tu cenote favorito.",
+          "Acceso a servicios del parque (baños, regaderas, áreas de descanso).",
+          "Actividades opcionales disponibles (tirolesas y paseo en ATV con reserva previa)."
+        ],
+        includes: ["Guía acuático certificado", "Chaleco salvavidas obligatorio", "Entrada completa al parque", "Tiempo libre en cenotes"],
+        policies: "Horario de operación: 9:00 AM a 5:00 PM. Presentarse 15 minutos antes. Prohibido usar protector solar o repelente no biodegradable. No se permite ingresar alcohol."
+      },
+      en: {
+        title: "Casa Tortuga - Cenotes & Adventure",
+        subtitle: "Adventure & Relaxation in the Mayan Underworld",
+        description: "An immersive direct contact experience with nature at Casa Tortuga Park. Explore 5 spectacular cenotes: three open natural pool cenotes surrounded by lush jungle and two mystical caverns with stunning stalactite and stalagmitite formations.",
+        itinerary: [
+          "Guided tour of the park's 5 cenotes.",
+          "Free time to swim and relax in your favorite cenote.",
+          "Access to park services (restrooms, showers, relaxation areas).",
+          "Optional activities available (zipline and ATV tours with prior booking)."
+        ],
+        includes: ["Certified aquatic guide", "Mandatory life jacket", "Full park entry ticket", "Free time in the cenotes"],
+        policies: "Operating hours: 9:00 AM to 5:00 PM. Arrive 15 minutes before. Prohibited to use non-biodegradable sunscreen or repellent. Alcohol entry not permitted."
+      },
+      fr: {
+        title: "Casa Tortuga - Cénotes & Aventure",
+        subtitle: "Aventure et détente dans l'inframonde maya",
+        description: "Une expérience immersive de contact direct avec la nature au parc Casa Tortuga. Explorez 5 cénotes spectaculaires : trois cénotes ouverts de type piscine naturelle entourés de jungle et deux cavernes mystiques aux stalactites impressionnantes.",
+        itinerary: [
+          "Visite guidée des 5 cénotes du parc.",
+          "Temps libre pour nager et vous détendre dans votre cénoté préféré.",
+          "Accès aux services du parc (vestiaires, douches, zones de repos).",
+          "Activités optionnelles disponibles (tyroliennes et tyroliennes ATV sur réservation)."
+        ],
+        includes: ["Guide aquatique certifié", "Gilet de sauvetage obligatoire", "Entrée complète du parc", "Temps libre dans les cénotes"],
+        policies: "Heures d'ouverture: 9h00 à 17h00. Arriver 15 minutes avant. Crème solaire biodégradable uniquement. Alcool interdit."
+      },
+      it: {
+        title: "Casa Tortuga - Cenotes & Avventura",
+        subtitle: "Avventura e relax nell'inframondo maya",
+        description: "Un'esperienza immersiva a diretto contatto con la natura nel Parco Casa Tortuga. Esplora 5 cenotes spettacolari: tre cenote aperti in stile piscina naturale circondati dalla giungla e due mistiche caverne con stalattiti.",
+        itinerary: [
+          "Tour guidato dei 5 cenotes del parco.",
+          "Tempo libero per nuotare e rilassarsi nel tuo cenote preferito.",
+          "Accesso ai servizi del parco (bagni, docce, aree relax).",
+          "Attività opzionali disponibili (zipline e tour in ATV con prenotazione anticipata)."
+        ],
+        includes: ["Guida acquatica certificata", "Giubbotto di salvataggio obbligatorio", "Ingresso completo al parco", "Tempo libero nei cenote"],
+        policies: "Orari di apertura: dalle 9:00 alle 17:00. Arrivare 15 minuti prima. Solo crema solare biodegradabile. Vietato introdurre alcolici."
+      },
+      pt: {
+        title: "Casa Tortuga - Cenotes e Aventura",
+        subtitle: "Aventura e relaxamento no submundo maia",
+        description: "Uma experiência de contato direto com a natureza no Parque Casa Tortuga. Explore 5 cenotes espetaculares: três cenotes abertos estilo piscina natural cercados pela selva e duas cavernas místicas com estalactites.",
+        itinerary: [
+          "Tour guiado pelos 5 cenotes do parque.",
+          "Tempo livre para nadar e relaxar no seu cenote favorito.",
+          "Acesso aos serviços do parque (banheiros, duchas, áreas de descanso).",
+          "Atividades opcionais disponíveis (tirolesa e passeios de ATV com reserva)."
+        ],
+        includes: ["Guia aquático certificado", "Colete salva-vidas obrigatório", "Entrada completa do parque", "Tempo livre nos cenotes"],
+        policies: "Horário de funcionamento: 9:00 às 17:00. Apresentar-se 15 minutos antes. Proibido protetor solar comum. Bebidas alcoólicas não permitidas."
+      }
+    },
+    Tulum_Oceanic_Expedition: {
+      images: ['./assets/tulum_hero.webp', './assets/tulum_1.webp', './assets/tulum_2.webp', './assets/tulum_3.webp'],
+      es: {
+        title: "Tulum - Ruinas del Caribe",
+        subtitle: "La Única Ciudad Maya Frente al Mar Caribe",
+        description: "Explora la espectacular zona arqueológica de Tulum, la única ciudad amurallada construida en un acantilado con vistas al Mar Caribe. Conoce la historia de Zamá (amanecer), que funcionó como un importante puerto comercial marítimo maya.",
+        itinerary: [
+          "Recorrido guiado de los templos de El Castillo, Dios Descendente, y de los Frescos.",
+          "Paseo a lo largo de las murallas defensivas mayas.",
+          "Acceso a miradores panorámicos espectaculares con vista al Caribe.",
+          "Tiempo libre para disfrutar de la playa de Tulum y tomar fotografías memorables."
+        ],
+        includes: ["Guía certificado", "Entrada a la Zona Arqueológica", "Tiempo libre en la playa", "Explicación histórica"],
+        policies: "Traer ropa cómoda y fresca, calzado antiderrapante, gorra y traje de baño. Cancelación gratuita con 24h de anticipación. Sujeto a indicaciones del INAH."
+      },
+      en: {
+        title: "Tulum - Ruins of the Caribbean",
+        subtitle: "The Only Mayan City Facing the Caribbean Sea",
+        description: "Explore the spectacular archaeological site of Tulum, the only walled city built on a cliff overlooking the Caribbean Sea. Learn the history of Zamá (dawn), which operated as a key Mayan maritime trade port.",
+        itinerary: [
+          "Guided tour of El Castillo, Temple of the Descending God, and Temple of the Frescoes.",
+          "Walk along the ancient Mayan defensive walls.",
+          "Access to spectacular panoramic viewpoints overlooking the Caribbean.",
+          "Free time to enjoy Tulum beach and take memorable photos."
+        ],
+        includes: ["Certified guide", "Entry ticket to Archaeological Zone", "Free time at the beach", "Historical explanations"],
+        policies: "Bring comfortable fresh clothing, non-slip footwear, hat, and swimsuit. Free cancellation 24h in advance. Subject to INAH instructions."
+      },
+      fr: {
+        title: "Tulum - Ruines des Caraïbes",
+        subtitle: "La seule ville maya face à la mer des Caraïbes",
+        description: "Explorez le site archéologique spectaculaire de Tulum, la seule ville fortifiée bâtie sur une falaise surplombant la mer des Caraïbes. Apprenez l'histoire de Zamá (l'aube), qui servait de port commercial maritime maya.",
+        itinerary: [
+          "Visite guidée d'El Castillo, du temple du Dieu Descendant et des Fresques.",
+          "Promenade le long des anciennes murailles défensives mayas.",
+          "Accès à des points de vue panoramiques spectaculaires sur les Caraïbes.",
+          "Temps libre pour profiter de la plage de Tulum et prendre des photos mémorables."
+        ],
+        includes: ["Guide certifié", "Billet d'entrée à la zone archéologique", "Temps libre sur la plage", "Explications historiques"],
+        policies: "Apporter vêtements légers, chaussures antidérapantes, chapeau et maillot de bain. Annulation gratuite 24h à l'avance. Sujet aux règles de l'INAH."
+      },
+      it: {
+        title: "Tulum - Rovine dei Caraibi",
+        subtitle: "L'unica città maya di fronte al mare dei Caraibi",
+        description: "Esplora lo spettacolare sito archeologico di Tulum, l'unica città murata costruita su una scogliera a picco sul Mar dei Caraibi. Scopri la storia di Zamá (alba), antico e importante porto commerciale marittimo maya.",
+        itinerary: [
+          "Visite guidate a El Castillo, Tempio del Dio Discendente e degli Affreschi.",
+          "Passeggiata lungo le antiche mura difensive maya.",
+          "Accesso a spettacolari punti panoramici con vista sui Caraibi.",
+          "Tempo libero per godersi la spiaggia di Tulum e scattare foto memorabili."
+        ],
+        includes: ["Guida certificata", "Ingresso alla zona archeologica", "Tempo libero in spiaggia", "Spiegazioni storiche"],
+        policies: "Portare abiti comodi e freschi, scarpe antiscivolo, cappello e costume. Cancellazione gratuita entro 24 ore. Soggetto alle regole INAH."
+      },
+      pt: {
+        title: "Tulum - Ruínas do Caribe",
+        subtitle: "A única cidade maia em frente ao mar do Caribe",
+        description: "Explore o espetacular sítio arqueológico de Tulum, a única cidade amuralhada construída em um penhasco com vista para o Mar do Caribe. Conheça a história de Zamá (amanhecer), que funcionou como um importante porto comercial maia.",
+        itinerary: [
+          "Tour guiado pelos templos de El Castillo, Deus Descendente e dos Frescos.",
+          "Caminhada pelas antigas muralhas defensivas maias.",
+          "Acesso a mirantes panorâmicos espetaculares com vista para o Caribe.",
+          "Tempo livre para desfrutar da praia de Tulum e tirar fotos memoráveis."
+        ],
+        includes: ["Guia certificado", "Ingresso para a zona arqueológica", "Tempo livre na praia", "Explicação histórica"],
+        policies: "Trazer roupas leves, calçado antiderrapante, boné e roupa de banho. Cancelamento gratuito com 24h de antecedência. Sujeito às regras do INAH."
+      }
     }
   };
 
@@ -579,6 +793,116 @@
     }
   };
 
+  // React-like Interactive Modal system
+  window.openTourModal = function(productCode) {
+    console.log(`[Tour Modal] Opening details for: ${productCode}`);
+    const tour = TOUR_DETAILS[productCode];
+    if (!tour) return;
+
+    const dict = tour[userLanguage] || tour.es;
+
+    // Create modal element
+    const modal = document.createElement('div');
+    modal.id = 'tour-detail-modal';
+    modal.className = 'fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-md transition-opacity duration-300';
+    
+    // Add custom keyframe animations dynamically
+    if (!document.getElementById('modal-styles')) {
+      const style = document.createElement('style');
+      style.id = 'modal-styles';
+      style.innerHTML = `
+        @keyframes fadeIn {
+          from { opacity: 0; transform: scale(0.95); }
+          to { opacity: 1; transform: scale(1); }
+        }
+        .animate-fade-in {
+          animation: fadeIn 0.3s ease-out forwards;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    modal.innerHTML = `
+      <div class="bg-[#F6F3E6] border-2 border-[#B09A6D] rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative flex flex-col md:flex-row animate-fade-in">
+        <!-- Close Button -->
+        <button onclick="document.getElementById('tour-detail-modal').remove()" class="absolute right-4 top-4 z-10 w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-colors">
+          <span class="material-symbols-outlined text-sm">close</span>
+        </button>
+
+        <!-- Left Column: Gallery -->
+        <div class="w-full md:w-1/2 p-6 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#B09A6D]/20">
+          <div class="relative w-full aspect-video md:aspect-[4/3] rounded-lg overflow-hidden border border-[#B09A6D]/30 bg-black flex items-center justify-center shadow-md">
+            <img id="modal-main-img" src="${tour.images[0]}" class="w-full h-full object-cover transition-all duration-300" alt="${dict.title}">
+          </div>
+          <!-- Thumbnails -->
+          <div class="flex gap-2 mt-4 overflow-x-auto pb-2">
+            ${tour.images.map((imgUrl, i) => `
+              <button onclick="document.getElementById('modal-main-img').src='${imgUrl}'" class="w-20 h-16 rounded overflow-hidden border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] focus:border-[#1F6C7B] flex-shrink-0 transition-all shadow-sm">
+                <img src="${imgUrl}" class="w-full h-full object-cover" alt="Thumbnail">
+              </button>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Right Column: Details -->
+        <div class="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+          <div class="space-y-5">
+            <div>
+              <span class="text-xs font-semibold text-[#1F6C7B] uppercase tracking-widest">${dict.subtitle}</span>
+              <h3 class="text-2xl font-bold text-[#00334D] mt-1 mb-2 font-display-xl">${dict.title}</h3>
+            </div>
+            
+            <p class="text-sm text-[#7A6947] leading-relaxed">${dict.description}</p>
+            
+            <!-- Itinerary -->
+            <div>
+              <h4 class="text-xs font-bold text-[#00334D] uppercase tracking-widest mb-2 border-b border-[#B09A6D]/20 pb-1">${userLanguage === 'en' ? 'Itinerary & Highlights' : 'Itinerario y Puntos Clave'}</h4>
+              <ul class="space-y-1.5">
+                ${dict.itinerary.map(item => `
+                  <li class="flex items-start gap-2 text-xs text-[#00334D]">
+                    <span class="material-symbols-outlined text-[8px] text-[#1F6C7B] mt-1" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span>${item}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <!-- Inclusions -->
+            <div>
+              <h4 class="text-xs font-bold text-[#00334D] uppercase tracking-widest mb-2 border-b border-[#B09A6D]/20 pb-1">${userLanguage === 'en' ? 'What\'s Included' : 'Qué Incluye'}</h4>
+              <div class="flex flex-wrap gap-1.5">
+                ${dict.includes.map(inc => `
+                  <span class="bg-[#1F6C7B]/10 text-[#1F6C7B] px-3 py-1 rounded-full text-caption font-semibold">${inc}</span>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Policies -->
+            <div>
+              <h4 class="text-xs font-bold text-red-800 uppercase tracking-widest mb-2 border-b border-red-800/10 pb-1">${userLanguage === 'en' ? 'Policies & Inclusions' : 'Políticas y Requisitos'}</h4>
+              <p class="text-caption text-red-900/80 leading-relaxed">${dict.policies}</p>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <button onclick="window.triggerCheckout('${productCode}')" class="w-full bg-[#1F6C7B] hover:bg-[#00334D] text-white py-3.5 rounded-full font-label-md uppercase tracking-widest transition-colors duration-300 shadow-md">
+              ${userLanguage === 'en' ? 'Book This Adventure' : 'Reservar Esta Aventura'}
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    // Close modal when clicking outside the container
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.remove();
+      }
+    });
+  };
+
   // Displays the post-payment popup or chat notification
   function handlePostPayment() {
     const params = new URLSearchParams(window.location.search);
@@ -670,6 +994,17 @@
       });
     }
 
+    // Connect tour cards to the React-like detail modal click
+    const tourCards = document.querySelectorAll(SELECTORS.tourCards);
+    tourCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        const productCode = card.getAttribute('data-product');
+        if (productCode) {
+          openTourModal(productCode);
+        }
+      });
+    });
+
     const bookButtons = [
       { sel: SELECTORS.bookChichenBtn, prod: 'Chichen_Gold_Expedition' },
       { sel: SELECTORS.bookTortugaBtn, prod: 'Tortuga_Nature_Pass' },
@@ -681,6 +1016,7 @@
       if (btn) {
         btn.addEventListener('click', (e) => {
           e.preventDefault();
+          e.stopPropagation(); // Avoid triggering openTourModal
           window.triggerCheckout(btnInfo.prod);
         });
       }

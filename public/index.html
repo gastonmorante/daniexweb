@@ -240,9 +240,9 @@
                         <span data-i18n="tours_view_all">View All Experiences</span> <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
 </button>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Card 1 -->
-<div class="group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Chichen_Gold_Expedition">
 <div class="aspect-video overflow-hidden relative">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/chichen_itza_hero.webp')">
 </div>
@@ -251,15 +251,17 @@
                                 Guía Certificado
                             </div>
 </div>
-<div class="p-6">
-<h3 data-i18n="tour1_title" class="font-headline-md text-headline-md text-primary mb-2">Chichén Itzá</h3>
-<p data-i18n="tour1_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">The Great Wonder</p>
-<p data-i18n="tour1_desc" class="font-body-md text-on-surface-variant mb-6">Experience the majesty of the Mayan world with exclusive early-access and expert archeological insights.</p>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div class="space-y-2 mb-6">
+<h3 data-i18n="tour1_title" class="font-headline-md text-headline-md text-primary">Chichén Itzá</h3>
+<p data-i18n="tour1_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold">The Great Wonder</p>
+<p data-i18n="tour1_desc" class="font-body-md text-on-surface-variant">Experience the majesty of the Mayan world with exclusive early-access and expert archeological insights.</p>
+</div>
 <button id="book-chichen-btn" data-i18n="tour1_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
 </div>
 </div>
 <!-- Card 2 -->
-<div class="group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Tortuga_Nature_Pass">
 <div class="aspect-video overflow-hidden relative">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/casa_tortuga_hero.webp')">
 </div>
@@ -268,15 +270,17 @@
                                 Guía Certificado
                             </div>
 </div>
-<div class="p-6">
-<h3 data-i18n="tour2_title" class="font-headline-md text-headline-md text-primary mb-2">Casa Tortuga</h3>
-<p data-i18n="tour2_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">Cenotes &amp; Nature</p>
-<p data-i18n="tour2_desc" class="font-body-md text-on-surface-variant mb-6">Dive into the sacred waters of the Mayan underworld in private, pristine limestone caverns.</p>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div class="space-y-2 mb-6">
+<h3 data-i18n="tour2_title" class="font-headline-md text-headline-md text-primary">Casa Tortuga</h3>
+<p data-i18n="tour2_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold">Cenotes &amp; Nature</p>
+<p data-i18n="tour2_desc" class="font-body-md text-on-surface-variant">Dive into the sacred waters of the Mayan underworld in private, pristine limestone caverns.</p>
+</div>
 <button id="book-tortuga-btn" data-i18n="tour2_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
 </div>
 </div>
 <!-- Card 3 -->
-<div class="group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2">
+<div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Tulum_Oceanic_Expedition">
 <div class="aspect-video overflow-hidden relative">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/tulum_hero.webp')">
 </div>
@@ -285,10 +289,12 @@
                                 Guía Certificado
                             </div>
 </div>
-<div class="p-6">
-<h3 data-i18n="tour3_title" class="font-headline-md text-headline-md text-primary mb-2">Tulum</h3>
-<p data-i18n="tour3_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold mb-3">Oceanic Ruins</p>
-<p class="font-body-md text-on-surface-variant mb-6" data-i18n="tour3_desc">A harmonious blend of ancient history and breathtaking Caribbean vistas, away from the crowds.</p>
+<div class="p-6 flex flex-col flex-grow justify-between">
+<div class="space-y-2 mb-6">
+<h3 data-i18n="tour3_title" class="font-headline-md text-headline-md text-primary">Tulum</h3>
+<p data-i18n="tour3_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold">Oceanic Ruins</p>
+<p class="font-body-md text-on-surface-variant" data-i18n="tour3_desc">A harmonious blend of ancient history and breathtaking Caribbean vistas, away from the crowds.</p>
+</div>
 <button id="book-tulum-btn" data-i18n="tour3_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
 </div>
 </div>
