@@ -86,7 +86,7 @@
             },
             "spacing": {
                     "container-max": "1280px",
-                    "section-gap": "5rem",
+                    "section-gap": "6rem",
                     "gutter": "2rem",
                     "stack-sm": "0.75rem",
                     "stack-lg": "3rem",
@@ -106,13 +106,13 @@
             "fontSize": {
                     "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
                     "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display-xl-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-xl-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "500"}],
                     "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
                     "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                    "headline-lg-mobile": ["32px", {"lineHeight": "1.25", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.25", "fontWeight": "500"}],
                     "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
             }
           },
         },
@@ -155,6 +155,16 @@
         .animate-ken-burns {
             animation: kenBurns 24s infinite ease-in-out;
             will-change: transform;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -208,15 +218,15 @@
 </header>
 <main>
 <!-- Section 1: Hero -->
-<section class="relative min-h-[90vh] flex items-center py-16 md:py-24">
+<section class="relative min-h-[70vh] md:min-h-[80vh] flex items-center py-12 md:py-16">
 <!-- Parallax Wrapper -->
 <div class="absolute inset-0 z-0 parallax-bg overflow-hidden">
   <!-- Ken Burns Zooming Image -->
   <div class="w-full h-full bg-cover bg-center animate-ken-burns" style="background-image: url('./assets/chichen_itza_sunset.webp')"></div>
 </div>
-<div class="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent z-10"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/35 via-black/10 to-transparent z-10"></div>
 <div class="relative z-20 max-w-container-max mx-auto px-6 md:px-gutter w-full py-8 md:py-12 flex justify-start">
-<div class="glass-card w-full p-5 sm:p-8 md:p-12 rounded-2xl border border-[#B09A6D]/30 max-w-2xl shadow-2xl relative overflow-hidden backdrop-blur-md bg-[#F6F3E6]/90 luxury-shadow">
+<div class="glass-card w-full p-5 sm:p-8 md:p-12 rounded-2xl border border-[#B09A6D]/30 max-w-2xl shadow-2xl relative overflow-hidden backdrop-blur-md bg-[#F6F3E6]/90 luxury-shadow reveal">
   <!-- Decorative gold top border accent -->
   <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#B09A6D] via-[#ECE8D9] to-[#B09A6D]"></div>
   
@@ -258,8 +268,18 @@
 </div>
 </div>
 </section>
+
+<!-- Mayan Fret Divider -->
+<div class="flex items-center justify-center my-8 opacity-10 max-w-container-max mx-auto px-6">
+    <div class="h-[1px] bg-gradient-to-r from-transparent to-[#B09A6D] flex-grow"></div>
+    <svg class="w-16 h-8 text-[#B09A6D] mx-4" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M0,10 L10,10 L10,5 L20,5 L20,15 L15,15 L15,12 L18,12 M30,10 L40,10 L40,5 L50,5 L50,15 L45,15 L45,12 L48,12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="h-[1px] bg-gradient-to-l from-transparent to-[#B09A6D] flex-grow"></div>
+</div>
+
 <!-- Section 2: IA Agent Interface -->
-<section class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter">
+<section class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter reveal">
 <div class="bg-surface-container-low rounded-xl p-4 sm:p-8 md:p-16 flex flex-col md:flex-row gap-8 md:gap-12 items-center luxury-shadow border border-outline-variant/30">
 <div class="w-full md:w-1/2 space-y-6">
 <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-caption font-semibold">
@@ -306,8 +326,18 @@
 </div>
 </div>
 </section>
+
+<!-- Mayan Fret Divider -->
+<div class="flex items-center justify-center my-8 opacity-10 max-w-container-max mx-auto px-6">
+    <div class="h-[1px] bg-gradient-to-r from-transparent to-[#B09A6D] flex-grow"></div>
+    <svg class="w-16 h-8 text-[#B09A6D] mx-4" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M0,10 L10,10 L10,5 L20,5 L20,15 L15,15 L15,12 L18,12 M30,10 L40,10 L40,5 L50,5 L50,15 L45,15 L45,12 L48,12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="h-[1px] bg-gradient-to-l from-transparent to-[#B09A6D] flex-grow"></div>
+</div>
+
 <!-- Section 2.5: Sobre tu Guía: Dany -->
-<section id="sobre-dany" class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter scroll-mt-20">
+<section id="sobre-dany" class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter scroll-mt-20 reveal">
   <div class="flex flex-col md:flex-row gap-12 items-center">
     <!-- Left Column: Image/Visual Badge -->
     <div class="w-full md:w-5/12 relative group">
@@ -337,7 +367,7 @@
   </div>
 </section>
 <!-- Section 2.7: Certificaciones Oficiales -->
-<section id="certificaciones" class="py-section-gap bg-[#F6F3E6]/60 border-t border-b border-[#B09A6D]/15 scroll-mt-20">
+<section id="certificaciones" class="py-section-gap bg-[#F6F3E6]/60 border-t border-b border-[#B09A6D]/15 scroll-mt-20 reveal">
   <div class="max-w-container-max mx-auto px-4 md:px-gutter text-center">
     <div class="max-w-3xl mx-auto mb-12 text-center space-y-3">
       <p data-i18n="cert_tag" class="text-[#1F6C7B] font-label-md uppercase tracking-widest">Garantía de Confianza</p>
@@ -395,8 +425,17 @@
   </div>
 </section>
 
+<!-- Mayan Fret Divider -->
+<div class="flex items-center justify-center my-8 opacity-10 max-w-container-max mx-auto px-6">
+    <div class="h-[1px] bg-gradient-to-r from-transparent to-[#B09A6D] flex-grow"></div>
+    <svg class="w-16 h-8 text-[#B09A6D] mx-4" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M0,10 L10,10 L10,5 L20,5 L20,15 L15,15 L15,12 L18,12 M30,10 L40,10 L40,5 L50,5 L50,15 L45,15 L45,12 L48,12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="h-[1px] bg-gradient-to-l from-transparent to-[#B09A6D] flex-grow"></div>
+</div>
+
 <!-- Section 3: Tour Cards -->
-<section id="tours" class="py-section-gap bg-surface-container-low/30 scroll-mt-20">
+<section id="tours" class="py-section-gap bg-surface-container-low/30 scroll-mt-20 reveal">
 <div class="max-w-container-max mx-auto px-4 md:px-gutter">
 <div class="flex justify-between items-end mb-stack-lg">
 <div>
@@ -410,8 +449,8 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Card 1 -->
 <div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Chichen_Gold_Expedition">
-<div class="aspect-video overflow-hidden relative">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/chichen_itza_hero.webp')">
+<div class="aspect-[4/3] overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/chichen_1.webp')">
 </div>
 <div class="absolute top-4 left-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-bold flex items-center gap-1 shadow-md">
 <span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
@@ -424,13 +463,13 @@
 <p data-i18n="tour1_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold">The Great Wonder</p>
 <p data-i18n="tour1_desc" class="font-body-md text-on-surface-variant">Experience the majesty of the Mayan world with exclusive early-access and expert archeological insights.</p>
 </div>
-<button id="book-chichen-btn" data-i18n="tour1_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
+<button id="book-chichen-btn" data-i18n="tour1_book" class="w-full bg-[#B09A6D] text-white py-3 rounded-full font-label-md tracking-widest hover:bg-[#9B885E] hover:shadow-md transition-all duration-300">Reservar Ahora</button>
 </div>
 </div>
 <!-- Card 2 -->
 <div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Tortuga_Nature_Pass">
-<div class="aspect-video overflow-hidden relative">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/casa_tortuga_hero.webp')">
+<div class="aspect-[4/3] overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/tortuga_2.webp')">
 </div>
 <div class="absolute top-4 left-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-bold flex items-center gap-1 shadow-md">
 <span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
@@ -443,13 +482,13 @@
 <p data-i18n="tour2_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold">Cenotes &amp; Nature</p>
 <p data-i18n="tour2_desc" class="font-body-md text-on-surface-variant">Dive into the sacred waters of the Mayan underworld in private, pristine limestone caverns.</p>
 </div>
-<button id="book-tortuga-btn" data-i18n="tour2_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
+<button id="book-tortuga-btn" data-i18n="tour2_book" class="w-full bg-[#B09A6D] text-white py-3 rounded-full font-label-md tracking-widest hover:bg-[#9B885E] hover:shadow-md transition-all duration-300">Reservar Ahora</button>
 </div>
 </div>
 <!-- Card 3 -->
 <div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Tulum_Oceanic_Expedition">
-<div class="aspect-video overflow-hidden relative">
-<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/tulum_hero.webp')">
+<div class="aspect-[4/3] overflow-hidden relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/tulum_1.webp')">
 </div>
 <div class="absolute top-4 left-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-bold flex items-center gap-1 shadow-md">
 <span class="material-symbols-outlined text-xs" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
@@ -462,27 +501,37 @@
 <p data-i18n="tour3_subtitle" class="text-caption text-secondary uppercase tracking-tighter font-bold">Oceanic Ruins</p>
 <p class="font-body-md text-on-surface-variant" data-i18n="tour3_desc">A harmonious blend of ancient history and breathtaking Caribbean vistas, away from the crowds.</p>
 </div>
-<button id="book-tulum-btn" data-i18n="tour3_book" class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-full font-label-md hover:bg-secondary transition-colors duration-300">Reservar Ahora</button>
+<button id="book-tulum-btn" data-i18n="tour3_book" class="w-full bg-[#B09A6D] text-white py-3 rounded-full font-label-md tracking-widest hover:bg-[#9B885E] hover:shadow-md transition-all duration-300">Reservar Ahora</button>
 </div>
 </div>
 </div>
 </div>
 </section>
+
+<!-- Mayan Fret Divider -->
+<div class="flex items-center justify-center my-8 opacity-10 max-w-container-max mx-auto px-6">
+    <div class="h-[1px] bg-gradient-to-r from-transparent to-[#B09A6D] flex-grow"></div>
+    <svg class="w-16 h-8 text-[#B09A6D] mx-4" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M0,10 L10,10 L10,5 L20,5 L20,15 L15,15 L15,12 L18,12 M30,10 L40,10 L40,5 L50,5 L50,15 L45,15 L45,12 L48,12" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="h-[1px] bg-gradient-to-l from-transparent to-[#B09A6D] flex-grow"></div>
+</div>
+
 <!-- Section 4: Categories (Bento Grid Style) -->
-<section class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter">
+<section class="py-section-gap max-w-container-max mx-auto px-4 md:px-gutter reveal">
 <div class="text-center mb-stack-lg">
 <h2 data-i18n="bento_title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Tailored Passions</h2>
 <p data-i18n="bento_subtitle" class="font-body-md text-on-surface-variant">Explore by your specific travel interests and desires.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
   <!-- 1. Mundos Extraordinarios (Eco-Parks) -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Mundos_Extraordinarios')">
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Mundos_Extraordinarios')">
     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_2.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="park">park</span>
-        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_eco_parks_title">Mundos Extraordinarios</h3>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-2xl text-[#B09A6D]" data-icon="park">park</span>
+        <h3 class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] font-bold" data-i18n="cat_eco_parks_title">Mundos Extraordinarios</h3>
       </div>
       <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_eco_parks_desc">Desde la magia cultural de Xcaret hasta la adrenalina de Xplor y el mundo sensorial de Xenses. Acceso prioritario a los parques más icónicos de México.</p>
       <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
@@ -495,13 +544,13 @@
   </div>
 
   <!-- 2. Legado Ancestral (Arqueología) -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Chichen_Gold_Expedition')">
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Chichen_Gold_Expedition')">
     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_1.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="account_balance">account_balance</span>
-        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_archaeology_title">Legado Ancestral</h3>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-2xl text-[#B09A6D]" data-icon="account_balance">account_balance</span>
+        <h3 class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] font-bold" data-i18n="cat_archaeology_title">Legado Ancestral</h3>
       </div>
       <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_archaeology_desc">Expediciones privadas a las raíces del Imperio Maya. Chichén Itzá, Tulum y Cobá bajo una narrativa experta y sin multitudes.</p>
       <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
@@ -513,13 +562,13 @@
   </div>
 
   <!-- 3. Conexión Vital (Nado con Delfines) -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Conexion_Vital')">
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Conexion_Vital')">
     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_3.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="waves">waves</span>
-        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_dolphins_title">Conexión Vital</h3>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-2xl text-[#B09A6D]" data-icon="waves">waves</span>
+        <h3 class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] font-bold" data-i18n="cat_dolphins_title">Conexión Vital</h3>
       </div>
       <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_dolphins_desc">Encuentros íntimos y educativos en los hábitats más exclusivos. Programas 1-a-1 diseñados para una conexión profunda con la especie.</p>
       <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
@@ -531,13 +580,13 @@
   </div>
 
   <!-- 4. Horizonte Caribe (Experiencias de Mar) -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-1 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Horizonte_Caribe')">
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-1 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Horizonte_Caribe')">
     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_2.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="sailing">sailing</span>
-        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_sea_title">Horizonte Caribe</h3>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-2xl text-[#B09A6D]" data-icon="sailing">sailing</span>
+        <h3 class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] font-bold" data-i18n="cat_sea_title">Horizonte Caribe</h3>
       </div>
       <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_sea_desc">Navegación premium en catamarán a Isla Mujeres, nado con tiburón ballena y cenas románticas bajo las estrellas del Caribe.</p>
       <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
@@ -550,13 +599,13 @@
   </div>
 
   <!-- 5. Selva Viva & Adrenalina (Aventura) -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-2 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left" onclick="window.openTourModal('Selva_Viva')">
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-2 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Selva_Viva')">
     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_1.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
-      <div class="flex items-center gap-2">
-        <span class="material-symbols-outlined text-3xl text-[#B09A6D]" data-icon="explore">explore</span>
-        <h3 class="font-display-xl text-base font-bold uppercase tracking-wider text-[#F6F3E6]" data-i18n="cat_adventure_title">Selva Viva & Adrenalina</h3>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="material-symbols-outlined text-2xl text-[#B09A6D]" data-icon="explore">explore</span>
+        <h3 class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] font-bold" data-i18n="cat_adventure_title">Selva Viva & Adrenalina</h3>
       </div>
       <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_adventure_desc">Rutas todoterreno en ATVs, el misticismo de los Xenotes y la belleza surrealista de las lagunas rosadas de Las Coloradas.</p>
       <div class="flex flex-wrap gap-1.5 pt-1.5 border-t border-white/10 mt-2">
@@ -570,7 +619,7 @@
 </div>
 </section>
 <!-- Section 5: Trust & Checkout -->
-<section class="py-section-gap bg-surface-container-lowest">
+<section class="py-section-gap bg-surface-container-lowest reveal">
 <div class="max-w-container-max mx-auto px-4 md:px-gutter text-center">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 <div class="text-left space-y-6">
@@ -775,6 +824,17 @@
         links.forEach(link => {
             link.addEventListener('click', closeMobileMenu);
         });
+
+        // Intersection Observer for scroll-reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
     });
 </script>
 <!-- Floating Action Buttons -->
