@@ -993,8 +993,8 @@
   // Trigger Checkout Redirect
   window.triggerCheckout = function (productCode) {
     console.log(`[Checkout Triggered] Opening checkout for ${productCode}`);
-    const priceText = productCode === 'Chichen_Gold_Expedition' ? '1,800 MXN' : 
-                      productCode === 'Tortuga_Nature_Pass' ? '1,200 MXN' : '1,500 MXN';
+    const priceText = productCode === 'Chichen_Gold_Expedition' ? '2,500 MXN / 150 USD' : 
+                      productCode === 'Tortuga_Nature_Pass' ? '1,800 MXN / 100 USD' : '2,000 MXN / 120 USD';
 
     const confirmCheckout = confirm(
       `[MOCK MERCADO PAGO CHECKOUT]\n\nProducto: ${productCode}\nPrecio: ${priceText}\n\n¿Deseas simular una compra exitosa y regresar al sitio?`
@@ -1127,8 +1127,11 @@
     if (paymentStatus === 'approved') {
       console.log('[Post-Payment] Approved status detected in URL parameters.');
 
-      let messageText = `Pago confirmado. Soy Miatz, el asistente de Dany. Estoy preparando tu equipo para ${product.replace(/_/g, ' ')}. Te contactaré en menos de 30 min por WhatsApp.`;
-      if (userLanguage === 'en') messageText = `Payment confirmed. I am Miatz, Dany's assistant. I am preparing your gear for ${product.replace(/_/g, ' ')}. I will contact you in less than 30 mins via WhatsApp.`;
+            let messageText = `¡Reserva Confirmada! Soy Dany, ya tengo tus datos. En breve te contactaré por WhatsApp para coordinar tu pick-up.`;
+      if (userLanguage === 'en') messageText = `Booking Confirmed! I am Dany, I have your details. I will contact you shortly via WhatsApp to coordinate your pick-up.`;
+      if (userLanguage === 'fr') messageText = `Réservation confirmée ! Je suis Dany, j'ai déjà vos coordonnées. Je vous contacterai sous peu via WhatsApp pour coordonner votre prise en charge.`;
+      if (userLanguage === 'it') messageText = `Prenotazione confermata! Sono Dany, ho già i tuoi dati. Ti contatterò a breve tramite WhatsApp para concordare il tuo pick-up.`;
+      if (userLanguage === 'pt') messageText = `Reserva confirmada! Sou o Dany, já tenho os seus dados. Em breve entrarei em contato pelo WhatsApp para coordenar o seu pick-up.`;
       if (userLanguage === 'fr') messageText = `Paiement confirmé. Je suis Miatz, l'assistant de Dany. Je prépare votre équipement pour ${product.replace(/_/g, ' ')}. Je vous contacterai dans moins de 30 minutes via WhatsApp.`;
       if (userLanguage === 'it') messageText = `Pagamento confermato. Sono Miatz, l'assistente di Dany. Sto preparando la tua attrezzatura per ${product.replace(/_/g, ' ')}. Ti contatterò in meno de 30 minuti tramite WhatsApp.`;
       if (userLanguage === 'pt') messageText = `Pagamento confirmado. Sou Miatz, assistente do Dany. Estou preparando seus equipamentos para ${product.replace(/_/g, ' ')}. Entrarei em contato em menos de 30 minutos via WhatsApp.`;
