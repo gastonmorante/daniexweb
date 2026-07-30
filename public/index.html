@@ -402,10 +402,10 @@
         <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <div class="relative scroll-reveal flex justify-center">
                 <div class="absolute -top-10 -left-10 w-48 h-48 bg-primary/10 rounded-full blur-[80px]"></div>
-                <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl transform -rotate-2 max-w-[80%] md:max-w-[70%]">
-                    <img alt="Dany, Founder" class="w-full h-auto grayscale-[20%] hover:grayscale-0 transition-all duration-1000" src="https://lh3.googleusercontent.com/aida/AP1WRLtoCxq0dJrryfrL5nw9-sWLMZB0RYXHcyBgIcLn3ddOqhn779fXY1lQzkcxkzVboJHS6cezQohoxG8JJw-sWUyWrrc7At0G-aVe7gt8Xth9hsWoUSVrwr0bryQdRZAKWZoj7c1ZUC2KDv87ExDzY7rpd-KpQeFrMeqBK0PCSF58RWQuGjfiNFiwhy7qlgoFYJnx-CxdID9abGr7glC_vran2tyCZEu5aUFHY5vPB-tgIDvGHr-z7NAeOW5b"/>
+                <div class="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl max-w-[80%] md:max-w-[70%]">
+                    <img alt="Dany, Founder" class="w-full h-auto grayscale-[20%] hover:grayscale-0 transition-all duration-1000" src="./assets/dany_profile.webp"/>
                 </div>
-                <div class="absolute -bottom-6 right-4 md:-right-6 glass-jungle p-6 md:p-8 rounded-[2rem] shadow-2xl rotate-2">
+                <div class="absolute -bottom-6 right-4 md:-right-6 glass-jungle p-6 md:p-8 rounded-[2rem] shadow-2xl">
                     <span class="block font-headline-sm text-2xl text-secondary">Dany</span>
                     <span class="block font-label-md text-[10px] uppercase text-primary tracking-[0.2em]" data-i18n="about_role">Master Host &amp; Protector</span>
                 </div>
@@ -422,13 +422,17 @@
                     </p>
                 </div>
                 
-                <div class="mt-12 flex gap-12" id="certificaciones">
+                <div class="mt-12 flex flex-wrap gap-8 md:gap-12" id="certificaciones">
                     <div>
-                        <span class="block font-display-lg text-4xl text-secondary mb-1">15+</span>
+                        <span class="block font-display-lg text-4xl text-secondary mb-1"><span class="count-up" data-target="15">0</span>+</span>
                         <span class="font-label-md text-[10px] uppercase text-on-surface-variant tracking-widest" data-i18n="about_cred1_title">Años de Sabiduría</span>
                     </div>
                     <div>
-                        <span class="block font-display-lg text-4xl text-secondary mb-1">100%</span>
+                        <span class="block font-display-lg text-4xl text-secondary mb-1"><span class="count-up" data-target="312">0</span>+</span>
+                        <span class="font-label-md text-[10px] uppercase text-on-surface-variant tracking-widest" data-i18n="about_cred4_title">Clientes Felices</span>
+                    </div>
+                    <div>
+                        <span class="block font-display-lg text-4xl text-secondary mb-1"><span class="count-up" data-target="100">0</span>%</span>
                         <span class="font-label-md text-[10px] uppercase text-on-surface-variant tracking-widest" data-i18n="about_cred3_title">Reseñas Ancestrales</span>
                     </div>
                 </div>
@@ -587,6 +591,38 @@
             sendBtn.click();
         }
     };
+
+    // Count-up animation using IntersectionObserver
+    const countUpObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const countUps = entry.target.querySelectorAll('.count-up');
+                countUps.forEach(el => {
+                    const target = parseInt(el.getAttribute('data-target'), 10);
+                    let count = 0;
+                    const duration = 1500; // ms
+                    const stepTime = Math.max(Math.floor(duration / target), 15);
+                    const increment = Math.ceil(target / (duration / stepTime));
+                    
+                    const timer = setInterval(() => {
+                        count += increment;
+                        if (count >= target) {
+                            el.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            el.textContent = count;
+                        }
+                    }, stepTime);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const statsSection = document.getElementById('certificaciones');
+    if (statsSection) {
+        countUpObserver.observe(statsSection);
+    }
 </script>
 
 <script src="./dany-experiences-integration.js"></script>
