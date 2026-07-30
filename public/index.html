@@ -61,6 +61,22 @@
         .bento-card-hover:hover {
             transform: scale(1.02);
         }
+        
+        /* Active chip styles */
+        .chip-checkbox.checked {
+            background-color: var(--jade-sacred) !important;
+            border-color: var(--gold-burnished) !important;
+            color: #fff !important;
+        }
+        .chip-checkbox.checked .chip-text {
+            color: #fff !important;
+        }
+        
+        /* Active signature card styles */
+        .active-jade-border.checked {
+            border-color: var(--gold-burnished) !important;
+            box-shadow: 0 0 15px rgba(30, 107, 79, 0.4);
+        }
     </style>
     <script id="tailwind-config">
       tailwind.config = {
@@ -440,56 +456,302 @@
         </div>
     </section>
 
-    <!-- AI Concierge: Miatz Section (Interactive Chat Interface) -->
-    <section id="miatz-ai" class="py-24 px-margin-mobile relative overflow-hidden scroll-mt-20 reveal">
-        <div class="max-w-4xl mx-auto glass-jungle p-8 md:p-16 rounded-[3rem] text-center relative z-10">
-            <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 stone-carved">
-                <span class="material-symbols-outlined text-primary !text-4xl">auto_awesome</span>
+    <!-- AI Concierge: Miatz & Itinerary Section -->
+    <section id="miatz-ai" class="py-24 px-margin-mobile md:px-margin-desktop relative overflow-hidden scroll-mt-20 reveal">
+        <div class="max-w-container-max mx-auto">
+            <!-- Header of the Section -->
+            <div class="max-w-2xl mb-12 scroll-reveal text-left">
+                <h2 class="font-headline-lg text-3xl md:text-5xl mb-4 text-on-surface" data-i18n="ai_section_title">Planificación Sagrada</h2>
+                <p class="font-body-md text-on-surface-variant" data-i18n="ai_section_subtitle">Combina la sabiduría de nuestra inteligencia artificial Miatz con el constructor de itinerarios a la medida.</p>
             </div>
-            <h2 class="font-headline-lg text-3xl md:text-5xl mb-6 text-on-surface" data-i18n="ai_title">Consulta a Miatz</h2>
-            <p class="font-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto" data-i18n="ai_desc">Tu oráculo digital para diseñar la expedición perfecta. Miatz conoce los secretos de la Riviera mejor que nadie.</p>
-            
-            <!-- Dynamic Chat UI Box -->
-            <div class="w-full bg-[#101412]/90 rounded-[2rem] border border-white/10 p-4 md:p-6 flex flex-col h-[480px] text-left shadow-2xl relative overflow-hidden" id="ai-agent-container">
-                <!-- Chat Header -->
-                <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
-                    <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary border border-primary/25">
-                        <span class="material-symbols-outlined text-xl">support_agent</span>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start relative z-10">
+                
+                <!-- Columna Izquierda: Miatz AI Chat -->
+                <div class="glass-jungle stone-carved p-6 md:p-8 rounded-[2.5rem] flex flex-col h-[650px] shadow-2xl relative overflow-hidden text-left" id="ai-agent-container">
+                    <!-- Chat Header -->
+                    <div class="flex items-center gap-3 border-b border-white/10 pb-4 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-primary border border-primary/25">
+                            <span class="material-symbols-outlined text-xl">support_agent</span>
+                        </div>
+                        <div>
+                            <p class="font-label-md text-primary font-bold text-sm">Miatz AI Concierge</p>
+                            <p class="text-xs text-on-surface-variant/70">Online &amp; listo para asistirte</p>
+                        </div>
                     </div>
-                    <div>
-                        <p class="font-label-md text-primary font-bold text-sm">Miatz AI Concierge</p>
-                        <p class="text-xs text-on-surface-variant/70">Online &amp; listo para asistirte</p>
+
+                    <!-- Messages Display -->
+                    <div class="flex-grow space-y-4 overflow-y-auto mb-4 pr-2 text-xs md:text-sm text-on-surface/90 scroll-area" id="ai-agent-messages">
+                        <!-- Message bubbles injected by JS -->
+                    </div>
+
+                    <!-- Suggestions Pills Row -->
+                    <div class="flex flex-wrap gap-2 mb-4 max-h-[85px] overflow-y-auto no-scrollbar" id="chat-suggestions">
+                        <button class="bg-[#1a201c] text-xs text-on-surface-variant/90 px-3.5 py-1.5 rounded-full border border-white/5 hover:border-primary/50 hover:text-primary transition-all duration-300" onclick="window.sendChatSuggestion('¿Cuál es el mejor cenote para una ceremonia privada?')">
+                            "¿Cenote privado?"
+                        </button>
+                        <button class="bg-[#1a201c] text-xs text-on-surface-variant/90 px-3.5 py-1.5 rounded-full border border-white/5 hover:border-primary/50 hover:text-primary transition-all duration-300" onclick="window.sendChatSuggestion('Deseo una experiencia gastronómica en la selva.')">
+                            "Gastronomía selva"
+                        </button>
+                        <button class="bg-[#1a201c] text-xs text-on-surface-variant/90 px-3.5 py-1.5 rounded-full border border-white/5 hover:border-primary/50 hover:text-primary transition-all duration-300" onclick="window.sendChatSuggestion('¿Qué incluye el tour de Chichén Itzá?')">
+                            "Chichén Itzá info"
+                        </button>
+                    </div>
+
+                    <!-- Text Input Box -->
+                    <div class="relative flex gap-2 mt-auto">
+                        <input id="ai-agent-input" class="w-full bg-[#0b0f0d] p-4 pr-12 rounded-full border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-sm text-on-surface placeholder-on-surface-variant/30" placeholder="Pregunta sobre actividades, itinerarios..." type="text">
+                        <button id="ai-agent-send" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary text-background rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-md">
+                            <span class="material-symbols-outlined text-sm font-bold">send</span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Messages Display -->
-                <div class="flex-grow space-y-4 overflow-y-auto mb-4 pr-2 text-xs md:text-sm text-on-surface/90 scroll-area" id="ai-agent-messages">
-                    <!-- Message bubbles injected by JS -->
+                <!-- Columna Derecha: Constructor Arma Tu Experiencia -->
+                <div class="glass-jungle stone-carved p-6 md:p-8 rounded-[2.5rem] flex flex-col h-[650px] shadow-2xl relative overflow-hidden text-left">
+                    <form id="itinerary-form" class="h-full flex flex-col justify-between" onsubmit="window.handleItinerarySubmit(event)">
+                        <!-- Form Header & Stepper -->
+                        <div>
+                            <h3 class="font-headline-md text-2xl text-secondary mb-1" data-i18n="form_title">Arma tu Experiencia</h3>
+                            <p class="text-xs text-on-surface-variant/80 mb-4" id="form-step-indicator">Paso 1 de 3: Selecciona tus Aventuras</p>
+                            
+                            <!-- Progress Bar -->
+                            <div class="w-full bg-white/10 h-1 rounded-full mb-6 overflow-hidden">
+                                <div id="form-progress" class="bg-primary h-full transition-all duration-300 w-1/3"></div>
+                            </div>
+                        </div>
+
+                        <!-- Form Steps Scroll Area -->
+                        <div class="flex-grow overflow-y-auto pr-2 scroll-area mb-4">
+                            
+                            <!-- STEP 1: Adventures -->
+                            <div id="step-1" class="form-step space-y-6">
+                                <p class="font-label-md text-xs text-primary uppercase tracking-wider mb-3">Expediciones Insignia (Dany's Signature)</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                    <!-- Chichen Card -->
+                                    <label class="group relative block rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer border border-white/10 active-jade-border" style="transform: translateZ(0);">
+                                        <input type="checkbox" name="tours" value="Chichén Itzá: Amanecer Sagrado" class="hidden tour-checkbox" onchange="window.toggleCheckboxClass(this)">
+                                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_1.webp'); filter: brightness(0.65);"></div>
+                                        <div class="absolute inset-0 bg-black/30 transition-colors bg-overlay"></div>
+                                        <div class="absolute inset-0 flex flex-col justify-between p-3 z-10 text-left">
+                                            <div class="flex justify-end">
+                                                <span class="material-symbols-outlined check-icon text-white/50 font-bold text-sm bg-black/40 rounded-full p-1 border border-white/10 transition-all">check_circle</span>
+                                            </div>
+                                            <p class="text-[10px] md:text-[11px] font-bold text-white leading-tight">Chichén Itzá</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <!-- Casa Tortuga Card -->
+                                    <label class="group relative block rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer border border-white/10 active-jade-border" style="transform: translateZ(0);">
+                                        <input type="checkbox" name="tours" value="Casa Tortuga: Mística de Cenotes" class="hidden tour-checkbox" onchange="window.toggleCheckboxClass(this)">
+                                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/casa_tortuga_hero.webp'); filter: brightness(0.65);"></div>
+                                        <div class="absolute inset-0 bg-black/30 transition-colors bg-overlay"></div>
+                                        <div class="absolute inset-0 flex flex-col justify-between p-3 z-10 text-left">
+                                            <div class="flex justify-end">
+                                                <span class="material-symbols-outlined check-icon text-white/50 font-bold text-sm bg-black/40 rounded-full p-1 border border-white/10 transition-all">check_circle</span>
+                                            </div>
+                                            <p class="text-[10px] md:text-[11px] font-bold text-white leading-tight">Casa Tortuga</p>
+                                        </div>
+                                    </label>
+                                    
+                                    <!-- Tulum Card -->
+                                    <label class="group relative block rounded-2xl overflow-hidden aspect-[4/3] cursor-pointer border border-white/10 active-jade-border" style="transform: translateZ(0);">
+                                        <input type="checkbox" name="tours" value="Tulum: Ciudad del Amanecer" class="hidden tour-checkbox" onchange="window.toggleCheckboxClass(this)">
+                                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_1.webp'); filter: brightness(0.65);"></div>
+                                        <div class="absolute inset-0 bg-black/30 transition-colors bg-overlay"></div>
+                                        <div class="absolute inset-0 flex flex-col justify-between p-3 z-10 text-left">
+                                            <div class="flex justify-end">
+                                                <span class="material-symbols-outlined check-icon text-white/50 font-bold text-sm bg-black/40 rounded-full p-1 border border-white/10 transition-all">check_circle</span>
+                                            </div>
+                                            <p class="text-[10px] md:text-[11px] font-bold text-white leading-tight">Tulum</p>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <!-- COMPLEMENTARY TOURS -->
+                                <div class="space-y-4">
+                                    <p class="font-label-md text-xs text-primary uppercase tracking-wider">Catálogo Complementario</p>
+                                    
+                                    <!-- Group 1: Mundos Xcaret -->
+                                    <div>
+                                        <label class="block text-xs font-bold text-on-surface-variant/80 mb-2 uppercase tracking-wide">Mundos Xcaret</label>
+                                        <div class="flex flex-wrap gap-2">
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Xcaret Plus" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Xcaret Plus</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Xel-Há" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Xel-Há</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Xplor" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Xplor</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Xavage" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Xavage</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Group 2: Mar y Faena -->
+                                    <div>
+                                        <label class="block text-xs font-bold text-on-surface-variant/80 mb-2 uppercase tracking-wide">Mar y Faena</label>
+                                        <div class="flex flex-wrap gap-2">
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Isla Mujeres Catamarán" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Isla Mujeres Catamarán</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Nado Tiburón Ballena" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Nado Tiburón Ballena</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Pesca Privada" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Pesca Privada</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Group 3: Conexión -->
+                                    <div>
+                                        <label class="block text-xs font-bold text-on-surface-variant/80 mb-2 uppercase tracking-wide">Conexión Animal</label>
+                                        <div class="flex flex-wrap gap-2">
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Nado con Delfines" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Nado con Delfines</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Encuentro Primax" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Encuentro Primax</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <!-- Group 4: Aventura -->
+                                    <div>
+                                        <label class="block text-xs font-bold text-on-surface-variant/80 mb-2 uppercase tracking-wide">Aventura y Naturaleza</label>
+                                        <div class="flex flex-wrap gap-2">
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="ATVs Cuatrimotos" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">ATVs Cuatrimotos</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Las Coloradas" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Las Coloradas</span>
+                                            </label>
+                                            <label class="chip-checkbox flex items-center gap-1.5 bg-[#1a201c] hover:bg-[#202722] text-xs px-3.5 py-2 rounded-full border border-white/10 cursor-pointer transition-all">
+                                                <input type="checkbox" name="tours" value="Xenotes Oasis" class="hidden" onchange="window.toggleCheckboxClass(this)">
+                                                <span class="chip-text text-on-surface-variant/90 font-bold">Xenotes Oasis</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 2: Logistics -->
+                            <div id="step-2" class="form-step hidden space-y-5">
+                                <p class="font-label-md text-xs text-primary uppercase tracking-wider mb-2">Detalles Logísticos</p>
+                                
+                                <!-- Date Picker -->
+                                <div class="space-y-1 text-left">
+                                    <label class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+                                        Fecha de Llegada / Inicio
+                                    </label>
+                                    <input type="date" id="form-arrival-date" name="arrival_date" class="w-full bg-[#0b0f0d] p-4 rounded-xl border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm text-on-surface" required>
+                                </div>
+
+                                <!-- Number of Travelers -->
+                                <div class="space-y-1 text-left">
+                                    <label class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm text-primary">group</span>
+                                        Número de Viajeros
+                                    </label>
+                                    <input type="number" id="form-travelers" name="travelers" min="1" max="100" value="2" class="w-full bg-[#0b0f0d] p-4 rounded-xl border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm text-on-surface" required>
+                                </div>
+
+                                <!-- Transport Type -->
+                                <div class="space-y-1 text-left">
+                                    <label class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm text-primary">directions_car</span>
+                                        Tipo de Transporte
+                                    </label>
+                                    <select id="form-transport" name="transport" class="w-full bg-[#0b0f0d] p-4 rounded-xl border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm text-on-surface cursor-pointer">
+                                        <option value="Servicio Privado VIP">Servicio Privado VIP (Recomendado)</option>
+                                        <option value="Traslado Regular / Colectivo">Traslado Regular / Colectivo</option>
+                                        <option value="Sin Transporte">Sin Transporte (Llegada propia)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Contact Details -->
+                            <div id="step-3" class="form-step hidden space-y-5">
+                                <p class="font-label-md text-xs text-primary uppercase tracking-wider mb-2">Datos de Contacto</p>
+
+                                <!-- Name Input -->
+                                <div class="space-y-1 text-left">
+                                    <label class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm text-primary">person</span>
+                                        Nombre Completo
+                                    </label>
+                                    <input type="text" id="form-contact-name" name="contact_name" placeholder="Ej. Alejandra Gómez" class="w-full bg-[#0b0f0d] p-4 rounded-xl border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm text-on-surface" required>
+                                </div>
+
+                                <!-- WhatsApp Input -->
+                                <div class="space-y-1 text-left">
+                                    <label class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm text-primary">chat</span>
+                                        Número de WhatsApp (con código de país)
+                                    </label>
+                                    <input type="tel" id="form-contact-phone" name="contact_phone" placeholder="Ej. +52 998 123 4567" class="w-full bg-[#0b0f0d] p-4 rounded-xl border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm text-on-surface" required>
+                                </div>
+
+                                <!-- Optional message / notes -->
+                                <div class="space-y-1 text-left">
+                                    <label class="text-xs font-bold text-on-surface-variant/80 uppercase tracking-wide flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm text-primary">note_add</span>
+                                        Notas adicionales / Comentarios
+                                    </label>
+                                    <textarea id="form-contact-notes" name="contact_notes" rows="2" placeholder="Cuéntanos algún detalle especial..." class="w-full bg-[#0b0f0d] p-4 rounded-xl border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm text-on-surface resize-none"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Form Navigation Controls (Wizard Footer) -->
+                        <div class="flex gap-4 border-t border-white/10 pt-4 mt-auto">
+                            <button type="button" id="prev-btn" class="flex-1 bg-white/5 hover:bg-white/10 text-white font-bold py-3.5 px-6 rounded-full border border-white/10 transition-all text-xs uppercase tracking-wider hidden" onclick="window.navigateForm(-1)">
+                                Atrás
+                            </button>
+                            <button type="button" id="next-btn" class="flex-grow bg-primary text-background font-bold py-3.5 px-6 rounded-full hover:scale-105 active:scale-95 transition-all text-xs uppercase tracking-wider" onclick="window.navigateForm(1)">
+                                Siguiente
+                            </button>
+                            <button type="submit" id="submit-btn" class="flex-grow bg-secondary text-background font-bold py-3.5 px-6 rounded-full hover:scale-105 active:scale-95 transition-all text-xs uppercase tracking-wider hidden">
+                                ENVIAR ITINERARIO SAGRADO
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Feedback Card -->
+                    <div id="form-success-card" class="hidden h-full flex flex-col items-center justify-center text-center p-6 space-y-6">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center stone-carved">
+                            <span class="material-symbols-outlined text-primary !text-5xl animate-pulse">verified</span>
+                        </div>
+                        <h3 class="font-headline-md text-3xl text-secondary" data-i18n="form_success_title">Itinerario Grabado</h3>
+                        <p class="font-body-md text-sm text-on-surface-variant leading-relaxed max-w-sm" data-i18n="form_success_desc">
+                            Tu itinerario sagrado ha sido grabado en el templo digital de Dany. Serás redirigido a WhatsApp para concretar tu expedición.
+                        </p>
+                        <!-- Glifo Maya Decorativo / Piedra grabada de éxito -->
+                        <div class="text-[8px] font-bold text-primary/40 uppercase tracking-[0.5em] border border-primary/20 p-2 rounded-lg bg-primary/5">
+                            ◈ GLIFO DE CONEXIÓN GRABADO ◈
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Suggestions Pills Row -->
-                <div class="flex flex-wrap gap-2 mb-4 max-h-[85px] overflow-y-auto no-scrollbar" id="chat-suggestions">
-                    <button class="bg-[#1a201c] text-xs text-on-surface-variant/90 px-3.5 py-1.5 rounded-full border border-white/5 hover:border-primary/50 hover:text-primary transition-all duration-300" onclick="window.sendChatSuggestion('¿Cuál es el mejor cenote para una ceremonia privada?')">
-                        "¿Cenote privado?"
-                    </button>
-                    <button class="bg-[#1a201c] text-xs text-on-surface-variant/90 px-3.5 py-1.5 rounded-full border border-white/5 hover:border-primary/50 hover:text-primary transition-all duration-300" onclick="window.sendChatSuggestion('Deseo una experiencia gastronómica en la selva.')">
-                        "Gastronomía selva"
-                    </button>
-                    <button class="bg-[#1a201c] text-xs text-on-surface-variant/90 px-3.5 py-1.5 rounded-full border border-white/5 hover:border-primary/50 hover:text-primary transition-all duration-300" onclick="window.sendChatSuggestion('¿Qué incluye el tour de Chichén Itzá?')">
-                        "Chichén Itzá info"
-                    </button>
-                </div>
-
-                <!-- Text Input Box -->
-                <div class="relative flex gap-2">
-                    <input id="ai-agent-input" class="w-full bg-[#0b0f0d] p-4 pr-12 rounded-full border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all text-sm text-on-surface placeholder-on-surface-variant/30" placeholder="Pregunta sobre actividades, itinerarios..." type="text">
-                    <button id="ai-agent-send" class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary text-background rounded-full flex items-center justify-center hover:scale-105 active:scale-95 transition-all shadow-md">
-                        <span class="material-symbols-outlined text-sm font-bold">send</span>
-                    </button>
-                </div>
             </div>
         </div>
-        
         <!-- Decorative Mayan Glyph Background Glow -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10 animate-pulse"></div>
     </section>
@@ -623,6 +885,140 @@
     if (statsSection) {
         countUpObserver.observe(statsSection);
     }
+
+    // --- ITINERARY WIZARD FORM LOGIC ---
+    let currentStep = 1;
+
+    window.toggleCheckboxClass = function(input) {
+        const parent = input.closest('label');
+        if (parent) {
+            if (input.checked) {
+                parent.classList.add('checked');
+            } else {
+                parent.classList.remove('checked');
+            }
+        }
+    };
+
+    window.navigateForm = function(direction) {
+        // Validate inputs on current step before moving forward
+        if (direction === 1) {
+            const currentStepEl = document.getElementById(`step-${currentStep}`);
+            const requiredInputs = currentStepEl.querySelectorAll('[required]');
+            let isValid = true;
+            requiredInputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    input.reportValidity();
+                    isValid = false;
+                }
+            });
+            
+            // For step 1, verify at least one tour is selected
+            if (currentStep === 1) {
+                const checkedTours = document.querySelectorAll('input[name="tours"]:checked');
+                if (checkedTours.length === 0) {
+                    alert("Por favor, selecciona al menos una aventura.");
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) return;
+        }
+
+        // Hide current step
+        document.getElementById(`step-${currentStep}`).classList.add('hidden');
+        
+        // Update step
+        currentStep += direction;
+        
+        // Show new step
+        document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+
+        // Update progress bar
+        const progressPct = (currentStep / 3) * 100;
+        document.getElementById('form-progress').style.width = `${progressPct}%`;
+
+        // Update indicator text
+        const indicators = {
+            1: "Paso 1 de 3: Selecciona tus Aventuras",
+            2: "Paso 2 de 3: Detalles Logísticos",
+            3: "Paso 3 de 3: Datos de Contacto"
+        };
+        document.getElementById('form-step-indicator').textContent = indicators[currentStep];
+
+        // Update buttons visibility
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        if (currentStep === 1) {
+            prevBtn.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
+            submitBtn.classList.add('hidden');
+        } else if (currentStep === 2) {
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            submitBtn.classList.add('hidden');
+        } else if (currentStep === 3) {
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.add('hidden');
+            submitBtn.classList.remove('hidden');
+        }
+    };
+
+    window.handleItinerarySubmit = async function(event) {
+        event.preventDefault();
+        
+        // Collect form data
+        const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked')).map(el => el.value);
+        const arrivalDate = document.getElementById('form-arrival-date').value;
+        const travelers = document.getElementById('form-travelers').value;
+        const transport = document.getElementById('form-transport').value;
+        const contactName = document.getElementById('form-contact-name').value;
+        const contactPhone = document.getElementById('form-contact-phone').value;
+        const contactNotes = document.getElementById('form-contact-notes').value;
+
+        // Compile details into interest field for Sheets Sync
+        const interest = `Itinerario personalizado: ${selectedTours.join(', ')}. Fecha: ${arrivalDate}. Viajeros: ${travelers}. Transporte: ${transport}. Notas: ${contactNotes}`;
+
+        const leadData = {
+            name: contactName,
+            phone: contactPhone,
+            interest: interest
+        };
+
+        // Submit to Backend CRM sheets endpoint
+        try {
+            const backendUrl = window.location.origin.includes('file://') || window.location.origin === 'null' 
+                ? 'https://negocioup-cerebro.onrender.com' 
+                : window.location.origin;
+
+            fetch(`${backendUrl}/api/dany/leads`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(leadData)
+            })
+            .then(res => res.json())
+            .then(resData => console.log('[Lead Capture] Itinerary lead synchronized:', resData))
+            .catch(err => console.error('[Lead Capture Error] Itinerary sync failed:', err));
+        } catch (e) {
+            console.error('[CRM Sync Error] ', e);
+        }
+
+        // Show Success Feedback Card
+        document.getElementById('itinerary-form').classList.add('hidden');
+        document.getElementById('form-success-card').classList.remove('hidden');
+
+        // Build WhatsApp Message Link
+        const toursListText = selectedTours.join(', ');
+        const waMessage = `¡Hola Dany! He armado mi itinerario en la web.\nTours: ${toursListText}\nFecha: ${arrivalDate}\nViajeros: ${travelers}\nTransporte: ${transport}\nMi nombre es: ${contactName}`;
+        const waLink = `https://wa.me/529981234567?text=${encodeURIComponent(waMessage)}`;
+
+        // Redirect after a short delay to let them see the glyph feedback
+        setTimeout(() => {
+            window.open(waLink, '_blank');
+        }, 1500);
+    };
 </script>
 
 <script src="./dany-experiences-integration.js"></script>

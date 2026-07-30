@@ -810,11 +810,11 @@
   // Get initial greeting based on language
   function getInitialGreeting(lang) {
     const greetings = {
-      es: '¡Hola! Soy Miatz, tu asistente de IA. He preparado algunas rutas exclusivas hoy con Dany, ¿prefieres la selva o el mar?',
-      en: 'Hello! I am Miatz, your AI assistant. I have prepared some exclusive routes today with Dany, do you prefer the jungle or the sea?',
-      fr: 'Bonjour! Je suis Miatz, votre assistant IA. J\'ai préparé des itinéraires exclusifs aujourd\'hui avec Dany, préférez-vous la jungle ou la mer?',
-      it: 'Ciao! Sono Miatz, il tuo assistente IA. Ho preparato dei percorsi esclusivi oggi con Dany, preferisci la giungla o el mare?',
-      pt: 'Olá! Sou Miatz, o seu assistente de IA. Preparei algumas rotas exclusivas hoje com Dany, você prefere a selva ou o mar?'
+      es: 'Hola, soy Miatz. ¿Tienes dudas sobre algún tour mientras armas tu itinerario?',
+      en: 'Hello, I am Miatz. Do you have any questions about a tour while building your itinerary?',
+      fr: 'Bonjour, je suis Miatz. Avez-vous des questions sur un tour pendant la construction de votre itinéraire?',
+      it: 'Ciao, sono Miatz. Hai domande su algún tour mentre componi il tuo itinerario?',
+      pt: 'Olá, sou Miatz. Você tem alguma dúvida sobre algum tour enquanto monta o seu roteiro?'
     };
     return greetings[lang] || greetings.es;
   }
