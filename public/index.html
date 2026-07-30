@@ -86,7 +86,7 @@
             },
             "spacing": {
                     "container-max": "1280px",
-                    "section-gap": "6rem",
+                    "section-gap": "8rem",
                     "gutter": "2rem",
                     "stack-sm": "0.75rem",
                     "stack-lg": "3rem",
@@ -106,25 +106,36 @@
             "fontSize": {
                     "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
                     "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display-xl-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "500"}],
-                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "display-xl-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.04em", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.03em", "fontWeight": "500"}],
                     "caption": ["12px", {"lineHeight": "1.4", "fontWeight": "400"}],
-                    "headline-lg-mobile": ["32px", {"lineHeight": "1.25", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "1.25", "letterSpacing": "-0.03em", "fontWeight": "500"}],
                     "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+                    "display-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "500"}]
             }
           },
         },
       }
     </script>
 <style>
-        html, body, #root-wrapper {
+        html, body {
             overflow-x: hidden !important;
             width: 100%;
             max-width: 100vw;
             margin: 0;
             padding: 0;
+        }
+        #root-wrapper {
+            overflow-x: hidden !important;
+            width: 100%;
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            /* Mayan glyph background pattern watermark (very subtle 2.5% opacity) */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath d='M30,30 C30,15 50,15 50,30 C50,45 30,45 30,30 M15,40 L45,40 M40,20 C45,25 45,35 40,40 M110,110 C110,95 130,95 130,110 C130,125 110,125 110,110 M95,120 L125,120 M120,100 C125,105 125,115 120,120' stroke='%23B09A6D' stroke-width='0.7' stroke-opacity='0.025' fill='none'/%3E%3C/svg%3E");
+            background-attachment: fixed;
         }
         header, section, footer {
             max-width: 100vw !important;
@@ -165,6 +176,50 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* Maya Cinema Color Grading & Cinematic Film Grain */
+        .maya-cinema {
+            position: relative;
+            overflow: hidden;
+        }
+        .maya-cinema::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(246, 243, 230, 0.05) 0%, rgba(0, 56, 38, 0.25) 100%), linear-gradient(135deg, rgba(0, 56, 38, 0.1) 0%, rgba(246, 243, 230, 0.05) 100%);
+            mix-blend-mode: color-burn;
+            pointer-events: none;
+            z-index: 10;
+        }
+        .maya-cinema::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9;
+            opacity: 0.12;
+            animation: noise-move 0.2s steps(4) infinite;
+        }
+        @keyframes noise-move {
+            0%, 100% { transform:translate(0, 0) }
+            10% { transform:translate(-1%, -1%) }
+            30% { transform:translate(-2%, -2%) }
+            50% { transform:translate(-1%, 2%) }
+            70% { transform:translate(2%, 1%) }
+            90% { transform:translate(-1%, 1%) }
+        }
+        
+        /* Stone carved fine relief line of light */
+        .stone-carved {
+            border: 1px solid rgba(31, 108, 123, 0.15);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 1px 3px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .stone-carved:hover {
+            border-color: rgba(31, 108, 123, 0.35);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 4px 12px rgba(31, 108, 123, 0.08);
         }
     </style>
 </head>
@@ -218,9 +273,9 @@
 </header>
 <main>
 <!-- Section 1: Hero -->
-<section class="relative min-h-[70vh] md:min-h-[80vh] flex items-center py-12 md:py-16">
+<section class="relative min-h-[70vh] md:min-h-[80vh] max-h-[85vh] flex items-center py-12 md:py-16">
 <!-- Parallax Wrapper -->
-<div class="absolute inset-0 z-0 parallax-bg overflow-hidden">
+<div class="absolute inset-0 z-0 parallax-bg overflow-hidden maya-cinema">
   <!-- Ken Burns Zooming Image -->
   <div class="w-full h-full bg-cover bg-center animate-ken-burns" style="background-image: url('./assets/chichen_itza_sunset.webp')"></div>
 </div>
@@ -342,7 +397,7 @@
     <!-- Left Column: Image/Visual Badge -->
     <div class="w-full md:w-5/12 relative group">
       <div class="absolute inset-0 bg-[#B09A6D]/20 rounded-xl transform translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-      <div class="aspect-[4/5] rounded-xl overflow-hidden border-2 border-[#B09A6D] relative shadow-lg bg-cover bg-center min-h-[300px] md:min-h-[400px]" style="background-image: url('./assets/dany_profile.webp');">
+      <div class="aspect-[4/5] rounded-xl overflow-hidden border-2 border-[#B09A6D] relative shadow-lg min-h-[300px] md:min-h-[400px] maya-cinema" style="background-image: url('./assets/dany_profile.webp'); background-size: 70%; background-position: right bottom; background-repeat: no-repeat; background-color: #003826;">
         <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
         <div class="absolute bottom-6 left-6 right-6 text-white">
           <p class="font-label-md text-xs uppercase tracking-widest text-[#B09A6D] mb-1">Dany Experiences</p>
@@ -449,7 +504,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Card 1 -->
 <div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Chichen_Gold_Expedition">
-<div class="aspect-[4/3] overflow-hidden relative">
+<div class="aspect-[4/3] overflow-hidden relative maya-cinema">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/chichen_1.webp')">
 </div>
 <div class="absolute top-4 left-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-bold flex items-center gap-1 shadow-md">
@@ -468,7 +523,7 @@
 </div>
 <!-- Card 2 -->
 <div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Tortuga_Nature_Pass">
-<div class="aspect-[4/3] overflow-hidden relative">
+<div class="aspect-[4/3] overflow-hidden relative maya-cinema">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/tortuga_2.webp')">
 </div>
 <div class="absolute top-4 left-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-bold flex items-center gap-1 shadow-md">
@@ -487,7 +542,7 @@
 </div>
 <!-- Card 3 -->
 <div class="tour-card-interactive cursor-pointer flex flex-col h-full group bg-surface-container-lowest rounded-lg overflow-hidden luxury-shadow transition-all duration-500 hover:-translate-y-2" data-product="Tulum_Oceanic_Expedition">
-<div class="aspect-[4/3] overflow-hidden relative">
+<div class="aspect-[4/3] overflow-hidden relative maya-cinema">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('./assets/tulum_1.webp')">
 </div>
 <div class="absolute top-4 left-4 bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full text-caption font-bold flex items-center gap-1 shadow-md">
@@ -525,8 +580,8 @@
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
   <!-- 1. Parques Temáticos y Eco-Arqueológicos -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Mundos_Extraordinarios')">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_2.webp')"></div>
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll maya-cinema" onclick="window.openTourModal('Mundos_Extraordinarios')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 bento-bg" style="background-image: url('./assets/tortuga_2.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
       <div class="flex items-center gap-2 mb-1">
@@ -548,8 +603,8 @@
   </div>
 
   <!-- 2. Zonas Arqueológicas y Cultura -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Chichen_Gold_Expedition')">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/chichen_1.webp')"></div>
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll maya-cinema" onclick="window.openTourModal('Chichen_Gold_Expedition')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 bento-bg" style="background-image: url('./assets/chichen_1.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
       <div class="flex items-center gap-2 mb-1">
@@ -568,8 +623,8 @@
   </div>
 
   <!-- 3. Actividades Acuáticas y de Mar -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-[4/3] sm:aspect-square flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Horizonte_Caribe')">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tulum_2.webp')"></div>
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll maya-cinema" onclick="window.openTourModal('Horizonte_Caribe')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 bento-bg" style="background-image: url('./assets/tulum_2.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
       <div class="flex items-center gap-2 mb-1">
@@ -590,8 +645,8 @@
   </div>
 
   <!-- 4. Nado con Delfines -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-1 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Conexion_Vital')">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_3.webp')"></div>
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-1 lg:col-span-3 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll maya-cinema" onclick="window.openTourModal('Conexion_Vital')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 bento-bg" style="background-image: url('./assets/tortuga_3.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
       <div class="flex items-center gap-2 mb-1">
@@ -609,8 +664,8 @@
   </div>
 
   <!-- 5. Aventura y Naturaleza -->
-  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-2 lg:col-span-3 aspect-[4/3] sm:aspect-square lg:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll" onclick="window.openTourModal('Selva_Viva')">
-    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('./assets/tortuga_1.webp')"></div>
+  <div class="group relative overflow-hidden rounded-xl border-2 border-[#B09A6D]/20 hover:border-[#1F6C7B] hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-2 lg:col-span-3 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll maya-cinema" onclick="window.openTourModal('Selva_Viva')">
+    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105 bento-bg" style="background-image: url('./assets/tortuga_1.webp')"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10"></div>
     <div class="relative z-20 space-y-2">
       <div class="flex items-center gap-2 mb-1">
@@ -786,6 +841,16 @@
             if (parallax) {
                 parallax.style.transform = `translateY(${scrolled * 0.15}px)`;
             }
+            
+            // Bento background parallax
+            document.querySelectorAll('.bento-bg').forEach(bg => {
+                const rect = bg.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    const offset = (rect.top - viewportHeight / 2) * 0.06;
+                    bg.style.transform = `translateY(${offset}px) scale(1.1)`;
+                }
+            });
             
             // Header background transition
             const header = document.querySelector('header');
