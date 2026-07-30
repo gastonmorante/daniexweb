@@ -278,15 +278,14 @@
                 <a class="text-primary font-label-md text-sm uppercase tracking-widest flex items-center gap-2 hover:translate-x-2 transition-transform" href="#actividades" data-i18n="tours_view_all">Ver Catálogo <span class="material-symbols-outlined">trending_flat</span></a>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Card 1: Chichén Itzá -->
-                <div class="md:col-span-8 group relative overflow-hidden rounded-[2rem] aspect-[4/5] md:aspect-auto md:h-[600px] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" data-product="Chichen_Gold_Expedition">
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" data-product="Chichen_Gold_Expedition">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVZBt9udGsZcNvlfekxBWGgWCEfzLbeFBAr6YoRajqW7MGgQwtxiWV8oztaERT5jXvv5uG-BcR8Br5R8tRknbX-rfTKrZo18E6VL3LvDG0Tk-hNyPa8CF4PkFjFGuTaxi0NVRMFMtJ1eCmJ3EJ32Kg5FYYZnKQQ5VnSqE5kQsqCFWtuhBvZURcP274j5CwY3CY8xAcdYjIpKMytwB2dEuyqeBy1dnEpuNbZqxnrMGlmFR2WKqCz5Cqmw')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 border-[0.5px] border-white/10 rounded-[2rem] pointer-events-none"></div>
                     <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
                         <div>
-                            <span class="inline-block px-3 py-1 bg-secondary text-background text-[10px] font-bold rounded-full mb-4 tracking-tighter uppercase">Exclusividad INAH</span>
                             <h3 class="font-headline-md text-2xl md:text-4xl text-white mb-3" data-i18n="tour1_title">Chichén Itzá: Amanecer Sagrado</h3>
                             <p class="font-body-md text-white/70 max-w-md hidden md:block" data-i18n="tour1_desc">Acceso privilegiado antes de las multitudes. Una conexión íntima con el Templo de Kukulcán.</p>
                         </div>
@@ -297,32 +296,35 @@
                 </div>
                 
                 <!-- Card 2: Tulum -->
-                <div class="md:col-span-4 group relative overflow-hidden rounded-[2rem] aspect-square md:h-[600px] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" data-product="Tulum_Oceanic_Expedition">
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" data-product="Tulum_Oceanic_Expedition">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD46-aNEZ_XxjSk3SwOqAMjCsb3weBK_t3OPq6mWH4PM7-h_n0c3aLvYWjPPCgrMp6yEUF5YIsqDkc_sWERejY5T4B-JhI7lHUeAOEHtXBroUNM9obanRYWvBMkm81L1RWT5pxDMJG3Opn_epQs-5oXH7Rr2-Q4BM9ikNaavERAOZXJhIifD7LxQa1n_7mYY5K092TjGosiizes0kogTop1U8YtCwnhP0ZTdBQdmOds4ih6QmPT_OCvRQ')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 w-full flex flex-col justify-end gap-3">
-                        <h3 class="font-headline-md text-2xl text-white mb-2" data-i18n="tour3_title">Tulum: Ciudad del Amanecer</h3>
-                        <p class="font-body-md text-white/70 text-sm mb-4" data-i18n="tour3_desc">Exploración costera en catamarán privado hacia el arrecife maya.</p>
-                        <button id="book-tulum-btn" class="bg-primary text-background px-5 py-2.5 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg self-start" data-i18n="tour3_book">
+                    <div class="absolute inset-0 border-[0.5px] border-white/10 rounded-[2rem] pointer-events-none"></div>
+                    <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                        <div>
+                            <h3 class="font-headline-md text-2xl md:text-4xl text-white mb-3" data-i18n="tour3_title">Tulum: Ciudad del Amanecer</h3>
+                            <p class="font-body-md text-white/70 max-w-md hidden md:block" data-i18n="tour3_desc">Exploración costera en catamarán privado hacia el arrecife maya.</p>
+                        </div>
+                        <button id="book-tulum-btn" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour3_book">
                             Reservar
                         </button>
                     </div>
                 </div>
                 
                 <!-- Card 3: Casa Tortuga -->
-                <div class="md:col-span-12 group relative overflow-hidden rounded-[2rem] h-72 md:h-[300px] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" data-product="Tortuga_Nature_Pass">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIHZSnfSUQmjjLu5olOiKqDuH_8eVXthR9uzQ__Vsel4ujQKvj--2FHJtGbl2CYqRKtc8rV2snh-lfzyG6BsUnpuV_lmhivftUMFcGgOE5Qr5GF7GIKzr9Gcep9500tqxoPDazWFpyP1Ta3RiQvxRjvBVKtyVccCryqeboB77P0pxsABq6RtEEiaNJhRCABPE4kbvIXG3oL2ZqQ2VKA-AntC5-l8XtPSljftDoZINTnXtNxry-ErGtNA')"></div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-8 flex flex-col md:flex-row md:items-center justify-between w-full gap-4">
-                        <div>
-                            <h3 class="font-headline-md text-2xl md:text-3xl text-white mb-2" data-i18n="tour2_title">Mística Casa Tortuga</h3>
-                            <p class="font-body-md text-white/70" data-i18n="tour2_desc">Un descenso al Xibalbá a través de cuatro cenotes milenarios.</p>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <button id="book-tortuga-btn" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg" data-i18n="tour2_book">
+                <div class="md:col-span-2 flex justify-center">
+                    <div class="w-full md:w-1/2 group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" data-product="Tortuga_Nature_Pass">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAIHZSnfSUQmjjLu5olOiKqDuH_8eVXthR9uzQ__Vsel4ujQKvj--2FHJtGbl2CYqRKtc8rV2snh-lfzyG6BsUnpuV_lmhivftUMFcGgOE5Qr5GF7GIKzr9Gcep9500tqxoPDazWFpyP1Ta3RiQvxRjvBVKtyVccCryqeboB77P0pxsABq6RtEEiaNJhRCABPE4kbvIXG3oL2ZqQ2VKA-AntC5-l8XtPSljftDoZINTnXtNxry-ErGtNA')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                        <div class="absolute inset-0 border-[0.5px] border-white/10 rounded-[2rem] pointer-events-none"></div>
+                        <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+                            <div>
+                                <h3 class="font-headline-md text-2xl md:text-4xl text-white mb-3" data-i18n="tour2_title">Mística Casa Tortuga</h3>
+                                <p class="font-body-md text-white/70 max-w-md hidden md:block" data-i18n="tour2_desc">Un descenso al Xibalbá a través de cuatro cenotes milenarios.</p>
+                            </div>
+                            <button id="book-tortuga-btn" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour2_book">
                                 Reservar
                             </button>
-                            <span class="hidden md:block font-display-lg text-secondary/30 text-7xl">03</span>
                         </div>
                     </div>
                 </div>
