@@ -272,17 +272,7 @@
         <img src="assets/logo_head.png" onerror="this.src='assets/logo_head.png'" alt="Dany Experiences Logo" class="h-44 md:h-56 w-auto object-contain filter drop-shadow-[0_0_35px_rgba(230,200,120,0.75)] drop-shadow-[0_0_65px_rgba(186,209,85,0.45)]"/>
       </div>
 
-      <!-- BRAND TYPOGRAPHY REVEAL (4.2s - 6.0s) -->
-      <div id="intro-brand-text" class="flex flex-col items-center mt-3 opacity-0 transition-all duration-1000 transform translate-y-4 text-center pointer-events-none">
-        <h1 class="text-4xl md:text-5xl font-extrabold tracking-[0.22em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#faeac8] via-[#e6c898] to-[#bad155] drop-shadow-[0_0_25px_rgba(230,200,120,0.6)] font-cinzel">
-          DANY
-        </h1>
-        <span class="text-xs md:text-sm font-light tracking-[0.55em] uppercase text-emerald-100/90 -mt-0.5 font-cinzel">
-          E X P E R I E N C E S
-        </span>
       </div>
-
-    </div>
 
     <!-- SKIP BUTTON (Top Right) -->
     <button id="skip-intro-button" class="absolute top-[max(1rem,env(safe-area-inset-top))] right-[max(1rem,env(safe-area-inset-right))] px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-xs font-semibold tracking-wider text-white/90 hover:text-white transition-all flex items-center gap-2 z-50 group shadow-[0_4px_16px_rgba(0,0,0,0.3)] active:scale-95">
@@ -325,17 +315,12 @@
 
       <!-- Desktop Navigation Menu (>= 1280px / xl) -->
       <nav class="hidden xl:flex items-center gap-6" data-active-classes="text-primary font-bold">
-        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#actividades" data-i18n="nav_actividades">Actividades</a>
         <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#expediciones-insignia" data-i18n="nav_insignia">Expediciones de Autor</a>
         <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#catalogo-tours" data-i18n="nav_catalogo">Catálogo de Tours</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#actividades" data-i18n="nav_actividades">Actividades</a>
         <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#el-anfitrion" data-i18n="nav_anfitrion">El Anfitrión</a>
         <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#planificacion-sagrada" data-i18n="nav_concierge">Miatz Concierge</a>
         <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#resenas" data-i18n="nav_resenas">Reseñas</a>
-        <!-- Replay Intro Trigger -->
-        <button id="replay-intro-btn" class="font-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 bg-secondary/10 hover:bg-secondary/20 px-3 py-1.5 rounded-full" title="Ver animación del jaguar de 6s">
-          <span class="material-symbols-outlined text-[16px]">play_circle</span>
-          <span data-i18n="nav_intro">Intro</span>
-        </button>
       </nav>
 
       <!-- Multilingual Dropdown & Fast CTAs -->
@@ -475,105 +460,77 @@
   <main class="w-full pt-20 bg-surface">
     <div class="flex flex-col w-full">
 
-      <!-- SECTION 1: HERO SECTION (IMAGEN CINEMATOGRÁFICA PURA SIN TEXTOS) -->
-      <section id="hero" class="relative w-full overflow-hidden bg-surface pt-20 sm:pt-24 pb-4 sm:pb-6">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="relative w-full h-[54vh] min-h-[380px] max-h-[640px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(19,78,63,0.12)] border border-primary/10">
-            <img class="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition-transform duration-1000" alt="Riviera Maya Santuario Sagrado" src="assets/chichen_itza_hero.webp"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none"></div>
-          </div>
-        </div>
-      </section>
+      <!-- SECTION 1: HERO SECTION - DISEÑO ESPECTACULAR CHICHÉN ITZÁ AL AMANECER (TEXTO FUERA DE LA IMAGEN) -->
+      <section id="hero" class="relative w-full overflow-hidden bg-gradient-to-b from-surface via-surface-container-lowest to-surface pt-24 sm:pt-28 md:pt-32 pb-10 sm:pb-14 border-b border-outline-variant/20">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-8 sm:gap-10">
 
-      <!-- SECTION: ACTIVIDADES EN LA RIVIERA MAYA (5 CATEGORÍAS EDITORIALES) -->
-      <section class="w-full bg-surface py-space-2xl lg:py-space-3xl border-b border-outline-variant/20" id="actividades">
-        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-space-xl">
-          
-          <div class="text-center flex flex-col items-center gap-space-xs max-w-2xl mx-auto">
-            <div class="inline-flex items-center gap-space-2xs px-3 py-1 rounded-full bg-secondary/10 text-secondary">
-              <span class="material-symbols-outlined text-[16px]">travel_explore</span>
-              <span class="font-label-sm text-label-sm uppercase tracking-widest font-bold" data-i18n="actividades_badge">Exploración del Caribe</span>
-            </div>
-            <h2 class="font-headline-xl text-headline-xl text-primary font-bold" data-i18n="actividades_title">Actividades en la Riviera Maya</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="actividades_desc">
-              Descubre las cinco grandes vertientes de aventura, naturaleza, arqueología y navegación que hacen única a la península de Yucatán.
-            </p>
-          </div>
-
-          <!-- Bento Grid: 5 Categorías Editoriales (Cero Humanos, Solo Paisajes y Actividades) -->
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
+          <!-- BLOQUE EDITORIAL DE TEXTOS (100% EXTERIOR A LA FOTOGRAFÍA) -->
+          <div class="flex flex-col items-center text-center max-w-4xl mx-auto gap-4 sm:gap-6">
             
-            <!-- 1. Parques Temáticos & Ecoturismo -->
-            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-6 h-[280px] sm:h-[320px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
-              <img src="assets/cat_eco_parks.webp" alt="Parques Temáticos & Ecoturismo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-              <div class="relative z-10 flex flex-col gap-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[20px]">park</span>
-                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_eco_title">Parques &amp; Ecoturismo</span>
-                </div>
-                <h3 class="font-headline-md text-xl sm:text-2xl font-bold text-white">Xcaret, Xel-Há &amp; Selva Viva</h3>
-                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-body-sm" data-i18n="cat_eco_desc">Ríos subterráneos milenarios, aviario tropical y espectáculos culturales mexicanos de primer nivel.</p>
-              </div>
-            </a>
+            <!-- Pre-badge de lujo -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/25 shadow-sm">
+              <span class="material-symbols-outlined text-[18px] text-secondary">wb_twilight</span>
+              <span class="font-label-sm uppercase tracking-[0.25em] text-secondary font-bold text-xs" data-i18n="hero_pretitle">
+                Santuario Sagrado Maya · Acceso al Alba
+              </span>
+            </div>
 
-            <!-- 2. Cultura & Ruinas -->
-            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-6 h-[280px] sm:h-[320px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
-              <img src="assets/cat_archaeology.webp" alt="Cultura & Ruinas Arqueológicas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-              <div class="relative z-10 flex flex-col gap-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
-                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_arch_title">Cultura &amp; Ruinas</span>
-                </div>
-                <h3 class="font-headline-md text-xl sm:text-2xl font-bold text-white">Chichén Itzá, Tulum &amp; Cobá</h3>
-                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-body-sm" data-i18n="cat_arch_desc">Monumentos prehispánicos sagrados, cosmología maya y ciudades amuralladas frente al mar turquesa.</p>
-              </div>
-            </a>
+            <!-- Título Monumental H1 -->
+            <h1 class="font-headline-xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary font-extrabold tracking-tight leading-[1.12]" data-i18n="hero_title">
+              Chichén Itzá al Amanecer:<br class="hidden sm:inline"/>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#0e5241] to-secondary">
+                El Despertar Sagrado del Mundo Maya
+              </span>
+            </h1>
 
-            <!-- 3. Mar & Navegación -->
-            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
-              <img src="assets/cat_sea_luxury.webp" alt="Mar & Navegación de Lujo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-              <div class="relative z-10 flex flex-col gap-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[20px]">sailing</span>
-                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_sea_title">Mar &amp; Navegación</span>
-                </div>
-                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Catamarán &amp; Yates de Lujo</h3>
-                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_sea_desc">Travesías a vela por Isla Mujeres, pesca deportiva en altamar y calas privadas del Caribe.</p>
-              </div>
-            </a>
+            <!-- Párrafo Descriptivo de Autor -->
+            <p class="font-body-lg text-base sm:text-lg md:text-xl text-on-surface-variant max-w-3xl leading-relaxed font-normal" data-i18n="hero_desc">
+              Experimenta la maravilla del mundo en la mística quietud matutina, antes del ingreso masivo de visitantes. Una expedición privada de autor creada a tu medida con transporte de alta gama, arqueología viva y guía federal certificado por SECTUR.
+            </p>
 
-            <!-- 4. Secretos del Arrecife (Snorkel & Diving) -->
-            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
-              <img src="assets/cat_reef_snorkel.webp" alt="Secretos del Arrecife" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-              <div class="relative z-10 flex flex-col gap-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[20px]">scuba_diving</span>
-                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_reef_title">Secretos del Arrecife</span>
-                </div>
-                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Arrecife Maya &amp; Cenotes Caverna</h3>
-                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_reef_desc">El segundo arrecife de coral más grande del mundo y cuevas de agua dulce cristalina.</p>
+            <!-- Puntos Clave de Valor / Badges de Exclusividad -->
+            <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1">
+              <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs sm:text-sm font-medium shadow-sm">
+                <span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+                <span data-i18n="hero_pill_1">Acceso Temprano Exclusivo</span>
               </div>
-            </a>
+              <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs sm:text-sm font-medium shadow-sm">
+                <span class="material-symbols-outlined text-secondary text-[18px]">directions_car</span>
+                <span data-i18n="hero_pill_2">Transporte VIP Privado</span>
+              </div>
+              <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs sm:text-sm font-medium shadow-sm">
+                <span class="material-symbols-outlined text-secondary text-[18px]">badge</span>
+                <span data-i18n="hero_pill_3">Guía Federal SECTUR</span>
+              </div>
+              <div class="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface text-xs sm:text-sm font-medium shadow-sm">
+                <span class="material-symbols-outlined text-secondary text-[18px]">groups</span>
+                <span data-i18n="hero_pill_4">Cero Multitudes</span>
+              </div>
+            </div>
 
-            <!-- 5. Aventura & Selva -->
-            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
-              <img src="assets/cat_adventure.webp" alt="Aventura & Selva Maya" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
-              <div class="relative z-10 flex flex-col gap-1.5">
-                <div class="flex items-center gap-2">
-                  <span class="material-symbols-outlined text-secondary text-[20px]">explore</span>
-                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_adv_title">Aventura &amp; Selva</span>
-                </div>
-                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Tirolesas, Cuatrimotos &amp; Cenotes</h3>
-                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_adv_desc">Emoción en la selva profunda, rutas todo terreno y ojos de agua milenarios vírgenes.</p>
-              </div>
-            </a>
+            <!-- Botones de Acción Primarios -->
+            <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
+              <a href="#expediciones-insignia" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-primary text-on-primary font-bold text-sm sm:text-base hover:bg-primary-container hover:shadow-[0_8px_25px_rgba(0,54,42,0.3)] transition-all duration-300 active:scale-95 shadow-md">
+                <span data-i18n="hero_cta_explore">Explorar Expediciones de Autor</span>
+                <span class="material-symbols-outlined text-[20px]">arrow_downward</span>
+              </a>
+              <a href="https://wa.me/529843336000" rel="noopener noreferrer" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-bold text-sm sm:text-base border border-outline-variant/40 hover:border-secondary/50 transition-all duration-300 active:scale-95 shadow-sm">
+                <span class="material-symbols-outlined text-[20px] text-secondary">chat</span>
+                <span data-i18n="hero_cta_dany">Diseñar Itinerario con Dany</span>
+              </a>
+            </div>
 
           </div>
+
+          <!-- MARCO PANORÁMICO ESPECTACULAR (FOTOGRAFÍA PURA SIN TEXTOS DENTRO) -->
+          <div class="relative w-full rounded-3xl sm:rounded-[32px] overflow-hidden shadow-[0_25px_60px_rgba(0,54,42,0.18)] border border-secondary/20 bg-black">
+            <div class="aspect-[16/9] w-full max-h-[640px] overflow-hidden">
+              <img src="assets/chichen_sunrise_hero.webp" alt="Pirámide de Chichén Itzá Kukulkán al Amanecer" class="w-full h-full object-cover object-center transform hover:scale-[1.02] transition-transform duration-1000 ease-out"/>
+            </div>
+            <!-- Resplandor perimetral sutil sin cubrir la foto -->
+            <div class="absolute inset-0 rounded-3xl sm:rounded-[32px] ring-1 ring-inset ring-white/15 pointer-events-none"></div>
+          </div>
+
         </div>
       </section>
 
@@ -810,7 +767,7 @@
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
                   <img class="w-full h-full object-cover" alt="Buceo en Arrecife &amp; Cenotes" src="assets/buceo.webp"/>
-                  <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">PADI Certified</div>
+                  <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Certificación Oficial PADI</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 5 Horas
                   </div>
@@ -1036,6 +993,98 @@
                 </a>
               </div>
             </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: ACTIVIDADES EN LA RIVIERA MAYA (5 CATEGORÍAS EDITORIALES) -->
+      <section class="w-full bg-surface py-space-2xl lg:py-space-3xl border-b border-outline-variant/20" id="actividades">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-space-xl">
+          
+          <div class="text-center flex flex-col items-center gap-space-xs max-w-2xl mx-auto">
+            <div class="inline-flex items-center gap-space-2xs px-3 py-1 rounded-full bg-secondary/10 text-secondary">
+              <span class="material-symbols-outlined text-[16px]">travel_explore</span>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest font-bold" data-i18n="actividades_badge">Exploración del Caribe</span>
+            </div>
+            <h2 class="font-headline-xl text-headline-xl text-primary font-bold" data-i18n="actividades_title">Actividades en la Riviera Maya</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="actividades_desc">
+              Descubre las cinco grandes vertientes de aventura, naturaleza, arqueología y navegación que hacen única a la península de Yucatán.
+            </p>
+          </div>
+
+          <!-- Bento Grid: 5 Categorías Editoriales (Cero Humanos, Solo Paisajes y Actividades) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
+            
+            <!-- 1. Parques Temáticos & Ecoturismo -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-6 h-[280px] sm:h-[320px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_eco_parks.webp" alt="Parques Temáticos & Ecoturismo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">park</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_eco_title">Parques &amp; Ecoturismo</span>
+                </div>
+                <h3 class="font-headline-md text-xl sm:text-2xl font-bold text-white">Xcaret, Xel-Há &amp; Selva Viva</h3>
+                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-body-sm" data-i18n="cat_eco_desc">Ríos subterráneos milenarios, aviario tropical y espectáculos culturales mexicanos de primer nivel.</p>
+              </div>
+            </a>
+
+            <!-- 2. Cultura & Ruinas -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-6 h-[280px] sm:h-[320px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_archaeology.webp" alt="Cultura & Ruinas Arqueológicas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_arch_title">Cultura &amp; Ruinas</span>
+                </div>
+                <h3 class="font-headline-md text-xl sm:text-2xl font-bold text-white">Chichén Itzá, Tulum &amp; Cobá</h3>
+                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-body-sm" data-i18n="cat_arch_desc">Monumentos prehispánicos sagrados, cosmología maya y ciudades amuralladas frente al mar turquesa.</p>
+              </div>
+            </a>
+
+            <!-- 3. Mar & Navegación -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_sea_luxury.webp" alt="Mar & Navegación de Lujo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">sailing</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_sea_title">Mar &amp; Navegación</span>
+                </div>
+                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Catamarán &amp; Yates de Lujo</h3>
+                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_sea_desc">Travesías a vela por Isla Mujeres, pesca deportiva en altamar y calas privadas del Caribe.</p>
+              </div>
+            </a>
+
+            <!-- 4. Secretos del Arrecife (Snorkel & Diving) -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_reef_snorkel.webp" alt="Secretos del Arrecife" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">scuba_diving</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_reef_title">Secretos del Arrecife</span>
+                </div>
+                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Arrecife Maya &amp; Cenotes Caverna</h3>
+                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_reef_desc">El segundo arrecife de coral más grande del mundo y cuevas de agua dulce cristalina.</p>
+              </div>
+            </a>
+
+            <!-- 5. Aventura & Selva -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_adventure.webp" alt="Aventura & Selva Maya" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">explore</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_adv_title">Aventura &amp; Selva</span>
+                </div>
+                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Tirolesas, Cuatrimotos &amp; Cenotes</h3>
+                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_adv_desc">Emoción en la selva profunda, rutas todo terreno y ojos de agua milenarios vírgenes.</p>
+              </div>
+            </a>
 
           </div>
         </div>
@@ -1348,15 +1397,18 @@
         </div>
       </section>
 
-      <!-- SECTION 6: RESEÑAS (Google Maps Local Pack 5.0) -->
+      <!-- SECTION 6: RESEÑAS (Testimonios de Huéspedes Verificados 5.0) -->
       <section class="w-full bg-surface-container-low py-space-3xl lg:py-space-4xl" id="resenas">
         <div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col gap-space-2xl">
           
           <div class="rounded-3xl bg-surface-container-lowest p-space-lg lg:p-space-xl shadow-[0_8px_30px_rgba(19,78,63,0.06)] flex flex-col md:flex-row items-center justify-between gap-space-lg">
             <div class="flex flex-col gap-space-xs">
               <div class="flex items-center gap-space-xs">
-                <span class="px-space-xs py-1 rounded-md bg-secondary text-on-secondary font-label-sm text-label-sm font-bold">GOOGLE LOCAL PACK</span>
-                <span class="font-body-sm text-body-sm text-secondary font-semibold">Riviera Maya Certified</span>
+                <span class="px-3.5 py-1 rounded-full bg-secondary/15 text-secondary font-label-sm text-xs font-bold flex items-center gap-1.5 shadow-sm">
+                  <span class="material-symbols-outlined text-[16px]">verified</span>
+                  <span data-i18n="reviews_badge">Reseñas de Huéspedes Verificadas</span>
+                </span>
+                <span class="font-body-sm text-xs text-secondary font-semibold" data-i18n="reviews_subbadge">Calificación 5.0 de Excelencia</span>
               </div>
               <h2 class="font-headline-xl text-headline-xl text-primary font-bold">Lo Que Dicen Nuestros Viajeros</h2>
               <p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
@@ -1724,7 +1776,6 @@
       const introOverlay = document.getElementById('cinematic-intro-overlay');
       const introCanvas = document.getElementById('introCanvas');
       const skipBtn = document.getElementById('skip-intro-button');
-      const replayBtn = document.getElementById('replay-intro-btn');
       const countdownEl = document.getElementById('intro-countdown');
       const progressFill = document.getElementById('intro-progress-fill');
       const percentEl = document.getElementById('intro-percent');
@@ -1732,10 +1783,9 @@
       const runningBox = document.getElementById('intro-jaguar-running');
       const settledBox = document.getElementById('intro-jaguar-settled');
       const pyramidEl = document.getElementById('intro-pyramid');
-      const brandText = document.getElementById('intro-brand-text');
       const streaksBox = document.getElementById('intro-streaks');
 
-      const TOTAL_INTRO_SECONDS = 6.0;
+      const TOTAL_INTRO_SECONDS = 5.8;
       let introStartTime = performance.now();
       let introActive = true;
       let phaseSettled = false;
@@ -1861,9 +1911,7 @@
         settledBox.classList.add('opacity-0', 'scale-90');
         pyramidEl.classList.remove('opacity-100', 'scale-100');
         pyramidEl.classList.add('opacity-0', 'scale-95');
-        brandText.classList.remove('opacity-100', 'translate-y-0');
-        brandText.classList.add('opacity-0', 'translate-y-4');
-        streaksBox.classList.remove('opacity-0');
+                        streaksBox.classList.remove('opacity-0');
 
         renderIntroCanvas();
       }
@@ -1886,7 +1934,7 @@
         countdownEl.textContent = remaining + 's';
 
         // At 3.6s: Transition from sprinting jaguar to noble emblem & laser pyramid
-        if (elapsed >= 3.6 && !phaseSettled) {
+        if (elapsed >= 2.8 && !phaseSettled) {
           phaseSettled = true;
           streaksBox.classList.add('opacity-0');
 
@@ -1903,9 +1951,7 @@
 
           // Reveal typography at 4.2s
           setTimeout(() => {
-            brandText.classList.remove('opacity-0', 'translate-y-4');
-            brandText.classList.add('opacity-100', 'translate-y-0');
-          }, 700);
+                                  }, 700);
         }
 
         // At 6.0s: Reveal the website
@@ -2215,6 +2261,17 @@
       // -------------------------------------------------------------
       const I18N_DICTIONARY = {
         es: {
+          hero_pretitle: "Santuario Sagrado Maya · Acceso al Alba",
+          hero_title: "Chichén Itzá al Amanecer:<br class=\"hidden sm:inline\"/> <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#0e5241] to-secondary\">El Despertar Sagrado del Mundo Maya</span>",
+          hero_desc: "Experimenta la maravilla del mundo en la mística quietud matutina, antes del ingreso masivo de visitantes. Una expedición privada de autor creada a tu medida con transporte de alta gama, arqueología viva y guía federal certificado por SECTUR.",
+          hero_pill_1: "Acceso Temprano Exclusivo",
+          hero_pill_2: "Transporte VIP Privado",
+          hero_pill_3: "Guía Federal SECTUR",
+          hero_pill_4: "Cero Multitudes",
+          hero_cta_explore: "Explorar Expediciones de Autor",
+          hero_cta_dany: "Diseñar Itinerario con Dany",
+          reviews_badge: "Reseñas de Huéspedes Verificadas",
+          reviews_subbadge: "Calificación 5.0 de Excelencia",
           brand_subtitle: "Riviera Maya · Viajes Privados",
           nav_actividades: "Actividades",
           nav_insignia: "Expediciones de Autor",
@@ -2240,6 +2297,17 @@
           cat_adv_desc: "Tirolesas, cuatrimotos y cenotes vírgenes en la selva maya profunda."
         },
         en: {
+          hero_pretitle: "Sacred Mayan Sanctuary · Dawn Access",
+          hero_title: "Chichén Itzá at Sunrise:<br class=\"hidden sm:inline\"/> <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-primary via-[#0e5241] to-secondary\">The Sacred Awakening of the Mayan World</span>",
+          hero_desc: "Experience this wonder of the world in golden morning tranquility, long before tour crowds arrive. A signature private expedition tailored to your pace with luxury transport, living archaeology, and SECTUR-certified federal guide.",
+          hero_pill_1: "Exclusive Early Access",
+          hero_pill_2: "Private VIP Transport",
+          hero_pill_3: "SECTUR Federal Guide",
+          hero_pill_4: "Zero Crowds",
+          hero_cta_explore: "Explore Signature Expeditions",
+          hero_cta_dany: "Design Itinerary with Dany",
+          reviews_badge: "Verified Guest Reviews",
+          reviews_subbadge: "5.0 Excellence Rating",
           brand_subtitle: "Riviera Maya · Private Journeys",
           nav_actividades: "Activities",
           nav_insignia: "Signature Expeditions",
