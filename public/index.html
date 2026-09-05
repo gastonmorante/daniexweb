@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="format-detection" content="telephone=no"/>
-  <title>Dany Experiences | Riviera Maya • Private Journeys</title>
+  <title>Dany Experiences | Riviera Maya • Viajes Privados</title>
   
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -269,19 +269,16 @@
 
       <!-- NOBLE EMBLEM LOCKUP (Phase 2: 3.6s - 6.0s) -->
       <div id="intro-jaguar-settled" class="absolute opacity-0 transition-all duration-1000 transform scale-90 translate-y-2 pointer-events-none">
-        <img src="assets/logo_head.png" onerror="this.src='https://lh3.googleusercontent.com/aida/AEtjO1V41wYxaAbnb4ZUN1-avvQtXYuD1YwyQmgCmZWY5D70a1XgnMoQO622eJelNBM8HRvNLTADr30XYyiGz9gA3IPFimkhbeTMowdQg98ouEbp-WpuSdvQcgV6dU2d6L3MP8oIKFZNRq2Tg73F38x4O48I1vWxE8M40Vc1OC7FK3lSMsGgmPpNfjQuo8Aldcizzc7ao26D37X7CfRoq04rhpTZEsuvQgrPOcj1_f4XrZBU5p9tSRlgoZyjfYQBn4Ofn7KVu1MXyEE'" alt="Dany Experiences Logo" class="h-44 md:h-56 w-auto object-contain filter drop-shadow-[0_0_35px_rgba(230,200,120,0.75)] drop-shadow-[0_0_65px_rgba(186,209,85,0.45)]"/>
+        <img src="assets/logo_head.png" onerror="this.src='assets/logo_head.png'" alt="Dany Experiences Logo" class="h-44 md:h-56 w-auto object-contain filter drop-shadow-[0_0_35px_rgba(230,200,120,0.75)] drop-shadow-[0_0_65px_rgba(186,209,85,0.45)]"/>
       </div>
 
       <!-- BRAND TYPOGRAPHY REVEAL (4.2s - 6.0s) -->
-      <div id="intro-brand-text" class="flex flex-col items-center mt-3 opacity-0 transition-all duration-1000 transform translate-y-4 text-center">
+      <div id="intro-brand-text" class="flex flex-col items-center mt-3 opacity-0 transition-all duration-1000 transform translate-y-4 text-center pointer-events-none">
         <h1 class="text-4xl md:text-5xl font-extrabold tracking-[0.22em] uppercase text-transparent bg-clip-text bg-gradient-to-r from-[#faeac8] via-[#e6c898] to-[#bad155] drop-shadow-[0_0_25px_rgba(230,200,120,0.6)] font-cinzel">
           DANY
         </h1>
-        <span class="text-xs md:text-sm font-light tracking-[0.55em] uppercase text-emerald-100/90 -mt-0.5">
+        <span class="text-xs md:text-sm font-light tracking-[0.55em] uppercase text-emerald-100/90 -mt-0.5 font-cinzel">
           E X P E R I E N C E S
-        </span>
-        <span class="text-[10px] md:text-xs tracking-[0.3em] uppercase text-[#bad155] font-semibold mt-2.5 opacity-90">
-          RIVIERA MAYA · PRIVATE JOURNEYS
         </span>
       </div>
 
@@ -312,58 +309,82 @@
   <!-- ========================================================= -->
   <!-- TOP APP HEADER (RESPONSIVE PC, TABLET & MOBILE)           -->
   <!-- ========================================================= -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(19,78,63,0.07)] transition-all">
-    <div class="h-16 sm:h-20 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+  <header class="fixed top-0 left-0 w-full z-50 bg-surface/92 backdrop-blur-xl shadow-[0_1px_12px_rgba(19,78,63,0.07)] transition-all">
+    <div class="h-16 sm:h-20 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-4">
       
       <!-- Brand Logo & Name -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <a class="flex items-center gap-2 sm:gap-2.5" data-path="inicio" href="#">
-          <img alt="Logo Dany Experiences" class="h-9 sm:h-11 md:h-12 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,54,42,0.15)]" src="assets/logo_head.png" onerror="this.src='https://lh3.googleusercontent.com/aida/AEtjO1V41wYxaAbnb4ZUN1-avvQtXYuD1YwyQmgCmZWY5D70a1XgnMoQO622eJelNBM8HRvNLTADr30XYyiGz9gA3IPFimkhbeTMowdQg98ouEbp-WpuSdvQcgV6dU2d6L3MP8oIKFZNRq2Tg73F38x4O48I1vWxE8M40Vc1OC7FK3lSMsGgmPpNfjQuo8Aldcizzc7ao26D37X7CfRoq04rhpTZEsuvQgrPOcj1_f4XrZBU5p9tSRlgoZyjfYQBn4Ofn7KVu1MXyEE'"/>
+          <img alt="Logo Dany Experiences" class="h-9 sm:h-11 md:h-12 w-auto object-contain drop-shadow-[0_2px_8px_rgba(0,54,42,0.15)]" src="assets/logo_head.png" onerror="this.src='assets/dany-logo.webp'"/>
           <div class="flex flex-col">
             <span class="font-headline-sm text-primary tracking-tight font-bold text-base sm:text-lg md:text-xl leading-tight">Dany Experiences</span>
-            <span class="hidden sm:inline-block font-label-sm uppercase tracking-widest text-secondary -mt-0.5 font-semibold text-[10px] sm:text-xs">Riviera Maya • Private Journeys</span>
+            <span class="hidden sm:inline-block font-label-sm uppercase tracking-widest text-secondary -mt-0.5 font-semibold text-[10px] sm:text-xs" data-i18n="brand_subtitle">Riviera Maya · Viajes Privados</span>
           </div>
         </a>
       </div>
 
       <!-- Desktop Navigation Menu (>= 1280px / xl) -->
       <nav class="hidden xl:flex items-center gap-6" data-active-classes="text-primary font-bold">
-        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#expediciones-insignia">Expediciones Insignia</a>
-        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#catalogo-tours">Catálogo de Tours</a>
-        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#el-anfitrion">El Anfitrión</a>
-        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#planificacion-sagrada">Miatz Concierge</a>
-        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#resenas">Reseñas</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#actividades" data-i18n="nav_actividades">Actividades</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#expediciones-insignia" data-i18n="nav_insignia">Expediciones de Autor</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#catalogo-tours" data-i18n="nav_catalogo">Catálogo de Tours</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#el-anfitrion" data-i18n="nav_anfitrion">El Anfitrión</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#planificacion-sagrada" data-i18n="nav_concierge">Miatz Concierge</a>
+        <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#resenas" data-i18n="nav_resenas">Reseñas</a>
         <!-- Replay Intro Trigger -->
-        <button id="replay-intro-btn" class="font-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 bg-secondary/10 hover:bg-secondary/20 px-3 py-1.5 rounded-full" title="Ver animación de inicio de 6s">
+        <button id="replay-intro-btn" class="font-label-sm text-secondary hover:text-primary transition-colors flex items-center gap-1 bg-secondary/10 hover:bg-secondary/20 px-3 py-1.5 rounded-full" title="Ver animación del jaguar de 6s">
           <span class="material-symbols-outlined text-[16px]">play_circle</span>
-          <span>Intro</span>
+          <span data-i18n="nav_intro">Intro</span>
         </button>
       </nav>
 
-      <!-- Language Switcher & CTAs & Mobile Hamburger -->
+      <!-- Multilingual Dropdown & Fast CTAs -->
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
-        <!-- 5-Language Switcher (Desktop / Laptop) -->
-        <div class="hidden lg:flex items-center gap-1 bg-surface-container-low px-1.5 py-1 rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.03)] border border-outline-variant/30">
-          <button class="px-2.5 py-1 rounded-full font-label-sm text-xs bg-primary text-on-primary transition-all duration-200" type="button">ES</button>
-          <button class="px-2.5 py-1 rounded-full font-label-sm text-xs text-on-surface-variant hover:text-on-surface transition-colors duration-200" type="button">EN</button>
-          <button class="px-2.5 py-1 rounded-full font-label-sm text-xs text-on-surface-variant hover:text-on-surface transition-colors duration-200" type="button">FR</button>
-          <button class="px-2.5 py-1 rounded-full font-label-sm text-xs text-on-surface-variant hover:text-on-surface transition-colors duration-200" type="button">IT</button>
-          <button class="px-2.5 py-1 rounded-full font-label-sm text-xs text-on-surface-variant hover:text-on-surface transition-colors duration-200" type="button">PT</button>
+        
+        <!-- Multilingual Dropdown Menu -->
+        <div class="relative" id="lang-menu-wrapper">
+          <button id="lang-dropdown-btn" aria-label="Seleccionar idioma" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container border border-outline-variant/30 text-primary font-semibold text-xs active:scale-95 transition-all shadow-sm">
+            <span class="material-symbols-outlined text-[18px] text-secondary">language</span>
+            <span id="active-lang-code" class="tracking-wide">ES</span>
+            <span class="material-symbols-outlined text-[16px] text-on-surface-variant transition-transform duration-200" id="lang-arrow">expand_more</span>
+          </button>
+          <div id="lang-dropdown-menu" class="hidden absolute right-0 top-full mt-2 w-44 rounded-2xl bg-surface-container-lowest/98 backdrop-blur-2xl border border-outline-variant/30 shadow-2xl py-2 z-50 flex flex-col gap-0.5">
+            <button class="lang-option flex items-center justify-between px-3.5 py-2 text-xs font-semibold text-primary hover:bg-surface-container transition-colors" data-lang="es">
+              <span class="flex items-center gap-2">🇲🇽 <span>Español</span></span>
+              <span class="lang-check text-secondary font-bold" id="check-es">✓</span>
+            </button>
+            <button class="lang-option flex items-center justify-between px-3.5 py-2 text-xs font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-lang="en">
+              <span class="flex items-center gap-2">🇺🇸 <span>English</span></span>
+              <span class="lang-check text-secondary font-bold hidden" id="check-en">✓</span>
+            </button>
+            <button class="lang-option flex items-center justify-between px-3.5 py-2 text-xs font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-lang="fr">
+              <span class="flex items-center gap-2">🇫🇷 <span>Français</span></span>
+              <span class="lang-check text-secondary font-bold hidden" id="check-fr">✓</span>
+            </button>
+            <button class="lang-option flex items-center justify-between px-3.5 py-2 text-xs font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-lang="it">
+              <span class="flex items-center gap-2">🇮🇹 <span>Italiano</span></span>
+              <span class="lang-check text-secondary font-bold hidden" id="check-it">✓</span>
+            </button>
+            <button class="lang-option flex items-center justify-between px-3.5 py-2 text-xs font-medium text-on-surface-variant hover:bg-surface-container hover:text-primary transition-colors" data-lang="pt">
+              <span class="flex items-center gap-2">🇧🇷 <span>Português</span></span>
+              <span class="lang-check text-secondary font-bold hidden" id="check-pt">✓</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Direct WhatsApp VIP Concierge (Tablet & Desktop) -->
+        <!-- Direct WhatsApp Concierge (Tablet & Desktop) -->
         <a class="hidden sm:flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary/15 text-secondary hover:bg-secondary hover:text-on-secondary transition-all duration-300 font-semibold text-xs sm:text-sm border border-secondary/30" href="https://wa.me/529843336000" rel="noopener noreferrer" target="_blank">
           <span class="material-symbols-outlined text-[18px]">chat</span>
-          <span class="hidden md:inline">VIP Concierge</span>
+          <span class="hidden md:inline" data-i18n="btn_whatsapp_concierge">Atención VIP</span>
         </a>
 
-        <!-- Fast Booking CTA (Universal) -->
-        <a class="flex items-center justify-center gap-1 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-all duration-300 shadow-[0_4px_16px_rgba(0,54,42,0.2)] font-semibold text-xs sm:text-sm active:scale-95" href="#planificacion-sagrada">
-          <span>Reservar</span>
+        <!-- Reservar CTA -->
+        <a class="flex items-center justify-center gap-1 px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-all duration-300 shadow-[0_4px_16px_rgba(0,54,42,0.2)] font-semibold text-xs sm:text-sm active:scale-95" href="#planificacion-sagrada">
+          <span data-i18n="btn_reservar">Reservar</span>
           <span class="material-symbols-outlined text-[15px] hidden xs:inline">arrow_forward</span>
         </a>
 
-        <!-- Mobile & Tablet Hamburger Menu Toggle Button (< 1280px) -->
+        <!-- Mobile Menu Toggle Button (< 1280px) -->
         <button id="mobile-menu-toggle" aria-label="Abrir menú de navegación" class="xl:hidden w-10 h-10 rounded-full bg-surface-container-low hover:bg-surface-container text-primary flex items-center justify-center transition-colors border border-outline-variant/40 active:scale-95">
           <span class="material-symbols-outlined text-[24px]">menu</span>
         </button>
@@ -454,101 +475,103 @@
   <main class="w-full pt-20 bg-surface">
     <div class="flex flex-col w-full">
 
-      <!-- SECTION 1: HERO SECTION -->
-      <section class="relative w-full overflow-hidden bg-surface py-space-3xl lg:py-space-4xl -mt-20 pt-36 lg:pt-44">
-        <div class="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-secondary-fixed/25 blur-3xl pointer-events-none"></div>
-        <div class="absolute top-1/2 -right-40 w-[550px] h-[550px] rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
-        <div class="absolute inset-0 opacity-[0.035] pointer-events-none" style="background-image: radial-gradient(#134e3f 1px, transparent 1px); background-size: 28px 28px;"></div>
-        
-        <div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+      <!-- SECTION 1: HERO SECTION (IMAGEN CINEMATOGRÁFICA PURA SIN TEXTOS) -->
+      <section id="hero" class="relative w-full overflow-hidden bg-surface pt-20 sm:pt-24 pb-4 sm:pb-6">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="relative w-full h-[54vh] min-h-[380px] max-h-[640px] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(19,78,63,0.12)] border border-primary/10">
+            <img class="w-full h-full object-cover object-center transform scale-100 hover:scale-105 transition-transform duration-1000" alt="Riviera Maya Santuario Sagrado" src="assets/chichen_itza_hero.webp"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 pointer-events-none"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: ACTIVIDADES EN LA RIVIERA MAYA (5 CATEGORÍAS EDITORIALES) -->
+      <section class="w-full bg-surface py-space-2xl lg:py-space-3xl border-b border-outline-variant/20" id="actividades">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col gap-space-xl">
+          
+          <div class="text-center flex flex-col items-center gap-space-xs max-w-2xl mx-auto">
+            <div class="inline-flex items-center gap-space-2xs px-3 py-1 rounded-full bg-secondary/10 text-secondary">
+              <span class="material-symbols-outlined text-[16px]">travel_explore</span>
+              <span class="font-label-sm text-label-sm uppercase tracking-widest font-bold" data-i18n="actividades_badge">Exploración del Caribe</span>
+            </div>
+            <h2 class="font-headline-xl text-headline-xl text-primary font-bold" data-i18n="actividades_title">Actividades en la Riviera Maya</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant" data-i18n="actividades_desc">
+              Descubre las cinco grandes vertientes de aventura, naturaleza, arqueología y navegación que hacen única a la península de Yucatán.
+            </p>
+          </div>
+
+          <!-- Bento Grid: 5 Categorías Editoriales (Cero Humanos, Solo Paisajes y Actividades) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
             
-            <!-- Left Copy -->
-            <div class="lg:col-span-7 flex flex-col items-start gap-space-md">
-              <div class="inline-flex items-center gap-space-xs px-space-md py-space-2xs rounded-full bg-surface-container-low shadow-[0_2px_8px_rgba(19,78,63,0.06)]">
-                <span class="text-secondary text-[14px]">✦</span>
-                <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] text-primary font-bold">Expediciones Privadas de Ultra-Lujo</span>
+            <!-- 1. Parques Temáticos & Ecoturismo -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-6 h-[280px] sm:h-[320px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_eco_parks.webp" alt="Parques Temáticos & Ecoturismo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">park</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_eco_title">Parques &amp; Ecoturismo</span>
+                </div>
+                <h3 class="font-headline-md text-xl sm:text-2xl font-bold text-white">Xcaret, Xel-Há &amp; Selva Viva</h3>
+                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-body-sm" data-i18n="cat_eco_desc">Ríos subterráneos milenarios, aviario tropical y espectáculos culturales mexicanos de primer nivel.</p>
               </div>
-              <h1 class="font-display-hero text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary tracking-tight leading-tight">
-                Descubre la Sabiduría del <span class="italic font-normal text-secondary">Mundo Maya</span> en su Máximo Esplendor
-              </h1>
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-                Expediciones exclusivas guiadas por Dany, anfitrión federal certificado. Conexión sagrada con Chichén Itzá al amanecer, cenotes milenarios vírgenes y costas caribeñas privadas sin aglomeraciones.
-              </p>
-              
-              <!-- CTAs: Responsive full-width on mobile -->
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-space-xs w-full">
-                <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-primary-container text-on-primary font-semibold text-sm sm:text-base shadow-[0_8px_24px_rgba(19,78,63,0.22)] hover:bg-primary transition-all duration-300 active:scale-95" href="#planificacion-sagrada">
-                  <span class="material-symbols-outlined text-[20px]">auto_awesome</span>
-                  <span>Planificar con IA Miatz</span>
-                </a>
-                <a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-lowest text-primary font-semibold text-sm sm:text-base shadow-[0_2px_12px_rgba(0,0,0,0.05)] hover:bg-surface-container-low transition-all duration-300 active:scale-95" href="#catalogo-tours">
-                  <span>Explorar Expediciones</span>
-                  <span class="material-symbols-outlined text-[18px]">south</span>
-                </a>
+            </a>
+
+            <!-- 2. Cultura & Ruinas -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-6 h-[280px] sm:h-[320px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_archaeology.webp" alt="Cultura & Ruinas Arqueológicas" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">account_balance</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_arch_title">Cultura &amp; Ruinas</span>
+                </div>
+                <h3 class="font-headline-md text-xl sm:text-2xl font-bold text-white">Chichén Itzá, Tulum &amp; Cobá</h3>
+                <p class="text-xs sm:text-sm text-white/80 leading-relaxed font-body-sm" data-i18n="cat_arch_desc">Monumentos prehispánicos sagrados, cosmología maya y ciudades amuralladas frente al mar turquesa.</p>
               </div>
+            </a>
 
-              <!-- Trust Stats Pill -->
-              <div class="flex flex-wrap items-center gap-x-space-lg gap-y-space-xs pt-space-md font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
-                <div class="flex items-center gap-space-2xs">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
-                  <span>10+ Años de Sabiduría</span>
+            <!-- 3. Mar & Navegación -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_sea_luxury.webp" alt="Mar & Navegación de Lujo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">sailing</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_sea_title">Mar &amp; Navegación</span>
                 </div>
-                <div class="h-3 w-px bg-outline-variant"></div>
-                <div class="flex items-center gap-space-2xs">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">star</span>
-                  <span class="text-on-surface font-bold">5.0 ★ Google Maps (148+ Reseñas)</span>
-                </div>
-                <div class="h-3 w-px bg-outline-variant"></div>
-                <div class="flex items-center gap-space-2xs">
-                  <span class="material-symbols-outlined text-secondary text-[18px]">nature_people</span>
-                  <span>100% Personalizado</span>
-                </div>
+                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Catamarán &amp; Yates de Lujo</h3>
+                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_sea_desc">Travesías a vela por Isla Mujeres, pesca deportiva en altamar y calas privadas del Caribe.</p>
               </div>
-            </div>
+            </a>
 
-            <!-- Right Visual Montage -->
-            <div class="lg:col-span-5 relative">
-              <div class="relative mx-auto max-w-[460px] lg:max-w-none">
-                <div class="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(19,78,63,0.14)] bg-surface-container-lowest p-space-xs">
-                  <div class="relative w-full h-[320px] sm:h-[400px] md:h-[480px] rounded-2xl overflow-hidden">
-                    <img class="w-full h-full object-cover" alt="Chichén Itzá amanecer dorado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmlPJHPUICZBmgQEMceY6tP529tnIg-Tb2BI-mH5pEpPYmE5xqGtw-y-ENuyK6YsG5blIyFlQa_UE3kcI9pAyEEC9iiK2eYhK10AnFJjA3cKdmzhGoZiXnLIttKn0Dqh9pLBk_omL2CHiJq4nXaJv3oRp_QLG3NGr2JZe5Dt6IW6UqNejMet7zGsHmE8lnqmRqGnHrijzmqpXRodGmqEQ_BapfuUKb2HkKywQ6J3dNQsd2IANyBK0"/>
-                    <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-black/10"></div>
-                    
-                    <!-- Floating Card Over Hero -->
-                    <div class="absolute bottom-space-md left-space-md right-space-md p-space-md rounded-xl bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.12)] flex items-center justify-between">
-                      <div class="flex items-center gap-space-sm">
-                        <div class="w-11 h-11 rounded-full bg-secondary/15 flex items-center justify-center text-secondary">
-                          <span class="material-symbols-outlined text-[24px]">explore</span>
-                        </div>
-                        <div class="flex flex-col">
-                          <span class="font-title-md text-title-md text-primary font-bold">Acceso VIP Amanecer</span>
-                          <span class="font-body-sm text-body-sm text-on-surface-variant">Chichén Itzá sin multitudes</span>
-                        </div>
-                      </div>
-                      <span class="font-label-sm text-label-sm px-space-xs py-space-2xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant uppercase font-bold">Exclusivo</span>
-                    </div>
-                  </div>
+            <!-- 4. Secretos del Arrecife (Snorkel & Diving) -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_reef_snorkel.webp" alt="Secretos del Arrecife" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">scuba_diving</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_reef_title">Secretos del Arrecife</span>
                 </div>
-
-                <!-- Floating SECTUR Stamp -->
-                <div class="absolute -bottom-6 -left-6 hidden sm:flex items-center gap-space-sm p-space-sm rounded-2xl bg-surface-container-lowest shadow-[0_12px_32px_rgba(0,54,42,0.12)]">
-                  <div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
-                    <span class="material-symbols-outlined text-[20px]">temple_hindu</span>
-                  </div>
-                  <div>
-                    <p class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">SECTUR México</p>
-                    <p class="font-title-md text-title-md text-primary font-bold">Guía Federal No. 0489</p>
-                  </div>
-                </div>
-
-                <!-- Live Booking Notification -->
-                <div class="absolute -top-4 -right-4 hidden sm:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_8px_20px_rgba(0,0,0,0.08)]">
-                  <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-ping"></span>
-                  <span class="font-label-sm text-label-sm text-on-surface font-semibold">Sarah (🇺🇸) reservó Buceo VIP</span>
-                </div>
+                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Arrecife Maya &amp; Cenotes Caverna</h3>
+                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_reef_desc">El segundo arrecife de coral más grande del mundo y cuevas de agua dulce cristalina.</p>
               </div>
-            </div>
+            </a>
+
+            <!-- 5. Aventura & Selva -->
+            <a href="#catalogo-tours" class="group relative overflow-hidden rounded-3xl lg:col-span-4 h-[260px] sm:h-[300px] shadow-[0_8px_24px_rgba(19,78,63,0.08)] flex flex-col justify-end p-6 text-white border border-white/10 hover:border-secondary/40 transition-all duration-500">
+              <img src="assets/cat_adventure.webp" alt="Aventura & Selva Maya" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent"></div>
+              <div class="relative z-10 flex flex-col gap-1.5">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-secondary text-[20px]">explore</span>
+                  <span class="font-label-sm uppercase tracking-widest text-secondary font-bold text-xs" data-i18n="cat_adv_title">Aventura &amp; Selva</span>
+                </div>
+                <h3 class="font-headline-md text-lg sm:text-xl font-bold text-white">Tirolesas, Cuatrimotos &amp; Cenotes</h3>
+                <p class="text-xs text-white/80 leading-relaxed font-body-sm" data-i18n="cat_adv_desc">Emoción en la selva profunda, rutas todo terreno y ojos de agua milenarios vírgenes.</p>
+              </div>
+            </a>
 
           </div>
         </div>
@@ -581,7 +604,7 @@
             <!-- Insignia 1: Chichén Itzá -->
             <article class="group rounded-3xl overflow-hidden bg-surface-container-lowest shadow-[0_8px_24px_rgba(19,78,63,0.06)] hover:shadow-[0_20px_40px_rgba(19,78,63,0.12)] transition-all duration-300 flex flex-col">
               <div class="relative aspect-[4/3] w-full overflow-hidden">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Chichén Itzá Amanecer Sagrado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjKlTirUOk6T4AQxBxlaFEprphwqB6AXCitGuR4b4-QgZ_4bR_h_rMCXeBJk497_dB23RVyA0t6Tq9iKa_SuQdbskaqLm4hv837BDVlFJNFzKenB5SuJdeGwVv1BPv0oBZ496VClQ7f3uSdzB9QSMiwBEG2WKmUAQtCr2bjfc5137v0YoLJSVPnkzdazsFRgbugOfaCoNo9Fu5V8fSMkm3CAZQNug9IU01FXe4Bjb2CwvUpXJThcs"/>
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Chichén Itzá Amanecer Sagrado" src="assets/chichen_itza_sunset.webp"/>
                 <div class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-label-sm text-label-sm text-primary font-bold">
                   ✦ Amanecer Sagrado
                 </div>
@@ -616,7 +639,7 @@
             <!-- Insignia 2: Tulum -->
             <article class="group rounded-3xl overflow-hidden bg-surface-container-lowest shadow-[0_8px_24px_rgba(19,78,63,0.06)] hover:shadow-[0_20px_40px_rgba(19,78,63,0.12)] transition-all duration-300 flex flex-col">
               <div class="relative aspect-[4/3] w-full overflow-hidden">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Tulum Ciudad del Amanecer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQx3xPIFJ4-oYY2IWl_UfKPayNB999WsflyHQ3T6sAS4j8V-fMFWSSBS2Mtb6pAO_cSbhr_sNGCVB7O0p9zbiDYXPLoxfXhsmWbn2TRBNcrmIvvLbxZ7YPSmQeA-BtcZ-qHBt_nnUk5EgygADxGDqa8ZotJ_UH9PNyiFJEDo7G2O26FV5QExndPzRkilq6gdcJnx6UMoTUgtrJNg6oG0k-XrqV-EvnGtLAlXI_BzYS2JMukCobhnk"/>
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Tulum Ciudad del Amanecer" src="assets/tulum_hero.webp"/>
                 <div class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-label-sm text-label-sm text-primary font-bold">
                   ✦ Ciudad del Amanecer
                 </div>
@@ -651,7 +674,7 @@
             <!-- Insignia 3: Casa Tortuga -->
             <article class="group rounded-3xl overflow-hidden bg-surface-container-lowest shadow-[0_8px_24px_rgba(19,78,63,0.06)] hover:shadow-[0_20px_40px_rgba(19,78,63,0.12)] transition-all duration-300 flex flex-col">
               <div class="relative aspect-[4/3] w-full overflow-hidden">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mística Casa Tortuga Cenotes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs7qndh0jHMb0RZhpu9zNOKlyK_Oo7APesktBkXK0TFZbN1mSf5LUl1soCsLpDq5RfSL1npxMjx4kFW9PyJwCF5ejBEtUCusd6ZCD5_b-6dnW4whSAkdrGb0OO7zvGUAphEHeyGpYGrkd6Duv2Djms7hoF9eJdSguzU7_FteJP2A7nfFtFoaS9HbXUduIUICI3u-XK_tTdvKFDQFX5z41osxdLwZSWev5rjSSzD8NHaySYy-d2ZPk"/>
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mística Casa Tortuga Cenotes" src="assets/casa_tortuga_hero.webp"/>
                 <div class="absolute top-space-sm left-space-sm px-space-sm py-space-2xs rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-sm font-label-sm text-label-sm text-primary font-bold">
                   ✦ Inframundo Maya
                 </div>
@@ -728,7 +751,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="mar">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="El Cielo y Palancar Cozumel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8-N6BkswkVNYulUL2IKluciuWnkFcxUVt6k1NRVMh9CSSNG2T-aPgLASI8O2J4rzdoBddmLy1NX_94_Mc6wiH4zw8FjB4h3-NI4y5DdeZUoGy7fhZydXFcvxmq4t_dAmynz1vy6r4k6RKmpHFodvg9ltWk4X0jSJ74AHUiJLXz8SpGtuKsILkqtKEcOXpwVAl4HL4sV2SypN0nBJ_WmxQZxAjuOlmC3EC55-h1ShYdlhJMTjVvOE"/>
+                  <img class="w-full h-full object-cover" alt="El Cielo y Palancar Cozumel" src="assets/cozumel.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Snorkel &amp; Arrecife</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 4.5 Horas
@@ -757,7 +780,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="xcaret">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Xcaret Total" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcMNLJB0XcOs4BWpsQtFFczYU4Zc-jbHrSfOj7ozz_IjL9NWixZu4MrrhgsV0qyTbZH0tlbHCUOL5AbyoYxoFsnZgfOGOkvOxhjNYHFd81yALVsvSE1tkaTnoxKrdU079t2356JUrNXtSrHjY5atPxnfaATdjFbOUOHfKLdE8UVmDFBTNcE5u7xfLYcCVTTgXaRdWR_0fUorctAbudus1DcqnoUfm0--8XIOn4jEUoX5Av2ucgnBc"/>
+                  <img class="w-full h-full object-cover" alt="Xcaret Total" src="assets/xcaret.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Mundos Xcaret</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 12 Horas
@@ -786,7 +809,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="cenotes">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Buceo en Arrecife & Cenotes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh5F051BLkJ-sok4j1_KHbW-l3QqQPZuRw3d9L2UVUFBGeRpgmsge5RhKQ5PpLRyqqZN8gvIKFiIlDQYCcjIlLMRC_In4sTnzzIxdtI_gDXlGD-R29NTwCDfBK2GtYNUoU9MqsVnuoO1S5569rYuTdpZWAme_b5mQbf00jdLSZgFdxxPuBJc8DccSoT50RvFs9mPG6wS7kodavWEGPnqHBbjt_DSCxek5z__AZjx9Q8OTcFLkbavk"/>
+                  <img class="w-full h-full object-cover" alt="Buceo en Arrecife &amp; Cenotes" src="assets/buceo.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">PADI Certified</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 5 Horas
@@ -811,17 +834,17 @@
               </div>
             </div>
 
-            <!-- Item 4: Fine Dining Frente al Mar -->
+            <!-- Item 4: Alta Gastronomía Frente al Mar -->
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="mar">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Fine Dining Frente al Mar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf4JdKRcMEF8xA1b8K19rKuUcSBxtWX5P-g5rfSMW3dN3nbS-RTwmXwMTHZalQWgT7Atb9VpYXKv-kOmkJVreDiJMxzU_T5rys3s2n6-0MRdEFiTWXECBbHdhqeRYyO1VSbwDgS84jp12iWzlrNk6Cmv7zAEc2UF1VwniiPIifyuPDcTp2Ln9etuz-Qp0HA_4lEA15ekyPDlHgI1RRRnJofAfQcISd8mK0_dOKV-dItwvp9K-BPWA"/>
+                  <img class="w-full h-full object-cover" alt="Alta Gastronomía Frente al Mar" src="assets/cenas.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Gourmet &amp; Romance</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 3.5 Horas
                   </div>
                 </div>
-                <h3 class="font-title-lg text-title-lg text-primary font-bold">Fine Dining Frente al Mar</h3>
+                <h3 class="font-title-lg text-title-lg text-primary font-bold">Alta Gastronomía Frente al Mar</h3>
                 <p class="font-body-sm text-body-sm text-on-surface-variant">Exquisita cena de 3 tiempos frente a la brisa marina. Disfruta langosta caribeña fresca, cortes prime y maridaje de autor.</p>
                 <div class="flex items-center gap-space-2xs text-secondary font-body-sm text-body-sm font-semibold">
                   <span class="material-symbols-outlined text-[16px]">verified</span>
@@ -844,7 +867,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="yates">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Catamarán Isla Mujeres VIP" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7k8p3wCg4SP7U327UQETA9vBeu4YjYDWK1BhLMlsgHCZmkSDAoaGGDBEgFlC8Ol0KvydyW1ZRl6RPBOv_g7IpBME8mj9a0fWmjTXAGu6zk51rJ5iugRGafJ0nWiMARMYRlBPEr7mST8BTwaXvERhi3UB6y1vDn2LospoxRBK2Z2CYKhNxfuWhX-D3VZF7cj5h9cUwl36pCnu4yvSji8AlgAX_wdJqHPi6MwuEUfGbVQ3OC7rhlsw"/>
+                  <img class="w-full h-full object-cover" alt="Catamarán Isla Mujeres" src="assets/isla mujeres.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Catamarán VIP</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 7 Horas
@@ -873,7 +896,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="cultura">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Golf de Campeonato Riviera Maya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVEI_4qpkwyTI_SEQD1ZYIYSLcY9p1VxrHAvMJv5JzuGLYrTNk6qyybpR_sADjj0zeGRtw1cK2d_rzAFM1BcCnYr7-pI3P1V8MvXb1SAp8iAlNB8MJI_pLLta_wvVpqpCigkeqjubMV0Qw7I3sjiVOOBdUysBFeixPkDthCuipbliXc1falp0oaxwt4t8imu4M-EK8ZHKGVo7wlu0Sm8D1-_gDvCXKyr5FIYYP5GoMID0q3iW8OI"/>
+                  <img class="w-full h-full object-cover" alt="Golf de Campeonato Riviera Maya" src="assets/golf.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">18 Hoyos PGA</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 5 Horas
@@ -902,7 +925,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="yates">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Pesca Deportiva Privada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOTvD6WkRTerQV-4MdXfu7TUSdgJQtKtIVxDl13_nltA_hcnNKRKr8BBvhcoS6813XBMLTysBNchDAliNDRMG5d__nmCPQ4WkOVXhWS8Y2KmLqJHbo4_LktSe98tPpnXorTnsbyiaAxZeXEI0ZiFq3aNAJWFuoDj0o-c2XymYprijjgtIaMeA8RzEhHN_3B5Pck0iE-wLTBdLkzXbvy38QHcw-NzfZi8M09FdGhc2KgqNP14Y3I3Y"/>
+                  <img class="w-full h-full object-cover" alt="Pesca Deportiva Privada" src="assets/pesca.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Chárter Privado</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 4-6 Horas
@@ -931,7 +954,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="yates">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Yates & Catamaranes Privados" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhzQ_Dq9O4OymmYreERTjVeXs0_F697GDMQGk4d25vcPzGGy23V0fbiTl6NEq0QHYPrunygrBC9w9WnFlMre926fjkkaG-zyo2KzodA2YGL-ly7y4A8OYzNrWcx48UaFnGB6Mm6JA24ZvwBcWPu6qR8v0_Ol-a3ieQkq7x2JSMXVbbetbXfBb95pRp_T2bwH1o80EkKBxdJ15vGnYQCLd3qFUgKQH4dgFl5SPjOBMRlg3rFsW9qZI"/>
+                  <img class="w-full h-full object-cover" alt="Yates &amp; Catamaranes Privados" src="assets/yates.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Ultra Lujo VIP</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 4 Horas
@@ -960,7 +983,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md" data-category="cenotes">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Ruta de Cenotes Sagrados" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHlK8zoPNNQ3AbfZiRXT48gbRFvlOgn-P1vLmfNv6iM61sXppPmw8sYRJg0UddwjJMRqzQUjKbk8UgZceAI1p_QfK3adtnwSSBESgqIJ53Agb85e_cyE9JNfmHteQ78yla3UUl0LLfrOkBJQjjz8lMpRoFiB-MO7dxKO9w13sIHvE0o2f_srZTeIZNKocJUS5CZ_yaQrJFekcUpe3TgM7OGmGRKjL7R7IZN-EbzreqRGgvFSR-ecU"/>
+                  <img class="w-full h-full object-cover" alt="Ruta de Cenotes Sagrados" src="assets/cenotes.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Ecoturismo Sagrado</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 5 Horas
@@ -989,7 +1012,7 @@
             <div class="tour-card rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_4px_16px_rgba(19,78,63,0.05)] flex flex-col justify-between gap-space-md lg:col-start-3" data-category="cultura" id="card-coba-end">
               <div class="flex flex-col gap-space-sm">
                 <div class="relative w-full h-48 rounded-xl overflow-hidden">
-                  <img class="w-full h-full object-cover" alt="Ruinas Arqueológicas & Cobá" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBktJpu_XeA6GWQf3ilW0UJTVqXSwUIiCbjm-e-9KGBZ2G4WyGcfY620ix8rj1kvfSBMflUSs58YyjC95Q7aAoeiNCf2DYlPO8sEtpvrBEzMjYXwa8oJMwh_ZZQrzx8WkIKxxnZdJTnQmcyCsWQ40dpzPSA6SC8sXOHN3lIScLz6BB2Q7Fwx2aoa76thlKlaxmPURMwjMcCaMm7i6ZOdeikfbjGA497NEF65bn2JL6aB3JqHno0eN8"/>
+                  <img class="w-full h-full object-cover" alt="Ruinas Arqueológicas &amp; Cobá" src="assets/ruinas.webp"/>
                   <div class="absolute top-2 left-2 px-space-xs py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur font-label-sm text-label-sm text-secondary font-bold">Historia Maya</div>
                   <div class="absolute bottom-2 right-2 px-space-xs py-1 rounded-md bg-black/60 backdrop-blur text-white font-label-sm text-label-sm flex items-center gap-1">
                     <span class="material-symbols-outlined text-[14px]">schedule</span> 11 Horas
@@ -1028,7 +1051,7 @@
               <div class="relative w-full max-w-[420px]">
                 <div class="rounded-3xl overflow-hidden shadow-[0_16px_40px_rgba(19,78,63,0.12)] bg-surface-container-lowest p-space-xs">
                   <div class="relative w-full h-[460px] rounded-2xl overflow-hidden">
-                    <img class="w-full h-full object-cover" alt="Dany Hernández Guía Certificado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLwJwym6LhO1XQroQuGJlOOtD2QJ05lIYOv7G0NmvzNcvo4g65JAYtyR2rybNGhYzjvFqihDmrXVjlA35MX_S30iwQMNStRFaTOCMCVfCmSNLUfB6gsPPdXtaAIxZ_MqZQRfB7W64AB2xMPkevdlUriSfdU0uEe2hC8DI-PrLaySyzKxh74DQ8zzMIGRqE5hh7maRLsLwLEW2VyV0U-JiePcrRug3m_33zDBS6vOMMuXJkQ0ZUdCE"/>
+                    <img class="w-full h-full object-cover" alt="Dany Hernández Guía Certificado" src="assets/dany_profile.webp"/>
                     <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-transparent to-transparent"></div>
                     <div class="absolute bottom-space-md left-space-md right-space-md text-on-primary">
                       <p class="font-headline-md text-headline-md text-on-primary font-bold">Dany Hernández</p>
@@ -1044,7 +1067,7 @@
                   </div>
                   <div class="flex flex-col">
                     <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">100% Certificado</span>
-                    <span class="font-body-sm text-body-sm text-primary font-semibold">Credencial Oficial No. 0489</span>
+                    <span class="font-body-sm text-body-sm text-primary font-semibold">Guía Federal Certificado por SECTUR</span>
                   </div>
                 </div>
               </div>
@@ -1514,7 +1537,7 @@
         
         <div class="lg:col-span-5 flex flex-col gap-space-md">
           <div class="flex items-center gap-space-xs">
-            <img alt="Logo Dany Experiences" class="h-10 w-auto object-contain" src="assets/logo_head.png" onerror="this.src='https://lh3.googleusercontent.com/aida/AEtjO1V41wYxaAbnb4ZUN1-avvQtXYuD1YwyQmgCmZWY5D70a1XgnMoQO622eJelNBM8HRvNLTADr30XYyiGz9gA3IPFimkhbeTMowdQg98ouEbp-WpuSdvQcgV6dU2d6L3MP8oIKFZNRq2Tg73F38x4O48I1vWxE8M40Vc1OC7FK3lSMsGgmPpNfjQuo8Aldcizzc7ao26D37X7CfRoq04rhpTZEsuvQgrPOcj1_f4XrZBU5p9tSRlgoZyjfYQBn4Ofn7KVu1MXyEE'"/>
+            <img alt="Logo Dany Experiences" class="h-10 w-auto object-contain" src="assets/logo_head.png" onerror="this.src='assets/logo_head.png'"/>
             <span class="font-headline-md text-headline-md text-primary font-bold">Dany Experiences</span>
           </div>
           <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
@@ -1584,12 +1607,111 @@
         <p>© 2026 Dany Experiences S.A. de C.V. Todos los derechos reservados.</p>
         <div class="flex items-center gap-space-lg">
           <a class="hover:text-on-surface transition-colors" href="#">Términos &amp; Condiciones</a>
-          <a class="hover:text-on-surface transition-colors" href="#">Aviso de Privacidad</a>
+          <a class="hover:text-primary transition-colors cursor-pointer" onclick="openLegalModal('privacidad')">Aviso de Privacidad (LFPDPPP)</a>
           <a class="hover:text-on-surface transition-colors" href="#">Seguridad &amp; Garantías</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ========================================================= -->
+  <!-- MODAL LEGAL INTERACTIVO: TÉRMINOS, PRIVACIDAD & POLÍTICAS   -->
+  <!-- ========================================================= -->
+  <div id="legal-modal-backdrop" class="fixed inset-0 z-[99990] bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <div id="legal-modal" class="fixed inset-4 sm:inset-10 md:inset-16 lg:inset-20 z-[99995] bg-surface-container-lowest rounded-3xl shadow-2xl border border-outline-variant/30 flex flex-col overflow-hidden opacity-0 pointer-events-none scale-95 transition-all duration-300">
+    
+    <!-- Modal Header -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-outline-variant/30 bg-surface-container-low">
+      <div class="flex items-center gap-2.5">
+        <span class="material-symbols-outlined text-secondary text-[24px]">gavel</span>
+        <h3 class="font-headline-sm text-primary font-bold text-lg sm:text-xl" id="legal-modal-title">Marco Legal &amp; Términos de Servicio</h3>
+      </div>
+      <button id="legal-modal-close" aria-label="Cerrar ventana legal" class="w-9 h-9 rounded-full bg-surface hover:bg-surface-container text-primary flex items-center justify-center transition-colors active:scale-95">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+    </div>
+
+    <!-- Modal Tabs -->
+    <div class="flex items-center gap-2 px-6 py-2 bg-surface-container-low/60 border-b border-outline-variant/20 overflow-x-auto no-scrollbar">
+      <button class="legal-tab-btn px-4 py-2 rounded-xl text-xs font-bold bg-primary text-on-primary transition-all shrink-0" data-tab="terminos">
+        Términos y Condiciones
+      </button>
+      <button class="legal-tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all shrink-0" data-tab="privacidad">
+        Aviso de Privacidad (LFPDPPP)
+      </button>
+      <button class="legal-tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all shrink-0" data-tab="cancelacion">
+        Políticas de Cancelación &amp; Clima
+      </button>
+      <button class="legal-tab-btn px-4 py-2 rounded-xl text-xs font-semibold text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all shrink-0" data-tab="medioambiente">
+        Sostenibilidad &amp; Cenotes
+      </button>
+    </div>
+
+    <!-- Modal Content Body -->
+    <div class="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 text-on-surface leading-relaxed text-sm">
+      
+      <!-- TAB 1: TÉRMINOS Y CONDICIONES -->
+      <div id="pane-terminos" class="legal-tab-pane space-y-4">
+        <div class="border-b border-outline-variant/20 pb-3">
+          <h4 class="font-headline-md text-primary font-bold text-lg">Términos y Condiciones de Servicio Turístico Privado</h4>
+          <p class="text-xs text-on-surface-variant">Conforme a la Ley General de Turismo de los Estados Unidos Mexicanos y disposiciones de PROFECO.</p>
+        </div>
+        <p><strong>1. Identificación del Prestador:</strong> Dany Experiences es una entidad de servicios de guianza turística especializada y logística de expediciones privadas de lujo con base de operaciones en la Riviera Maya, Quintana Roo, México. Los recorridos son operados bajo la supervisión de Guías Oficiales Acreditados ante la Secretaría de Turismo Federal (SECTUR).</p>
+        <p><strong>2. Naturaleza Exclusiva del Servicio:</strong> Todas las expediciones catalogadas como "Insignia", "Privadas" o "A Medida" corresponden a vehículos terrestres privados de alta gama (con aire acondicionado, agua embotellada y amenidades de cortesía), conductor certificado y guía federal exclusivo para el grupo contratante. En excursiones combinadas marítimas o visitas a parques temáticos, rigen complementariamente las normativas de seguridad de las embarcaciones de recreo y reglamentos internos de los recintos de conservación.</p>
+        <p><strong>3. Responsabilidad Civil y Cobertura de Seguros:</strong> El transporte terrestre asignado cuenta con Póliza de Responsabilidad Civil Viajero obligatoria conforme a la legislación federal de caminos y puentes. En actividades acuáticas de snorkel, buceo o navegación, se incluyen chalecos salvavidas certificados y equipo reglamentario avalado por Capitanía de Puerto.</p>
+        <p><strong>4. Deber de Cuidado del Viajero:</strong> El contratante asume la responsabilidad de informar cualquier restricción médica, cardíaca, de movilidad o alergias alimentarias al momento de confirmar la reserva a fin de adaptar los itinerarios oportunamente.</p>
+      </div>
+
+      <!-- TAB 2: AVISO DE PRIVACIDAD -->
+      <div id="pane-privacidad" class="legal-tab-pane hidden space-y-4">
+        <div class="border-b border-outline-variant/20 pb-3">
+          <h4 class="font-headline-md text-primary font-bold text-lg">Aviso de Privacidad Integral</h4>
+          <p class="text-xs text-on-surface-variant">En apego a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP).</p>
+        </div>
+        <p><strong>1. Responsable del Tratamiento:</strong> Dany Experiences es responsable del tratamiento legítimo, controlado e informado de sus datos personales facilitados a través de formularios de reserva, mensajes de WhatsApp o correo electrónico.</p>
+        <p><strong>2. Datos Recabados:</strong> Para la contratación y prestación de las experiencias, recabamos: nombre completo, teléfono de contacto (WhatsApp), dirección de correo electrónico, idioma de preferencia, fechas deseadas de recorrido, hotel o alojamiento de recogida y solicitudes especiales (alergias o preferencias alimentarias).</p>
+        <p><strong>3. Finalidad del Tratamiento:</strong> Los datos se utilizarán exclusivamente para: (a) Confirmar disponibilidad y gestionar la reserva de las expediciones; (b) Coordinar traslados directos y accesos a zonas arqueológicas, reservas o parques; (c) Mantener comunicación fluida de asistencia de viaje y atención de contingencias operativas.</p>
+        <p><strong>4. No Comercialización ni Transferencia:</strong> Sus datos personales NUNCA serán vendidos, transferidos ni compartidos con empresas ajenas o agencias de mercadotecnia masiva. Solo se transmiten los datos estrictamente necesarios a operadores de parques o lancheros para efectos de emisión de brazaletes o seguros obligatorios.</p>
+        <p><strong>5. Derechos ARCO:</strong> En cualquier momento podrá ejercer sus derechos de Acceso, Rectificación, Cancelación u Oposición enviando un mensaje directo a nuestra línea de asistencia legal vía WhatsApp (+52 984 333 6000).</p>
+      </div>
+
+      <!-- TAB 3: CANCELACIÓN & CLIMA -->
+      <div id="pane-cancelacion" class="legal-tab-pane hidden space-y-4">
+        <div class="border-b border-outline-variant/20 pb-3">
+          <h4 class="font-headline-md text-primary font-bold text-lg">Políticas de Cancelación, Modificación y Clima</h4>
+          <p class="text-xs text-on-surface-variant">Garantía de flexibilidad y transparencia ante contingencias meteorológicas del Caribe Mexicano.</p>
+        </div>
+        <p><strong>1. Cancelaciones Anticipadas:</strong> Si el huésped cancela con más de 48 horas de antelación a la fecha programada del tour, se reembolsará el 100% del anticipo o se reprogramará la fecha sin cargo ni penalización alguna.</p>
+        <p><strong>2. Cancelaciones de 48 a 24 horas:</strong> Aplica una reprogramación flexible válida por 12 meses o crédito aplicable a cualquier otra experiencia dentro de la Riviera Maya.</p>
+        <p><strong>3. Fuerza Mayor y Cierre de Puertos por Clima:</strong> Cuando la Capitanía de Puerto cierre la navegación marítima por condiciones climáticas adversas (vientos, marejadas, frentes fríos), o las autoridades decreten el cierre temporal de zonas arqueológicas, el huésped podrá optar libremente por: (a) Reprogramación prioritaria en la siguiente fecha disponible; (b) Cambio de itinerario por una alternativa terrestre viable de similar o superior categoría; (c) Reembolso íntegro del monto abonado.</p>
+        <p><strong>4. Garantía de Puntualidad y No-Show:</strong> Rogamos a los huéspedes estar listos en el lobby de su hospedaje a la hora pactada en la confirmación. El margen de cortesía es de 20 minutos para evitar demoras en el acceso preferente a ruinas arqueológicas.</p>
+      </div>
+
+      <!-- TAB 4: SOSTENIBILIDAD & CENOTES -->
+      <div id="pane-medioambiente" class="legal-tab-pane hidden space-y-4">
+        <div class="border-b border-outline-variant/20 pb-3">
+          <h4 class="font-headline-md text-primary font-bold text-lg">Normas de Conservación Ambiental &amp; Cenotes Sagrados</h4>
+          <p class="text-xs text-on-surface-variant">Protocolos bioculturales y de protección al Gran Acuífero Maya.</p>
+        </div>
+        <p><strong>1. Prohibición de Bloqueadores Químicos:</strong> Para ingresar a cenotes, ríos subterráneos y caletas de Quintana Roo, está estrictamente prohibido el uso de protectores solares, bronceadores, repelentes de mosquitos o lociones corporales no 100% biodegradables. Es obligatorio ducharse previamente en las instalaciones ecológicas para proteger el manto freático.</p>
+        <p><strong>2. Respeto a Espeleotemas y Estructuras Ancestrales:</strong> En cenotes caverna y zonas arqueológicas protegidas por el INAH, está terminantemente prohibido tocar, quebrar o alterar estalagmitas, estalactitas o glifos mayas milenarios.</p>
+        <p><strong>3. Cero Plásticos de Un Solo Uso:</strong> Promovemos expediciones libres de basura plástica; suministramos termos y agua purificada fresca en recipientes reutilizables durante todo el recorrido.</p>
+        <p><strong>4. Respeto a la Fauna y Ecosistemas Silvestres:</strong> En avistamientos de tortugas marinas en Akumal o Cozumel, así como en senderos de la selva, se debe guardar una distancia mínima de 3 metros y nunca alimentar, perseguir ni tocar a las especies silvestres.</p>
+      </div>
+
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="px-6 py-4 border-t border-outline-variant/30 bg-surface-container-low flex items-center justify-between">
+      <span class="text-xs text-on-surface-variant hidden sm:inline">Dany Experiences · Turismo Sustentable Acreditado</span>
+      <button id="legal-modal-ok" class="ml-auto px-6 py-2 rounded-full bg-primary text-on-primary text-xs font-bold hover:bg-primary-container transition-all active:scale-95 shadow-md">
+        Entendido y Aceptar
+      </button>
+    </div>
+
+  </div>
+
 
   <!-- ========================================================= -->
   <!-- CLIENT-SIDE SCRIPTS: INTRO + CATALOG + CHAT + BUILDER     -->
@@ -2064,7 +2186,259 @@
           }, 350);
         });
       }
-    })();
+    
+      // -------------------------------------------------------------
+      // MULTILINGUAL DROPDOWN CONTROLLER
+      // -------------------------------------------------------------
+      const langDropdownBtn = document.getElementById('lang-dropdown-btn');
+      const langDropdownMenu = document.getElementById('lang-dropdown-menu');
+      const langArrow = document.getElementById('lang-arrow');
+      const activeLangCode = document.getElementById('active-lang-code');
+
+      if (langDropdownBtn && langDropdownMenu) {
+        langDropdownBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          langDropdownMenu.classList.toggle('hidden');
+          if (langArrow) langArrow.classList.toggle('rotate-180');
+        });
+
+        document.addEventListener('click', (e) => {
+          if (!langDropdownBtn.contains(e.target) && !langDropdownMenu.contains(e.target)) {
+            langDropdownMenu.classList.add('hidden');
+            if (langArrow) langArrow.classList.remove('rotate-180');
+          }
+        });
+      }
+
+      // -------------------------------------------------------------
+      // PURE 5-LANGUAGE DICTIONARY (ES, EN, FR, IT, PT)
+      // -------------------------------------------------------------
+      const I18N_DICTIONARY = {
+        es: {
+          brand_subtitle: "Riviera Maya · Viajes Privados",
+          nav_actividades: "Actividades",
+          nav_insignia: "Expediciones de Autor",
+          nav_catalogo: "Catálogo de Tours",
+          nav_anfitrion: "El Anfitrión",
+          nav_concierge: "Miatz Concierge",
+          nav_resenas: "Reseñas",
+          nav_intro: "Intro",
+          btn_whatsapp_concierge: "Atención VIP",
+          btn_reservar: "Reservar",
+          actividades_badge: "Exploración del Caribe",
+          actividades_title: "Actividades en la Riviera Maya",
+          actividades_desc: "Descubre las cinco grandes vertientes de aventura, naturaleza, arqueología y navegación que hacen única a la península de Yucatán.",
+          cat_eco_title: "Parques & Ecoturismo",
+          cat_eco_desc: "Ríos subterráneos milenarios, aviario tropical y espectáculos culturales mexicanos de primer nivel.",
+          cat_arch_title: "Cultura & Ruinas",
+          cat_arch_desc: "Monumentos prehispánicos sagrados, cosmología maya y ciudades amuralladas frente al mar turquesa.",
+          cat_sea_title: "Mar & Navegación",
+          cat_sea_desc: "Travesías a vela por Isla Mujeres, pesca deportiva en altamar y calas privadas del Caribe.",
+          cat_reef_title: "Secretos del Arrecife",
+          cat_reef_desc: "El segundo arrecife de coral más grande del mundo y cuevas de agua dulce cristalina.",
+          cat_adv_title: "Aventura & Selva",
+          cat_adv_desc: "Tirolesas, cuatrimotos y cenotes vírgenes en la selva maya profunda."
+        },
+        en: {
+          brand_subtitle: "Riviera Maya · Private Journeys",
+          nav_actividades: "Activities",
+          nav_insignia: "Signature Expeditions",
+          nav_catalogo: "Tours Catalog",
+          nav_anfitrion: "The Host",
+          nav_concierge: "Miatz Concierge",
+          nav_resenas: "Reviews",
+          nav_intro: "Intro",
+          btn_whatsapp_concierge: "VIP Support",
+          btn_reservar: "Book Now",
+          actividades_badge: "Caribbean Exploration",
+          actividades_title: "Riviera Maya Activities",
+          actividades_desc: "Explore the five pillars of adventure, pristine nature, archaeology, and private sailing that define the Yucatan Peninsula.",
+          cat_eco_title: "Parks & Ecotourism",
+          cat_eco_desc: "Ancient underground rivers, tropical aviary, and world-class authentic Mexican cultural shows.",
+          cat_arch_title: "Culture & Ruins",
+          cat_arch_desc: "Sacred pre-Hispanic monuments, Mayan cosmology, and cliffside walled cities overlooking turquoise waters.",
+          cat_sea_title: "Sea & Sailing",
+          cat_sea_desc: "Private catamaran charters to Isla Mujeres, deep sea sport fishing, and secluded Caribbean bays.",
+          cat_reef_title: "Reef Secrets",
+          cat_reef_desc: "The world's second-largest barrier reef and crystalline underground freshwater cavern cenotes.",
+          cat_adv_title: "Adventure & Jungle",
+          cat_adv_desc: "Canopy ziplines, all-terrain ATV trails, and pristine hidden cenotes deep in the Mayan jungle."
+        },
+        fr: {
+          brand_subtitle: "Riviera Maya · Voyages Privés",
+          nav_actividades: "Activités",
+          nav_insignia: "Expéditions Uniques",
+          nav_catalogo: "Catalogue des Tours",
+          nav_anfitrion: "Votre Hôte",
+          nav_concierge: "Miatz Concierge",
+          nav_resenas: "Avis",
+          nav_intro: "Intro",
+          btn_whatsapp_concierge: "Support VIP",
+          btn_reservar: "Réserver",
+          actividades_badge: "Exploration des Caraïbes",
+          actividades_title: "Activités en Riviera Maya",
+          actividades_desc: "Découvrez les cinq piliers d'aventure, de nature préservée, d'archéologie et de navigation qui subliment le Yucatán.",
+          cat_eco_title: "Parcs & Écotourisme",
+          cat_eco_desc: "Rivières souterraines millénaires, volière tropicale et grands spectacles culturels traditionnels.",
+          cat_arch_title: "Culture & Vestiges",
+          cat_arch_desc: "Monuments préhispaniques sacrés, cosmologie maya et forteresses dominant la mer turquoise.",
+          cat_sea_title: "Mer & Navigation",
+          cat_sea_desc: "Croisières privées en catamaran vers Isla Mujeres, pêche au gros et criques paradisiaques.",
+          cat_reef_title: "Secrets du Récif",
+          cat_reef_desc: "La deuxième plus vaste barrière de corail au monde et de majestueux cénotes aux eaux cristallines.",
+          cat_adv_title: "Aventure & Jungle",
+          cat_adv_desc: "Tyroliennes au-dessus de la canopée, parcours quad tout-terrain et cénotes secrets préservés."
+        },
+        it: {
+          brand_subtitle: "Riviera Maya · Viaggi Privati",
+          nav_actividades: "Attività",
+          nav_insignia: "Spedizioni Esclusive",
+          nav_catalogo: "Catalogo Tour",
+          nav_anfitrion: "Il Tuo Host",
+          nav_concierge: "Miatz Concierge",
+          nav_resenas: "Recensioni",
+          nav_intro: "Intro",
+          btn_whatsapp_concierge: "Assistenza VIP",
+          btn_reservar: "Prenota",
+          actividades_badge: "Esplorazione Caraibica",
+          actividades_title: "Attività nella Riviera Maya",
+          actividades_desc: "Scopri le cinque dimensioni di avventura, natura incontaminata, archeologia e navigazione dello Yucatán.",
+          cat_eco_title: "Parchi & Ecoturismo",
+          cat_eco_desc: "Fiumi sotterranei millenari, riserve faunistiche e spettacoli culturali messicani indimenticabili.",
+          cat_arch_title: "Cultura & Rovine",
+          cat_arch_desc: "Monumenti preispanici sacri, cosmologia maya e templi a picco sul mare turchese.",
+          cat_sea_title: "Mare & Navigazione",
+          cat_sea_desc: "Tour privati in catamarano verso Isla Mujeres, pesca d'altura e baie caraibiche esclusive.",
+          cat_reef_title: "Segreti della Barriera",
+          cat_reef_desc: "La seconda barriera corallina più grande al mondo e spettacolari cenotes di acqua purissima.",
+          cat_adv_title: "Avventura & Giungla",
+          cat_adv_desc: "Teleferiche nella giungla selvaggia, itinerari in quad e cenotes nascosti nella selva."
+        },
+        pt: {
+          brand_subtitle: "Riviera Maya · Viagens Privadas",
+          nav_actividades: "Atividades",
+          nav_insignia: "Expedições Exclusivas",
+          nav_catalogo: "Catálogo de Tours",
+          nav_anfitrion: "O Anfitrião",
+          nav_concierge: "Miatz Concierge",
+          nav_resenas: "Avaliações",
+          nav_intro: "Intro",
+          btn_whatsapp_concierge: "Atendimento VIP",
+          btn_reservar: "Reservar",
+          actividades_badge: "Exploração do Caribe",
+          actividades_title: "Atividades na Riviera Maya",
+          actividades_desc: "Descubra os cinco pilares de aventura, natureza, arqueologia e navegação que tornam Yucatán fascinante.",
+          cat_eco_title: "Parques & Ecoturismo",
+          cat_eco_desc: "Rios subterrâneos milenares, aviário tropical e espetáculos culturais mexicanos de alto nível.",
+          cat_arch_title: "Cultura & Ruínas",
+          cat_arch_desc: "Monumentos pré-hispânicos sagrados, cosmologia maia e cidades amuralhadas diante do mar turquesa.",
+          cat_sea_title: "Mar & Navegação",
+          cat_sea_desc: "Passeios de catamarã para Isla Mujeres, pesca esportiva em alto-mar e enseadas caribenhas privadas.",
+          cat_reef_title: "Segredos dos Recifes",
+          cat_reef_desc: "O segundo maior recife de corais do planeta e cenotes de água doce cristalina.",
+          cat_adv_title: "Aventura & Selva",
+          cat_adv_desc: "Tirolesas na selva tropical, trilhas de quadriciclo off-road e cenotes naturais preservados."
+        }
+      };
+
+      const setSiteLanguage = (lang) => {
+        const dict = I18N_DICTIONARY[lang] || I18N_DICTIONARY.es;
+        if (activeLangCode) activeLangCode.textContent = lang.toUpperCase();
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (dict[key]) {
+            el.innerHTML = dict[key];
+          }
+        });
+
+        // Update checks in dropdown
+        ['es', 'en', 'fr', 'it', 'pt'].forEach(code => {
+          const chk = document.getElementById('check-' + code);
+          if (chk) {
+            if (code === lang) {
+              chk.classList.remove('hidden');
+            } else {
+              chk.classList.add('hidden');
+            }
+          }
+        });
+      };
+
+      document.querySelectorAll('.lang-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          setSiteLanguage(lang);
+          if (langDropdownMenu) langDropdownMenu.classList.add('hidden');
+          if (langArrow) langArrow.classList.remove('rotate-180');
+        });
+      });
+
+      // -------------------------------------------------------------
+      // LEGAL MODAL CONTROLLER
+      // -------------------------------------------------------------
+      const legalModal = document.getElementById('legal-modal');
+      const legalBackdrop = document.getElementById('legal-modal-backdrop');
+      const legalClose = document.getElementById('legal-modal-close');
+      const legalOk = document.getElementById('legal-modal-ok');
+      const legalTabBtns = document.querySelectorAll('.legal-tab-btn');
+      const legalPanes = document.querySelectorAll('.legal-tab-pane');
+
+      window.openLegalModal = (tabId) => {
+        if (!legalModal) return;
+        legalModal.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+        legalModal.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+        if (legalBackdrop) {
+          legalBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+          legalBackdrop.classList.add('opacity-100', 'pointer-events-auto');
+        }
+        document.body.style.overflow = 'hidden';
+
+        if (tabId) switchLegalTab(tabId);
+      };
+
+      const closeLegalModal = () => {
+        if (!legalModal) return;
+        legalModal.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+        legalModal.classList.add('opacity-0', 'pointer-events-none', 'scale-95');
+        if (legalBackdrop) {
+          legalBackdrop.classList.remove('opacity-100', 'pointer-events-auto');
+          legalBackdrop.classList.add('opacity-0', 'pointer-events-none');
+        }
+        document.body.style.overflow = '';
+      };
+
+      const switchLegalTab = (tabId) => {
+        legalTabBtns.forEach(b => {
+          if (b.getAttribute('data-tab') === tabId) {
+            b.classList.remove('text-on-surface-variant', 'bg-transparent');
+            b.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+          } else {
+            b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+            b.classList.add('text-on-surface-variant', 'font-semibold');
+          }
+        });
+
+        legalPanes.forEach(p => {
+          if (p.id === 'pane-' + tabId) {
+            p.classList.remove('hidden');
+          } else {
+            p.classList.add('hidden');
+          }
+        });
+      };
+
+      legalTabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tabId = btn.getAttribute('data-tab');
+          switchLegalTab(tabId);
+        });
+      });
+
+      if (legalClose) legalClose.addEventListener('click', closeLegalModal);
+      if (legalOk) legalOk.addEventListener('click', closeLegalModal);
+      if (legalBackdrop) legalBackdrop.addEventListener('click', closeLegalModal);
+})();
   </script>
   <!-- ========================================================= -->
   <!-- NATIVE MOBILE APP BOTTOM NAVIGATION BAR (< 1024px)        -->
