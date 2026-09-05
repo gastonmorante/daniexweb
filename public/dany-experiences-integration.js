@@ -1463,17 +1463,6 @@ function bindEvents() {
       intrinsicallyPrivate: true,
       description: 'La fortaleza maya frente al mar Caribe turquesa. Historia marítima, energía ancestral y playa paradisíaca.'
     },
-    boss: {
-      id: 'boss',
-      name: 'Yo lo pido (Bespoke)',
-      category: 'Personalizado',
-      priceUSD: 120,
-      priceMXN: 2100,
-      duration: 'Flexible',
-      image: './assets/yo lo pido.webp',
-      intrinsicallyPrivate: true,
-      description: 'Diseña tu propia aventura exclusiva con vehículo privado, chofer y concierge dedicado para armar tus destinos soñados.'
-    },
     czm: {
       id: 'czm',
       name: 'El Cielo y Palancar (Cozumel)',
