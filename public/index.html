@@ -120,10 +120,10 @@
 
 <!-- Navigation (Desktop/Tablet) -->
 <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-background/40 backdrop-blur-xl border-b border-white/5">
-    <div class="flex items-center gap-3">
-        <img alt="Dany Experiences Logo" class="h-10 w-10 md:h-12 md:w-12 object-contain filter drop-shadow-[0_0_8px_rgba(140,214,179,0.5)]" src="./assets/logo.svg"/>
+    <a href="#" class="flex items-center gap-3 group">
+        <img alt="Dany Experiences Logo" class="h-12 md:h-16 w-auto object-contain filter drop-shadow-[0_0_10px_rgba(186,209,85,0.35)] transition-transform group-hover:scale-105 duration-300" src="./assets/logo.svg"/>
         <span class="font-headline-sm text-lg md:text-xl font-bold tracking-tight text-primary">Dany Experiences</span>
-    </div>
+    </a>
     
     <div class="flex items-center gap-4">
         <!-- Language Selector -->
@@ -310,111 +310,8 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Bento Grid Section: Actividades en la Riviera Maya -->
-    <section id="actividades" class="py-24 px-margin-mobile md:px-margin-desktop bg-surface/20 border-y border-white/5 scroll-mt-20">
-        <div class="max-w-container-max mx-auto">
-            <div class="max-w-2xl mb-12 scroll-reveal">
-                <h2 class="font-headline-lg text-3xl md:text-5xl mb-4 text-on-surface" data-i18n="bento_title">Actividades en la Riviera Maya</h2>
-                <p class="font-body-md text-on-surface-variant" data-i18n="bento_subtitle">Explora la colección completa de aventuras y excursiones disponibles.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
-                <!-- 1. Parques Temáticos y Eco-Arqueológicos -->
-                <div class="group relative overflow-hidden rounded-[2rem] border border-white/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll bg-[#101412]" onclick="window.openTourModal('Mundos_Extraordinarios')">
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('./assets/cat_eco_parks.webp')"></div>
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-                    <div class="relative z-20 space-y-2">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="material-symbols-outlined text-sm text-secondary">park</span>
-                            <h3 class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold" data-i18n="cat_eco_parks_title">Parques Temáticos</h3>
-                        </div>
-                        <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_eco_parks_desc">Xcaret, Xel-Há, Xplor, Xenses, Río Secreto, Aqua Nick y más.</p>
-                        <div class="flex flex-wrap gap-1 pt-1.5 border-t border-white/10 mt-2">
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Xcaret Plus</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Xel-Há</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Xplor Fuego</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Zonas Arqueológicas y Cultura -->
-                <div class="group relative overflow-hidden rounded-[2rem] border border-white/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll bg-[#101412]" onclick="window.openTourModal('Chichen_Gold_Expedition')">
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('./assets/cat_archaeology.webp')"></div>
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-                    <div class="relative z-20 space-y-2">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="material-symbols-outlined text-sm text-secondary">account_balance</span>
-                            <h3 class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold" data-i18n="cat_archaeology_title">Cultura &amp; Ruinas</h3>
-                        </div>
-                        <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_archaeology_desc">Chichén Itzá, Tulum, Cobá, Ek Balam y Valladolid.</p>
-                        <div class="flex flex-wrap gap-1 pt-1.5 border-t border-white/10 mt-2">
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Chichén Deluxe</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Tulum &amp; Snorkel</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Cobá</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Actividades Acuáticas y de Mar -->
-                <div class="group relative overflow-hidden rounded-[2rem] border border-white/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 lg:col-span-2 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll bg-[#101412]" onclick="window.openTourModal('Horizonte_Caribe')">
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('./assets/cat_sea_luxury.webp')"></div>
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-                    <div class="relative z-20 space-y-2">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="material-symbols-outlined text-sm text-secondary">sailing</span>
-                            <h3 class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold" data-i18n="cat_sea_title">Mar &amp; Navegación</h3>
-                        </div>
-                        <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_sea_desc">Isla Mujeres, tiburón ballena, MUSA, Jungle Tour, pesca y cruceros.</p>
-                        <div class="flex flex-wrap gap-1 pt-1.5 border-t border-white/10 mt-2">
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Isla Mujeres</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Tiburón Ballena</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Akumal Tortugas</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Secretos del Arrecife (Snorkel & Diving) -->
-                <div class="group relative overflow-hidden rounded-[2rem] border border-white/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-1 lg:col-span-3 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll bg-[#101412]" onclick="window.openTourModal('Secretos_Arrecife')">
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('./assets/cat_reef_snorkel.webp')" data-seo-alt="Snorkel de lujo en el arrecife maya y buceo en cenotes sagrados"></div>
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-                    <div class="relative z-20 space-y-2">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="material-symbols-outlined text-sm text-secondary">scuba_diving</span>
-                            <h3 class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold" data-i18n="cat_dolphins_title">Secretos del Arrecife</h3>
-                        </div>
-                        <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_dolphins_desc">Explora la biodiversidad del Gran Arrecife Maya y el misticismo de las cuevas inundadas. Una inmersión total en las venas de la tierra.</p>
-                        <div class="flex flex-wrap gap-1 pt-1.5 border-t border-white/10 mt-2">
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Snorkel Arrecife</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Buceo Cenotes</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Cozumel VIP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Aventura y Naturaleza -->
-                <div class="group relative overflow-hidden rounded-[2rem] border border-white/10 hover:border-primary/50 hover:shadow-xl transition-all duration-500 cursor-pointer col-span-1 sm:col-span-2 lg:col-span-3 aspect-video sm:aspect-[16/10] flex flex-col justify-end p-6 text-white text-left animate-on-scroll bg-[#101412]" onclick="window.openTourModal('Selva_Viva')">
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('./assets/cat_adventure.webp')"></div>
-                    <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-black/95 via-black/30 to-transparent z-10"></div>
-                    <div class="relative z-20 space-y-2">
-                        <div class="flex items-center gap-2 mb-1">
-                            <span class="material-symbols-outlined text-sm text-secondary">explore</span>
-                            <h3 class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold" data-i18n="cat_adventure_title">Aventura &amp; Selva</h3>
-                        </div>
-                        <p class="text-xs text-white/90 leading-relaxed font-body-md" data-i18n="cat_adventure_desc">Tirolesas en Selvática, cuatrimotos todoterreno, Xenotes, Coloradas.</p>
-                        <div class="flex flex-wrap gap-1 pt-1.5 border-t border-white/10 mt-2">
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">Selvática</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">ATVs Motos</span>
-                            <span class="bg-white/10 text-white/90 px-2 py-0.5 rounded text-[8px] uppercase tracking-wider font-bold">4 Xenotes Tour</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Catálogo Completo de Tours & Excursiones (12 Tours) -->
+    <!-- Catálogo Completo de Tours & Excursiones -->
     <section id="catalogo-tours" class="py-24 px-margin-mobile md:px-margin-desktop bg-[#0c100e] border-y border-white/5 scroll-mt-20 relative">
         <div class="max-w-container-max mx-auto">
             <!-- Section Header -->
