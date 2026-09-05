@@ -29,6 +29,18 @@
   // i18n Translation Dictionary
   const TRANSLATIONS = {
     es: {
+      nav_reviews: 'Reseñas',
+      reviews_badge: 'Google Maps Local Pack • 5.0 ★★★★★',
+      reviews_title: 'Lo Que Dicen Nuestros Viajeros',
+      reviews_subtitle: 'Experiencias reales compartidas por huéspedes de todo el mundo que descubrieron la Riviera Maya con Dany.',
+      reviews_rating: '5.0 de 5.0 • 148+ Reseñas',
+      review_1_text: '¡Servicio increíble! Dany organizó un chárter privado en yate a El Cielo y Palancar para mi familia. El snorkel fue espectacular y la comida a bordo deliciosa. ¡Atención de primer nivel!',
+      review_2_text: 'El tour privado a Chichén Itzá y el cenote sagrado fue insuperable. El transporte privado de lujo tenía aire acondicionado perfecto y bebidas frías. Guía sumamente culto y respetuoso.',
+      review_3_text: 'Experiencia espectacular de buceo y cenotes. El asistente de IA nos ayudó a armar la ruta y Dany coordinó todo inmediatamente por WhatsApp. Muy seguro para viajar en familia.',
+      review_4_text: 'Expediciones de boutique diseñadas con absoluta maestría. La combinación de ruinas de Tulum y Casa Tortuga fue mágica. Cero aglomeraciones y calidez humana impecable.',
+      fomo_confirmed: 'RESERVA CONFIRMADA',
+      fomo_designed: 'ITINERARIO CREADO',
+      fomo_ago: 'Hace {m} minutos',
       nav_tours: "Tours Privados",
       nav_about: "Sobre Dany",
       nav_certifications: "Certificaciones",
@@ -131,6 +143,18 @@
       num_guest_assist: "Atención al Turista"
     },
     en: {
+      nav_reviews: 'Reviews',
+      reviews_badge: 'Google Maps Local Pack • 5.0 ★★★★★',
+      reviews_title: 'What Our Travelers Say',
+      reviews_subtitle: 'Real experiences shared by guests from around the world who explored the Riviera Maya with Dany.',
+      reviews_rating: '5.0 out of 5.0 • 148+ Reviews',
+      review_1_text: 'Amazing service! Dany organized a private yacht charter to El Cielo and Palancar for my family. The snorkeling was spectacular and food on board was delicious. Top tier service!',
+      review_2_text: 'The private tour to Chichén Itzá and sacred cenote was second to none. Luxury private transport with perfect AC and cold drinks. Highly knowledgeable and respectful guide.',
+      review_3_text: 'Spectacular diving and cenotes experience. The AI assistant helped us design the route and Dany coordinated everything right away on WhatsApp. Extremely safe for families.',
+      review_4_text: 'Masterfully crafted boutique expeditions. The Tulum ruins and Casa Tortuga combo was magical. Zero crowds and warm, impeccable hospitality.',
+      fomo_confirmed: 'BOOKING CONFIRMED',
+      fomo_designed: 'ITINERARY CREATED',
+      fomo_ago: '{m} minutes ago',
       nav_tours: "Private Tours",
       nav_about: "About Dany",
       nav_certifications: "Credentials",
@@ -233,6 +257,18 @@
       num_guest_assist: "Tourist Hotline"
     },
     fr: {
+      nav_reviews: 'Avis',
+      reviews_badge: 'Google Maps Local Pack • 5.0 ★★★★★',
+      reviews_title: 'Ce Que Disent Nos Voyageurs',
+      reviews_subtitle: 'Des expériences authentiques partagées par des voyageurs du monde entier ayant exploré la Riviera Maya avec Dany.',
+      reviews_rating: '5.0 sur 5.0 • 148+ Avis',
+      review_1_text: 'Service incroyable ! Dany a organisé une location privée de yacht pour El Cielo et Palancar pour ma famille. Le snorkeling était spectaculaire et la nourriture délicieuse !',
+      review_2_text: 'La visite privée de Chichén Itzá et du cénote sacré était inégalée. Transport de luxe avec climatisation impeccable et boissons fraîches. Guide très cultivé.',
+      review_3_text: "Expérience spectaculaire de plongée et cénotes. L'IA nous a aidés à concevoir notre itinéraire et Dany a tout coordonné immédiatement par WhatsApp.",
+      review_4_text: 'Excursions boutique conçues avec un savoir-faire absolu. La combinaison Tulum et Casa Tortuga était magique. Aucune foule et hospitalité irréprochable.',
+      fomo_confirmed: 'RÉSERVATION CONFIRMÉE',
+      fomo_designed: 'ITINÉRAIRE CRÉÉ',
+      fomo_ago: 'Il y a {m} minutes',
       nav_tours: "Tours Privés",
       nav_about: "À propos de Dany",
       nav_certifications: "Certifications",
@@ -335,6 +371,18 @@
       num_guest_assist: "Assistance Touristique"
     },
     it: {
+      nav_reviews: 'Recensioni',
+      reviews_badge: 'Google Maps Local Pack • 5.0 ★★★★★',
+      reviews_title: 'Cosa Dicono i Nostri Viaggiatori',
+      reviews_subtitle: 'Esperienze autentiche condivise da ospiti di tutto il mondo che hanno scoperto la Riviera Maya con Dany.',
+      reviews_rating: '5.0 su 5.0 • 148+ Recensioni',
+      review_1_text: 'Servizio incredibile! Dany ha organizzato un charter privato in yacht per El Cielo e Palancar per la mia famiglia. Snorkeling spettacolare e cibo delizioso!',
+      review_2_text: 'Il tour privato a Chichén Itzá e al cenote sacro è stato imbattibile. Trasporto di lusso con aria condizionata e bevande fresche. Guida molto colta.',
+      review_3_text: "Esperienza spettacolare di immersioni e cenote. L'IA ci ha aiutato a creare l'itinerario e Dany ha coordinato tutto subito su WhatsApp.",
+      review_4_text: 'Tour boutique creati con maestria. La combinazione di Tulum e Casa Tortuga è stata magica. Niente folla e calorosa ospitalità impeccabile.',
+      fomo_confirmed: 'PRENOTAZIONE CONFERMATA',
+      fomo_designed: 'ITINERARIO CREATO',
+      fomo_ago: '{m} minuti fa',
       nav_tours: "Tour Privati",
       nav_about: "Su Dany",
       nav_certifications: "Certificazioni",
@@ -437,6 +485,18 @@
       num_guest_assist: "Assistenza Turistica"
     },
     pt: {
+      nav_reviews: 'Avaliações',
+      reviews_badge: 'Google Maps Local Pack • 5.0 ★★★★★',
+      reviews_title: 'O Que Dizem Nossos Viajantes',
+      reviews_subtitle: 'Experiências reais compartilhadas por viajantes de todo o mundo que exploraram a Riviera Maya com Dany.',
+      reviews_rating: '5.0 de 5.0 • 148+ Avaliações',
+      review_1_text: 'Serviço incrível! Dany organizou um charter de iate privativo para El Cielo e Palancar para minha família. O snorkel foi espetacular e a comida a bordo deliciosa!',
+      review_2_text: 'O tour privativo a Chichén Itzá e ao cenote sagrado foi insuperável. Transporte de luxo com ar-condicionado perfeito e bebidas geladas. Guia muito culto.',
+      review_3_text: 'Experiência espetacular de mergulho e cenotes. A IA nos ajudou a montar o roteiro e Dany coordenou tudo imediatamente pelo WhatsApp. Muito seguro para famílias.',
+      review_4_text: 'Passeios de boutique desenhados com maestria absoluta. A combinação Tulum e Casa Tortuga foi mágica. Sem multidões e atendimento impecável.',
+      fomo_confirmed: 'RESERVA CONFIRMADA',
+      fomo_designed: 'ROTEIRO CRIADO',
+      fomo_ago: 'Há {m} minutos',
       nav_tours: "Tours Privados",
       nav_about: "Sobre Dany",
       nav_certifications: "Certificações",
@@ -1176,7 +1236,78 @@
   }
 
   // EVENT BINDINGS
-  function bindEvents() {
+  
+  // ==================== FOMO NOTIFICATIONS WIDGET ====================
+  const FOMO_ACTIVITIES = [
+    { name: "Sarah", country: "USA", flag: "\u{1F1FA}\u{1F1F8}", tour: "Buceo en Arrecifes de Cozumel", minutes: 8, type: "booking" },
+    { name: "Marc", country: "France", flag: "\u{1F1EB}\u{1F1F7}", tour: "Ch\u{00E1}rter Privado en Yate", minutes: 14, type: "booking" },
+    { name: "John", country: "Canada", flag: "\u{1F1E8}\u{1F1E6}", tour: "Itinerario a la Medida", minutes: 3, type: "design" },
+    { name: "Sofia", country: "Brasil", flag: "\u{1F1E7}\u{1F1F7}", tour: "El Cielo & Palancar", minutes: 10, type: "booking" },
+    { name: "Mateo", country: "Italia", flag: "\u{1F1EE}\u{1F1F9}", tour: "Chich\u{00E9}n Itz\u{00E1} Privado al Amanecer", minutes: 21, type: "booking" }
+  ];
+
+  let fomoIndex = 0;
+  let fomoTimer = null;
+  let fomoHideTimer = null;
+
+  window.dismissFomo = function() {
+    const el = document.getElementById('fomo-widget');
+    if (!el) return;
+    el.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+    el.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+    if (fomoHideTimer) clearTimeout(fomoHideTimer);
+  };
+
+  function showNextFomo() {
+    const el = document.getElementById('fomo-widget');
+    if (!el) return;
+
+    const item = FOMO_ACTIVITIES[fomoIndex];
+    const badgeEl = document.getElementById('fomo-badge');
+    const msgEl = document.getElementById('fomo-message');
+    const timeEl = document.getElementById('fomo-time');
+
+    const dict = TRANSLATIONS[userLanguage] || TRANSLATIONS.es;
+
+    if (badgeEl) {
+      badgeEl.textContent = item.type === 'booking' ? (dict.fomo_confirmed || 'RESERVA CONFIRMADA') : (dict.fomo_designed || 'ITINERARIO CREADO');
+    }
+
+    if (msgEl) {
+      const verb = item.type === 'booking' 
+        ? (userLanguage === 'en' ? 'booked' : (userLanguage === 'fr' ? 'a r\u{00E9}serv\u{00E9}' : (userLanguage === 'it' ? 'ha prenotato' : (userLanguage === 'pt' ? 'reservou' : 'reserv\u{00F3}'))))
+        : (userLanguage === 'en' ? 'created' : (userLanguage === 'fr' ? 'a cr\u{00E9}\u{00E9}' : (userLanguage === 'it' ? 'ha creato' : (userLanguage === 'pt' ? 'criou' : 'dise\u{00F1}\u{00F3}'))));
+      msgEl.innerHTML = `<strong>${item.name}</strong> (${item.flag}) ${verb} <strong>${item.tour}</strong>`;
+    }
+
+    if (timeEl) {
+      const template = dict.fomo_ago || 'Hace {m} minutos';
+      timeEl.textContent = template.replace('{m}', item.minutes);
+    }
+
+    // Show widget
+    el.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    el.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+    // Auto-hide after 8 seconds
+    if (fomoHideTimer) clearTimeout(fomoHideTimer);
+    fomoHideTimer = setTimeout(() => {
+      window.dismissFomo();
+    }, 8000);
+
+    fomoIndex = (fomoIndex + 1) % FOMO_ACTIVITIES.length;
+  }
+
+  function initFomoWidget() {
+    setTimeout(() => {
+      showNextFomo();
+      setInterval(showNextFomo, 38000);
+    }, 6000);
+  }
+
+function bindEvents() {
+    initFomoWidget();
+
     // 1. Detect browser language and localize page layout
     detectAndApplyLanguage();
 
@@ -1695,24 +1826,24 @@
     const tourName = bookingState.tour.name;
     const date = bookingState.date || getTomorrowString();
     const serviceType = bookingState.isPrivate ? 'Privado VIP Exclusivo' : 'Compartido Seleccionado';
-    const notesText = bookingState.notes ? `\n📝 *Notas:* ${bookingState.notes}` : '';
+    const notesText = bookingState.notes ? `\n\u{1F4DD} *Notas:* ${bookingState.notes}` : '';
 
-    const waMsg = `🌴 *DANY EXPERIENCES - SOLICITUD DE RESERVA* 🌴\n` +
+    const waMsg = `\u{1F334} *DANY EXPERIENCES - SOLICITUD DE RESERVA* \u{1F334}\n` +
       `----------------------------------\n` +
-      `🎟️ *ID:* ${bookingState.bookingId}\n` +
-      `👤 *Huésped:* ${bookingState.name}\n` +
-      `📧 *Email:* ${bookingState.email}\n` +
-      `📱 *WhatsApp:* ${bookingState.phone}\n\n` +
-      `🗓️ *Expedición:* ${tourName}\n` +
-      `📅 *Fecha:* ${date}\n` +
-      `👥 *Pasajeros:* ${bookingState.pax} Pax\n` +
-      `🛡️ *Modalidad:* ${serviceType}\n` +
-      `💰 *Total Estimado:* $${bookingState.totalUSD} USD / $${bookingState.totalMXN} MXN` +
+      `\u{1F3AB} *ID Reserva:* ${bookingState.bookingId}\n` +
+      `\u{1F464} *Hu\u{00E9}sped:* ${bookingState.name}\n` +
+      `\u{2709}\u{FE0F} *Email:* ${bookingState.email}\n` +
+      `\u{1F4F1} *WhatsApp:* ${bookingState.phone}\n\n` +
+      `\u{1F5FA}\u{FE0F} *Expedici\u{00F3}n:* ${tourName}\n` +
+      `\u{1F4C5} *Fecha:* ${date}\n` +
+      `\u{1F465} *Pasajeros:* ${bookingState.pax} Pax\n` +
+      `\u{2B50} *Modalidad:* ${serviceType}\n` +
+      `\u{1F4B0} *Total Estimado:* $${bookingState.totalUSD} USD / $${bookingState.totalMXN} MXN` +
       notesText + `\n` +
       `----------------------------------\n` +
-      `*Dany, me gustaría confirmar la disponibilidad y coordinar los detalles.* 🐆☀️`;
+      `*Hola Dany, me gustar\u{00ED}a confirmar disponibilidad y coordinar los detalles de mi expedici\u{00F3}n.* \u{2728}`;
 
-    const waUrl = `https://wa.me/529981234567?text=${encodeURIComponent(waMsg)}`;
+    const waUrl = `https://wa.me/529843336000?text=${encodeURIComponent(waMsg)}`;
     bookingState.waLink = waUrl;
 
     // Send lead to backend proxy
@@ -1742,15 +1873,16 @@
     const dateClean = (bookingState.date || getTomorrowString()).replace(/-/g, '');
     const startTime = `${dateClean}T080000`;
     const endTime = `${dateClean}T160000`;
-    const title = encodeURIComponent(`Expedición: ${bookingState.tour.name} - Dany Experiences`);
+    const title = encodeURIComponent(`Expedici\u{00F3}n: ${bookingState.tour.name} - Dany Experiences`);
     const details = encodeURIComponent(
       `Reserva confirmada con Dany Experiences.\n` +
-      `Código: ${bookingState.bookingId}\n` +
+      `C\u{00F3}digo: ${bookingState.bookingId}\n` +
       `Modalidad: ${bookingState.isPrivate ? 'Privado VIP' : 'Compartido'}\n` +
       `Pasajeros: ${bookingState.pax}\n` +
-      `Contacto anfitrión: +52 998 123 4567`
+      `Contacto anfitri\u{00F3}n: +52 984 333 6000\n` +
+      `WhatsApp: https://wa.me/529843336000`
     );
-    const location = encodeURIComponent('Riviera Maya, Quintana Roo, México');
+    const location = encodeURIComponent('Riviera Maya, Quintana Roo, M\u{00E9}xico');
     const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startTime}/${endTime}&details=${details}&location=${location}`;
 
     window.open(gCalUrl, '_blank');
