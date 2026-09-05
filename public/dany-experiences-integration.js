@@ -1295,6 +1295,467 @@
     handlePostPayment();
   }
 
+  // -------------------------------------------------------------
+  // EXPEDITIONS CATALOG & 4-STEP BOOKING WIZARD SYSTEM
+  // -------------------------------------------------------------
+  const EXPEDITIONS_CATALOG = {
+    chichen: {
+      id: 'chichen',
+      name: 'Chichén Itzá: Amanecer Sagrado',
+      category: 'Cultura e Historia',
+      priceUSD: 150,
+      priceMXN: 2500,
+      duration: '9 horas aprox.',
+      image: './assets/chichen_1.webp',
+      intrinsicallyPrivate: true,
+      description: 'Acceso privilegiado antes de las multitudes. Una conexión íntima con el Templo de Kukulcán y la arqueoastronomía maya.'
+    },
+    tortuga: {
+      id: 'tortuga',
+      name: 'Casa Tortuga: Cenotes Sagrados',
+      category: 'Naturaleza',
+      priceUSD: 100,
+      priceMXN: 1800,
+      duration: '5 horas aprox.',
+      image: './assets/casa_tortuga_hero.webp',
+      intrinsicallyPrivate: true,
+      description: 'Inmersión mística en 4 cenotes milenarios (2 cavernas, 1 semiabierto y 1 abierto) en la profundidad de la selva.'
+    },
+    tulum: {
+      id: 'tulum',
+      name: 'Tulum: Ciudad del Amanecer',
+      category: 'Cultura e Historia',
+      priceUSD: 120,
+      priceMXN: 2000,
+      duration: '6 horas aprox.',
+      image: './assets/tulum_1.webp',
+      intrinsicallyPrivate: true,
+      description: 'La fortaleza maya frente al mar Caribe turquesa. Historia marítima, energía ancestral y playa paradisíaca.'
+    },
+    boss: {
+      id: 'boss',
+      name: 'Yo lo pido (Bespoke)',
+      category: 'Personalizado',
+      priceUSD: 120,
+      priceMXN: 2100,
+      duration: 'Flexible',
+      image: './assets/yo lo pido.webp',
+      intrinsicallyPrivate: true,
+      description: 'Diseña tu propia aventura exclusiva con vehículo privado, chofer y concierge dedicado para armar tus destinos soñados.'
+    },
+    czm: {
+      id: 'czm',
+      name: 'El Cielo y Palancar (Cozumel)',
+      category: 'Agua y Aventura',
+      priceUSD: 85,
+      priceMXN: 1500,
+      duration: '4.5 horas',
+      image: './assets/cozumel.webp',
+      intrinsicallyPrivate: false,
+      description: 'Catamarán exclusivo hacia El Cielo en Cozumel, el santuario de estrellas de mar y corales más espectacular del Caribe.'
+    },
+    xct: {
+      id: 'xct',
+      name: 'Parques XCARET Total',
+      category: 'Parques Temáticos',
+      priceUSD: 160,
+      priceMXN: 2800,
+      duration: '12 horas',
+      image: './assets/xcaret.webp',
+      intrinsicallyPrivate: false,
+      description: 'Ríos subterráneos milenarios, aviario tropical, acuario de arrecife de coral y el espectáculo Xcaret México Espectacular.'
+    },
+    dive: {
+      id: 'dive',
+      name: 'Buceo en Arrecife & Cenotes',
+      category: 'Agua y Aventura',
+      priceUSD: 100,
+      priceMXN: 1800,
+      duration: '5 horas',
+      image: './assets/buceo.webp',
+      intrinsicallyPrivate: false,
+      description: 'Inmersión doble en los arrecifes de Cozumel o en cavernas inundadas con guías certificados PADI.'
+    },
+    fidi: {
+      id: 'fidi',
+      name: 'Fine Dining Frente al Mar',
+      category: 'Cenas',
+      priceUSD: 110,
+      priceMXN: 1950,
+      duration: '3.5 horas',
+      image: './assets/cenas.webp',
+      intrinsicallyPrivate: false,
+      description: 'Exquisita cena gourmet de 3 tiempos frente a la brisa caribeña con langosta caribeña o cortes de carne premium.'
+    },
+    imj: {
+      id: 'imj',
+      name: 'Catamarán Isla Mujeres VIP',
+      category: 'Agua y Aventura',
+      priceUSD: 95,
+      priceMXN: 1700,
+      duration: '7 horas',
+      image: './assets/isla mujeres.webp',
+      intrinsicallyPrivate: false,
+      description: 'Navega a vela hacia Isla Mujeres, disfruta barra libre a bordo, almuerzo buffet en club de playa privado y snorkel.'
+    },
+    golf: {
+      id: 'golf',
+      name: 'Golf de Campeonato',
+      category: 'Golf',
+      priceUSD: 130,
+      priceMXN: 2300,
+      duration: '5 horas',
+      image: './assets/golf.webp',
+      intrinsicallyPrivate: false,
+      description: 'Campos profesionales de clase mundial en la Riviera Maya, rodeados de vegetación tropical y cenotes.'
+    },
+    fsh: {
+      id: 'fsh',
+      name: 'Pesca Deportiva Privada',
+      category: 'Exclusivo',
+      priceUSD: 150,
+      priceMXN: 2700,
+      duration: '4 a 6 horas',
+      image: './assets/pesca.webp',
+      intrinsicallyPrivate: true,
+      description: 'Embarcación privada de pesca completamente equipada con tripulación experta, cañas pro, carnada y bebidas.'
+    },
+    sfo: {
+      id: 'sfo',
+      name: 'Yates & Catamaranes Privados',
+      category: 'Exclusivo',
+      priceUSD: 195,
+      priceMXN: 3500,
+      duration: '4 horas',
+      image: './assets/yates.webp',
+      intrinsicallyPrivate: true,
+      description: 'Navegación en yates de lujo por bahías vírgenes. Barra libre premium, chef a bordo, ceviche gourmet y paddleboard.'
+    },
+    life: {
+      id: 'life',
+      name: 'Vida Nocturna VIP (Coco Bongo)',
+      category: 'Vida Nocturna',
+      priceUSD: 120,
+      priceMXN: 2100,
+      duration: '6 horas',
+      image: './assets/vida nocturna.webp',
+      intrinsicallyPrivate: false,
+      description: 'Disfruta de la noche más vibrante con accesos preferenciales, acrobacias en vivo, tributos musicales y servicio VIP.'
+    },
+    cen: {
+      id: 'cen',
+      name: 'Ruta de Cenotes Sagrados',
+      category: 'Naturaleza',
+      priceUSD: 75,
+      priceMXN: 1350,
+      duration: '5 horas',
+      image: './assets/cenotes.webp',
+      intrinsicallyPrivate: false,
+      description: 'Sumérgete en la belleza pura de 3 cenotes sagrados (abierto, semiabierto y caverna) con guía local.'
+    },
+    arq: {
+      id: 'arq',
+      name: 'Ruinas Arqueológicas & Cobá',
+      category: 'Cultura e Historia',
+      priceUSD: 145,
+      priceMXN: 2600,
+      duration: '11 horas',
+      image: './assets/ruinas.webp',
+      intrinsicallyPrivate: false,
+      description: 'Templos mayas en la selva de Cobá, bicicletas hacia Nohoch Mul, nado en cenote subterráneo y buffet regional.'
+    }
+  };
+
+  // State of the current booking session
+  let bookingState = {
+    tour: EXPEDITIONS_CATALOG.chichen,
+    step: 1,
+    date: '',
+    pax: 2,
+    isPrivate: true,
+    name: '',
+    email: '',
+    phone: '',
+    notes: '',
+    bookingId: '',
+    totalUSD: 300,
+    totalMXN: 5000,
+    waLink: ''
+  };
+
+  // Helper to set tomorrow date by default
+  function getTomorrowString() {
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().split('T')[0];
+  }
+
+  // Filter tours by category
+  window.filterTours = function(category) {
+    const filterBtns = document.querySelectorAll('.cat-filter-btn');
+    filterBtns.forEach(btn => {
+      if (btn.getAttribute('data-category') === category) {
+        btn.className = 'cat-filter-btn active bg-primary text-background px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-bold transition-all shadow-md';
+      } else {
+        btn.className = 'cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all';
+      }
+    });
+
+    const items = document.querySelectorAll('#tours-catalog-grid .tour-item');
+    items.forEach(item => {
+      const itemCat = item.getAttribute('data-cat');
+      if (category === 'Todas' || itemCat === category) {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  };
+
+  // Open booking widget
+  window.openBookingWidget = function(tourId) {
+    console.log('[Booking Widget] Opening tour:', tourId);
+    const selectedTour = EXPEDITIONS_CATALOG[tourId] || EXPEDITIONS_CATALOG.chichen;
+    bookingState.tour = selectedTour;
+    bookingState.step = 1;
+    bookingState.date = getTomorrowString();
+    bookingState.pax = 2;
+    bookingState.isPrivate = !!selectedTour.intrinsicallyPrivate;
+    bookingState.bookingId = 'DNY-' + Math.floor(10000 + Math.random() * 90000);
+
+    // Populate UI
+    const thumb = document.getElementById('bw-tour-thumb');
+    const cat = document.getElementById('bw-tour-category');
+    const title = document.getElementById('bw-tour-title');
+    const dur = document.getElementById('bw-duration-text');
+    const dateInput = document.getElementById('bw-date');
+    const paxCount = document.getElementById('bw-pax-count');
+
+    if (thumb) thumb.src = selectedTour.image;
+    if (cat) cat.textContent = selectedTour.category;
+    if (title) title.textContent = selectedTour.name;
+    if (dur) dur.textContent = selectedTour.duration;
+    if (dateInput) {
+      dateInput.min = getTomorrowString();
+      dateInput.value = bookingState.date;
+    }
+    if (paxCount) paxCount.textContent = bookingState.pax;
+
+    window.togglePrivate(bookingState.isPrivate);
+    window.updatePriceCalculation();
+    window.setBookingStep(1);
+
+    const modal = document.getElementById('booking-modal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  };
+
+  // Close booking widget
+  window.closeBookingWidget = function() {
+    const modal = document.getElementById('booking-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  };
+
+  // Set current wizard step (1 to 4)
+  window.setBookingStep = function(step) {
+    bookingState.step = step;
+
+    // Toggle views
+    for (let s = 1; s <= 4; s++) {
+      const stepEl = document.getElementById(`booking-step-${s}`);
+      const navEl = document.getElementById(`step-nav-${s}`);
+      if (stepEl) {
+        if (s === step) {
+          stepEl.classList.remove('hidden');
+        } else {
+          stepEl.classList.add('hidden');
+        }
+      }
+      if (navEl) {
+        const badge = navEl.querySelector('span:first-child');
+        if (s <= step) {
+          navEl.classList.remove('text-on-surface/40');
+          navEl.classList.add('text-primary');
+          if (badge) {
+            badge.className = 'w-6 h-6 rounded-full bg-primary text-background flex items-center justify-center text-xs';
+          }
+        } else {
+          navEl.classList.add('text-on-surface/40');
+          navEl.classList.remove('text-primary');
+          if (badge) {
+            badge.className = 'w-6 h-6 rounded-full bg-white/10 text-on-surface/60 flex items-center justify-center text-xs';
+          }
+        }
+      }
+    }
+  };
+
+  // Change Pax count
+  window.changePax = function(delta) {
+    let nextPax = bookingState.pax + delta;
+    if (nextPax < 1) nextPax = 1;
+    if (nextPax > 20) nextPax = 20;
+    bookingState.pax = nextPax;
+
+    const paxEl = document.getElementById('bw-pax-count');
+    if (paxEl) paxEl.textContent = nextPax;
+
+    window.updatePriceCalculation();
+  };
+
+  // Toggle private vs shared service
+  window.togglePrivate = function(isPrivate) {
+    bookingState.isPrivate = isPrivate;
+    const btnPriv = document.getElementById('bw-btn-private');
+    const btnShared = document.getElementById('bw-btn-shared');
+
+    if (btnPriv && btnShared) {
+      if (isPrivate) {
+        btnPriv.className = 'p-3.5 rounded-xl border-2 border-primary bg-primary/10 text-left transition-all cursor-pointer';
+        btnShared.className = 'p-3.5 rounded-xl border border-white/10 bg-white/5 text-left transition-all opacity-60 cursor-pointer';
+      } else {
+        btnPriv.className = 'p-3.5 rounded-xl border border-white/10 bg-white/5 text-left transition-all opacity-60 cursor-pointer';
+        btnShared.className = 'p-3.5 rounded-xl border-2 border-primary bg-primary/10 text-left transition-all cursor-pointer';
+      }
+    }
+
+    window.updatePriceCalculation();
+  };
+
+  // Update date
+  window.updateBookingDate = function(val) {
+    bookingState.date = val;
+  };
+
+  // Update real-time price calculation
+  window.updatePriceCalculation = function() {
+    const baseUSD = bookingState.tour.priceUSD;
+    let totalUSD = baseUSD * bookingState.pax;
+    if (bookingState.isPrivate && !bookingState.tour.intrinsicallyPrivate) {
+      totalUSD = Math.round(totalUSD * 1.25);
+    }
+    const totalMXN = Math.round(totalUSD * 17.5);
+
+    bookingState.totalUSD = totalUSD;
+    bookingState.totalMXN = totalMXN;
+
+    const usdEl = document.getElementById('bw-price-total-usd');
+    const mxnEl = document.getElementById('bw-price-total-mxn');
+    if (usdEl) usdEl.textContent = `$${totalUSD.toLocaleString()} USD`;
+    if (mxnEl) mxnEl.textContent = `≈ $${totalMXN.toLocaleString()} MXN`;
+  };
+
+  // Validate step 2 inputs and advance
+  window.validateStep2AndContinue = function() {
+    const name = (document.getElementById('bw-name')?.value || '').trim();
+    const email = (document.getElementById('bw-email')?.value || '').trim();
+    const phone = (document.getElementById('bw-phone')?.value || '').trim();
+    const notes = (document.getElementById('bw-notes')?.value || '').trim();
+    const err = document.getElementById('bw-step2-error');
+
+    if (!name || !email || !phone || !email.includes('@')) {
+      if (err) err.classList.remove('hidden');
+      return;
+    }
+
+    if (err) err.classList.add('hidden');
+
+    bookingState.name = name;
+    bookingState.email = email;
+    bookingState.phone = phone;
+    bookingState.notes = notes;
+
+    // Populate Step 3 Summary
+    const sumTour = document.getElementById('bw-sum-tour');
+    const sumDate = document.getElementById('bw-sum-date');
+    const sumPax = document.getElementById('bw-sum-pax');
+    const sumService = document.getElementById('bw-sum-service');
+    const sumName = document.getElementById('bw-sum-name');
+    const sumPhone = document.getElementById('bw-sum-phone');
+    const sumPrice = document.getElementById('bw-sum-price');
+
+    if (sumTour) sumTour.textContent = bookingState.tour.name;
+    if (sumDate) sumDate.textContent = bookingState.date || getTomorrowString();
+    if (sumPax) sumPax.textContent = `${bookingState.pax} ${bookingState.pax === 1 ? 'Viajero' : 'Viajeros'}`;
+    if (sumService) sumService.textContent = bookingState.isPrivate ? 'Privado VIP Exclusivo' : 'Compartido Seleccionado';
+    if (sumName) sumName.textContent = bookingState.name;
+    if (sumPhone) sumPhone.textContent = bookingState.phone;
+    if (sumPrice) sumPrice.textContent = `$${bookingState.totalUSD.toLocaleString()} USD / $${bookingState.totalMXN.toLocaleString()} MXN`;
+
+    window.setBookingStep(3);
+  };
+
+  // Confirm booking & dispatch to WhatsApp & Sync
+  window.confirmAndDispatchBooking = function() {
+    const tourName = bookingState.tour.name;
+    const date = bookingState.date || getTomorrowString();
+    const serviceType = bookingState.isPrivate ? 'Privado VIP Exclusivo' : 'Compartido Seleccionado';
+    const notesText = bookingState.notes ? `\n📝 *Notas:* ${bookingState.notes}` : '';
+
+    const waMsg = `🌴 *DANY EXPERIENCES - SOLICITUD DE RESERVA* 🌴\n` +
+      `----------------------------------\n` +
+      `🎟️ *ID:* ${bookingState.bookingId}\n` +
+      `👤 *Huésped:* ${bookingState.name}\n` +
+      `📧 *Email:* ${bookingState.email}\n` +
+      `📱 *WhatsApp:* ${bookingState.phone}\n\n` +
+      `🗓️ *Expedición:* ${tourName}\n` +
+      `📅 *Fecha:* ${date}\n` +
+      `👥 *Pasajeros:* ${bookingState.pax} Pax\n` +
+      `🛡️ *Modalidad:* ${serviceType}\n` +
+      `💰 *Total Estimado:* $${bookingState.totalUSD} USD / $${bookingState.totalMXN} MXN` +
+      notesText + `\n` +
+      `----------------------------------\n` +
+      `*Dany, me gustaría confirmar la disponibilidad y coordinar los detalles.* 🐆☀️`;
+
+    const waUrl = `https://wa.me/529981234567?text=${encodeURIComponent(waMsg)}`;
+    bookingState.waLink = waUrl;
+
+    // Send lead to backend proxy
+    syncLeadToSheets({
+      name: bookingState.name,
+      phone: bookingState.phone,
+      interest: `${tourName} (Fecha: ${date} - ${bookingState.pax} Pax - ${serviceType})`
+    });
+
+    // Setup Reopen button
+    const reopenBtn = document.getElementById('bw-reopen-wa-btn');
+    if (reopenBtn) {
+      reopenBtn.onclick = () => window.open(waUrl, '_blank');
+    }
+
+    const confId = document.getElementById('bw-confirmed-id');
+    if (confId) confId.textContent = bookingState.bookingId;
+
+    // Open WhatsApp in new tab
+    window.open(waUrl, '_blank');
+
+    window.setBookingStep(4);
+  };
+
+  // Google Calendar integration
+  window.syncGoogleCalendar = function() {
+    const dateClean = (bookingState.date || getTomorrowString()).replace(/-/g, '');
+    const startTime = `${dateClean}T080000`;
+    const endTime = `${dateClean}T160000`;
+    const title = encodeURIComponent(`Expedición: ${bookingState.tour.name} - Dany Experiences`);
+    const details = encodeURIComponent(
+      `Reserva confirmada con Dany Experiences.\n` +
+      `Código: ${bookingState.bookingId}\n` +
+      `Modalidad: ${bookingState.isPrivate ? 'Privado VIP' : 'Compartido'}\n` +
+      `Pasajeros: ${bookingState.pax}\n` +
+      `Contacto anfitrión: +52 998 123 4567`
+    );
+    const location = encodeURIComponent('Riviera Maya, Quintana Roo, México');
+    const gCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startTime}/${endTime}&details=${details}&location=${location}`;
+
+    window.open(gCalUrl, '_blank');
+  };
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', bindEvents);
   } else {

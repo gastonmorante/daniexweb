@@ -121,7 +121,7 @@
 <!-- Navigation (Desktop/Tablet) -->
 <header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-background/40 backdrop-blur-xl border-b border-white/5">
     <div class="flex items-center gap-3">
-        <img alt="Dany Experiences Logo" class="h-10 w-10 md:h-12 md:w-12 object-contain filter drop-shadow-[0_0_8px_rgba(140,214,179,0.5)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUrtXHTcja2yg9JJa69v1fTYUoYWEJlNY6vJIYYfhCPLcTy-HzR7Jzy5Fap0pqme5Muics0cDE_C_yw3xWMxZO1heSg7VPVG7fh5bMuHhvPzK1EQKodNim8j61vST7kDUq6dHCMOA08-8N8sWLG4s--7KOkj22JeWSv_-IB6ZzZw2Duf1zVyIh-p1bhrueBm6rHRqzM189oN9eTf1iqNPApOko0w246ptK4i4VKPkSHFx_1nmR4xpOoBDPc9Sc3ajGzu0"/>
+        <img alt="Dany Experiences Logo" class="h-10 w-10 md:h-12 md:w-12 object-contain filter drop-shadow-[0_0_8px_rgba(140,214,179,0.5)]" src="./assets/logo.svg"/>
         <span class="font-headline-sm text-lg md:text-xl font-bold tracking-tight text-primary">Dany Experiences</span>
     </div>
     
@@ -159,9 +159,10 @@
 
         <nav class="hidden md:flex gap-8 items-center">
             <a data-i18n="nav_tours" class="font-label-md text-sm text-on-surface/80 hover:text-secondary transition-colors" href="#tours">Sabiduría Ancestral</a>
+            <a class="font-label-md text-sm text-on-surface/80 hover:text-secondary transition-colors" href="#catalogo-tours">Catálogo de Tours</a>
             <a data-i18n="nav_about" class="font-label-md text-sm text-on-surface/80 hover:text-secondary transition-colors" href="#sobre-dany">El Anfitrión</a>
             <a data-i18n="nav_certifications" class="font-label-md text-sm text-on-surface/80 hover:text-secondary transition-colors" href="#certificaciones">Credenciales</a>
-            <button data-i18n="nav_book" class="bg-primary-container text-primary px-6 py-2 rounded-full font-label-md text-sm uppercase tracking-widest border border-primary/20 hover:bg-primary hover:text-background transition-all" onclick="document.getElementById('tours').scrollIntoView({behavior: 'smooth'})">
+            <button data-i18n="nav_book" class="bg-primary-container text-primary px-6 py-2 rounded-full font-label-md text-sm uppercase tracking-widest border border-primary/20 hover:bg-primary hover:text-background transition-all" onclick="window.openBookingWidget('chichen')">
                 Reservar
             </button>
         </nav>
@@ -183,7 +184,7 @@
         <span class="text-[10px] font-label-md uppercase tracking-tighter" data-i18n="nav_about">Legado</span>
     </a>
     <div class="relative -top-8">
-        <button class="bg-[#bad155] text-background p-4 rounded-full stone-carved shadow-2xl active:scale-90 transition-transform" onclick="document.getElementById('tours').scrollIntoView({behavior: 'smooth'})">
+        <button class="bg-[#bad155] text-background p-4 rounded-full stone-carved shadow-2xl active:scale-90 transition-transform cursor-pointer" onclick="window.openBookingWidget('chichen')">
             <span class="material-symbols-outlined !text-3xl">calendar_month</span>
         </button>
     </div>
@@ -254,7 +255,7 @@
                     <h2 class="font-headline-lg text-3xl md:text-5xl mb-4 text-on-surface" data-i18n="tours_title">Expediciones <span class="text-secondary italic">Insignia</span></h2>
                     <p class="font-body-md text-on-surface-variant" data-i18n="tours_tag">Curaduría de experiencias que entrelazan la naturaleza indómita con la herencia sagrada de nuestros antepasados.</p>
                 </div>
-                <a class="text-primary font-label-md text-sm uppercase tracking-widest flex items-center gap-2 hover:translate-x-2 transition-transform" href="#actividades" data-i18n="tours_view_all">Ver Catálogo <span class="material-symbols-outlined">trending_flat</span></a>
+                <a class="text-primary font-label-md text-sm uppercase tracking-widest flex items-center gap-2 hover:translate-x-2 transition-transform" href="#catalogo-tours" data-i18n="tours_view_all">Ver Catálogo <span class="material-symbols-outlined">trending_flat</span></a>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -268,14 +269,14 @@
                             <h3 class="font-headline-md text-2xl md:text-4xl text-white mb-3" data-i18n="tour1_title">Chichén Itzá: Amanecer Sagrado</h3>
                             <p class="font-body-md text-white/70 max-w-md hidden md:block" data-i18n="tour1_desc">Acceso privilegiado antes de las multitudes. Una conexión íntima con el Templo de Kukulcán.</p>
                         </div>
-                        <button id="book-chichen-btn" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour1_book">
+                        <button id="book-chichen-btn" onclick="event.stopPropagation(); window.openBookingWidget('chichen')" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour1_book">
                             Reservar
                         </button>
                     </div>
                 </div>
                 
                 <!-- Card 2: Tulum -->
-                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" style="transform: translateZ(0);" data-product="Tulum_Oceanic_Expedition">
+                <div class="group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" style="transform: translateZ(0);" data-product="Tulum_Oceanic_Expedition" onclick="window.openBookingWidget('tulum')">
                     <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('./assets/tulum_1.webp')"></div>
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                     <div class="absolute inset-0 border-[0.5px] border-white/10 rounded-[2rem] pointer-events-none"></div>
@@ -284,7 +285,7 @@
                             <h3 class="font-headline-md text-2xl md:text-4xl text-white mb-3" data-i18n="tour3_title">Tulum: Ciudad del Amanecer</h3>
                             <p class="font-body-md text-white/70 max-w-md hidden md:block" data-i18n="tour3_desc">Exploración costera en catamarán privado hacia el arrecife maya.</p>
                         </div>
-                        <button id="book-tulum-btn" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour3_book">
+                        <button id="book-tulum-btn" onclick="event.stopPropagation(); window.openBookingWidget('tulum')" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour3_book">
                             Reservar
                         </button>
                     </div>
@@ -292,7 +293,7 @@
                 
                 <!-- Card 3: Casa Tortuga -->
                 <div class="md:col-span-2 flex justify-center">
-                    <div class="w-full md:w-1/2 group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" style="transform: translateZ(0);" data-product="Tortuga_Nature_Pass">
+                    <div class="w-full md:w-1/2 group relative overflow-hidden rounded-[2rem] aspect-[4/3] bento-card-hover scroll-reveal tour-card-interactive cursor-pointer" style="transform: translateZ(0);" data-product="Tortuga_Nature_Pass" onclick="window.openBookingWidget('tortuga')">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" style="background-image: url('./assets/casa_tortuga_hero.webp')"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
                         <div class="absolute inset-0 border-[0.5px] border-white/10 rounded-[2rem] pointer-events-none"></div>
@@ -301,7 +302,7 @@
                                 <h3 class="font-headline-md text-2xl md:text-4xl text-white mb-3" data-i18n="tour2_title">Mística Casa Tortuga</h3>
                                 <p class="font-body-md text-white/70 max-w-md hidden md:block" data-i18n="tour2_desc">Un descenso al Xibalbá a través de cuatro cenotes milenarios.</p>
                             </div>
-                            <button id="book-tortuga-btn" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour2_book">
+                            <button id="book-tortuga-btn" onclick="event.stopPropagation(); window.openBookingWidget('tortuga')" class="bg-primary text-background px-6 py-3 rounded-full font-label-md text-xs uppercase tracking-widest border border-primary/20 hover:scale-105 active:scale-95 transition-all shadow-lg shrink-0" data-i18n="tour2_book">
                                 Reservar
                             </button>
                         </div>
@@ -413,7 +414,450 @@
         </div>
     </section>
 
-    <!-- Founder Section (Mobile-First Layout) -->
+    <!-- Catálogo Completo de Tours & Excursiones (12 Tours) -->
+    <section id="catalogo-tours" class="py-24 px-margin-mobile md:px-margin-desktop bg-[#0c100e] border-y border-white/5 scroll-mt-20 relative">
+        <div class="max-w-container-max mx-auto">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-12 scroll-reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-md text-xs uppercase tracking-widest mb-4">
+                    <span class="material-symbols-outlined text-sm">explore</span>
+                    <span>Colección de Aventuras</span>
+                </div>
+                <h2 class="font-headline-lg text-3xl md:text-5xl text-white font-bold mb-4">
+                    Catálogo de <span class="text-secondary italic">Excursiones</span>
+                </h2>
+                <p class="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">
+                    Experiencias curadas con transportación privada de alta gama, anfitriones bilingües certificados y acceso prioritario en toda la Riviera Maya y Quintana Roo.
+                </p>
+                
+                <!-- Category Filter Pills -->
+                <div class="flex flex-wrap justify-center gap-2 mt-8" id="tour-category-filters">
+                    <button class="cat-filter-btn active bg-primary text-background px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider font-bold transition-all shadow-md" data-category="Todas" onclick="window.filterTours('Todas')">
+                        Todas (12)
+                    </button>
+                    <button class="cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all" data-category="Agua y Aventura" onclick="window.filterTours('Agua y Aventura')">
+                        Agua &amp; Mar
+                    </button>
+                    <button class="cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all" data-category="Parques Temáticos" onclick="window.filterTours('Parques Temáticos')">
+                        Parques Xcaret
+                    </button>
+                    <button class="cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all" data-category="Cultura e Historia" onclick="window.filterTours('Cultura e Historia')">
+                        Cultura &amp; Ruinas
+                    </button>
+                    <button class="cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all" data-category="Naturaleza" onclick="window.filterTours('Naturaleza')">
+                        Cenotes &amp; Selva
+                    </button>
+                    <button class="cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all" data-category="Exclusivo" onclick="window.filterTours('Exclusivo')">
+                        Yates &amp; Pesca
+                    </button>
+                    <button class="cat-filter-btn bg-white/5 hover:bg-white/10 text-white/80 border border-white/10 px-4 py-2 rounded-full text-xs font-label-md uppercase tracking-wider transition-all" data-category="Personalizado" onclick="window.filterTours('Personalizado')">
+                        A tu Medida
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tours Grid (12 Tours) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="tours-catalog-grid">
+                
+                <!-- 1. Yo lo pido -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Personalizado">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/yo lo pido.webp" alt="Yo lo pido" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">100% Personalizado</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> Flexible
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Yo lo pido (Bespoke)</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Diseña tu propia aventura exclusiva. Concierge dedicado, transporte de lujo y asesoría personalizada para recorrer múltiples destinos a tu ritmo.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Transportación privada, chofer, bebidas y ruta flexible.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Desde</span>
+                                <span class="text-lg font-bold text-primary">$120 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $2,100 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('boss')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. El Cielo y Palancar -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Agua y Aventura">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/cozumel.webp" alt="El Cielo y Palancar" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Snorkel &amp; Arrecife</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 4.5 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">El Cielo y Palancar (Cozumel)</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Navega en catamarán hacia el santuario de estrellas de mar más paradisíaco del Caribe. Aguas poco profundas cristalinas y corales vivos.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Catamarán, snorkel, barra libre nacional y ceviche fresco.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$85 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $1,500 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('czm')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Parques XCARET -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Parques Temáticos">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/xcaret.webp" alt="Parques Xcaret" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Mundos Xcaret</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 12 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Parques XCARET Total</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Ríos subterráneos milenarios, aviario tropical, acuario de arrecife de coral y el icónico espectáculo folclórico 'Xcaret México Espectacular'.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Acceso completo, buffet gourmet con bebidas y casillero.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$160 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $2,800 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('xct')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Buceo -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Agua y Aventura">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/buceo.webp" alt="Buceo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">PADI Certified</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 5 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Buceo en Arrecife &amp; Cenotes</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Inmersión doble en los arrecifes de Cozumel o en cavernas inundadas con guías certificados PADI. Una aventura subacuática de clase mundial.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Equipo completo, 2 tanques, transportación marítima y guía.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$100 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $1,800 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('dive')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Fine Dining Frente al Mar -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Cenas">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/cenas.webp" alt="Fine Dining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Gourmet &amp; Romance</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 3.5 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Fine Dining Frente al Mar</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Exquisita cena gourmet de 3 tiempos frente a la brisa caribeña. Disfruta langosta caribeña, cortes de carne premium y coctelería de autor.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Menú 3 tiempos, mesa privada frente al mar y copa de bienvenida.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$110 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $1,950 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('fidi')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Isla Mujeres Catamarán -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Agua y Aventura">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/isla mujeres.webp" alt="Isla Mujeres" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Catamarán VIP</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 7 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Catamarán Isla Mujeres VIP</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Navega a vela hacia Isla Mujeres, disfruta barra libre a bordo, almuerzo buffet en club de playa privado y tiempo libre en Playa Norte.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Catamarán de lujo, barra libre, club de playa y snorkel.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$95 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $1,700 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('imj')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Golf -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Golf">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/golf.webp" alt="Golf" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">18 Hoyos</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 5 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Golf de Campeonato</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Campos profesionales de clase mundial en la Riviera Maya, rodeados de vegetación tropical, cenotes naturales y vistas al mar.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Green fee, carrito con GPS, pelotas de práctica y toallas.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Jugador</span>
+                                <span class="text-lg font-bold text-primary">$130 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $2,300 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('golf')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Pesca Deportiva -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Exclusivo">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/pesca.webp" alt="Pesca" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Chárter Privado</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 4-6 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Pesca Deportiva Privada</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Navega en embarcación privada completamente equipada para captura de marlín, pez vela, dorado y barracuda con tripulación profesional.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Embarcación privada, carnada, cañas pro, cervezas y lunch.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Chárter</span>
+                                <span class="text-lg font-bold text-primary">$150 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $2,700 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('fsh')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Yates y Catamaranes -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Exclusivo">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/yates.webp" alt="Yates" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Ultra Lujo VIP</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 4 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Yates &amp; Catamaranes Privados</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Navegación en yates de lujo por bahías vírgenes de la Riviera Maya. Barra libre premium, chef a bordo, ceviche gourmet y paddleboard.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Yate privado exclusivo, capitán, barra libre premium y chef.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$195 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $3,500 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('sfo')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Vida Nocturna -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Vida Nocturna">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/vida nocturna.webp" alt="Vida Nocturna" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Shows &amp; Fiesta</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 6 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Vida Nocturna VIP (Coco Bongo)</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Disfruta de la noche más vibrante con accesos preferenciales, acrobacias en vivo, tributos musicales y servicio VIP continuo sin filas.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Entrada regular/VIP, shows continuos y barra libre nacional.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$120 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $2,100 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('life')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Cenotes Sagrados -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Naturaleza">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/cenotes.webp" alt="Cenotes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-primary/20 backdrop-blur-md border border-primary/30 text-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Ecoturismo</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 5 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Ruta de Cenotes Sagrados</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Sumérgete en la belleza pura de 3 cenotes sagrados (abierto, semiabierto y caverna misteriosa). Conexión espiritual con aguas cristalinas.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Entradas, chalecos salvavidas, linternas y comida típica.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$75 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $1,350 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('cen')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Ruinas Arqueológicas y Cobá -->
+                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Cultura e Historia">
+                    <div class="relative aspect-[16/10] overflow-hidden bg-black">
+                        <img src="./assets/ruinas.webp" alt="Ruinas Arqueológicas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
+                        <span class="absolute top-4 left-4 bg-secondary/20 backdrop-blur-md border border-secondary/30 text-secondary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">Historia Maya</span>
+                        <span class="absolute top-4 right-4 bg-black/50 backdrop-blur-md text-white/80 text-[10px] font-mono px-2.5 py-1 rounded-full flex items-center gap-1">
+                            <span class="material-symbols-outlined text-xs">schedule</span> 11 horas
+                        </span>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="font-headline-sm text-xl text-white font-bold mb-2">Ruinas Arqueológicas &amp; Cobá</h3>
+                            <p class="text-xs text-on-surface-variant/80 leading-relaxed mb-4">Recorre templos ancestrales escondidos en la selva, pasea en bicicleta maya hacia Nohoch Mul y relájate en un cenote subterráneo.</p>
+                            <div class="bg-white/5 border border-white/10 rounded-xl p-3 text-[11px] text-[#C5A880] mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-xs text-primary">verified</span>
+                                <span>Transporte con A/C, entrada guiada, cenote y comida regional.</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
+                            <div>
+                                <span class="text-[10px] text-on-surface-variant uppercase tracking-wider block">Por Persona</span>
+                                <span class="text-lg font-bold text-primary">$145 USD</span>
+                                <span class="text-[10px] text-white/50 block font-mono">≈ $2,600 MXN</span>
+                            </div>
+                            <button onclick="window.openBookingWidget('arq')" class="bg-primary hover:bg-primary/90 text-background px-5 py-2.5 rounded-full font-label-md text-xs font-bold uppercase tracking-wider transition-all shadow-md active:scale-95 flex items-center gap-1.5">
+                                <span>Reservar</span>
+                                <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section id="sobre-dany" class="py-24 px-margin-mobile md:px-margin-desktop bg-[#101412]/50 border-y border-white/5 overflow-hidden scroll-mt-20">
         <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
             <div class="relative scroll-reveal flex justify-center">
@@ -761,7 +1205,7 @@
 <footer id="contacto" class="w-full px-margin-mobile md:px-margin-desktop py-20 pb-32 md:pb-20 flex flex-col md:flex-row justify-between items-start gap-16 bg-background border-t border-white/5 relative z-10">
     <div class="max-w-sm">
         <div class="flex items-center gap-4 mb-6">
-            <img alt="Dany Experiences Logo" class="h-12 w-12 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo-Y56nR2tNtoh_AT6RGa9mDMRIrbhSlQbZ86dPyWHQ49ExHYNRsf4Rh8XtwfJJkkh24FfBrmTjjR9jZ0ejTj-yOQUFb54EPKEBf2uplWtGA247acR7fw8g1EgTst8otFPkSqRcq_ERAyKwEbEXw_EQn4-M4T6pH9hOnnf2Zr9BTjW_Ebv85CxnnN6O3DUCUn_xKSnfxVElmP6vtolm2kn295BXHc7QYLPXiaU1DACG_PbWuw_mHo2RYkEbLsImzNGgF8"/>
+            <img alt="Dany Experiences Logo" class="h-12 w-12 object-contain filter drop-shadow-[0_0_8px_rgba(140,214,179,0.4)]" src="./assets/logo.svg"/>
             <h2 class="font-headline-md text-2xl text-primary font-bold">Dany Experiences</h2>
         </div>
         <p class="font-body-md text-on-surface-variant mb-8 leading-relaxed" data-i18n="footer_desc">
@@ -1020,6 +1464,246 @@
         }, 1500);
     };
 </script>
+
+<!-- Interactive Booking Wizard Modal (4 Steps) -->
+<div id="booking-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md transition-all duration-300">
+  <div class="relative w-full max-w-xl bg-[#0f1412] border border-[#B09A6D]/40 rounded-3xl p-6 md:p-8 max-h-[92vh] overflow-y-auto shadow-2xl flex flex-col text-on-surface">
+    <!-- Close Button -->
+    <button onclick="window.closeBookingWidget()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer z-20">
+      <span class="material-symbols-outlined text-lg">close</span>
+    </button>
+
+    <!-- Stepper Navigation -->
+    <div class="border-b border-white/10 pb-4 mb-6">
+      <div class="flex items-center justify-between">
+        <!-- Step 1 Indicator -->
+        <div id="step-nav-1" class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-primary">
+          <span class="w-6 h-6 rounded-full bg-primary text-background flex items-center justify-center text-xs">1</span>
+          <span class="hidden sm:inline">Opciones</span>
+        </div>
+        <div class="h-[1px] w-6 sm:w-12 bg-white/10"></div>
+        <!-- Step 2 Indicator -->
+        <div id="step-nav-2" class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-on-surface/40">
+          <span class="w-6 h-6 rounded-full bg-white/10 text-on-surface/60 flex items-center justify-center text-xs">2</span>
+          <span class="hidden sm:inline">Huésped</span>
+        </div>
+        <div class="h-[1px] w-6 sm:w-12 bg-white/10"></div>
+        <!-- Step 3 Indicator -->
+        <div id="step-nav-3" class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-on-surface/40">
+          <span class="w-6 h-6 rounded-full bg-white/10 text-on-surface/60 flex items-center justify-center text-xs">3</span>
+          <span class="hidden sm:inline">Resumen</span>
+        </div>
+        <div class="h-[1px] w-6 sm:w-12 bg-white/10"></div>
+        <!-- Step 4 Indicator -->
+        <div id="step-nav-4" class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-on-surface/40">
+          <span class="w-6 h-6 rounded-full bg-white/10 text-on-surface/60 flex items-center justify-center text-xs">4</span>
+          <span class="hidden sm:inline">Listo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wizard Steps Container -->
+    <!-- STEP 1: Options -->
+    <div id="booking-step-1" class="space-y-6">
+      <div class="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4">
+        <img id="bw-tour-thumb" src="./assets/chichen_1.webp" class="w-20 h-20 rounded-xl object-cover border border-white/10 shrink-0" alt="Tour Thumbnail">
+        <div>
+          <span id="bw-tour-category" class="text-[10px] font-bold text-secondary uppercase tracking-widest">Cultura e Historia</span>
+          <h3 id="bw-tour-title" class="text-lg md:text-xl font-bold text-white leading-tight">Chichén Itzá: Amanecer Sagrado</h3>
+          <p class="text-xs text-on-surface-variant flex items-center gap-1 mt-1">
+            <span class="material-symbols-outlined text-xs text-primary">schedule</span>
+            <span id="bw-duration-text">9 horas aprox.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Date Selection -->
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Fecha Deseada de la Expedición *</label>
+        <div class="relative">
+          <input type="date" id="bw-date" onchange="window.updateBookingDate(this.value)" class="w-full bg-[#161c19] border border-white/10 rounded-xl p-3.5 text-sm text-white focus:border-primary focus:outline-none" required>
+        </div>
+        <p class="text-[11px] text-on-surface-variant/60 mt-1">Recomendamos reservar con al menos 24 a 48 hrs de anticipación.</p>
+      </div>
+
+      <!-- Passengers Selector (Pax) -->
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Número de Pasajeros (Pax)</label>
+        <div class="flex items-center justify-between bg-[#161c19] border border-white/10 rounded-xl p-3">
+          <span class="text-sm font-medium text-white">Viajeros en tu grupo</span>
+          <div class="flex items-center gap-3">
+            <button type="button" onclick="window.changePax(-1)" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-base transition-colors cursor-pointer">-</button>
+            <span id="bw-pax-count" class="font-bold text-base text-primary min-w-[24px] text-center">2</span>
+            <button type="button" onclick="window.changePax(1)" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center font-bold text-base transition-colors cursor-pointer">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Level: Private vs Shared -->
+      <div id="bw-service-type-container">
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Modalidad de Servicio</label>
+        <div class="grid grid-cols-2 gap-3">
+          <button type="button" id="bw-btn-private" onclick="window.togglePrivate(true)" class="p-3.5 rounded-xl border-2 border-primary bg-primary/10 text-left transition-all cursor-pointer">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-primary">Privado VIP</span>
+              <span class="material-symbols-outlined text-sm text-primary">star</span>
+            </div>
+            <p class="text-[11px] text-on-surface-variant/80">Vehículo y anfitrión exclusivo para tu grupo.</p>
+          </button>
+          <button type="button" id="bw-btn-shared" onclick="window.togglePrivate(false)" class="p-3.5 rounded-xl border border-white/10 bg-white/5 text-left transition-all opacity-70 cursor-pointer">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-white">Compartido</span>
+              <span class="material-symbols-outlined text-sm text-white/60">groups</span>
+            </div>
+            <p class="text-[11px] text-on-surface-variant/80">Grupo reducido con otros exploradores.</p>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pricing preview box -->
+      <div class="bg-gradient-to-r from-primary/10 via-white/5 to-transparent border border-primary/20 rounded-2xl p-4 flex justify-between items-center">
+        <div>
+          <span class="text-[10px] text-on-surface-variant uppercase tracking-widest font-bold block">Inversión Estimada</span>
+          <span class="text-xs text-secondary font-medium">Margen operativo e impuestos incluidos</span>
+        </div>
+        <div class="text-right">
+          <span id="bw-price-total-usd" class="text-xl md:text-2xl font-bold text-primary font-headline-md block">$300 USD</span>
+          <span id="bw-price-total-mxn" class="text-xs text-on-surface-variant font-mono">≈ $5,000 MXN</span>
+        </div>
+      </div>
+
+      <button type="button" onclick="window.setBookingStep(2)" class="w-full bg-primary hover:bg-primary/90 text-background py-4 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+        <span>Continuar a Datos del Huésped</span>
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+      </button>
+    </div>
+
+    <!-- STEP 2: Contact Info -->
+    <div id="booking-step-2" class="space-y-4 hidden">
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Nombre Completo *</label>
+        <input type="text" id="bw-name" placeholder="Ej. Carlos Mendoza" class="w-full bg-[#161c19] border border-white/10 rounded-xl p-3.5 text-sm text-white focus:border-primary focus:outline-none" required>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Correo Electrónico *</label>
+        <input type="email" id="bw-email" placeholder="carlos@ejemplo.com" class="w-full bg-[#161c19] border border-white/10 rounded-xl p-3.5 text-sm text-white focus:border-primary focus:outline-none" required>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">WhatsApp / Teléfono (con código de país) *</label>
+        <input type="tel" id="bw-phone" placeholder="+52 998 123 4567" class="w-full bg-[#161c19] border border-white/10 rounded-xl p-3.5 text-sm text-white focus:border-primary focus:outline-none" required>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-1.5">Hotel o Punto de Salida / Notas Especiales (Opcional)</label>
+        <textarea id="bw-notes" rows="2" placeholder="Hotel, villa, requerimientos dietéticos o si viajas con niños..." class="w-full bg-[#161c19] border border-white/10 rounded-xl p-3 text-sm text-white focus:border-primary focus:outline-none"></textarea>
+      </div>
+
+      <div id="bw-step2-error" class="hidden text-xs text-red-400 bg-red-950/40 border border-red-800/50 rounded-xl p-3">
+        Por favor completa todos los campos requeridos con datos válidos.
+      </div>
+
+      <div class="flex gap-3 pt-2">
+        <button type="button" onclick="window.setBookingStep(1)" class="w-1/3 border border-white/20 hover:bg-white/5 text-white py-3.5 rounded-xl font-label-md text-xs uppercase tracking-wider transition-all cursor-pointer">
+          Atrás
+        </button>
+        <button type="button" onclick="window.validateStep2AndContinue()" class="w-2/3 bg-primary hover:bg-primary/90 text-background py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+          <span>Revisar Resumen</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Summary & Dispatch -->
+    <div id="booking-step-3" class="space-y-5 hidden">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 space-y-3.5">
+        <h4 class="text-xs font-bold text-primary uppercase tracking-widest border-b border-white/10 pb-2">Resumen de la Solicitud</h4>
+        
+        <div class="flex justify-between text-xs">
+          <span class="text-on-surface-variant">Expedición:</span>
+          <span id="bw-sum-tour" class="font-bold text-white text-right">Chichén Itzá</span>
+        </div>
+        <div class="flex justify-between text-xs">
+          <span class="text-on-surface-variant">Fecha:</span>
+          <span id="bw-sum-date" class="font-medium text-white">2026-09-06</span>
+        </div>
+        <div class="flex justify-between text-xs">
+          <span class="text-on-surface-variant">Pasajeros:</span>
+          <span id="bw-sum-pax" class="font-medium text-white">2 Adultos</span>
+        </div>
+        <div class="flex justify-between text-xs">
+          <span class="text-on-surface-variant">Modalidad:</span>
+          <span id="bw-sum-service" class="font-medium text-secondary">Privado VIP</span>
+        </div>
+        <div class="flex justify-between text-xs">
+          <span class="text-on-surface-variant">Titular:</span>
+          <span id="bw-sum-name" class="font-medium text-white">Carlos Mendoza</span>
+        </div>
+        <div class="flex justify-between text-xs">
+          <span class="text-on-surface-variant">WhatsApp:</span>
+          <span id="bw-sum-phone" class="font-mono text-white">+52 998 123 4567</span>
+        </div>
+        
+        <div class="border-t border-white/10 pt-3 flex justify-between items-center">
+          <span class="text-xs font-bold text-white uppercase">Inversión Total Estimada:</span>
+          <div class="text-right">
+            <span id="bw-sum-price" class="text-lg font-bold text-primary">$300 USD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-3.5 flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary text-base mt-0.5">verified_user</span>
+        <p class="text-[11px] text-on-surface-variant/90 leading-relaxed">
+          Al confirmar, abriremos un chat directo en WhatsApp con Dany para verificar la logística y enviar tu comprobante oficial de reserva. Sin cobros sorpresa.
+        </p>
+      </div>
+
+      <div class="flex gap-3 pt-2">
+        <button type="button" onclick="window.setBookingStep(2)" class="w-1/3 border border-white/20 hover:bg-white/5 text-white py-3.5 rounded-xl font-label-md text-xs uppercase tracking-wider transition-all cursor-pointer">
+          Editar
+        </button>
+        <button type="button" onclick="window.confirmAndDispatchBooking()" class="w-2/3 bg-[#25D366] hover:bg-[#1EBE5D] text-black py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer">
+          <span class="material-symbols-outlined text-base">chat</span>
+          <span>Confirmar en WhatsApp</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Success & Calendar Sync -->
+    <div id="booking-step-4" class="text-center space-y-6 py-4 hidden">
+      <div class="w-16 h-16 bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] rounded-full flex items-center justify-center mx-auto shadow-[0_0_25px_rgba(37,211,102,0.3)]">
+        <span class="material-symbols-outlined text-3xl">check</span>
+      </div>
+
+      <div>
+        <span class="text-[10px] font-bold text-secondary uppercase tracking-widest block mb-1">¡SOLICITUD ENVIADA CON ÉXITO!</span>
+        <h3 class="text-2xl font-bold text-white mb-2">Te esperamos en la Riviera Maya</h3>
+        <p class="text-xs text-on-surface-variant max-w-sm mx-auto leading-relaxed">
+          Tu código de reserva es <span id="bw-confirmed-id" class="font-mono text-primary font-bold">DNY-84920</span>. Hemos abierto la conversación de WhatsApp con Dany para los detalles de tu pick-up.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-3 max-w-sm mx-auto">
+        <button type="button" id="bw-reopen-wa-btn" class="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-black py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer">
+          <span class="material-symbols-outlined text-base">chat</span>
+          <span>Reabrir WhatsApp</span>
+        </button>
+
+        <button type="button" onclick="window.syncGoogleCalendar()" class="w-full bg-white/10 hover:bg-white/20 border border-white/20 text-white py-3.5 rounded-xl font-label-md text-xs uppercase tracking-widest font-bold transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <span class="material-symbols-outlined text-base text-secondary">event</span>
+          <span>Añadir a Google Calendar</span>
+        </button>
+
+        <button type="button" onclick="window.closeBookingWidget()" class="w-full text-on-surface-variant hover:text-white py-2 text-xs font-label-md uppercase tracking-wider transition-colors cursor-pointer">
+          Volver a la Página
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="./dany-experiences-integration.js"></script>
 
