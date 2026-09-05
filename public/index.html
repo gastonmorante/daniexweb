@@ -77,6 +77,11 @@
             border-color: var(--gold-burnished) !important;
             box-shadow: 0 0 15px rgba(30, 107, 79, 0.4);
         }
+        @media (min-width: 1024px) {
+            #tours-catalog-grid .last-tour-item-right {
+                grid-column-start: 3;
+            }
+        }
     </style>
     <script id="tailwind-config">
       tailwind.config = {
@@ -651,7 +656,7 @@
                 </div>
 
                 <!-- 11. Cenotes Sagrados -->
-                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Naturaleza">
+                <div id="tour-card-cen" class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 lg:col-start-1" data-cat="Naturaleza">
                     <div class="relative aspect-[16/10] overflow-hidden bg-black">
                         <img src="./assets/cenotes.webp" alt="Cenotes" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>
@@ -684,7 +689,7 @@
                 </div>
 
                 <!-- 12. Ruinas Arqueológicas y Cobá -->
-                <div class="tour-item group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1" data-cat="Cultura e Historia">
+                <div id="tour-card-arq" class="tour-item last-tour-item-right group bg-[#111714] border border-white/10 hover:border-primary/40 rounded-[2rem] overflow-hidden flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 lg:col-start-3" data-cat="Cultura e Historia">
                     <div class="relative aspect-[16/10] overflow-hidden bg-black">
                         <img src="./assets/ruinas.webp" alt="Ruinas Arqueológicas" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                         <div class="absolute inset-0 bg-gradient-to-t from-[#111714] via-black/30 to-transparent"></div>

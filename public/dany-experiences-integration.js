@@ -1630,6 +1630,20 @@ function bindEvents() {
         item.style.display = 'none';
       }
     });
+
+    // When viewing 'Todas', align the last tour card to the right column for symmetrical aesthetic balance
+    const lastItem = document.getElementById('tour-card-arq') || document.querySelector('#tours-catalog-grid .last-tour-item-right');
+    if (lastItem) {
+      if (category === 'Todas') {
+        lastItem.classList.add('lg:col-start-3');
+        lastItem.classList.add('last-tour-item-right');
+        lastItem.style.gridColumnStart = '';
+      } else {
+        lastItem.classList.remove('lg:col-start-3');
+        lastItem.classList.remove('last-tour-item-right');
+        lastItem.style.gridColumnStart = 'auto';
+      }
+    }
   };
 
   // Open booking widget
