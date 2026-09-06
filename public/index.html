@@ -163,7 +163,11 @@
     /* 6-SECOND CINEMATIC RUNNING JAGUAR INTRO ANIMATION         */
     /* ========================================================= */
     #cinematic-intro-overlay {
-      background: radial-gradient(circle at center, #0a110d 0%, #050806 100%);
+      background: radial-gradient(circle at center, #0e1e17 0%, #060b08 100%);
+      transition: background 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #cinematic-intro-overlay.phase-settled {
+      background: radial-gradient(circle at center, #ffffff 0%, #f4f6f5 60%, #e2eae3 100%);
     }
 
     /* Running Jaguar Motion */
@@ -179,38 +183,20 @@
       animation: jaguarGallopMotion 0.60s ease-in-out infinite;
     }
 
-    /* Kinetic Speed Streaks across Screen */
-    @keyframes speedStreaks {
-      0% { transform: translateX(120%); opacity: 0; }
-      50% { opacity: 0.75; }
-      100% { transform: translateX(-120%); opacity: 0; }
+    /* Skip Button dynamic theme adjustments */
+    #cinematic-intro-overlay.phase-settled #skip-intro-button {
+      background: rgba(27, 57, 41, 0.08);
+      border-color: rgba(27, 57, 41, 0.18);
+      color: #1b3929;
+      box-shadow: 0 4px 16px rgba(0, 54, 42, 0.12);
     }
-    .streak {
-      position: absolute;
-      height: 1.5px;
-      background: linear-gradient(90deg, transparent, #e5c378, #bad155, transparent);
-      animation: speedStreaks 0.75s linear infinite;
+    #cinematic-intro-overlay.phase-settled #skip-intro-button:hover {
+      background: rgba(27, 57, 41, 0.14);
+      color: #12281d;
     }
-
-    /* Mayan Pyramid Laser Stroke Draw Animation */
-    @keyframes drawLine {
-      0% { stroke-dashoffset: 1000; opacity: 0; }
-      30% { opacity: 1; }
-      100% { stroke-dashoffset: 0; opacity: 0.95; }
-    }
-    .mayan-path {
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      animation: drawLine 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    /* Mayan Geometry Ring */
-    @keyframes spinSlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    .spin-slow {
-      animation: spinSlow 30s linear infinite;
+    #cinematic-intro-overlay.phase-settled #intro-countdown {
+      background: rgba(27, 57, 41, 0.12);
+      color: #1b3929;
     }
 
     /* Dissolve effect for intro exit */
@@ -227,60 +213,36 @@
   <!-- ========================================================= -->
   <!-- CINEMATIC RUNNING JAGUAR INTRO OVERLAY (6 SECONDS)       -->
   <!-- ========================================================= -->
-  <div id="cinematic-intro-overlay" class="fixed inset-0 z-[999999] flex flex-col items-center justify-center transition-all duration-1000 select-none overflow-hidden">
+  <div id="cinematic-intro-overlay" class="fixed inset-0 z-[999999] flex flex-col items-center justify-center select-none overflow-hidden">
     
-    <!-- Background Particles & Dust Canvas -->
-    <canvas id="introCanvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
-
-    <!-- Speed Streaks during sprint phase -->
-    <div id="intro-streaks" class="absolute inset-0 pointer-events-none overflow-hidden">
-      <div class="streak w-64 top-[44%] left-[15%]" style="animation-delay: 0.05s;"></div>
-      <div class="streak w-96 top-[53%] left-[35%]" style="animation-delay: 0.25s;"></div>
-      <div class="streak w-48 top-[62%] left-[10%]" style="animation-delay: 0.5s;"></div>
-      <div class="streak w-80 top-[37%] left-[55%]" style="animation-delay: 0.15s;"></div>
-    </div>
-
-    <!-- Sacred Mayan Geometry Halo (Center) -->
-    <div class="absolute w-[450px] h-[450px] md:w-[580px] md:h-[580px] rounded-full border border-emerald-500/10 pointer-events-none spin-slow">
-      <div class="absolute inset-4 rounded-full border border-amber-400/10 border-dashed"></div>
-    </div>
+    <!-- Ambient Particles Canvas (Soft golden embers drifting during sprint) -->
+    <canvas id="introCanvas" class="absolute inset-0 w-full h-full pointer-events-none transition-opacity duration-1000"></canvas>
 
     <!-- Central Stage -->
-    <div class="relative flex flex-col items-center justify-center w-full max-w-4xl px-4 z-10 min-h-[380px]">
+    <div class="relative flex flex-col items-center justify-center w-full max-w-4xl px-4 z-10 min-h-[360px]">
 
       <!-- SPRINTING JAGUAR (Phase 1: 0.0s - 3.0s) -->
       <div id="intro-jaguar-running" class="relative flex flex-col items-center justify-center transition-all duration-700">
         <div class="relative flex items-center justify-center jaguar-gallop-motion">
           <picture>
             <source srcset="assets/jaguar_gallop.webp" type="image/webp"/>
-            <img src="assets/jaguar_gallop.gif" alt="Jaguar corriendo" class="w-64 min-[390px]:w-72 sm:w-96 md:w-[440px] h-auto object-contain filter drop-shadow-[0_0_30px_rgba(223,188,122,0.85)] drop-shadow-[0_0_60px_rgba(186,209,85,0.45)] select-none pointer-events-none"/>
+            <img src="assets/jaguar_gallop.gif" alt="Jaguar corriendo" class="w-64 min-[390px]:w-72 sm:w-96 md:w-[440px] h-auto object-contain filter drop-shadow-[0_0_28px_rgba(215,181,136,0.65)] select-none pointer-events-none"/>
           </picture>
         </div>
       </div>
 
-      <!-- NOBLE EMBLEM LOCKUP (Phase 2: 3.6s - 6.0s) -->
-      <div id="intro-jaguar-settled" class="absolute opacity-0 transition-all duration-1000 transform scale-90 translate-y-2 pointer-events-none">
-        <img src="assets/logo_head.png" onerror="this.src='assets/logo_head.png'" alt="Dany Experiences Logo" class="h-44 md:h-56 w-auto object-contain filter drop-shadow-[0_0_35px_rgba(230,200,120,0.75)] drop-shadow-[0_0_65px_rgba(186,209,85,0.45)]"/>
+      <!-- NOBLE EMBLEM LOCKUP: AUTHENTIC ORIGINAL LOGO (Phase 2: 3.0s - 6.0s) -->
+      <div id="intro-jaguar-settled" class="absolute opacity-0 transition-all duration-1000 transform scale-95 pointer-events-none flex flex-col items-center justify-center">
+        <img src="assets/logo_head_hd.png" onerror="this.src='assets/logo_head.png'" alt="Dany Experiences Logo" class="h-44 sm:h-56 md:h-64 lg:h-72 w-auto object-contain select-none pointer-events-none drop-shadow-[0_4px_24px_rgba(0,54,42,0.08)]"/>
       </div>
 
-      </div>
+    </div>
 
     <!-- SKIP BUTTON (Top Right) -->
-    <button id="skip-intro-button" class="absolute top-[max(1rem,env(safe-area-inset-top))] right-[max(1rem,env(safe-area-inset-right))] px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-xs font-semibold tracking-wider text-white/90 hover:text-white transition-all flex items-center gap-2 z-50 group shadow-[0_4px_16px_rgba(0,0,0,0.3)] active:scale-95">
+    <button id="skip-intro-button" class="absolute top-[max(1.25rem,env(safe-area-inset-top))] right-[max(1.25rem,env(safe-area-inset-right))] px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-xs font-semibold tracking-wider text-white/90 hover:text-white transition-all duration-500 flex items-center gap-2 z-50 group shadow-[0_4px_16px_rgba(0,0,0,0.3)] active:scale-95 cursor-pointer">
       <span>Saltar Intro</span>
-      <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/30 text-emerald-300 font-mono" id="intro-countdown">6.0s</span>
+      <span class="text-[10px] px-2 py-0.5 rounded-full bg-[#d7b587]/30 text-[#f3dcad] font-mono transition-colors duration-500" id="intro-countdown">6.0s</span>
     </button>
-
-    <!-- BOTTOM PROGRESS BAR (0% to 100% over 6 seconds) -->
-    <div class="absolute bottom-[max(1.75rem,env(safe-area-inset-bottom))] w-full max-w-sm px-6 flex flex-col items-center gap-2">
-      <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden relative">
-        <div id="intro-progress-fill" class="h-full bg-gradient-to-r from-[#94713c] via-[#e5c378] to-[#bad155] w-0 shadow-[0_0_15px_#bad155]"></div>
-      </div>
-      <div class="flex items-center justify-between w-full text-[10px] uppercase tracking-[0.2em] text-white/60 font-mono">
-        <span>Santuario Ancestral</span>
-        <span id="intro-percent">0%</span>
-      </div>
-    </div>
 
   </div>
 
@@ -1766,20 +1728,17 @@
       const introCanvas = document.getElementById('introCanvas');
       const skipBtn = document.getElementById('skip-intro-button');
       const countdownEl = document.getElementById('intro-countdown');
-      const progressFill = document.getElementById('intro-progress-fill');
-      const percentEl = document.getElementById('intro-percent');
-
       const runningBox = document.getElementById('intro-jaguar-running');
       const settledBox = document.getElementById('intro-jaguar-settled');
-      const streaksBox = document.getElementById('intro-streaks');
 
       const TOTAL_INTRO_SECONDS = 6.0;
       let introStartTime = performance.now();
       let introActive = true;
       let phaseSettled = false;
       let animFrameId = null;
+      let introTimer = null;
 
-      // Particles Canvas Setup
+      // Ambient Golden Motes Canvas
       const ictx = introCanvas ? introCanvas.getContext('2d') : null;
       let cw, ch;
       function resizeIntroCanvas() {
@@ -1790,178 +1749,145 @@
       window.addEventListener('resize', resizeIntroCanvas);
       resizeIntroCanvas();
 
-      // Ambient Mayan Dust Particles
+      // Ambient Mayan Golden Dust Particles
       const particles = [];
       if (cw && ch) {
-        for (let i = 0; i < 70; i++) {
+        for (let i = 0; i < 40; i++) {
           particles.push({
             x: Math.random() * cw,
             y: Math.random() * ch,
-            vx: (Math.random() - 0.5) * 0.7 - 0.4,
-            vy: (Math.random() - 0.5) * 0.4,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: -Math.random() * 0.7 - 0.2,
             size: Math.random() * 2.2 + 0.8,
-            color: Math.random() > 0.45 ? 'rgba(230, 200, 150, ' : 'rgba(186, 209, 85, ',
-            alpha: Math.random() * 0.7 + 0.3
+            color: Math.random() > 0.4 ? 'rgba(215, 181, 136, ' : 'rgba(243, 220, 173, ',
+            alpha: Math.random() * 0.65 + 0.25
           });
         }
       }
-
-      // Paw Strike Sparks
-      const sparks = [];
-      function spawnPawSparks() {
-        if (!cw || !ch) return;
-        const cx = cw * 0.5;
-        const cy = ch * 0.5 + 40;
-        for (let i = 0; i < 4; i++) {
-          sparks.push({
-            x: cx - 35 + (Math.random() - 0.5) * 45,
-            y: cy + (Math.random() - 0.5) * 12,
-            vx: -Math.random() * 6 - 3,
-            vy: -Math.random() * 3 + 1,
-            life: 22,
-            maxLife: 22,
-            size: Math.random() * 3 + 1,
-            color: Math.random() > 0.35 ? '#e5c378' : '#bad155'
-          });
-        }
-      }
-
-      let sparkTicker = 0;
 
       function renderIntroCanvas() {
         if (!introActive || !ictx) return;
         ictx.clearRect(0, 0, cw, ch);
 
-        // Update & Draw Dust
-        particles.forEach(p => {
-          p.x += p.vx;
-          p.y += p.vy;
-          if (p.x < 0) p.x = cw;
-          if (p.x > cw) p.x = 0;
-          if (p.y < 0) p.y = ch;
-          if (p.y > ch) p.y = 0;
-
-          ictx.fillStyle = p.color + (p.alpha * 0.85) + ')';
-          ictx.beginPath();
-          ictx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-          ictx.fill();
-        });
-
-        // Spawn Sparks during sprint
         if (!phaseSettled) {
-          sparkTicker++;
-          if (sparkTicker % 3 === 0) spawnPawSparks();
-        }
+          particles.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0) p.x = cw;
+            if (p.x > cw) p.x = 0;
+            if (p.y < 0) p.y = ch;
+            if (p.y > ch) p.y = 0;
 
-        // Draw Sparks
-        for (let i = sparks.length - 1; i >= 0; i--) {
-          const s = sparks[i];
-          s.x += s.vx;
-          s.y += s.vy;
-          s.life--;
-          const a = Math.max(0, s.life / s.maxLife);
-          ictx.fillStyle = s.color;
-          ictx.globalAlpha = a;
-          ictx.shadowBlur = 8;
-          ictx.shadowColor = s.color;
-          ictx.beginPath();
-          ictx.arc(s.x, s.y, s.size * a, 0, Math.PI * 2);
-          ictx.fill();
-          ictx.shadowBlur = 0;
-          ictx.globalAlpha = 1;
-          if (s.life <= 0) sparks.splice(i, 1);
+            ictx.fillStyle = p.color + (p.alpha * 0.8) + ')';
+            ictx.beginPath();
+            ictx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ictx.fill();
+          });
         }
 
         animFrameId = requestAnimationFrame(renderIntroCanvas);
       }
       if (ictx) renderIntroCanvas();
 
-      // Main Choreography Loop
       function closeIntro() {
         if (!introActive || !introOverlay) return;
         introActive = false;
+        if (introTimer) {
+          clearInterval(introTimer);
+          introTimer = null;
+        }
         introOverlay.classList.add('intro-exit');
         document.body.style.overflow = '';
         setTimeout(() => {
           introOverlay.style.display = 'none';
-          if (animFrameId) cancelAnimationFrame(animFrameId);
-        }, 1000);
+          if (animFrameId) {
+            cancelAnimationFrame(animFrameId);
+            animFrameId = null;
+          }
+        }, 950);
+      }
+
+      function startTimer() {
+        if (introTimer) clearInterval(introTimer);
+        introTimer = setInterval(() => {
+          if (!introActive) {
+            clearInterval(introTimer);
+            introTimer = null;
+            return;
+          }
+
+          const elapsed = (performance.now() - introStartTime) / 1000;
+          const remaining = Math.max(0, TOTAL_INTRO_SECONDS - elapsed).toFixed(1);
+          if (countdownEl) countdownEl.textContent = remaining + 's';
+
+          // At 3.0s: Transition to the authentic original logo (Phase 2: holds 3 full seconds)
+          if (elapsed >= 3.0 && !phaseSettled) {
+            phaseSettled = true;
+            introOverlay.classList.add('phase-settled');
+            if (introCanvas) introCanvas.style.opacity = '0';
+
+            // Fade out running jaguar smoothly
+            if (runningBox) {
+              runningBox.classList.add('opacity-0', 'scale-95');
+              runningBox.classList.remove('opacity-100', 'scale-100');
+            }
+
+            // Reveal authentic original logo and hold for 3 seconds
+            setTimeout(() => {
+              if (settledBox) {
+                settledBox.classList.remove('opacity-0', 'scale-95');
+                settledBox.classList.add('opacity-100', 'scale-100');
+              }
+            }, 300);
+          }
+
+          // At 6.0s: Intro completes and dissolves gracefully into website
+          if (elapsed >= TOTAL_INTRO_SECONDS) {
+            clearInterval(introTimer);
+            introTimer = null;
+            closeIntro();
+          }
+        }, 40);
       }
 
       function startIntro() {
         if (!introOverlay) return;
+        if (introTimer) {
+          clearInterval(introTimer);
+          introTimer = null;
+        }
         introOverlay.style.display = 'flex';
-        introOverlay.classList.remove('intro-exit');
+        introOverlay.classList.remove('intro-exit', 'phase-settled');
+        if (introCanvas) introCanvas.style.opacity = '1';
         introActive = true;
         phaseSettled = false;
         introStartTime = performance.now();
         document.body.style.overflow = 'hidden';
 
-        // Reset visual elements
         if (runningBox) {
-          runningBox.classList.remove('opacity-0', 'scale-90');
-          runningBox.classList.add('opacity-100');
+          runningBox.classList.remove('opacity-0', 'scale-95');
+          runningBox.classList.add('opacity-100', 'scale-100');
         }
         if (settledBox) {
           settledBox.classList.remove('opacity-100', 'scale-100');
-          settledBox.classList.add('opacity-0', 'scale-90');
+          settledBox.classList.add('opacity-0', 'scale-95');
         }
-        if (streaksBox) {
-          streaksBox.classList.remove('opacity-0');
-        }
+        if (countdownEl) countdownEl.textContent = '6.0s';
 
         renderIntroCanvas();
+        startTimer();
       }
 
       // Initial Launch
       document.body.style.overflow = 'hidden';
-
-      const introTimer = setInterval(() => {
-        if (!introActive) {
-          clearInterval(introTimer);
-          return;
-        }
-
-        const elapsed = (performance.now() - introStartTime) / 1000;
-        const progress = Math.min(1.0, elapsed / TOTAL_INTRO_SECONDS);
-        const remaining = Math.max(0, TOTAL_INTRO_SECONDS - elapsed).toFixed(1);
-
-        if (progressFill) progressFill.style.width = (progress * 100) + '%';
-        if (percentEl) percentEl.textContent = Math.round(progress * 100) + '%';
-        if (countdownEl) countdownEl.textContent = remaining + 's';
-
-        // At 3.0s: Transition from sprinting jaguar to original logo (Phase 2: 3.0s)
-        if (elapsed >= 3.0 && !phaseSettled) {
-          phaseSettled = true;
-          if (streaksBox) streaksBox.classList.add('opacity-0');
-
-          // Fade out runner smoothly
-          if (runningBox) {
-            runningBox.classList.add('opacity-0', 'scale-90');
-          }
-
-          // Reveal original logo and hold for 3 seconds
-          setTimeout(() => {
-            if (settledBox) {
-              settledBox.classList.remove('opacity-0', 'scale-90');
-              settledBox.classList.add('opacity-100', 'scale-100');
-            }
-          }, 300);
-        }
-
-        // At 6.0s: Reveal the website
-        if (elapsed >= TOTAL_INTRO_SECONDS) {
-          clearInterval(introTimer);
-          closeIntro();
-        }
-      }, 40);
+      startTimer();
 
       if (skipBtn) {
-        skipBtn.addEventListener('click', () => {
-          clearInterval(introTimer);
-          closeIntro();
-        });
+        skipBtn.addEventListener('click', closeIntro);
       }
+
+      window.startIntro = startIntro;
+      window.closeIntro = closeIntro;
 
       // Replay intro handled via mobile drawer and header controllers
       // -------------------------------------------------------------
