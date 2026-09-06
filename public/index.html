@@ -5,8 +5,10 @@
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0" name="viewport"/>
   <meta name="theme-color" content="#00362a"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="format-detection" content="telephone=no"/>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+  <meta http-equiv="Pragma" content="no-cache"/>
+  <meta http-equiv="Expires" content="0"/>
   <!-- Preload Critical Intro Assets for Instant Playback -->
   <link rel="preload" href="assets/jaguar_gallop.webp" as="image" type="image/webp"/>
   <link rel="preload" href="assets/jaguar_gallop.gif" as="image" type="image/gif"/>
@@ -1160,25 +1162,25 @@
               <!-- Chat Prompts & Input -->
               <div class="flex flex-col gap-space-sm pt-space-md border-t border-surface-container-high/60">
                 <div class="flex flex-wrap gap-1.5" id="miatz-prompt-chips">
-                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Tulum Privado" type="button">
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors cursor-pointer" data-topic="Tulum Privado" type="button" onclick="if(window.handleMiatzChip){window.handleMiatzChip(this);}">
                     ⭐ Tulum Privado (Prioridad #1)
                   </button>
-                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Chichén Itzá" type="button">
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors cursor-pointer" data-topic="Chichén Itzá" type="button" onclick="if(window.handleMiatzChip){window.handleMiatzChip(this);}">
                     🏛️ Chichén Itzá &amp; Cenote
                   </button>
-                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Coco Bongo" type="button">
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors cursor-pointer" data-topic="Coco Bongo" type="button" onclick="if(window.handleMiatzChip){window.handleMiatzChip(this);}">
                     🎉 Coco Bongo &amp; Cuatrimotos ATV
                   </button>
-                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Dany Chacón" type="button">
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors cursor-pointer" data-topic="Dany Chacón" type="button" onclick="if(window.handleMiatzChip){window.handleMiatzChip(this);}">
                     👤 ¿Quién es Dany Chacón?
                   </button>
-                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Tarifas y Transporte" type="button">
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors cursor-pointer" data-topic="Tarifas y Transporte" type="button" onclick="if(window.handleMiatzChip){window.handleMiatzChip(this);}">
                     💎 Tarifas y Transporte
                   </button>
                 </div>
-                <form class="flex items-center gap-space-xs bg-surface-container-low rounded-full px-space-sm py-space-2xs shadow-inner border border-outline-variant/30 focus-within:border-secondary transition-colors" id="miatz-chat-form">
-                  <input class="bg-transparent flex-1 font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-outline" id="miatz-input" placeholder="Pregúntale a Miatz..." type="text"/>
-                  <button aria-label="Enviar mensaje a Miatz" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors shrink-0" type="submit">
+                <form class="flex items-center gap-space-xs bg-surface-container-low rounded-full px-space-sm py-space-2xs shadow-inner border border-outline-variant/30 focus-within:border-secondary transition-colors" id="miatz-chat-form" action="javascript:void(0);" onsubmit="if(window.handleMiatzSubmit){window.handleMiatzSubmit(event);} return false;">
+                  <input class="bg-transparent flex-1 font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-outline" id="miatz-input" placeholder="Pregúntale a Miatz..." type="text" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();if(window.handleMiatzSubmit){window.handleMiatzSubmit(event);}}"/>
+                  <button aria-label="Enviar mensaje a Miatz" id="miatz-send-btn" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors shrink-0 cursor-pointer" type="button" onclick="if(window.handleMiatzSubmit){window.handleMiatzSubmit(event);}">
                     <span class="material-symbols-outlined text-[18px]">send</span>
                   </button>
                 </form>
@@ -1209,8 +1211,8 @@
                   
                   <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
                     <!-- Card 1: Tulum Privado (PRIORIDAD #1) -->
-                    <label class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-secondary bg-secondary/10 shadow-sm has-[:checked]:border-secondary has-[:checked]:bg-secondary/15">
-                      <input checked="" class="sr-only tour-checkbox" name="tours" type="checkbox" value="Tulum Privado &amp; Playa Paraíso"/>
+                    <label id="label-tours-tulum" class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-secondary bg-secondary/15 shadow-sm has-[:checked]:border-secondary has-[:checked]:bg-secondary/15">
+                      <input checked="" class="sr-only tour-checkbox" name="tours" type="checkbox" value="Tulum Privado &amp; Playa Paraíso" onchange="if(window.updateTourCardVisual){window.updateTourCardVisual(this);}"/>
                       <div class="flex items-center justify-between">
                         <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] font-bold tracking-wide">
                           <span class="material-symbols-outlined text-[12px]">star</span> PRIORIDAD #1
@@ -1222,8 +1224,8 @@
                     </label>
 
                     <!-- Card 2: Chichén Itzá Privado -->
-                    <label class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
-                      <input checked="" class="sr-only tour-checkbox" name="tours" type="checkbox" value="Chichén Itzá Privado &amp; Cenote"/>
+                    <label id="label-tours-chichen" class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-secondary bg-secondary/15 shadow-sm has-[:checked]:border-secondary has-[:checked]:bg-secondary/15">
+                      <input checked="" class="sr-only tour-checkbox" name="tours" type="checkbox" value="Chichén Itzá Privado &amp; Cenote" onchange="if(window.updateTourCardVisual){window.updateTourCardVisual(this);}"/>
                       <div class="flex items-center justify-between">
                         <span class="material-symbols-outlined text-secondary text-[20px]">temple_hindu</span>
                         <span class="material-symbols-outlined text-secondary text-[20px] checkmark-icon">check_circle</span>
@@ -1233,8 +1235,8 @@
                     </label>
 
                     <!-- Card 3: Cenotes Casa Tortuga -->
-                    <label class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
-                      <input class="sr-only tour-checkbox" name="tours" type="checkbox" value="Cenotes Casa Tortuga"/>
+                    <label id="label-tours-tortuga" class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/15">
+                      <input class="sr-only tour-checkbox" name="tours" type="checkbox" value="Cenotes Casa Tortuga" onchange="if(window.updateTourCardVisual){window.updateTourCardVisual(this);}"/>
                       <div class="flex items-center justify-between">
                         <span class="material-symbols-outlined text-secondary text-[20px]">water_drop</span>
                         <span class="material-symbols-outlined text-secondary text-[20px] checkmark-icon">radio_button_unchecked</span>
@@ -1361,16 +1363,16 @@
 
                 <!-- Stepper Buttons -->
                 <div class="flex items-center justify-between pt-space-xs border-t border-surface-container-high">
-                  <button class="hidden px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors items-center gap-1" id="builder-prev-btn" type="button">
+                  <button class="hidden px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors items-center gap-1 cursor-pointer" id="builder-prev-btn" type="button" onclick="if(window.handleBuilderPrev){window.handleBuilderPrev(event);}">
                     <span class="material-symbols-outlined text-[16px]">arrow_back</span>
                     <span>Atrás</span>
                   </button>
                   <div class="ml-auto">
-                    <button class="px-space-xl py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-secondary transition-colors flex items-center gap-1.5 shadow-sm" id="builder-next-btn" type="button">
+                    <button class="px-space-xl py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-secondary transition-colors flex items-center gap-1.5 shadow-sm cursor-pointer" id="builder-next-btn" type="button" onclick="if(window.handleBuilderNext){window.handleBuilderNext(event);}">
                       <span>Siguiente: Fechas</span>
                       <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </button>
-                    <button class="hidden px-space-xl py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-2 shadow-[0_4px_16px_rgba(0,106,97,0.3)] hover:scale-[1.02]" id="builder-submit-btn" type="button">
+                    <button class="hidden px-space-xl py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-2 shadow-[0_4px_16px_rgba(0,106,97,0.3)] hover:scale-[1.02] cursor-pointer" id="builder-submit-btn" type="button" onclick="if(window.handleBuilderSubmit){window.handleBuilderSubmit(event);}">
                       <span class="material-symbols-outlined text-[18px]">chat</span>
                       <span>Enviar a Dany Chacón por WhatsApp</span>
                     </button>
@@ -2001,15 +2003,37 @@
       });
 
       // -------------------------------------------------------------
+      // 3. MIATZ AI CONCIERGE & MULTISTEP BUILDER (STANDALONE CONTROLLERS)
       // -------------------------------------------------------------
-      // 3. MIATZ AI CONCIERGE CHAT INTERACTIONS
-      // -------------------------------------------------------------
-      const chatForm = document.getElementById('miatz-chat-form');
-      const chatInput = document.getElementById('miatz-input');
-      const chatStream = document.getElementById('miatz-chat-stream');
-      const promptChips = document.querySelectorAll('.chat-prompt-chip');
+      let currentStep = 1;
 
-      const appendMiatzMessage = (sender, text, actionUrl = null, actionLabel = null) => {
+      window.updateTourCardVisual = function(cb) {
+        if (!cb) return;
+        try {
+          const label = cb.closest('.tour-card-label');
+          if (!label) return;
+          const checkIcon = label.querySelector('.checkmark-icon');
+          if (cb.checked) {
+            if (checkIcon) checkIcon.textContent = 'check_circle';
+            label.classList.add('border-secondary', 'bg-secondary/15', 'shadow-sm');
+            label.classList.remove('border-transparent');
+          } else {
+            if (checkIcon) checkIcon.textContent = 'radio_button_unchecked';
+            label.classList.remove('border-secondary', 'bg-secondary/15', 'shadow-sm');
+            label.classList.add('border-transparent');
+          }
+          const errEl = document.getElementById('step1-error');
+          if (errEl && cb.checked) {
+            errEl.classList.add('hidden');
+            errEl.style.display = 'none';
+          }
+        } catch (err) {
+          console.warn('Error in updateTourCardVisual:', err);
+        }
+      };
+
+      window.appendMiatzMessage = function(sender, text, actionUrl = null, actionLabel = null) {
+        const chatStream = document.getElementById('miatz-chat-stream');
         if (!chatStream) return;
         const msgDiv = document.createElement('div');
         msgDiv.className = 'flex items-start gap-space-xs ' + (sender === 'user' ? 'max-w-[88%] ml-auto justify-end' : 'max-w-[92%]');
@@ -2050,8 +2074,10 @@
         chatStream.scrollTop = chatStream.scrollHeight;
       };
 
-      const showTypingIndicator = () => {
+      window.showTypingIndicator = function() {
+        const chatStream = document.getElementById('miatz-chat-stream');
         if (!chatStream) return;
+        window.removeTypingIndicator();
         const typingDiv = document.createElement('div');
         typingDiv.id = 'miatz-typing';
         typingDiv.className = 'flex items-start gap-space-xs max-w-[92%]';
@@ -2069,23 +2095,29 @@
         chatStream.scrollTop = chatStream.scrollHeight;
       };
 
-      const removeTypingIndicator = () => {
+      window.removeTypingIndicator = function() {
         const el = document.getElementById('miatz-typing');
         if (el) el.remove();
       };
 
-      const handleAiResponse = (userPrompt) => {
-        appendMiatzMessage('user', userPrompt);
-        showTypingIndicator();
+      window.handleAiResponse = function(userPrompt) {
+        if (!userPrompt || !userPrompt.trim()) return;
+        const promptTrimmed = userPrompt.trim();
+        window.appendMiatzMessage('user', promptTrimmed);
+        window.showTypingIndicator();
 
         setTimeout(() => {
-          removeTypingIndicator();
-          const p = userPrompt.toLowerCase();
+          window.removeTypingIndicator();
+          const p = promptTrimmed.toLowerCase();
           let reply = "";
           let actionLabel = "Consultar con Dany Chacón por WhatsApp";
-          let waText = `Hola Dany Chacón, estaba consultando con Miatz AI y me gustaría más información sobre: ${userPrompt}`;
+          let waText = `Hola Dany Chacón, estaba consultando con Miatz AI y me gustaría más información sobre: ${promptTrimmed}`;
 
-          if (p.includes('tulum') || p.includes('paraiso') || p.includes('paraíso') || p.includes('prioridad')) {
+          if (p.includes('hola') || p.includes('buen') || p.includes('buenas') || p.includes('saludos') || p === 'hi' || p === 'hello') {
+            reply = "¡Hola! Es un gusto saludarte. Soy <strong>Miatz</strong>, la asistente virtual de <strong>Dany Chacón</strong> en la Riviera Maya.<br><br>Ofrecemos expediciones <strong>100% privadas</strong> con transportación climatizada exclusiva, itinerarios a tu propio ritmo y la conducción de un Guía Federal Certificado por SECTUR.<br><br>¿Qué te gustaría explorar hoy? Puedes consultarme sobre <strong>Tulum Privado (nuestra prioridad #1)</strong>, <strong>Chichén Itzá</strong>, <strong>Cenotes Casa Tortuga</strong>, <strong>Coco Bongo VIP</strong> o actividades como cuatrimotos ATV.";
+            actionLabel = "Chatear con Dany Chacón por WhatsApp";
+            waText = "Hola Dany Chacón, un gusto saludarte. Me gustaría recibir información para organizar mi viaje a la Riviera Maya.";
+          } else if (p.includes('tulum') || p.includes('paraiso') || p.includes('paraíso') || p.includes('prioridad')) {
             reply = "<strong>🏛️ Tulum Privado &amp; Playa Paraíso (Nuestra Expedición Insignia #1):</strong><br>Es la experiencia más solicitada y la prioridad de Dany Chacón. Visita guiada personalizada por la emblemática zona arqueológica amurallada frente al Mar Caribe, complementada con descanso y nado en la paradisíaca Playa Paraíso. Todo en transporte climatizado privado a tu ritmo, sin prisas de autobuses masivos.";
             actionLabel = "Reservar Tulum Privado (#1)";
             waText = "Hola Dany Chacón, deseo apartar mi fecha para la expedición insignia de Tulum Privado & Playa Paraíso.";
@@ -2097,11 +2129,11 @@
             reply = "<strong>🌊 Cenotes Casa Tortuga &amp; Cavernas:</strong><br>Un circuito privado único a través de 4 cenotes milenarios (2 abiertos rodeados de selva virgen y 2 cavernas de aguas cristalinas a 24°C con estalagmitas). Incluye chalecos salvavidas y atención guiada especializada.";
             actionLabel = "Consultar Cenotes Casa Tortuga";
             waText = "Hola Dany Chacón, me gustaría conocer detalles para visitar Cenotes Casa Tortuga en privado.";
-          } else if (p.includes('coco') || p.includes('bongo') || p.includes('fiesta') || p.includes('noche') || p.includes('nocturn')) {
+          } else if (p.includes('coco') || p.includes('bongo') || p.includes('fiesta') || p.includes('noche') || p.includes('nocturn') || p.includes('antro')) {
             reply = "<strong>🎉 Coco Bongo Show VIP:</strong><br>El espectáculo acrobático y la fiesta más legendaria de la Riviera Maya (Cancún y Playa del Carmen). Coordinamos tus entradas preferenciales, mesa VIP, barra libre y traslados privados de ida y vuelta a tu hotel para que disfrutes con total seguridad.";
             actionLabel = "Reservar Coco Bongo VIP";
             waText = "Hola Dany Chacón, deseo coordinar accesos VIP y transporte para Coco Bongo.";
-          } else if (p.includes('atv') || p.includes('cuatrimoto') || p.includes('adrenalina') || p.includes('selva') || p.includes('tirolesa')) {
+          } else if (p.includes('atv') || p.includes('cuatrimoto') || p.includes('adrenalina') || p.includes('selva') || p.includes('tirolesa') || p.includes('aventura')) {
             reply = "<strong>🏍️ Cuatrimotos ATV Selva &amp; Aventura:</strong><br>Ruta todoterreno 4x4 por senderos ocultos de la selva maya, circuito de tirolesas a gran altura y nado en cenote subterráneo. Incluye equipo de seguridad homologado y guías profesionales.";
             actionLabel = "Consultar Aventura ATV en Selva";
             waText = "Hola Dany Chacón, me interesa la expedición de Cuatrimotos ATV y tirolesas en la selva.";
@@ -2120,191 +2152,245 @@
           } else {
             reply = "¡Excelente consulta! Dany Chacón diseña tu experiencia de manera 100% personalizada para ti y tus acompañantes, adaptando tiempos, paradas y accesos sin prisas. ¿Te gustaría coordinar tu itinerario directo con él?";
             actionLabel = "Escribir a Dany Chacón (+52 1 984 232 6708)";
-            waText = `Hola Dany Chacón, me gustaría hacerte una consulta directa: "${userPrompt}"`;
+            waText = `Hola Dany Chacón, me gustaría hacerte una consulta directa: "${promptTrimmed}"`;
           }
 
           const actionUrl = `https://wa.me/5219842326708?text=${encodeURIComponent(waText)}`;
-          appendMiatzMessage('miatz', reply, actionUrl, actionLabel);
-        }, 450);
+          window.appendMiatzMessage('miatz', reply, actionUrl, actionLabel);
+        }, 400);
       };
 
-      if (chatForm) {
-        chatForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const val = chatInput.value.trim();
-          if (val) {
-            handleAiResponse(val);
-            chatInput.value = '';
-          }
-        });
-      }
-
-      promptChips.forEach(chip => {
-        chip.addEventListener('click', () => {
-          const topic = chip.getAttribute('data-topic') || chip.textContent.trim();
-          handleAiResponse(topic);
-        });
-      });
-
-      // -------------------------------------------------------------
-      // 4. MULTISTEP EXPERIENCE BUILDER
-      // -------------------------------------------------------------
-      let currentStep = 1;
-      const step1 = document.getElementById('builder-step-1');
-      const step2 = document.getElementById('builder-step-2');
-      const step3 = document.getElementById('builder-step-3');
-      const nextBtn = document.getElementById('builder-next-btn');
-      const prevBtn = document.getElementById('builder-prev-btn');
-      const submitBtn = document.getElementById('builder-submit-btn');
-      const stepBadge = document.getElementById('step-badge');
-      const stepTitle = document.getElementById('step-title');
-
-      const p1 = document.getElementById('prog-1');
-      const p2 = document.getElementById('prog-2');
-      const p3 = document.getElementById('prog-3');
-
-      // Initialize date input with tomorrow's date & min = today
-      const dateInput = document.getElementById('builder-date');
-      if (dateInput) {
-        const today = new Date();
-        const yyyy = today.getFullYear();
-        const mm = String(today.getMonth() + 1).padStart(2, '0');
-        const dd = String(today.getDate()).padStart(2, '0');
-        dateInput.min = `${yyyy}-${mm}-${dd}`;
-
-        const tomorrow = new Date(today);
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        const tYyyy = tomorrow.getFullYear();
-        const tMm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-        const tDd = String(tomorrow.getDate()).padStart(2, '0');
-        if (!dateInput.value) {
-          dateInput.value = `${tYyyy}-${tMm}-${tDd}`;
+      let lastMiatzSubmitTime = 0;
+      window.handleMiatzSubmit = function(e) {
+        if (e) {
+          if (e.preventDefault) e.preventDefault();
+          if (e.stopPropagation) e.stopPropagation();
         }
-      }
+        const now = Date.now();
+        if (now - lastMiatzSubmitTime < 250) return false;
+        lastMiatzSubmitTime = now;
 
-      // Checkbox visual toggle for tour cards
-      document.querySelectorAll('.tour-checkbox').forEach(cb => {
-        cb.addEventListener('change', () => {
-          const label = cb.closest('.tour-card-label');
-          const checkIcon = label ? label.querySelector('.checkmark-icon') : null;
-          if (checkIcon) {
-            checkIcon.textContent = cb.checked ? 'check_circle' : 'radio_button_unchecked';
-          }
-        });
-      });
-
-      const updateSummaryPreview = () => {
-        const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked')).map(cb => cb.value);
-        const selectedExtras = Array.from(document.querySelectorAll('input[name="extra"]:checked')).map(cb => cb.value);
-        const all = [...selectedTours, ...selectedExtras];
-        
-        const sumTours = document.getElementById('summary-tours');
-        const sumDate = document.getElementById('summary-date');
-        const sumGuests = document.getElementById('summary-guests');
-        const sumTransport = document.getElementById('summary-transport');
-
-        if (sumTours) sumTours.textContent = all.length > 0 ? all.join(' • ') : 'Ninguna expedición seleccionada';
-        if (sumDate && dateInput) sumDate.textContent = dateInput.value || 'Por definir';
-        const guestsEl = document.getElementById('builder-guests');
-        if (sumGuests && guestsEl) sumGuests.textContent = guestsEl.value;
-        const transportChecked = document.querySelector('input[name="transport"]:checked');
-        if (sumTransport && transportChecked) sumTransport.textContent = transportChecked.value;
+        const chatInput = document.getElementById('miatz-input');
+        if (!chatInput) return false;
+        const val = chatInput.value.trim();
+        if (val) {
+          window.handleAiResponse(val);
+          chatInput.value = '';
+        }
+        return false;
       };
 
-      const updateStepUI = () => {
-        if (!step1 || !step2 || !step3) return;
-        step1.classList.add('hidden');
-        step1.classList.remove('flex');
-        step2.classList.add('hidden');
-        step2.classList.remove('flex');
-        step3.classList.add('hidden');
-        step3.classList.remove('flex');
+      window.handleMiatzChip = function(chipEl) {
+        if (!chipEl) return;
+        const topic = chipEl.getAttribute('data-topic') || chipEl.textContent.trim();
+        window.handleAiResponse(topic);
+      };
 
-        p1.classList.remove('bg-secondary');
-        p2.classList.remove('bg-secondary');
-        p3.classList.remove('bg-secondary');
-        p1.classList.add('bg-surface-container-highest');
-        p2.classList.add('bg-surface-container-highest');
-        p3.classList.add('bg-surface-container-highest');
+      window.updateSummaryPreview = function() {
+        try {
+          const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked')).map(cb => cb.value);
+          const selectedExtras = Array.from(document.querySelectorAll('input[name="extra"]:checked')).map(cb => cb.value);
+          const all = [...selectedTours, ...selectedExtras];
+          
+          const sumTours = document.getElementById('summary-tours');
+          const sumDate = document.getElementById('summary-date');
+          const sumGuests = document.getElementById('summary-guests');
+          const sumTransport = document.getElementById('summary-transport');
+          const dateInput = document.getElementById('builder-date');
+
+          if (sumTours) sumTours.textContent = all.length > 0 ? all.join(' • ') : 'Ninguna expedición seleccionada';
+          if (sumDate && dateInput) sumDate.textContent = dateInput.value || 'Por definir';
+          const guestsEl = document.getElementById('builder-guests');
+          if (sumGuests && guestsEl) sumGuests.textContent = guestsEl.value;
+          const transportChecked = document.querySelector('input[name="transport"]:checked');
+          if (sumTransport && transportChecked) sumTransport.textContent = transportChecked.value;
+        } catch (err) {
+          console.warn('Error in updateSummaryPreview:', err);
+        }
+      };
+
+      window.updateStepUI = function() {
+        const step1 = document.getElementById('builder-step-1');
+        const step2 = document.getElementById('builder-step-2');
+        const step3 = document.getElementById('builder-step-3');
+        const nextBtn = document.getElementById('builder-next-btn');
+        const prevBtn = document.getElementById('builder-prev-btn');
+        const submitBtn = document.getElementById('builder-submit-btn');
+        const stepBadge = document.getElementById('step-badge');
+        const stepTitle = document.getElementById('step-title');
+
+        const p1 = document.getElementById('prog-1');
+        const p2 = document.getElementById('prog-2');
+        const p3 = document.getElementById('prog-3');
+
+        if (!step1 || !step2 || !step3) return;
 
         if (currentStep === 1) {
           step1.classList.remove('hidden');
           step1.classList.add('flex');
-          prevBtn.classList.add('hidden');
-          prevBtn.classList.remove('inline-flex');
-          nextBtn.classList.remove('hidden');
-          nextBtn.classList.add('inline-flex');
-          const nextText = nextBtn.querySelector('span:first-child');
-          if (nextText) nextText.textContent = 'Siguiente: Fechas';
-          submitBtn.classList.add('hidden');
-          submitBtn.classList.remove('inline-flex');
-          stepBadge.textContent = 'Paso 1 de 3';
-          stepTitle.textContent = 'Selecciona tus Expediciones';
-          p1.classList.add('bg-secondary');
+          step1.style.display = 'flex';
+
+          step2.classList.add('hidden');
+          step2.classList.remove('flex');
+          step2.style.display = 'none';
+
+          step3.classList.add('hidden');
+          step3.classList.remove('flex');
+          step3.style.display = 'none';
+
+          if (prevBtn) {
+            prevBtn.classList.add('hidden');
+            prevBtn.classList.remove('inline-flex');
+            prevBtn.style.display = 'none';
+          }
+          if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            nextBtn.classList.add('inline-flex');
+            nextBtn.style.display = 'inline-flex';
+            const nextText = nextBtn.querySelector('span:first-child');
+            if (nextText) nextText.textContent = 'Siguiente: Fechas';
+          }
+          if (submitBtn) {
+            submitBtn.classList.add('hidden');
+            submitBtn.classList.remove('inline-flex');
+            submitBtn.style.display = 'none';
+          }
+          if (stepBadge) stepBadge.textContent = 'Paso 1 de 3';
+          if (stepTitle) stepTitle.textContent = 'Selecciona tus Expediciones';
+          if (p1) { p1.classList.add('bg-secondary'); p1.classList.remove('bg-surface-container-highest'); }
+          if (p2) { p2.classList.remove('bg-secondary'); p2.classList.add('bg-surface-container-highest'); }
+          if (p3) { p3.classList.remove('bg-secondary'); p3.classList.add('bg-surface-container-highest'); }
         } else if (currentStep === 2) {
+          step1.classList.add('hidden');
+          step1.classList.remove('flex');
+          step1.style.display = 'none';
+
           step2.classList.remove('hidden');
           step2.classList.add('flex');
-          prevBtn.classList.remove('hidden');
-          prevBtn.classList.add('inline-flex');
-          nextBtn.classList.remove('hidden');
-          nextBtn.classList.add('inline-flex');
-          const nextText = nextBtn.querySelector('span:first-child');
-          if (nextText) nextText.textContent = 'Siguiente: Confirmar';
-          submitBtn.classList.add('hidden');
-          submitBtn.classList.remove('inline-flex');
-          stepBadge.textContent = 'Paso 2 de 3';
-          stepTitle.textContent = 'Fechas y Grupo de Viajeros';
-          p1.classList.add('bg-secondary');
-          p2.classList.add('bg-secondary');
+          step2.style.display = 'flex';
+
+          step3.classList.add('hidden');
+          step3.classList.remove('flex');
+          step3.style.display = 'none';
+
+          if (prevBtn) {
+            prevBtn.classList.remove('hidden');
+            prevBtn.classList.add('inline-flex');
+            prevBtn.style.display = 'inline-flex';
+          }
+          if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            nextBtn.classList.add('inline-flex');
+            nextBtn.style.display = 'inline-flex';
+            const nextText = nextBtn.querySelector('span:first-child');
+            if (nextText) nextText.textContent = 'Siguiente: Confirmar';
+          }
+          if (submitBtn) {
+            submitBtn.classList.add('hidden');
+            submitBtn.classList.remove('inline-flex');
+            submitBtn.style.display = 'none';
+          }
+          if (stepBadge) stepBadge.textContent = 'Paso 2 de 3';
+          if (stepTitle) stepTitle.textContent = 'Fechas y Grupo de Viajeros';
+          if (p1) { p1.classList.add('bg-secondary'); p1.classList.remove('bg-surface-container-highest'); }
+          if (p2) { p2.classList.add('bg-secondary'); p2.classList.remove('bg-surface-container-highest'); }
+          if (p3) { p3.classList.remove('bg-secondary'); p3.classList.add('bg-surface-container-highest'); }
         } else if (currentStep === 3) {
-          updateSummaryPreview();
+          window.updateSummaryPreview();
+
+          step1.classList.add('hidden');
+          step1.classList.remove('flex');
+          step1.style.display = 'none';
+
+          step2.classList.add('hidden');
+          step2.classList.remove('flex');
+          step2.style.display = 'none';
+
           step3.classList.remove('hidden');
           step3.classList.add('flex');
-          prevBtn.classList.remove('hidden');
-          prevBtn.classList.add('inline-flex');
-          nextBtn.classList.add('hidden');
-          nextBtn.classList.remove('inline-flex');
-          submitBtn.classList.remove('hidden');
-          submitBtn.classList.add('inline-flex');
-          stepBadge.textContent = 'Paso 3 de 3';
-          stepTitle.textContent = 'Detalles de Contacto VIP';
-          p1.classList.add('bg-secondary');
-          p2.classList.add('bg-secondary');
-          p3.classList.add('bg-secondary');
+          step3.style.display = 'flex';
+
+          if (prevBtn) {
+            prevBtn.classList.remove('hidden');
+            prevBtn.classList.add('inline-flex');
+            prevBtn.style.display = 'inline-flex';
+          }
+          if (nextBtn) {
+            nextBtn.classList.add('hidden');
+            nextBtn.classList.remove('inline-flex');
+            nextBtn.style.display = 'none';
+          }
+          if (submitBtn) {
+            submitBtn.classList.remove('hidden');
+            submitBtn.classList.add('inline-flex');
+            submitBtn.style.display = 'inline-flex';
+          }
+          if (stepBadge) stepBadge.textContent = 'Paso 3 de 3';
+          if (stepTitle) stepTitle.textContent = 'Detalles de Contacto VIP';
+          if (p1) { p1.classList.add('bg-secondary'); p1.classList.remove('bg-surface-container-highest'); }
+          if (p2) { p2.classList.add('bg-secondary'); p2.classList.remove('bg-surface-container-highest'); }
+          if (p3) { p3.classList.add('bg-secondary'); p3.classList.remove('bg-surface-container-highest'); }
         }
       };
 
-      if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
+      let lastNextTime = 0;
+      window.handleBuilderNext = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const now = Date.now();
+        if (now - lastNextTime < 250) return;
+        lastNextTime = now;
+
+        try {
           if (currentStep === 1) {
             const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked'));
             const selectedExtras = Array.from(document.querySelectorAll('input[name="extra"]:checked'));
             const errEl = document.getElementById('step1-error');
             if (selectedTours.length === 0 && selectedExtras.length === 0) {
-              if (errEl) errEl.classList.remove('hidden');
+              if (errEl) {
+                errEl.classList.remove('hidden');
+                errEl.style.display = 'block';
+              }
               return;
             } else {
-              if (errEl) errEl.classList.add('hidden');
+              if (errEl) {
+                errEl.classList.add('hidden');
+                errEl.style.display = 'none';
+              }
             }
           }
           if (currentStep < 3) {
             currentStep++;
-            updateStepUI();
+            window.updateStepUI();
           }
-        });
-      }
+        } catch (err) {
+          console.warn('Error in handleBuilderNext:', err);
+        }
+      };
 
-      if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
+      let lastPrevTime = 0;
+      window.handleBuilderPrev = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const now = Date.now();
+        if (now - lastPrevTime < 250) return;
+        lastPrevTime = now;
+
+        try {
           if (currentStep > 1) {
             currentStep--;
-            updateStepUI();
+            window.updateStepUI();
           }
-        });
-      }
+        } catch (err) {
+          console.warn('Error in handleBuilderPrev:', err);
+        }
+      };
 
-      if (submitBtn) {
-        submitBtn.addEventListener('click', () => {
+      let lastSubmitTime = 0;
+      window.handleBuilderSubmit = function(e) {
+        if (e && e.preventDefault) e.preventDefault();
+        const now = Date.now();
+        if (now - lastSubmitTime < 500) return;
+        lastSubmitTime = now;
+        try {
           const nameInput = document.getElementById('builder-name');
           const phoneInput = document.getElementById('builder-phone');
           const nameErr = document.getElementById('name-error');
@@ -2315,21 +2401,21 @@
 
           let valid = true;
           if (!name) {
-            if (nameErr) nameErr.classList.remove('hidden');
+            if (nameErr) { nameErr.classList.remove('hidden'); nameErr.style.display = 'block'; }
             if (nameInput) nameInput.classList.add('border-red-500');
             valid = false;
           } else {
-            if (nameErr) nameErr.classList.add('hidden');
+            if (nameErr) { nameErr.classList.add('hidden'); nameErr.style.display = 'none'; }
             if (nameInput) nameInput.classList.remove('border-red-500');
           }
 
           const phoneDigits = phone.replace(/\D/g, '');
           if (!phone || phoneDigits.length < 8) {
-            if (phoneErr) phoneErr.classList.remove('hidden');
+            if (phoneErr) { phoneErr.classList.remove('hidden'); phoneErr.style.display = 'block'; }
             if (phoneInput) phoneInput.classList.add('border-red-500');
             valid = false;
           } else {
-            if (phoneErr) phoneErr.classList.add('hidden');
+            if (phoneErr) { phoneErr.classList.add('hidden'); phoneErr.style.display = 'none'; }
             if (phoneInput) phoneInput.classList.remove('border-red-500');
           }
 
@@ -2339,6 +2425,7 @@
             return;
           }
 
+          const dateInput = document.getElementById('builder-date');
           const date = dateInput ? dateInput.value : 'Por definir';
           const guests = document.getElementById('builder-guests')?.value || '2 Personas';
           const transport = document.querySelector('input[name="transport"]:checked')?.value || 'Van VIP Privada Climatizada';
@@ -2351,7 +2438,86 @@
 
           const waUrl = `https://wa.me/5219842326708?text=${encodeURIComponent(messageText)}`;
           window.open(waUrl, '_blank');
-        });
+        } catch (err) {
+          console.warn('Error in handleBuilderSubmit:', err);
+        }
+      };
+
+      window.initPlanificacionSagrada = function() {
+        try {
+          // Initialize date input with tomorrow's date & min = today
+          const dateInput = document.getElementById('builder-date');
+          if (dateInput) {
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const tYyyy = tomorrow.getFullYear();
+            const tMm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const tDd = String(tomorrow.getDate()).padStart(2, '0');
+            if (!dateInput.value) {
+              dateInput.value = `${tYyyy}-${tMm}-${tDd}`;
+            }
+          }
+
+          // Checkbox visual toggle for tour cards
+          document.querySelectorAll('.tour-checkbox').forEach(cb => {
+            cb.addEventListener('change', () => window.updateTourCardVisual(cb));
+            window.updateTourCardVisual(cb);
+          });
+
+          // Miatz form submit listener
+          const chatForm = document.getElementById('miatz-chat-form');
+          if (chatForm) {
+            chatForm.addEventListener('submit', window.handleMiatzSubmit);
+          }
+
+          // Miatz input Enter listener
+          const chatInput = document.getElementById('miatz-input');
+          if (chatInput) {
+            chatInput.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter') {
+                e.preventDefault();
+                window.handleMiatzSubmit(e);
+              }
+            });
+          }
+
+          // Miatz send button listener
+          const miatzSendBtn = document.getElementById('miatz-send-btn');
+          if (miatzSendBtn) {
+            miatzSendBtn.addEventListener('click', window.handleMiatzSubmit);
+          }
+
+          // Chips listeners
+          document.querySelectorAll('.chat-prompt-chip').forEach(chip => {
+            chip.addEventListener('click', () => window.handleMiatzChip(chip));
+          });
+
+          // Stepper buttons listeners
+          const nextBtn = document.getElementById('builder-next-btn');
+          if (nextBtn) nextBtn.addEventListener('click', window.handleBuilderNext);
+
+          const prevBtn = document.getElementById('builder-prev-btn');
+          if (prevBtn) prevBtn.addEventListener('click', window.handleBuilderPrev);
+
+          const submitBtn = document.getElementById('builder-submit-btn');
+          if (submitBtn) submitBtn.addEventListener('click', window.handleBuilderSubmit);
+
+          window.updateStepUI();
+        } catch (err) {
+          console.warn('Error in initPlanificacionSagrada:', err);
+        }
+      };
+
+      // Run immediately
+      window.initPlanificacionSagrada();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', window.initPlanificacionSagrada);
       }
       // -------------------------------------------------------------
       // 5. MOBILE DRAWER & BOTTOM BAR CONTROLLERS
