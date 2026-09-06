@@ -1093,7 +1093,8 @@
       </section>
 
       <!-- SECTION 5: PLANIFICACIÓN SAGRADA (Miatz AI + Multi-Step Builder) -->
-      <section class="w-full bg-surface py-space-3xl lg:py-space-4xl" id="planificacion-sagrada">
+            <!-- PLANIFICACIÓN INTERACTIVA & ITINERARIOS -->
+      <section class="py-space-3xl lg:py-space-4xl" id="planificacion-sagrada">
         <div class="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col gap-space-2xl">
           
           <div class="text-center flex flex-col items-center gap-space-xs max-w-2xl mx-auto">
@@ -1101,68 +1102,76 @@
               <span class="material-symbols-outlined text-[16px]">smart_toy</span>
               <span class="font-label-sm text-label-sm uppercase tracking-widest font-bold">Tecnología &amp; Hospitalidad</span>
             </div>
-            <h2 class="font-headline-xl text-headline-xl text-primary font-bold">Planificación Sagrada</h2>
+            <h2 class="font-headline-xl text-headline-xl text-primary font-bold">Planificación y Reservas</h2>
             <p class="font-body-md text-body-md text-on-surface-variant">
-              Combina la sabiduría de nuestra inteligencia artificial Miatz Concierge con el constructor de itinerarios a la medida para materializar tu travesía maya ideal.
+              Consulta en vivo con nuestra asistente virtual Miatz Concierge o diseña tu itinerario privado a la medida en 3 pasos con confirmación directa con Dany Chacón.
             </p>
           </div>
 
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
             
             <!-- Left: Miatz AI Concierge Card -->
-            <div class="lg:col-span-5 rounded-3xl bg-surface-container-lowest shadow-[0_12px_36px_rgba(19,78,63,0.07)] p-space-lg flex flex-col justify-between h-full min-h-[520px]">
+            <div class="lg:col-span-5 rounded-3xl bg-surface-container-lowest shadow-[0_12px_36px_rgba(19,78,63,0.07)] p-space-lg flex flex-col justify-between h-full min-h-[560px] border border-outline-variant/20">
               <div class="flex flex-col gap-space-md">
                 <div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
                   <div class="flex items-center gap-space-sm">
-                    <div class="relative w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center">
+                    <div class="relative w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-inner">
                       <span class="material-symbols-outlined text-[22px]">auto_awesome</span>
-                      <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary ring-2 ring-white"></span>
+                      <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary ring-2 ring-white animate-pulse"></span>
                     </div>
                     <div class="flex flex-col">
                       <span class="font-title-md text-title-md text-primary font-bold">Miatz AI Concierge</span>
-                      <span class="font-label-sm text-label-sm text-secondary">Online • Experta en Riviera Maya</span>
+                      <span class="font-label-sm text-label-sm text-secondary flex items-center gap-1 font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary inline-block"></span> En línea • Asistente de Dany Chacón
+                      </span>
                     </div>
                   </div>
                   <span class="px-space-xs py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-bold">IA 24/7</span>
                 </div>
 
                 <!-- Chat Stream -->
-                <div class="flex flex-col gap-space-sm max-h-[300px] overflow-y-auto pr-1" id="miatz-chat-stream">
-                  <div class="flex items-start gap-space-xs max-w-[88%]">
+                <div class="flex flex-col gap-space-sm max-h-[330px] overflow-y-auto pr-1" id="miatz-chat-stream">
+                  <div class="flex items-start gap-space-xs max-w-[92%]">
                     <div class="w-7 h-7 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shrink-0 mt-1">
                       <span class="material-symbols-outlined text-[14px]">smart_toy</span>
                     </div>
-                    <div class="p-space-sm rounded-2xl rounded-tl-none bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-sm">
-                      ¡Hola! Soy Miatz. ¿Tienes dudas sobre qué tour se adapta mejor a tu grupo, horarios o temporadas de anidación marina?
+                    <div class="p-space-sm rounded-2xl rounded-tl-none bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-sm leading-relaxed">
+                      ¡Hola! Soy <strong>Miatz</strong>, la asistente virtual de Dany Chacón. ¿Tienes dudas sobre cuál expedición elegir para tu grupo, disponibilidad de fechas, traslados o actividades?
                     </div>
                   </div>
-                  <div class="flex items-start gap-space-xs max-w-[88%]">
+                  <div class="flex items-start gap-space-xs max-w-[92%]">
                     <div class="w-7 h-7 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shrink-0 mt-1">
                       <span class="material-symbols-outlined text-[14px]">smart_toy</span>
                     </div>
-                    <div class="p-space-sm rounded-2xl rounded-tl-none bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-sm">
-                      Prueba tocando una de las consultas frecuentes para armar tu ruta:
+                    <div class="p-space-sm rounded-2xl rounded-tl-none bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-sm leading-relaxed">
+                      Toca una de las consultas sugeridas o escribe tu propia pregunta abajo:
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Chat Prompts & Input -->
-              <div class="flex flex-col gap-space-sm pt-space-md">
-                <div class="flex flex-wrap gap-space-2xs">
-                  <button class="chat-prompt-chip px-space-xs py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-colors" type="button">
-                    "¿Cenote privado?"
+              <div class="flex flex-col gap-space-sm pt-space-md border-t border-surface-container-high/60">
+                <div class="flex flex-wrap gap-1.5" id="miatz-prompt-chips">
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Tulum Privado" type="button">
+                    ⭐ Tulum Privado (Prioridad #1)
                   </button>
-                  <button class="chat-prompt-chip px-space-xs py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-colors" type="button">
-                    "Gastronomía selva"
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Chichén Itzá" type="button">
+                    🏛️ Chichén Itzá &amp; Cenote
                   </button>
-                  <button class="chat-prompt-chip px-space-xs py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary-container transition-colors" type="button">
-                    "Chichén Itzá info"
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Coco Bongo" type="button">
+                    🎉 Coco Bongo &amp; Cuatrimotos ATV
+                  </button>
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Dany Chacón" type="button">
+                    👤 ¿Quién es Dany Chacón?
+                  </button>
+                  <button class="chat-prompt-chip px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm hover:bg-secondary/15 hover:text-secondary transition-colors" data-topic="Tarifas y Transporte" type="button">
+                    💎 Tarifas y Transporte
                   </button>
                 </div>
-                <form class="flex items-center gap-space-xs bg-surface-container-low rounded-full px-space-sm py-space-2xs shadow-inner" id="miatz-chat-form">
-                  <input class="bg-transparent flex-1 font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-outline" id="miatz-input" placeholder="Pregunta a Miatz..." type="text"/>
-                  <button class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors shrink-0" type="submit">
+                <form class="flex items-center gap-space-xs bg-surface-container-low rounded-full px-space-sm py-space-2xs shadow-inner border border-outline-variant/30 focus-within:border-secondary transition-colors" id="miatz-chat-form">
+                  <input class="bg-transparent flex-1 font-body-sm text-body-sm text-on-surface focus:outline-none placeholder:text-outline" id="miatz-input" placeholder="Pregúntale a Miatz..." type="text"/>
+                  <button aria-label="Enviar mensaje a Miatz" class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-secondary transition-colors shrink-0" type="submit">
                     <span class="material-symbols-outlined text-[18px]">send</span>
                   </button>
                 </form>
@@ -1170,60 +1179,76 @@
             </div>
 
             <!-- Right: Arma tu Experiencia (Step Builder) -->
-            <div class="lg:col-span-7 rounded-3xl bg-surface-container-lowest shadow-[0_12px_36px_rgba(19,78,63,0.07)] p-space-lg lg:p-space-xl flex flex-col gap-space-lg">
-              <div class="flex items-center justify-between">
+            <div class="lg:col-span-7 rounded-3xl bg-surface-container-lowest shadow-[0_12px_36px_rgba(19,78,63,0.07)] p-space-lg lg:p-space-xl flex flex-col gap-space-lg border border-outline-variant/20" id="builder-card-container">
+              <div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
                 <div>
                   <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold" id="step-badge">Paso 1 de 3</span>
                   <h3 class="font-headline-md text-headline-md text-primary font-bold" id="step-title">Selecciona tus Expediciones</h3>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <div class="w-7 h-2 rounded-full bg-secondary transition-colors" id="prog-1"></div>
-                  <div class="w-7 h-2 rounded-full bg-surface-container-highest transition-colors" id="prog-2"></div>
-                  <div class="w-7 h-2 rounded-full bg-surface-container-highest transition-colors" id="prog-3"></div>
+                  <div class="w-8 h-2 rounded-full bg-secondary transition-colors" id="prog-1"></div>
+                  <div class="w-8 h-2 rounded-full bg-surface-container-highest transition-colors" id="prog-2"></div>
+                  <div class="w-8 h-2 rounded-full bg-surface-container-highest transition-colors" id="prog-3"></div>
                 </div>
               </div>
 
-              <form class="flex flex-col gap-space-lg" id="experience-builder-form">
+              <form class="flex flex-col gap-space-lg" id="experience-builder-form" onsubmit="return false;">
                 
                 <!-- STEP 1 CONTAINER -->
                 <div class="flex flex-col gap-space-md" id="builder-step-1">
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Elige las experiencias clave que deseas incluir en tu plan privado:</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Elige las expediciones clave que deseas incluir en tu plan privado (puedes marcar varias):
+                  </p>
+                  
                   <div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
-                    <label class="cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-colors border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
-                      <input checked="" class="sr-only" name="tours" type="checkbox" value="Chichén Itzá Amanecer"/>
+                    <!-- Card 1: Tulum Privado (PRIORIDAD #1) -->
+                    <label class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-secondary bg-secondary/10 shadow-sm has-[:checked]:border-secondary has-[:checked]:bg-secondary/15">
+                      <input checked="" class="sr-only tour-checkbox" name="tours" type="checkbox" value="Tulum Privado &amp; Playa Paraíso"/>
+                      <div class="flex items-center justify-between">
+                        <span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] font-bold tracking-wide">
+                          <span class="material-symbols-outlined text-[12px]">star</span> PRIORIDAD #1
+                        </span>
+                        <span class="material-symbols-outlined text-secondary text-[20px] checkmark-icon">check_circle</span>
+                      </div>
+                      <span class="font-title-md text-title-md text-primary font-bold mt-1">Tulum Privado</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">Arqueología &amp; Playa Paraíso</span>
+                    </label>
+
+                    <!-- Card 2: Chichén Itzá Privado -->
+                    <label class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
+                      <input checked="" class="sr-only tour-checkbox" name="tours" type="checkbox" value="Chichén Itzá Privado &amp; Cenote"/>
                       <div class="flex items-center justify-between">
                         <span class="material-symbols-outlined text-secondary text-[20px]">temple_hindu</span>
-                        <span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+                        <span class="material-symbols-outlined text-secondary text-[20px] checkmark-icon">check_circle</span>
                       </div>
-                      <span class="font-title-md text-title-md text-primary font-bold">Chichén Itzá</span>
-                      <span class="font-body-sm text-body-sm text-on-surface-variant">Acceso preferente</span>
+                      <span class="font-title-md text-title-md text-primary font-bold mt-1">Chichén Itzá</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">Maravilla &amp; Cenote Sagrado</span>
                     </label>
 
-                    <label class="cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-colors border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
-                      <input checked="" class="sr-only" name="tours" type="checkbox" value="Cenotes Casa Tortuga"/>
+                    <!-- Card 3: Cenotes Casa Tortuga -->
+                    <label class="tour-card-label cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-all border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
+                      <input class="sr-only tour-checkbox" name="tours" type="checkbox" value="Cenotes Casa Tortuga"/>
                       <div class="flex items-center justify-between">
                         <span class="material-symbols-outlined text-secondary text-[20px]">water_drop</span>
-                        <span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+                        <span class="material-symbols-outlined text-secondary text-[20px] checkmark-icon">radio_button_unchecked</span>
                       </div>
-                      <span class="font-title-md text-title-md text-primary font-bold">Casa Tortuga</span>
-                      <span class="font-body-sm text-body-sm text-on-surface-variant">4 Cenotes míticos</span>
-                    </label>
-
-                    <label class="cursor-pointer rounded-xl p-space-sm bg-surface-container-low hover:bg-surface-container flex flex-col gap-space-2xs transition-colors border-2 border-transparent has-[:checked]:border-secondary has-[:checked]:bg-secondary/10">
-                      <input class="sr-only" name="tours" type="checkbox" value="Tulum Murallas &amp; Arrecife"/>
-                      <div class="flex items-center justify-between">
-                        <span class="material-symbols-outlined text-secondary text-[20px]">beach_access</span>
-                        <span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
-                      </div>
-                      <span class="font-title-md text-title-md text-primary font-bold">Tulum Acantilado</span>
-                      <span class="font-body-sm text-body-sm text-on-surface-variant">Mar caribeño</span>
+                      <span class="font-title-md text-title-md text-primary font-bold mt-1">Casa Tortuga</span>
+                      <span class="font-body-sm text-body-sm text-on-surface-variant">4 Cenotes cristalinos</span>
                     </label>
                   </div>
 
                   <!-- Complementary Chips -->
                   <div class="flex flex-col gap-space-xs pt-space-xs">
-                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Experiencias Complementarias</span>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Experiencias y Actividades Complementarias</span>
                     <div class="flex flex-wrap gap-space-xs">
+                      <label class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm cursor-pointer hover:bg-surface-container has-[:checked]:bg-primary has-[:checked]:text-on-primary transition-colors">
+                        <input class="sr-only" name="extra" type="checkbox" value="Coco Bongo VIP Show"/>
+                        <span>🎉 Coco Bongo VIP Show</span>
+                      </label>
+                      <label class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm cursor-pointer hover:bg-surface-container has-[:checked]:bg-primary has-[:checked]:text-on-primary transition-colors">
+                        <input class="sr-only" name="extra" type="checkbox" value="Cuatrimotos ATV Selva"/>
+                        <span>🏍️ Cuatrimotos ATV Selva</span>
+                      </label>
                       <label class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm cursor-pointer hover:bg-surface-container has-[:checked]:bg-primary has-[:checked]:text-on-primary transition-colors">
                         <input class="sr-only" name="extra" type="checkbox" value="Xcaret Plus"/>
                         <span>Xcaret Plus</span>
@@ -1234,7 +1259,7 @@
                       </label>
                       <label class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm cursor-pointer hover:bg-surface-container has-[:checked]:bg-primary has-[:checked]:text-on-primary transition-colors">
                         <input class="sr-only" name="extra" type="checkbox" value="Buceo en Arrecifes"/>
-                        <span>Buceo Arrecifes</span>
+                        <span>Buceo en Arrecifes</span>
                       </label>
                       <label class="inline-flex items-center gap-1.5 px-space-sm py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm cursor-pointer hover:bg-surface-container has-[:checked]:bg-primary has-[:checked]:text-on-primary transition-colors">
                         <input class="sr-only" name="extra" type="checkbox" value="Yate Privado"/>
@@ -1242,35 +1267,46 @@
                       </label>
                     </div>
                   </div>
+                  
+                  <div class="hidden text-error text-body-sm font-medium" id="step1-error">
+                    Por favor selecciona al menos una expedición para continuar.
+                  </div>
                 </div>
 
                 <!-- STEP 2 CONTAINER -->
                 <div class="hidden flex-col gap-space-md" id="builder-step-2">
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Define fechas tentativas y estilo de viaje para afinar logística:</p>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">Define tu fecha tentativa y estilo de viaje para afinar la logística:</p>
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
                     <div class="flex flex-col gap-1">
-                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Fecha Deseada</label>
-                      <input class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30" id="builder-date" type="date" value="2026-06-15"/>
+                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold" for="builder-date">Fecha Tentativa</label>
+                      <input class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30 focus:border-secondary transition-colors" id="builder-date" type="date"/>
                     </div>
                     <div class="flex flex-col gap-1">
-                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Número de Viajeros</label>
-                      <select class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30" id="builder-guests">
+                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold" for="builder-guests">Número de Viajeros</label>
+                      <select class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30 focus:border-secondary transition-colors" id="builder-guests">
                         <option value="2 Adultos (Pareja)">2 Adultos (Pareja)</option>
-                        <option value="Familia (3 a 5 personas)">Familia (3 a 5 personas)</option>
-                        <option value="Grupo Privado (6+ personas)">Grupo Privado (6+ personas)</option>
+                        <option value="3 a 5 Personas (Familia / Amigos)">3 a 5 Personas (Familia / Amigos)</option>
+                        <option value="6 a 10 Personas (Grupo Privado)">6 a 10 Personas (Grupo Privado)</option>
+                        <option value="11+ Personas (Expedición Grande)">11+ Personas (Expedición Grande)</option>
                       </select>
                     </div>
                   </div>
                   <div class="flex flex-col gap-1">
                     <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Transporte Exclusivo</label>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
-                      <label class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-xs cursor-pointer has-[:checked]:bg-secondary/15">
-                        <input checked="" class="text-secondary" name="transport" type="radio" value="Van Ejecutiva de Lujo"/>
-                        <span class="font-body-sm text-body-sm text-on-surface font-semibold">Suburban / Van VIP Privada</span>
+                      <label class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-xs cursor-pointer has-[:checked]:bg-secondary/15 has-[:checked]:border-secondary border border-transparent transition-all">
+                        <input checked="" class="text-secondary" name="transport" type="radio" value="Van VIP Privada Climatizada"/>
+                        <div class="flex flex-col">
+                          <span class="font-body-sm text-body-sm text-on-surface font-bold">Van VIP Privada Climatizada</span>
+                          <span class="font-label-sm text-label-sm text-on-surface-variant">Recogida directa en tu hotel (Recomendado)</span>
+                        </div>
                       </label>
-                      <label class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-xs cursor-pointer has-[:checked]:bg-secondary/15">
-                        <input class="text-secondary" name="transport" type="radio" value="Traslado Estándar"/>
-                        <span class="font-body-sm text-body-sm text-on-surface font-semibold">Traslado Flexible</span>
+                      <label class="p-space-sm rounded-xl bg-surface-container-low flex items-center gap-space-xs cursor-pointer has-[:checked]:bg-secondary/15 has-[:checked]:border-secondary border border-transparent transition-all">
+                        <input class="text-secondary" name="transport" type="radio" value="Traslado Flexible"/>
+                        <div class="flex flex-col">
+                          <span class="font-body-sm text-body-sm text-on-surface font-bold">Traslado Flexible</span>
+                          <span class="font-label-sm text-label-sm text-on-surface-variant">Puntos de encuentro a convenir</span>
+                        </div>
                       </label>
                     </div>
                   </div>
@@ -1278,38 +1314,58 @@
 
                 <!-- STEP 3 CONTAINER -->
                 <div class="hidden flex-col gap-space-md" id="builder-step-3">
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Conexión directa: enviaremos tu resumen a Dany para confirmación inmediata de cupos VIP.</p>
-                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                    <div class="flex flex-col gap-1">
-                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Nombre Completo</label>
-                      <input class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30" id="builder-name" placeholder="Ej. Carlos Mendoza" type="text"/>
+                  <p class="font-body-sm text-body-sm text-on-surface-variant">
+                    Revisa tu resumen y confirma tus datos para enviar tu solicitud directamente al WhatsApp de Dany Chacón:
+                  </p>
+
+                  <!-- Dynamic Live Summary Card -->
+                  <div class="p-space-md rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col gap-space-xs text-body-sm" id="builder-summary-preview">
+                    <div class="flex items-center justify-between pb-1 border-b border-surface-container-high text-primary font-bold">
+                      <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[18px] text-secondary">checklist</span> Resumen de tu Itinerario:</span>
                     </div>
-                    <div class="flex flex-col gap-1">
-                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">WhatsApp (con código país)</label>
-                      <input class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30" id="builder-phone" placeholder="+52 1 984 232 6708" type="tel"/>
+                    <div class="flex flex-col gap-1 text-on-surface pt-1">
+                      <div><strong class="text-primary">Expediciones:</strong> <span id="summary-tours" class="text-secondary font-medium">Tulum Privado &amp; Playa Paraíso</span></div>
+                      <div><strong class="text-primary">Fecha:</strong> <span id="summary-date">Pendiente</span></div>
+                      <div><strong class="text-primary">Grupo:</strong> <span id="summary-guests">2 Adultos (Pareja)</span></div>
+                      <div><strong class="text-primary">Transporte:</strong> <span id="summary-transport">Van VIP Privada Climatizada</span></div>
                     </div>
                   </div>
+
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+                    <div class="flex flex-col gap-1">
+                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold" for="builder-name">Tu Nombre Completo *</label>
+                      <input class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30 focus:border-secondary transition-colors" id="builder-name" placeholder="Ej. Carlos Mendoza" type="text" required/>
+                      <span class="hidden text-error text-[12px] font-medium" id="name-error">Por favor ingresa tu nombre.</span>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                      <label class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold" for="builder-phone">Tu WhatsApp con Código de País *</label>
+                      <input class="px-space-md py-space-xs rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none border border-outline-variant/30 focus:border-secondary transition-colors" id="builder-phone" placeholder="Ej. +52 1 984 232 6708" type="tel" required/>
+                      <span class="hidden text-error text-[12px] font-medium" id="phone-error">Por favor ingresa tu WhatsApp (mínimo 8 dígitos).</span>
+                    </div>
+                  </div>
+
                   <div class="p-space-sm rounded-xl bg-secondary-fixed/40 flex items-center gap-space-sm">
-                    <span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+                    <span class="material-symbols-outlined text-secondary text-[22px] shrink-0">verified_user</span>
                     <span class="font-body-sm text-body-sm text-on-secondary-fixed-variant">
-                      Atención directa con Dany. Sin intermediarios, sin comisiones ocultas y con itinerario digital garantizado.
+                      Atención directa con <strong>Dany Chacón</strong> (+52 1 984 232 6708). Sin intermediarios, sin comisiones de agencia y con confirmación inmediata de fecha.
                     </span>
                   </div>
                 </div>
 
                 <!-- Stepper Buttons -->
                 <div class="flex items-center justify-between pt-space-xs border-t border-surface-container-high">
-                  <button class="hidden px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors" id="builder-prev-btn" type="button">
-                    Atrás
+                  <button class="hidden px-space-md py-space-xs rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors items-center gap-1" id="builder-prev-btn" type="button">
+                    <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+                    <span>Atrás</span>
                   </button>
                   <div class="ml-auto">
-                    <button class="px-space-xl py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-secondary transition-colors flex items-center gap-1" id="builder-next-btn" type="button">
-                      <span>Siguiente Paso</span>
+                    <button class="px-space-xl py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-secondary transition-colors flex items-center gap-1.5 shadow-sm" id="builder-next-btn" type="button">
+                      <span>Siguiente: Fechas</span>
                       <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                     </button>
-                    <button class="hidden px-space-xl py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:bg-primary transition-colors flex items-center gap-2 shadow-[0_4px_16px_rgba(0,106,97,0.25)]" id="builder-submit-btn" type="button">
+                    <button class="hidden px-space-xl py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:bg-primary transition-all flex items-center gap-2 shadow-[0_4px_16px_rgba(0,106,97,0.3)] hover:scale-[1.02]" id="builder-submit-btn" type="button">
                       <span class="material-symbols-outlined text-[18px]">chat</span>
-                      <span>Enviar Itinerario Sagrado</span>
+                      <span>Enviar a Dany Chacón por WhatsApp</span>
                     </button>
                   </div>
                 </div>
@@ -1930,6 +1986,7 @@
       });
 
       // -------------------------------------------------------------
+      // -------------------------------------------------------------
       // 3. MIATZ AI CONCIERGE CHAT INTERACTIONS
       // -------------------------------------------------------------
       const chatForm = document.getElementById('miatz-chat-form');
@@ -1937,13 +1994,14 @@
       const chatStream = document.getElementById('miatz-chat-stream');
       const promptChips = document.querySelectorAll('.chat-prompt-chip');
 
-      const appendMessage = (sender, text) => {
+      const appendMiatzMessage = (sender, text, actionUrl = null, actionLabel = null) => {
+        if (!chatStream) return;
         const msgDiv = document.createElement('div');
-        msgDiv.className = 'flex items-start gap-space-xs ' + (sender === 'user' ? 'max-w-[88%] ml-auto justify-end' : 'max-w-[88%]');
+        msgDiv.className = 'flex items-start gap-space-xs ' + (sender === 'user' ? 'max-w-[88%] ml-auto justify-end' : 'max-w-[92%]');
         
         if (sender === 'user') {
           msgDiv.innerHTML = `
-            <div class="p-space-sm rounded-2xl rounded-tr-none bg-primary text-on-primary font-body-sm text-body-sm shadow-sm">
+            <div class="p-space-sm rounded-2xl rounded-tr-none bg-primary text-on-primary font-body-sm text-body-sm shadow-sm leading-relaxed">
               ${text}
             </div>
             <div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 mt-1">
@@ -1951,12 +2009,25 @@
             </div>
           `;
         } else {
+          let actionBtn = '';
+          if (actionUrl && actionLabel) {
+            actionBtn = `
+              <div class="pt-2 mt-1.5 border-t border-outline-variant/20">
+                <a href="${actionUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[12px] font-bold hover:bg-primary transition-colors shadow-sm">
+                  <span class="material-symbols-outlined text-[14px]">chat</span>
+                  <span>${actionLabel}</span>
+                </a>
+              </div>
+            `;
+          }
+
           msgDiv.innerHTML = `
             <div class="w-7 h-7 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shrink-0 mt-1">
               <span class="material-symbols-outlined text-[14px]">smart_toy</span>
             </div>
-            <div class="p-space-sm rounded-2xl rounded-tl-none bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-sm">
-              ${text}
+            <div class="p-space-sm rounded-2xl rounded-tl-none bg-surface-container-low text-on-surface font-body-sm text-body-sm shadow-sm leading-relaxed">
+              <div class="space-y-1">${text}</div>
+              ${actionBtn}
             </div>
           `;
         }
@@ -1964,20 +2035,82 @@
         chatStream.scrollTop = chatStream.scrollHeight;
       };
 
+      const showTypingIndicator = () => {
+        if (!chatStream) return;
+        const typingDiv = document.createElement('div');
+        typingDiv.id = 'miatz-typing';
+        typingDiv.className = 'flex items-start gap-space-xs max-w-[92%]';
+        typingDiv.innerHTML = `
+          <div class="w-7 h-7 rounded-full bg-secondary/15 flex items-center justify-center text-secondary shrink-0 mt-1">
+            <span class="material-symbols-outlined text-[14px]">smart_toy</span>
+          </div>
+          <div class="px-4 py-2.5 rounded-2xl rounded-tl-none bg-surface-container-low flex items-center gap-1.5 text-secondary">
+            <span class="w-2 h-2 rounded-full bg-secondary animate-bounce" style="animation-delay: 0ms"></span>
+            <span class="w-2 h-2 rounded-full bg-secondary animate-bounce" style="animation-delay: 150ms"></span>
+            <span class="w-2 h-2 rounded-full bg-secondary animate-bounce" style="animation-delay: 300ms"></span>
+          </div>
+        `;
+        chatStream.appendChild(typingDiv);
+        chatStream.scrollTop = chatStream.scrollHeight;
+      };
+
+      const removeTypingIndicator = () => {
+        const el = document.getElementById('miatz-typing');
+        if (el) el.remove();
+      };
+
       const handleAiResponse = (userPrompt) => {
-        appendMessage('user', userPrompt);
+        appendMiatzMessage('user', userPrompt);
+        showTypingIndicator();
+
         setTimeout(() => {
-          let reply = "Entendido. Dany cuenta con acceso a cenotes semiprivados y camioneta climatizada para esa ruta. ¿Te gustaría coordinarlo por WhatsApp?";
+          removeTypingIndicator();
           const p = userPrompt.toLowerCase();
-          if (p.includes('cenote')) {
-            reply = "Para cenotes privados, recomendamos Casa Tortuga a primera hora o la Ruta Secreta de Sac Actun. Aguas puras a 24°C y cero multitudes.";
-          } else if (p.includes('gastronom')) {
-            reply = "Contamos con cenas de 3 tiempos frente a la playa en Tulum y degustaciones prehispánicas con miel melipona en la selva de Cobá.";
-          } else if (p.includes('chichén') || p.includes('chichen')) {
-            reply = "Nuestra expedición de Chichén Itzá inicia a las 6:00 AM para ingresar antes que el público general y disfrutar de la acústica sagrada de Kukulcán.";
+          let reply = "";
+          let actionLabel = "Consultar con Dany Chacón por WhatsApp";
+          let waText = `Hola Dany Chacón, estaba consultando con Miatz AI y me gustaría más información sobre: ${userPrompt}`;
+
+          if (p.includes('tulum') || p.includes('paraiso') || p.includes('paraíso') || p.includes('prioridad')) {
+            reply = "<strong>🏛️ Tulum Privado &amp; Playa Paraíso (Nuestra Expedición Insignia #1):</strong><br>Es la experiencia más solicitada y la prioridad de Dany Chacón. Visita guiada personalizada por la emblemática zona arqueológica amurallada frente al Mar Caribe, complementada con descanso y nado en la paradisíaca Playa Paraíso. Todo en transporte climatizado privado a tu ritmo, sin prisas de autobuses masivos.";
+            actionLabel = "Reservar Tulum Privado (#1)";
+            waText = "Hola Dany Chacón, deseo apartar mi fecha para la expedición insignia de Tulum Privado & Playa Paraíso.";
+          } else if (p.includes('chichén') || p.includes('chichen') || p.includes('kukulcan') || p.includes('kukulcán')) {
+            reply = "<strong>⚡ Chichén Itzá Privado &amp; Cenote Sagrado:</strong><br>Descubre la maravilla del mundo maya con la explicación histórica y acústica de Dany Chacón (Guía Federal SECTUR). Incluye transportación privada ejecutiva climatizada, acceso preferente y visita a un cenote sagrado de aguas cristalinas para refrescarte.";
+            actionLabel = "Consultar Chichén Itzá Privado";
+            waText = "Hola Dany Chacón, me interesa cotizar la expedición privada a Chichén Itzá y Cenote.";
+          } else if (p.includes('cenote') || p.includes('tortuga') || p.includes('caverna')) {
+            reply = "<strong>🌊 Cenotes Casa Tortuga &amp; Cavernas:</strong><br>Un circuito privado único a través de 4 cenotes milenarios (2 abiertos rodeados de selva virgen y 2 cavernas de aguas cristalinas a 24°C con estalagmitas). Incluye chalecos salvavidas y atención guiada especializada.";
+            actionLabel = "Consultar Cenotes Casa Tortuga";
+            waText = "Hola Dany Chacón, me gustaría conocer detalles para visitar Cenotes Casa Tortuga en privado.";
+          } else if (p.includes('coco') || p.includes('bongo') || p.includes('fiesta') || p.includes('noche') || p.includes('nocturn')) {
+            reply = "<strong>🎉 Coco Bongo Show VIP:</strong><br>El espectáculo acrobático y la fiesta más legendaria de la Riviera Maya (Cancún y Playa del Carmen). Coordinamos tus entradas preferenciales, mesa VIP, barra libre y traslados privados de ida y vuelta a tu hotel para que disfrutes con total seguridad.";
+            actionLabel = "Reservar Coco Bongo VIP";
+            waText = "Hola Dany Chacón, deseo coordinar accesos VIP y transporte para Coco Bongo.";
+          } else if (p.includes('atv') || p.includes('cuatrimoto') || p.includes('adrenalina') || p.includes('selva') || p.includes('tirolesa')) {
+            reply = "<strong>🏍️ Cuatrimotos ATV Selva &amp; Aventura:</strong><br>Ruta todoterreno 4x4 por senderos ocultos de la selva maya, circuito de tirolesas a gran altura y nado en cenote subterráneo. Incluye equipo de seguridad homologado y guías profesionales.";
+            actionLabel = "Consultar Aventura ATV en Selva";
+            waText = "Hola Dany Chacón, me interesa la expedición de Cuatrimotos ATV y tirolesas en la selva.";
+          } else if (p.includes('dany') || p.includes('chacón') || p.includes('chacon') || p.includes('guía') || p.includes('guia') || p.includes('quién') || p.includes('quien') || p.includes('anfitrión') || p.includes('anfitrion')) {
+            reply = "<strong>👤 Dany Chacón (Guía Anfitrión):</strong><br>Guía Federal Certificado por SECTUR con más de 15 años de trayectoria en la Península de Yucatán y Riviera Maya, y calificación de 4.6 en Google. Su compromiso es brindarte un viaje seguro, puntual, 100% privado y enriquecido con historia auténtica.";
+            actionLabel = "Hablar directamente con Dany Chacón";
+            waText = "Hola Dany Chacón, un gusto saludarte. Me gustaría platicar contigo para organizar mi viaje a la Riviera Maya.";
+          } else if (p.includes('precio') || p.includes('tarifa') || p.includes('costo') || p.includes('cuanto') || p.includes('cuánto') || p.includes('cotiz')) {
+            reply = "<strong>💎 Tarifas y Cotización Directa:</strong><br>Nuestras tarifas se calculan de manera transparente según el tamaño de tu grupo, la fecha elegida y las expediciones combinadas. Todas incluyen transportación privada climatizada, chofer profesional y guía certificado, sin comisiones intermediarias.";
+            actionLabel = "Solicitar Cotización por WhatsApp";
+            waText = "Hola Dany Chacón, me gustaría solicitar una cotización personalizada para mi grupo.";
+          } else if (p.includes('transporte') || p.includes('van') || p.includes('camioneta') || p.includes('recogida') || p.includes('hotel') || p.includes('traslado')) {
+            reply = "<strong>🚐 Transportación Ejecutiva Privada:</strong><br>Te recogemos y regresamos directamente en el lobby de tu hotel o alojamiento en Cancún, Riviera Maya, Playa del Carmen o Tulum. Vehículos ejecutivos climatizados, cómodos y con chofer profesional.";
+            actionLabel = "Coordinar Transporte Privado";
+            waText = "Hola Dany Chacón, deseo información sobre el servicio de transportación privada y recogida en mi hotel.";
+          } else {
+            reply = "¡Excelente consulta! Dany Chacón diseña tu experiencia de manera 100% personalizada para ti y tus acompañantes, adaptando tiempos, paradas y accesos sin prisas. ¿Te gustaría coordinar tu itinerario directo con él?";
+            actionLabel = "Escribir a Dany Chacón (+52 1 984 232 6708)";
+            waText = `Hola Dany Chacón, me gustaría hacerte una consulta directa: "${userPrompt}"`;
           }
-          appendMessage('miatz', reply);
-        }, 550);
+
+          const actionUrl = `https://wa.me/5219842326708?text=${encodeURIComponent(waText)}`;
+          appendMiatzMessage('miatz', reply, actionUrl, actionLabel);
+        }, 450);
       };
 
       if (chatForm) {
@@ -1993,8 +2126,8 @@
 
       promptChips.forEach(chip => {
         chip.addEventListener('click', () => {
-          const text = chip.textContent.replace(/"/g, '').trim();
-          handleAiResponse(text);
+          const topic = chip.getAttribute('data-topic') || chip.textContent.trim();
+          handleAiResponse(topic);
         });
       });
 
@@ -2015,10 +2148,62 @@
       const p2 = document.getElementById('prog-2');
       const p3 = document.getElementById('prog-3');
 
+      // Initialize date input with tomorrow's date & min = today
+      const dateInput = document.getElementById('builder-date');
+      if (dateInput) {
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tYyyy = tomorrow.getFullYear();
+        const tMm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+        const tDd = String(tomorrow.getDate()).padStart(2, '0');
+        if (!dateInput.value) {
+          dateInput.value = `${tYyyy}-${tMm}-${tDd}`;
+        }
+      }
+
+      // Checkbox visual toggle for tour cards
+      document.querySelectorAll('.tour-checkbox').forEach(cb => {
+        cb.addEventListener('change', () => {
+          const label = cb.closest('.tour-card-label');
+          const checkIcon = label ? label.querySelector('.checkmark-icon') : null;
+          if (checkIcon) {
+            checkIcon.textContent = cb.checked ? 'check_circle' : 'radio_button_unchecked';
+          }
+        });
+      });
+
+      const updateSummaryPreview = () => {
+        const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked')).map(cb => cb.value);
+        const selectedExtras = Array.from(document.querySelectorAll('input[name="extra"]:checked')).map(cb => cb.value);
+        const all = [...selectedTours, ...selectedExtras];
+        
+        const sumTours = document.getElementById('summary-tours');
+        const sumDate = document.getElementById('summary-date');
+        const sumGuests = document.getElementById('summary-guests');
+        const sumTransport = document.getElementById('summary-transport');
+
+        if (sumTours) sumTours.textContent = all.length > 0 ? all.join(' • ') : 'Ninguna expedición seleccionada';
+        if (sumDate && dateInput) sumDate.textContent = dateInput.value || 'Por definir';
+        const guestsEl = document.getElementById('builder-guests');
+        if (sumGuests && guestsEl) sumGuests.textContent = guestsEl.value;
+        const transportChecked = document.querySelector('input[name="transport"]:checked');
+        if (sumTransport && transportChecked) sumTransport.textContent = transportChecked.value;
+      };
+
       const updateStepUI = () => {
+        if (!step1 || !step2 || !step3) return;
         step1.classList.add('hidden');
+        step1.classList.remove('flex');
         step2.classList.add('hidden');
+        step2.classList.remove('flex');
         step3.classList.add('hidden');
+        step3.classList.remove('flex');
 
         p1.classList.remove('bg-secondary');
         p2.classList.remove('bg-secondary');
@@ -2029,26 +2214,43 @@
 
         if (currentStep === 1) {
           step1.classList.remove('hidden');
+          step1.classList.add('flex');
           prevBtn.classList.add('hidden');
+          prevBtn.classList.remove('inline-flex');
           nextBtn.classList.remove('hidden');
+          nextBtn.classList.add('inline-flex');
+          const nextText = nextBtn.querySelector('span:first-child');
+          if (nextText) nextText.textContent = 'Siguiente: Fechas';
           submitBtn.classList.add('hidden');
+          submitBtn.classList.remove('inline-flex');
           stepBadge.textContent = 'Paso 1 de 3';
           stepTitle.textContent = 'Selecciona tus Expediciones';
           p1.classList.add('bg-secondary');
         } else if (currentStep === 2) {
           step2.classList.remove('hidden');
+          step2.classList.add('flex');
           prevBtn.classList.remove('hidden');
+          prevBtn.classList.add('inline-flex');
           nextBtn.classList.remove('hidden');
+          nextBtn.classList.add('inline-flex');
+          const nextText = nextBtn.querySelector('span:first-child');
+          if (nextText) nextText.textContent = 'Siguiente: Confirmar';
           submitBtn.classList.add('hidden');
+          submitBtn.classList.remove('inline-flex');
           stepBadge.textContent = 'Paso 2 de 3';
           stepTitle.textContent = 'Fechas y Grupo de Viajeros';
           p1.classList.add('bg-secondary');
           p2.classList.add('bg-secondary');
         } else if (currentStep === 3) {
+          updateSummaryPreview();
           step3.classList.remove('hidden');
+          step3.classList.add('flex');
           prevBtn.classList.remove('hidden');
+          prevBtn.classList.add('inline-flex');
           nextBtn.classList.add('hidden');
+          nextBtn.classList.remove('inline-flex');
           submitBtn.classList.remove('hidden');
+          submitBtn.classList.add('inline-flex');
           stepBadge.textContent = 'Paso 3 de 3';
           stepTitle.textContent = 'Detalles de Contacto VIP';
           p1.classList.add('bg-secondary');
@@ -2059,6 +2261,17 @@
 
       if (nextBtn) {
         nextBtn.addEventListener('click', () => {
+          if (currentStep === 1) {
+            const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked'));
+            const selectedExtras = Array.from(document.querySelectorAll('input[name="extra"]:checked'));
+            const errEl = document.getElementById('step1-error');
+            if (selectedTours.length === 0 && selectedExtras.length === 0) {
+              if (errEl) errEl.classList.remove('hidden');
+              return;
+            } else {
+              if (errEl) errEl.classList.add('hidden');
+            }
+          }
           if (currentStep < 3) {
             currentStep++;
             updateStepUI();
@@ -2077,17 +2290,52 @@
 
       if (submitBtn) {
         submitBtn.addEventListener('click', () => {
-          const name = document.getElementById('builder-name').value || 'Huésped VIP';
-          const phone = document.getElementById('builder-phone').value || 'Por definir';
-          const date = document.getElementById('builder-date').value;
-          const guests = document.getElementById('builder-guests').value;
-          
+          const nameInput = document.getElementById('builder-name');
+          const phoneInput = document.getElementById('builder-phone');
+          const nameErr = document.getElementById('name-error');
+          const phoneErr = document.getElementById('phone-error');
+
+          const name = (nameInput ? nameInput.value.trim() : '');
+          const phone = (phoneInput ? phoneInput.value.trim() : '');
+
+          let valid = true;
+          if (!name) {
+            if (nameErr) nameErr.classList.remove('hidden');
+            if (nameInput) nameInput.classList.add('border-red-500');
+            valid = false;
+          } else {
+            if (nameErr) nameErr.classList.add('hidden');
+            if (nameInput) nameInput.classList.remove('border-red-500');
+          }
+
+          const phoneDigits = phone.replace(/\D/g, '');
+          if (!phone || phoneDigits.length < 8) {
+            if (phoneErr) phoneErr.classList.remove('hidden');
+            if (phoneInput) phoneInput.classList.add('border-red-500');
+            valid = false;
+          } else {
+            if (phoneErr) phoneErr.classList.add('hidden');
+            if (phoneInput) phoneInput.classList.remove('border-red-500');
+          }
+
+          if (!valid) {
+            if (!name && nameInput) nameInput.focus();
+            else if (!phone && phoneInput) phoneInput.focus();
+            return;
+          }
+
+          const date = dateInput ? dateInput.value : 'Por definir';
+          const guests = document.getElementById('builder-guests')?.value || '2 Personas';
+          const transport = document.querySelector('input[name="transport"]:checked')?.value || 'Van VIP Privada Climatizada';
+
           const selectedTours = Array.from(document.querySelectorAll('input[name="tours"]:checked')).map(cb => cb.value);
           const selectedExtras = Array.from(document.querySelectorAll('input[name="extra"]:checked')).map(cb => cb.value);
           const allTours = [...selectedTours, ...selectedExtras].join(', ') || 'Expedición personalizada';
 
-          const msg = encodeURIComponent(`Hola Dany, deseo cotizar un Itinerario Sagrado:\n• Titular: ${name}\n• Teléfono: ${phone}\n• Fecha: ${date}\n• Grupo: ${guests}\n• Experiencias: ${allTours}`);
-          window.open(`https://wa.me/5219842326708?text=${msg}`, '_blank');
+          const messageText = `Hola Dany Chacón, deseo cotizar mi itinerario exclusivo:\n• Titular: ${name}\n• WhatsApp: ${phone}\n• Fecha tentativa: ${date}\n• Grupo: ${guests}\n• Transporte: ${transport}\n• Expediciones seleccionadas: ${allTours}`;
+
+          const waUrl = `https://wa.me/5219842326708?text=${encodeURIComponent(messageText)}`;
+          window.open(waUrl, '_blank');
         });
       }
       // -------------------------------------------------------------
