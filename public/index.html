@@ -7,6 +7,10 @@
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
   <meta name="format-detection" content="telephone=no"/>
+  <!-- Preload Critical Intro Assets for Instant Playback -->
+  <link rel="preload" href="assets/jaguar_gallop.webp" as="image" type="image/webp"/>
+  <link rel="preload" href="assets/jaguar_gallop.gif" as="image" type="image/gif"/>
+  <link rel="preload" href="assets/logo_head.png" as="image" type="image/png"/>
   <title>Dany Experiences | Riviera Maya • Viajes Privados</title>
   
   <!-- Fonts & Icons -->
@@ -160,19 +164,17 @@
       background: radial-gradient(circle at center, #0a110d 0%, #050806 100%);
     }
 
-    /* Running Jaguar Sprite using CSS Steps */
-    .jaguar-run-sprite {
-      width: 500px;
-      height: 320px;
-      background-image: url('assets/jaguar_gallop_sheet.png');
-      background-repeat: no-repeat;
-      background-position: 0 0;
-      animation: jaguarSprint 0.65s steps(10) infinite;
-      filter: drop-shadow(0 0 25px rgba(223, 188, 122, 0.7)) drop-shadow(0 0 55px rgba(186, 209, 85, 0.35));
-      transform-origin: center;
+    /* Running Jaguar Motion */
+    @keyframes jaguarGallopMotion {
+      0%, 100% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-8px) scale(1.015);
+      }
     }
-    @keyframes jaguarSprint {
-      100% { background-position: -5000px 0; }
+    .jaguar-gallop-motion {
+      animation: jaguarGallopMotion 0.60s ease-in-out infinite;
     }
 
     /* Kinetic Speed Streaks across Screen */
@@ -244,9 +246,14 @@
     <!-- Central Stage -->
     <div class="relative flex flex-col items-center justify-center w-full max-w-4xl px-4 z-10 min-h-[380px]">
 
-      <!-- SPRINTING JAGUAR (Phase 1: 0.0s - 3.6s) -->
-      <div id="intro-jaguar-running" class="relative flex items-center justify-center transition-all duration-700">
-        <div class="jaguar-run-sprite transform scale-[0.50] min-[390px]:scale-[0.62] sm:scale-90 md:scale-100"></div>
+      <!-- SPRINTING JAGUAR (Phase 1: 0.0s - 3.0s) -->
+      <div id="intro-jaguar-running" class="relative flex flex-col items-center justify-center transition-all duration-700">
+        <div class="relative flex items-center justify-center jaguar-gallop-motion">
+          <picture>
+            <source srcset="assets/jaguar_gallop.webp" type="image/webp"/>
+            <img src="assets/jaguar_gallop.gif" alt="Jaguar corriendo" class="w-64 min-[390px]:w-72 sm:w-96 md:w-[440px] h-auto object-contain filter drop-shadow-[0_0_30px_rgba(223,188,122,0.85)] drop-shadow-[0_0_60px_rgba(186,209,85,0.45)] select-none pointer-events-none"/>
+          </picture>
+        </div>
       </div>
 
       <!-- NOBLE EMBLEM LOCKUP (Phase 2: 3.6s - 6.0s) -->
@@ -1764,16 +1771,17 @@
       const settledBox = document.getElementById('intro-jaguar-settled');
       const streaksBox = document.getElementById('intro-streaks');
 
-      const TOTAL_INTRO_SECONDS = 5.8;
+      const TOTAL_INTRO_SECONDS = 6.0;
       let introStartTime = performance.now();
       let introActive = true;
       let phaseSettled = false;
       let animFrameId = null;
 
       // Particles Canvas Setup
-      const ictx = introCanvas.getContext('2d');
+      const ictx = introCanvas ? introCanvas.getContext('2d') : null;
       let cw, ch;
       function resizeIntroCanvas() {
+        if (!introCanvas) return;
         cw = introCanvas.width = window.innerWidth;
         ch = introCanvas.height = window.innerHeight;
       }
@@ -1782,21 +1790,24 @@
 
       // Ambient Mayan Dust Particles
       const particles = [];
-      for (let i = 0; i < 70; i++) {
-        particles.push({
-          x: Math.random() * cw,
-          y: Math.random() * ch,
-          vx: (Math.random() - 0.5) * 0.7 - 0.4,
-          vy: (Math.random() - 0.5) * 0.4,
-          size: Math.random() * 2.2 + 0.8,
-          color: Math.random() > 0.45 ? 'rgba(230, 200, 150, ' : 'rgba(186, 209, 85, ',
-          alpha: Math.random() * 0.7 + 0.3
-        });
+      if (cw && ch) {
+        for (let i = 0; i < 70; i++) {
+          particles.push({
+            x: Math.random() * cw,
+            y: Math.random() * ch,
+            vx: (Math.random() - 0.5) * 0.7 - 0.4,
+            vy: (Math.random() - 0.5) * 0.4,
+            size: Math.random() * 2.2 + 0.8,
+            color: Math.random() > 0.45 ? 'rgba(230, 200, 150, ' : 'rgba(186, 209, 85, ',
+            alpha: Math.random() * 0.7 + 0.3
+          });
+        }
       }
 
       // Paw Strike Sparks
       const sparks = [];
       function spawnPawSparks() {
+        if (!cw || !ch) return;
         const cx = cw * 0.5;
         const cy = ch * 0.5 + 40;
         for (let i = 0; i < 4; i++) {
@@ -1816,7 +1827,7 @@
       let sparkTicker = 0;
 
       function renderIntroCanvas() {
-        if (!introActive) return;
+        if (!introActive || !ictx) return;
         ictx.clearRect(0, 0, cw, ch);
 
         // Update & Draw Dust
@@ -1861,11 +1872,11 @@
 
         animFrameId = requestAnimationFrame(renderIntroCanvas);
       }
-      renderIntroCanvas();
+      if (ictx) renderIntroCanvas();
 
       // Main Choreography Loop
       function closeIntro() {
-        if (!introActive) return;
+        if (!introActive || !introOverlay) return;
         introActive = false;
         introOverlay.classList.add('intro-exit');
         document.body.style.overflow = '';
@@ -1876,6 +1887,7 @@
       }
 
       function startIntro() {
+        if (!introOverlay) return;
         introOverlay.style.display = 'flex';
         introOverlay.classList.remove('intro-exit');
         introActive = true;
@@ -1884,11 +1896,17 @@
         document.body.style.overflow = 'hidden';
 
         // Reset visual elements
-        runningBox.classList.remove('opacity-0', 'scale-90');
-        runningBox.classList.add('opacity-100');
-        settledBox.classList.remove('opacity-100', 'scale-100');
-        settledBox.classList.add('opacity-0', 'scale-90');
-                                        streaksBox.classList.remove('opacity-0');
+        if (runningBox) {
+          runningBox.classList.remove('opacity-0', 'scale-90');
+          runningBox.classList.add('opacity-100');
+        }
+        if (settledBox) {
+          settledBox.classList.remove('opacity-100', 'scale-100');
+          settledBox.classList.add('opacity-0', 'scale-90');
+        }
+        if (streaksBox) {
+          streaksBox.classList.remove('opacity-0');
+        }
 
         renderIntroCanvas();
       }
@@ -1906,27 +1924,27 @@
         const progress = Math.min(1.0, elapsed / TOTAL_INTRO_SECONDS);
         const remaining = Math.max(0, TOTAL_INTRO_SECONDS - elapsed).toFixed(1);
 
-        progressFill.style.width = (progress * 100) + '%';
-        percentEl.textContent = Math.round(progress * 100) + '%';
-        countdownEl.textContent = remaining + 's';
+        if (progressFill) progressFill.style.width = (progress * 100) + '%';
+        if (percentEl) percentEl.textContent = Math.round(progress * 100) + '%';
+        if (countdownEl) countdownEl.textContent = remaining + 's';
 
-        // At 3.6s: Transition from sprinting jaguar to noble emblem & laser pyramid
-        if (elapsed >= 2.8 && !phaseSettled) {
+        // At 3.0s: Transition from sprinting jaguar to original logo (Phase 2: 3.0s)
+        if (elapsed >= 3.0 && !phaseSettled) {
           phaseSettled = true;
-          streaksBox.classList.add('opacity-0');
+          if (streaksBox) streaksBox.classList.add('opacity-0');
 
-          // Fade out runner
-          runningBox.classList.add('opacity-0', 'scale-90');
+          // Fade out runner smoothly
+          if (runningBox) {
+            runningBox.classList.add('opacity-0', 'scale-90');
+          }
 
-          // Reveal pyramid and settled logo
+          // Reveal original logo and hold for 3 seconds
           setTimeout(() => {
-            settledBox.classList.remove('opacity-0', 'scale-90');
-            settledBox.classList.add('opacity-100', 'scale-100');
-                                  }, 300);
-
-          // Reveal typography at 4.2s
-          setTimeout(() => {
-                                  }, 700);
+            if (settledBox) {
+              settledBox.classList.remove('opacity-0', 'scale-90');
+              settledBox.classList.add('opacity-100', 'scale-100');
+            }
+          }, 300);
         }
 
         // At 6.0s: Reveal the website
@@ -1936,17 +1954,14 @@
         }
       }, 40);
 
-      skipBtn.addEventListener('click', () => {
-        clearInterval(introTimer);
-        closeIntro();
-      });
-
-      if (replayBtn) {
-        replayBtn.addEventListener('click', () => {
-          startIntro();
+      if (skipBtn) {
+        skipBtn.addEventListener('click', () => {
+          clearInterval(introTimer);
+          closeIntro();
         });
       }
 
+      // Replay intro handled via mobile drawer and header controllers
       // -------------------------------------------------------------
       // 2. CATALOG FILTER SYSTEM
       // -------------------------------------------------------------
